@@ -77,7 +77,7 @@ Main() {
 ### Python
 
 ```python
-# 使用Python 令電腦輸出Hello World
+# 使用 Python 令電腦輸出Hello World
 print("Hello World")
 ```
 
