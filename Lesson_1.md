@@ -86,12 +86,15 @@ Windows 則需要安裝對應的環境才可以執行Python程式碼。
  - 本課程基於 `Python 3.11.7` 版本 (若有語法更新，請自行查詢手冊)
 
 1. 先到 Python 官方網站下載 : https://www.python.org/
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
 
 2. 選擇 `Windows 64-bit` 版本 (亦可按照自身需求，選擇macOS、32-bit、ARM版本)
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041610443.png)
 
 3. 為方便後續管理，請把 `Add python.exe to PATH` 打勾
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041618824.png)
 
 4. 安裝完成後，我們可以在Windows開始菜單中，找到Python 3.11 相關程式
