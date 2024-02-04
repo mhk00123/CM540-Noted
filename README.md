@@ -1,4 +1,4 @@
-# Lesson 1 - CM540
+# CM540 課程資料
 ###### tags: `Python` `CM-540` `Introduction`
 
 ## Course Grading
