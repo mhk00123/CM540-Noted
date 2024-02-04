@@ -95,6 +95,7 @@ Windows 則需要安裝對應的環境才可以執行Python程式碼。
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041618824.png)
 
 4. 安裝完成後，我們可以在Windows開始菜單中，找到Python 3.11 相關程式
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041626154.png)
 
 5. 打開`IDLE(Python3.11 64-bit)`，並輸入以下代碼。若有成功顯示，表示則Python環境已經順利安裝到電腦中。
