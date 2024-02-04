@@ -11,7 +11,7 @@
 
 ## Python 是甚麼 ?
 
-Python 是一個高層次的結合了解釋性、編譯性、互動性和物件導向的腳本語言。Python 的設計具有很強的可讀性，相比其他語言經常使用英文關鍵字，其他語言的一些標點符號，它具有比其他語言更有特色語法結構。
+Python眾多程式語言中的一種，它是一種直譯式的程式語言，也是一種膠合語言。屬於直譯式的原因是，它的程式在執行時是一行接著一行的，也就是說，系統會先翻譯一行執行它，如果順利執行之後，再翻譯下一行，再執行。
 
 英國發音：/ˈpaɪθən/ 美國發音：/ˈpaɪθɑːn/
 
@@ -82,13 +82,15 @@ print("Hello World")
 ```
 
 ## 如何運行Python?
-
-需要在安裝了Python環境的計算機系統中運行(Mac 自帶 Python 2.x版本)。 Windows 則需要安裝對應的環境才可以執行Python程式碼。
-
-## 環境搭建
-
 * 本課程基於 `Python 3.11.7` 版本 (若有語法更新，請自行查詢手冊)
 
+由於Python是直譯式的程式語言，因此執行Python有著很多很多的方法，本課程將會教大家 2 種方法執行，大家可以按照個人喜好選擇。 
+> 注意：在爬蟲的章節，由於套件問題建議使用本機環境方式執行
+
+## 環境搭建(1) - 本機(Local)形式
+在本機中直接安裝Python執行環境、配合 Visual Studio Code 完成開發
+
+### 一、安裝 Python 環境
 1. 先到 Python 官方網站下載 : https://www.python.org/
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
@@ -112,3 +114,39 @@ print("Hello World!")
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041633572.png)
+
+### 二、撰寫您的第一個程式 Hello World
+1. 首先在 IDEL 的左上方點擊 File -> New File
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041748782.png)
+
+2. 在這個地方輸入程式碼
+``` python
+print("Hello World 1")
+
+print("Hello World 2")
+
+print("Hello World 3")
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041751080.png)
+
+3. 儲存檔案 `HelloWorld.py`
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041753562.png)
+
+4. 點擊 Run -> Run Module 執行程式碼
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041755050.png)
+
+5. Shell顯示執行成功
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041756721.png)
+
+### 三、安裝 IDE - Visual Studio Code
+一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
+
+VS Code 下載: https://code.visualstudio.com/download
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
+
+1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
+
+2. 執行成功
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
