@@ -117,6 +117,7 @@ print("Hello World!")
 
 ### 二、撰寫您的第一個程式 Hello World
 1. 首先在 IDEL 的左上方點擊 File -> New File
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041748782.png)
 
 2. 在這個地方輸入程式碼
@@ -131,22 +132,28 @@ print("Hello World 3")
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041751080.png)
 
 3. 儲存檔案 `HelloWorld.py`
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041753562.png)
 
 4. 點擊 Run -> Run Module 執行程式碼
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041755050.png)
 
 5. Shell顯示執行成功
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041756721.png)
 
 ### 三、安裝 IDE - Visual Studio Code
 一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
 
 VS Code 下載: https://code.visualstudio.com/download
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
 
 1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
 
 2. 執行成功
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
