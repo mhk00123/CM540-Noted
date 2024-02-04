@@ -26,7 +26,7 @@ Python亦稱為膠水語言，主要源於以下幾個原因：
 
 一般來說，程序有分二大類，**1. 編譯式語言**、**2. 直譯式語言**
 
-* #### 編譯式語言(Compiled language)
+* **編譯式語言(Compiled language)**
 
 其實電腦只看得懂1跟0，也就是機器語言。不過要我們人去寫機器語言，也太強人所難了；不只不好思考，我們處理滿篇的0與1也不可能比電腦快，這樣效率太低了。
 
@@ -36,7 +36,7 @@ Python亦稱為膠水語言，主要源於以下幾個原因：
 
 這類型的語言多半都是強型別的語言(strongly-typed)，有非常嚴格的檢查機制。不過它們的執行速度非常快，畢竟已經翻譯成電腦看得懂的語言了。著名的編譯語言有：`C`、`C++`、`Java`、`C#`、`Rust`、`Swift`等等。
 
-* #### 直譯式語言(Interpreted language)
+* **直譯式語言(Interpreted language)**
 
 既然電腦只看得懂0與1的機器語言，直譯式語言一樣會把程式語言翻譯成機器語言，差別在於它是一行一行翻譯，而不是一口氣將整篇翻好。直譯式語言會從上到下，由左至右，翻譯完一行之後，執行一行。有點像專業的口譯翻譯員，聽完一段翻譯一段，而編譯式則比較像筆譯翻譯員，將整篇文章讀完，再將整篇翻譯。
 
@@ -82,15 +82,19 @@ print("Hello World")
 ```
 
 ## 如何運行Python?
+
 * 本課程基於 `Python 3.11.7` 版本 (若有語法更新，請自行查詢手冊)
 
-由於Python是直譯式的程式語言，因此執行Python有著很多很多的方法，本課程將會教大家 2 種方法執行，大家可以按照個人喜好選擇。 
+由於Python是直譯式的程式語言，因此執行Python有著很多很多的方法，本課程將會教大家 2 種方法執行，大家可以按照個人喜好選擇。
+
 > 注意：在爬蟲的章節，由於套件問題建議使用本機環境方式執行
 
 ## 環境搭建(1) - 本機(Local)形式
+
 在本機中直接安裝Python執行環境、配合 Visual Studio Code 完成開發
 
 ### 一、安裝 Python 環境
+
 1. 先到 Python 官方網站下載 : https://www.python.org/
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
@@ -116,12 +120,14 @@ print("Hello World!")
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041633572.png)
 
 ### 二、撰寫您的第一個程式 Hello World
+
 1. 首先在 IDEL 的左上方點擊 File -> New File
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041748782.png)
 
 2. 在這個地方輸入程式碼
-``` python
+
+```python
 print("Hello World 1")
 
 print("Hello World 2")
@@ -144,6 +150,7 @@ print("Hello World 3")
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041756721.png)
 
 ### 三、安裝 IDE - Visual Studio Code
+
 一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
 
 VS Code 下載: https://code.visualstudio.com/download
@@ -158,8 +165,10 @@ VS Code 下載: https://code.visualstudio.com/download
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
 
-## 環境搭建(2) - 
+## 環境搭建(2) - Jupyter
+
 ### 一、Jupyter Notebook
+
 由於Python為直譯式語言，因此有開發者推出可以一行一行執行的執行環境 - Jupyter Notebook，Jupyter Notebook是以網頁的形式打開，可以在網頁頁面中直接編寫程式碼和執行程式碼，程式碼的運行結果也會直接在程式碼區塊下顯示的程式。如在程式設計過程中需要編寫說明文檔，可在同一個頁面中直接編寫，以便於作及時的說明和解釋。
 
 由於透過Jupyter執行可以一行一行地顯示當前程式碼的執行結果，因此特別方便用於資料分析的使用者。
@@ -171,23 +180,24 @@ Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio
 本課程推薦使用 Google Colab 服務直接取用 Jupyter Notebook，以節省配置時間。
 
 ### 二、Google Colab
+
 1. 登入您的 Google 帳號
 2. 進入 Google Colab 服務：https://colab.research.google.com/
 3. 新增一個"記事本"，所有有關Google Colab的文件將會存放在你的個人Google Drive中
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041857579.png)
 
-4. 為該檔案更改名稱，`HelloWord.ipynb`，使用Jupyter的檔案以`.ipynb`結尾
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041902180.png)
-
+4. 為該檔案更改名稱，`HelloWord.ipynb`，使用Jupyter的檔案以`.ipynb`結尾 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041902180.png)
 5. 同樣地，可以嘗試輸入剛才`HelloWord.py`中的內容
-``` python
+
+```python
 print("Hello World 1")
  
 print("Hello World 2")
  
 print("Hello World 3")
 ```
+
 6. 按下執行即可顯示結果
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
