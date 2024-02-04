@@ -158,7 +158,8 @@ VS Code 下載: https://code.visualstudio.com/download
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
 
-## 環境搭建(2) - Jupyter Notebook(Google Colab)
+## 環境搭建(2) - 
+### 一、Jupyter Notebook
 由於Python為直譯式語言，因此有開發者推出可以一行一行執行的執行環境 - Jupyter Notebook，Jupyter Notebook是以網頁的形式打開，可以在網頁頁面中直接編寫程式碼和執行程式碼，程式碼的運行結果也會直接在程式碼區塊下顯示的程式。如在程式設計過程中需要編寫說明文檔，可在同一個頁面中直接編寫，以便於作及時的說明和解釋。
 
 由於透過Jupyter執行可以一行一行地顯示當前程式碼的執行結果，因此特別方便用於資料分析的使用者。
@@ -169,7 +170,7 @@ Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio
 
 本課程推薦使用 Google Colab 服務直接取用 Jupyter Notebook，以節省配置時間。
 
-### Google Colab
+### 二、Google Colab
 1. 登入您的 Google 帳號
 2. 進入 Google Colab 服務：https://colab.research.google.com/
 3. 新增一個"記事本"，所有有關Google Colab的文件將會存放在你的個人Google Drive中
