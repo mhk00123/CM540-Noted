@@ -52,7 +52,7 @@ Python亦稱為膠水語言，主要源於以下幾個原因：
 
 ## Hello World 寫法比較
 ### Java
-```Java
+``` Java
 // 使用 Java 令電腦輸出Hello World
 package helloworld;
 
@@ -63,7 +63,7 @@ public class HelloWorld {
 }
 ```
 ### C++
-```C++
+``` C++
 // 使用 C++ 令電腦輸出Hello World
 #include <iostream.h>
 Main() {
@@ -73,7 +73,7 @@ Main() {
 ```
 
 ### Python
-```Python
+``` Python
 # 使用Python 令電腦輸出Hello World
 print("Hello World")
 ```
@@ -105,5 +105,4 @@ Windows 則需要安裝對應的環境才可以執行Python程式碼。
 ```python
 print("Hello World!")
 ```
-
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041633572.png)
