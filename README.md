@@ -2,6 +2,9 @@
 
 **tags: `Python`** **`CM-540`** **`Introduction`**
 
+## Notes
+[https://leotam-cpttm.gitbook.io/cm540/](https://leotam-cpttm.gitbook.io/cm540/)
+
 ## Course Grading
 
 * 課堂表現
