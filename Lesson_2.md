@@ -231,8 +231,90 @@ print("Hi, My name is " + first_name + " " + last_name + ", my phone number is "
 # Hi, My name is Leo Tam, my phone numer is 28781313
 ```
 
+
+
+### 檢查變量型態
+可以使用 `type()` 函數去檢查該變量屬於甚麼型態
+```python
+a = 100
+b = 12.345
+c = "Hello, World"
+d = True
+
+print(type(a))    # <class 'int'>
+print(type(b))    # <class 'float'>
+print(type(c))    # <class 'str'>
+print(type(d))    # <class 'bool'>
+```
+
+### 強制轉型
+從剛才的例子中，我們發現不同型態的變數是無法進行相互運算的，那麼若現在有需要把變數指定類型，可以使用PPython中內置的函數對變量類型進行強制轉換
+
+- `int()`：將一個數值或字符串轉換成整數，可以指定進制。
+- `float()`：將一個字符串轉換成浮點數。
+- `str()`：將指定的對像轉換成字符串形式，可以指定編碼。
+- `chr()`：將整數轉換成該編碼對應的字符串（一個字符）。
+- `ord()`：將字符串（一個字符）轉換成對應的編碼（整數）。
+
+```python
+a = 100
+b = 12.345
+
+print(type(a)) # <class 'int'>
+print(type(b)) # <class 'float'>
+
+c = str(a)
+print(c) # 100
+print(type(c)) # <class 'str'>
+
+d = int(b)
+print(d) # ???
+```
+
+### 輸入及輸出
+到目前為止我們都只有在程式中輸出特定的變數，那麼若今天我們需要由使用者輸入變數，那麼就需要使用Python的輸入`input()`功能。`input()` 是 Python 的內置函數，用於從控制台讀取用戶輸入的內容。`input()` 函數總是以**字符串**的形式來處理用戶輸入的內容，所以用戶輸入的內容可以包含任何字符。
+
+```python
+a = input("請輸入內容") # 輸入 123
+
+print(a) # 123
+print(type(a)) # <class 'str'>
+```
+
+若我們需要對變數進行運算，則需要對其進行強制轉型
+```python
+a = input("請輸入數字1： ") # 輸入 123
+b = input("請輸入數字2： ") # 輸入 456
+
+# 強制轉型並重新賦值
+a = int(a)
+b = int(b)
+
+# 兩個變數相加
+rs = a + b
+
+print(rs) # 579
+
+print(type(a))  # <class 'int'>
+print(type(b))  # <class 'int'>
+print(type(rs)) # <class 'int'>
+```
+
+#### 簡寫
+在Python中，函數可以嵌套，執行順序以括號優先。套用以上例子，我們可以把`input()`的程式碼簡化為：
+```python
+# 在輸入後，強制轉型並賦值
+a = int(input("請輸入數字1： ")) # 輸入 123
+b = int(input("請輸入數字2： ")) # 輸入 456
+
+print(type(a))  # <class 'int'>
+print(type(b))  # <class 'int'>
+```
+
+
 ### 格式化輸出
 在Python3中，提供了簡潔的字串格式化語法，使用方式就是在字串的前方加上`f` 或 `F` 前綴字，接著在 `{}` 符號中，傳入**變數或運算式**，Python會將 `{}` 中的變數資料或運算結果帶出來。
+
 ```python
 first_name = "Leo"
 last_name ="Tam"
@@ -245,3 +327,13 @@ print("Hi, My name is " + first_name + " " + last_name + ", my phone number is "
 print(f"Hi, My name is {first_name} {last_name}, my phone number is {my_phone_num}")
 # Hi, My name is Leo Tam, my phone numer is 28781313
 ```
+
+
+
+# 作業：CV模版
+程式描述：只需輸入你的名字、出生年月日、性別、年齡，便可以生成一段固定格式的個人介紹。
+- input : 
+    - 姓名：string
+    - 出生年月日：string `XXXX-XX-XX (年-月-日)`
+    - 姓別：string
+    - 年齡：int
