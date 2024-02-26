@@ -32,6 +32,7 @@
    * 本機搭建
    * Jupyter Notebook
    * 執行`HelloWord`程式
+
 2. 編程基礎邏輯：
    * 變數 Variable
      * 變數命名 (`PEP8`)
@@ -47,7 +48,7 @@
      * 輸出流
        * `txt` 文字檔
        * `Excel` , `CSV` 檔案
-3. 爬取資料：
+3. 透過 Python 爬取資料：
    * 認識資料意義
      * `HTML` 介紹
      * `API` 介紹
@@ -62,3 +63,4 @@
      * `Pandas`
    * 畫圖
      * `Matplotlib`
+5. 簡單計算機概論、數學知識、演算法、資料結構
