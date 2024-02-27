@@ -253,7 +253,10 @@ print(type(d))    # <class 'bool'>
 ```
 
 ### 強制轉型
-從剛才的例子中，我們發現不同型態的變數是無法進行相互運算的，那麼若現在有需要把變數指定類型，可以使用PPython中內置的函數對變量類型進行強制轉換
+
+> 補充資料：函數/方法(Function)，Python自定了很多不同的已經寫好的Function，我們先在這邊開一個頭，在後續的章節中我們會再詳講。所謂函數就是『敘述的集合』，並且以一個函數名稱來代表此敘述集合。通常一個函數可以完成某項功能，所以可以把函數想像成是一種對資料的操作方法。一般來說，函數以這樣的返式表示`函數名()`，例如我們接觸到的`print()` `type()`便是Python內建的函數。
+
+從剛才的例子中，我們發現不同型態的變數是無法進行相互運算的，那麼若現在有需要把變數指定類型，可以使用Python中內置的函數對變量類型進行強制轉換
 
 - `int()`：將一個數值或字符串轉換成整數，可以指定進制。
 - `float()`：將一個字符串轉換成浮點數。
@@ -332,6 +335,39 @@ print("Hi, My name is " + first_name + " " + last_name + ", my phone number is "
 print(f"Hi, My name is {first_name} {last_name}, my phone number is {my_phone_num}")
 # Hi, My name is Leo Tam, my phone numer is 28781313
 ```
+
+## 格式化輸出變數的用法
+```python
+num1 = 12.345 
+num2 = 456.789
+print(f'{num1}')
+print(f'{num2}')
+```
+
+#### 對齊
+```python
+# 觀察
+# 12.345  => 6個位元
+# 456.789 => 7個位元
+
+print(f'{num1:7}')
+print(f'{num2:7}')
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216877.png)
+
+#### 補0
+```python
+print(f'{num1:07}')
+print(f'{num2:07}')
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
+
+#### 精度(取小數點後 n 位)
+```python
+print(f'{num1:.2}')
+print(f'{num2:.1}')
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
 
 
 
