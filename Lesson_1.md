@@ -221,6 +221,10 @@ conda info --env
 conda create -n py311 python=3.11.7
 ```
 
+- 創建環境
+```bash
+conda remove -n py311 -all
+```
 - 進入環境
 ```bash
 conda activate py311
@@ -230,6 +234,31 @@ conda activate py311
 ```bash
 conda deactivate
 ```
+
+### 三、安裝 IDE - Visual Studio Code
+
+一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
+
+VS Code 下載: https://code.visualstudio.com/download
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
+
+1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
+
+2. 執行成功
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
+
+3. 選取不同版本的 Conda Env
+可以按下鍵盤的`ctrl`+`shift`+`p` 並輸入 `Select Interpreter`
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021902262.png)
+
+VS Code會自動檢查系統中包含的所有環境，在這里可以選擇Conda創建的`py311` env。
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021903518.png)
+
+
 
 ## 環境搭建(2) - Jupyter
 
@@ -245,7 +274,24 @@ Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio
 
 本課程推薦使用 Google Colab 服務直接取用 Jupyter Notebook，以節省配置時間。
 
-### 二、Google Colab
+### 二、Anaconda 內建 Jupyter
+我們所安裝的Anaconda中，會自帶 Jupyter，我們可以直接在執行。
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022002460.png)
+
+選擇對應的Python 3編譯器
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022003538.png)
+
+Jupyter 檔案不是以 .py 結尾，是以 .ipynb 結尾
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022004774.png)
+
+輸入 `print("Hello World")` 後按下執行即會顯示結果
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022005662.png)
+
+### 輸出 .ipynb 文件至 .py文件
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022020588.png)
+
+
+### 三、Google Colab
 
 1. 登入您的 Google 帳號
 2. 進入 Google Colab 服務：https://colab.research.google.com/
@@ -267,20 +313,3 @@ print("Hello World 3")
 6. 按下執行即可顯示結果
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
-
-
-### 三、安裝 IDE - Visual Studio Code
-
-一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
-
-VS Code 下載: https://code.visualstudio.com/download
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
-
-1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
-
-2. 執行成功
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
