@@ -241,22 +241,24 @@ conda deactivate
 
 VS Code 下載: https://code.visualstudio.com/download
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
 
 1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
 
 2. 執行成功
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
 
 3. 選取不同版本的 Conda Env
 可以按下鍵盤的`ctrl`+`shift`+`p` 並輸入 `Select Interpreter`
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021902262.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021902262.png)
 
 VS Code會自動檢查系統中包含的所有環境，在這里可以選擇Conda創建的`py311` env。
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021903518.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021903518.png)
 
 
 
@@ -268,7 +270,7 @@ VS Code會自動檢查系統中包含的所有環境，在這里可以選擇Cond
 
 由於透過Jupyter執行可以一行一行地顯示當前程式碼的執行結果，因此特別方便用於資料分析的使用者。
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041853337.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041853337.png)
 
 Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio Code中、也可以直接透過網頁版執行。
 
@@ -276,19 +278,24 @@ Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio
 
 ### 二、Anaconda 內建 Jupyter
 我們所安裝的Anaconda中，會自帶 Jupyter，我們可以直接在執行。
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022002460.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022002460.png)
 
 選擇對應的Python 3編譯器
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022003538.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022003538.png)
 
 Jupyter 檔案不是以 .py 結尾，是以 .ipynb 結尾
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022004774.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022004774.png)
 
 輸入 `print("Hello World")` 後按下執行即會顯示結果
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022005662.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022005662.png)
 
 ### 輸出 .ipynb 文件至 .py文件
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022020588.png)
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022020588.png)
 
 
 ### 三、Google Colab
@@ -297,9 +304,12 @@ Jupyter 檔案不是以 .py 結尾，是以 .ipynb 結尾
 2. 進入 Google Colab 服務：https://colab.research.google.com/
 3. 新增一個"記事本"，所有有關Google Colab的文件將會存放在你的個人Google Drive中
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041857579.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041857579.png)
 
-4. 為該檔案更改名稱，`HelloWord.ipynb`，使用Jupyter的檔案以`.ipynb`結尾 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041902180.png)
+4. 為該檔案更改名稱，`HelloWord.ipynb`，使用Jupyter的檔案以`.ipynb`結尾
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041902180.png)
+
 5. 同樣地，可以嘗試輸入剛才`HelloWord.py`中的內容
 
 ```python
@@ -312,4 +322,4 @@ print("Hello World 3")
 
 6. 按下執行即可顯示結果
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
