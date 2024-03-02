@@ -2,8 +2,10 @@
 
 **tags: `python`** **`CM-540`** **`Lesson1`**
 
-## 認識Python、搭建編程環境
+## Slide
+[https://tinyurl.com/3vn6mwvb](https://tinyurl.com/3vn6mwvb)
 
+## 認識Python、搭建編程環境
 * [ ] 認識Python
 * [ ] 本機搭建
 * [ ] Jupyter Notebook
@@ -14,6 +16,8 @@
 Python眾多程式語言中的一種，它是一種直譯式的程式語言，也是一種膠合語言。屬於直譯式的原因是，它的程式在執行時是一行接著一行的，也就是說，系統會先翻譯一行執行它，如果順利執行之後，再翻譯下一行，再執行。
 
 英國發音：/ˈpaɪθən/ 美國發音：/ˈpaɪθɑːn/
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021530581.png)
 
 Python亦稱為膠水語言，主要源於以下幾個原因：
 
