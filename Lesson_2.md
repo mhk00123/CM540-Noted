@@ -385,14 +385,11 @@ print(f'{num1}')
 print(f'{num2}')
 ```
 
-<<<<<<< Updated upstream
-**對齊**
-=======
 #### 對齊
 - `<` 靠左對齊 (默認)
 - `>` 靠右對齊
 - `^` 置中對齊
->>>>>>> Stashed changes
+
 
 ```python
 # 觀察
