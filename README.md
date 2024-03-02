@@ -8,6 +8,10 @@
 ## 作業/考試 繳交
 [https://driveuploader.com/upload/mwUQYp81Q7/](https://driveuploader.com/upload/mwUQYp81Q7/)
 
+- 命名規則 : `姓名_日期`
+- 可接受檔案：`.py`、`.ipynb`
+- 壓縮檔：`.zip`、`.7z`
+
 ## Course Grading
 
 * 課堂表現
