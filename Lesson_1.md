@@ -3,7 +3,9 @@
 **tags: `python`** **`CM-540`** **`Lesson1`**
 
 ## Slide
-[https://tinyurl.com/3vn6mwvb](https://tinyurl.com/3vn6mwvb)
+課件：[https://tinyurl.com/3vn6mwvb](https://tinyurl.com/3vn6mwvb)
+
+Python 3.11 官方手冊：[https://docs.python.org/zh-tw/3.11/](https://docs.python.org/zh-tw/3.11/)
 
 ## 認識Python、搭建編程環境
 * [ ] 認識Python
@@ -17,7 +19,7 @@ Python眾多程式語言中的一種，它是一種直譯式的程式語言，�
 
 英國發音：/ˈpaɪθən/ 美國發音：/ˈpaɪθɑːn/
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021530581.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021530581.png)
 
 Python亦稱為膠水語言，主要源於以下幾個原因：
 
@@ -50,7 +52,7 @@ Python亦稱為膠水語言，主要源於以下幾個原因：
 
 直譯式語言也有其優點，像是寫自動化測試等等。這種可以寫一點然後馬上測試看結果的，非常適合直譯式語言。
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041629329.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041629329.png)
 
 ## Hello World 寫法比較
 
@@ -101,19 +103,19 @@ print("Hello World")
 
 1. 先到 Python 官方網站下載 : https://www.python.org/
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
 
 2. 選擇 `Windows 64-bit` 版本 (亦可按照自身需求，選擇macOS、32-bit、ARM版本)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041610443.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041610443.png)
 
 3. 為方便後續管理，請把 `Add python.exe to PATH` 打勾
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041618824.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041618824.png)
 
 4. 安裝完成後，我們可以在Windows開始菜單中，找到Python 3.11 相關程式
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041626154.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041626154.png)
 
 5. 打開`IDLE(Python3.11 64-bit)`，並輸入以下代碼。若有成功顯示，表示則Python環境已經順利安裝到電腦中。
 
@@ -121,13 +123,13 @@ print("Hello World")
 print("Hello World!")
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041633572.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041633572.png)
 
 ### 二、撰寫您的第一個程式 Hello World
 
 1. 首先在 IDEL 的左上方點擊 File -> New File
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041748782.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041748782.png)
 
 2. 在這個地方輸入程式碼
 
@@ -139,35 +141,95 @@ print("Hello World 2")
 print("Hello World 3")
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041751080.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041751080.png)
 
 3. 儲存檔案 `HelloWorld.py`
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041753562.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041753562.png)
 
 4. 點擊 Run -> Run Module 執行程式碼
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041755050.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041755050.png)
 
 5. Shell顯示執行成功
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041756721.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041756721.png)
 
-### 三、安裝 IDE - Visual Studio Code
+## 安裝整合執行環境(Anaconda) - 推薦
+有了本機安裝的環境，一般已足夠滿足部份用戶，但我們仍然推薦使用整合的環境。
 
-一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
+### Python 環境分區
+由於每個Python版本都相互獨立，在開發中，難免有時會遇到客戶指定的套件/功能在持定的版本才有，因此，若使用方法1在本機安裝，那麼在開發和調試中會遇到很多不方便的情況。
 
-VS Code 下載: https://code.visualstudio.com/download
+此時我們可以整合執行環境 - Anaconda解決問題，他的原理是，透過Conda工具，開設一個虛擬的環境(Virtual Environment)，在此環境中開發者可以指定不同的Python版本，不同的套件，以方便管理。
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021803092.png)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
 
-1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
+到Anaconda官方網站下載安裝檔案 : [https://www.anaconda.com/](https://www.anaconda.com/)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
+1. **執行安裝程式**
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021753367.png)
 
-2. 執行成功
+2. 注意勾選 **Add Anaconda3 to my_PATH environment variable**
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021754828.png)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
+3. 完成後可看到 Anacaonda3 程式界面
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021755356.png)
+
+Anaconda 會為我們默認配置一個虛擬的可執行Python的環境(Env)，打開Anacaonda Prompt
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021759062.png)
+
+即可看到 `(base)` 字樣
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021759254.png)
+
+4. 透過命令我們可以看到此虛擬環境的版本為 `3.11.7`
+```bash
+python --version
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021800394.png)
+
+## 創建指定版本的 env
+Ex : 創建一個Python版本為3.11.7的env
+
+1. 透過命令提示輸入 `conda create -n 環境名 python=版本號`
+```bash
+conda create -n py311 python=3.11.7
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021816688.png)
+
+2. 成功後會看到
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021816451.png)
+
+3. 進入環境
+透過命令提示輸入 `conda activate 環境名稱`
+```bash
+conda activate py311
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021819440.png)
+
+## Conda 命令
+- 查看已創建環境
+```bash
+conda info --env
+```
+
+- 創建環境
+```bash
+conda create -n py311 python=3.11.7
+```
+
+- 進入環境
+```bash
+conda activate py311
+```
+
+- 退出環境
+```bash
+conda deactivate
+```
 
 ## 環境搭建(2) - Jupyter
 
@@ -205,3 +267,20 @@ print("Hello World 3")
 6. 按下執行即可顯示結果
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
+
+
+### 三、安裝 IDE - Visual Studio Code
+
+一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
+
+VS Code 下載: https://code.visualstudio.com/download
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
+
+1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
+
+2. 執行成功
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
