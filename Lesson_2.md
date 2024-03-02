@@ -23,7 +23,7 @@ a = 1
 1. 把數字 `1` **放進** 物件容器當中
 2. 指定該容器的名稱為 `a` (等於符號的作用)
 
-* 這里的等於符號並不是指相等的意思，在大部份程式語言中，這個等於符號的意思是**給予/賦予**的意思 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402042342728.png)
+* 這里的等於符號並不是指相等的意思，在大部份程式語言中，這個等於符號的意思是**給予/賦予**的意思 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402042342728.png)
 
 #### 變數命名
 
@@ -204,7 +204,7 @@ temp_str = str_1
 
 既然Python的字串是字元序，那麼，在這個序列中各個字元的位置、以及整個字串的長度，我們應如何計算呢?
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402062340466.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402062340466.png)
 
 1. 在Python中，任何**序列**開端編號(Index)一定為 `0`
 2. 每一字元皆佔 1 個長度
@@ -223,7 +223,7 @@ print(str_1[4]) # l
 print(str_1[6]) # W
 ```
 
-另外，在Python中，也可以**反向**取得字元 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402062348197.png)
+另外，在Python中，也可以**反向**取得字元 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402062348197.png)
 
 ```python
 str_1 = "Hello World!"
@@ -245,7 +245,7 @@ name = "Leo"
 name[0] = "N"
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402232325812.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402232325812.png)
 
 因此若我們想改變字串中的內容，可以採用 `replace()` 函數
 
@@ -400,7 +400,7 @@ print(f'{num1:7}')
 print(f'{num2:7}')
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216877.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216877.png)
 
 **補0**
 
@@ -409,7 +409,7 @@ print(f'{num1:07}')
 print(f'{num2:07}')
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
 
 **精度(取小數點後 n 位)**
 
@@ -418,7 +418,7 @@ print(f'{num1:.2}')
 print(f'{num2:.1}')
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
 
 ## 作業：CV模版
 
