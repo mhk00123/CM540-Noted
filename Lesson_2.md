@@ -2,6 +2,9 @@
 
 **tags: `python`** **`CM-540`** **`Lesson2`**
 
+## Slide
+課件：[https://tinyurl.com/3uaxcanp](https://tinyurl.com/3uaxcanp)
+
 ## Python的組成：
 1. 變數
 2. 資料型態: `int`、`float`、`str`、`bool`。
@@ -228,7 +231,7 @@ temp_str = str_1
 ```python
 str_1 = "Hello World!"
 
-print(str_1[4]) # l
+print(str_1[4]) # o
 
 print(str_1[6]) # W
 ```
@@ -238,7 +241,7 @@ print(str_1[6]) # W
 ```python
 str_1 = "Hello World!"
 
-print(str_1[-2]) # !
+print(str_1[-2]) # d
 
 print(str_1[-6]) # W
 ```
@@ -396,8 +399,8 @@ print(f'{num2}')
 ```
 
 #### 對齊
-- `<` 靠左對齊 (默認)
-- `>` 靠右對齊
+- `<` 靠左對齊 
+- `>` 靠右對齊 (默認)
 - `^` 置中對齊
 
 
