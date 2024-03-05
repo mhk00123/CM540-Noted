@@ -8,7 +8,7 @@
 Python 3.11 官方手冊：[https://docs.python.org/zh-tw/3.11/](https://docs.python.org/zh-tw/3.11/)
 
 ## 作業/考試 繳交
-[https://forms.gle/zAqxqLyj6W95wEbd9](https://forms.gle/zAqxqLyj6W95wEbd9/)
+作業1 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
 
 ## 認識Python、搭建編程環境
 * [ ] 認識Python
