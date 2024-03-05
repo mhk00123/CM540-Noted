@@ -6,11 +6,12 @@
 [https://leotam-cpttm.gitbook.io/cm540/](https://leotam-cpttm.gitbook.io/cm540/)
 
 ## 作業/考試 繳交
-[https://forms.gle/zAqxqLyj6W95wEbd9](https://forms.gle/zAqxqLyj6W95wEbd9/)
 
 - 命名規則 : `姓名_日期_作業N`
 - 可接受檔案：`.py`、`.ipynb`
 - 壓縮檔：`.zip`、`.7z`
+
+作業1 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
 
 ## Course Grading
 
