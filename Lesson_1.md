@@ -1,4 +1,5 @@
-# Lesson 1 - 認識 Python
+# Lesson 1
+認識 Python、環境搭建、變數、變數類型
 
 **tags: `python`** **`CM-540`** **`Lesson1`**
 
