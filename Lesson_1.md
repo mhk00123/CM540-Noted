@@ -3,21 +3,16 @@
 
 **tags: `python`** **`CM-540`** **`Lesson1`**
 
-## Slide
+# Slide
 課件：[https://tinyurl.com/3vn6mwvb](https://tinyurl.com/3vn6mwvb)
 
 Python 3.11 官方手冊：[https://docs.python.org/zh-tw/3.11/](https://docs.python.org/zh-tw/3.11/)
 
-## 作業/考試 繳交
+# 作業/考試 繳交
 作業1 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
 
-## 認識Python、搭建編程環境
-* [ ] 認識Python
-* [ ] 本機搭建
-* [ ] Jupyter Notebook
-* [ ] 執行你的第一個 Python 程式 - `HelloWord.py`
 
-## Python 是甚麼 ?
+# Python 是甚麼 ?
 
 Python眾多程式語言中的一種，它是一種直譯式的程式語言，也是一種膠合語言。屬於直譯式的原因是，它的程式在執行時是一行接著一行的，也就是說，系統會先翻譯一行執行它，如果順利執行之後，再翻譯下一行，再執行。
 
@@ -91,7 +86,7 @@ Main() {
 print("Hello World")
 ```
 
-## 如何運行Python?
+# 如何運行Python?
 
 * 本課程基於 `Python 3.11.7` 版本 (若有語法更新，請自行查詢手冊)
 
@@ -328,7 +323,7 @@ print("Hello World 3")
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
 
-## Python的組成：
+# Python的組成：
 1. 變數
 2. 資料型態: `int`、`float`、`str`、`bool`。
 3. 儲存容器: `list`、`tuple`、`set`、`dict`。
