@@ -3,12 +3,63 @@
 
 **tags: `python`** **`CM-540`** **`Lesson2`**
 
-## Slide
+# Slide
 課件：[https://tinyurl.com/3uaxcanp](https://tinyurl.com/3uaxcanp)
 
+# 作業/考試 繳交
+作業1 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
 
-### 強制轉型
+# Python 基本組成
+資料型態: int、float、str、bool
+儲存容器: list、tuple、set、dict
+輸出與輸入: print()、input()
+運算子、運算式：加減乘除、大小等於
+流程控制(選擇性敘述): if、elif、else
+重複執行的迴圈: for、while、switch
+例外狀況處理: try except
 
+## 變數類型、資料型態
+在Python中，基資料型態有以下4類：
+- int 整數：1、100、-50
+- float 浮點數：3.14、2.0、-6.7
+- string (str) 字串：必須用單引號或雙引號括住，"Hello World"、 '1234'
+- bool 布林型態：用來表示真或假，只有兩個值 True 和 False
+
+資料型態在程式中很重要，它們決定了資料的處理方式和運算規則，因此在撰寫程式時需要確保資料型態的一致性和適當使用。
+
+## 字串分割
+如果要將字串分割，在Python中使用 `[ start_index : end_index+1 ]` 作分割 
+> 注意一般來說 `[ ]` 中的 index 都是取頭不取尾 
+```python
+name = "LeoTam"   
+my_phone_num = 28781313
+
+# 如果我想要取得前 3 碼
+result = name[0:3] 
+print(result) # Leo
+
+# 想取得數字類型的前 3 碼
+result2 = my_phone_num[0:3]
+print(result2) # Error
+```
+
+## 字串相加
+如果要將兩個字串連接起來，在Python中使用 `+`
+```python
+first_name = "Leo"
+last_name ="Tam"
+my_phone_num = 28781313
+
+mix_str = first_name + last_name + str(my_phone_num) 
+
+print("Hi, My name is " + first_name + " " + last_name + ", my phone number is " + str(my_phone_num))
+# Hi, My name is Leo Tam, my phone numer is 28781313
+
+print(mix_str)
+# Hi, My name is Leo Tam, my phone numer is 28781313
+```
+
+## 強制轉型
 {% hint style="info" %}
 補充資料：函數/方法(Function)，Python自定了很多不同的已經寫好的Function，我們先在這邊開一個頭，在後續的章節中我們會再詳講。所謂函數就是『敘述的集合』，並且以一個函數名稱來代表此敘述集合。通常一個函數可以完成某項功能，所以可以把函數想像成是一種對資料的操作方法。一般來說，函數以這樣的返式表示`函數名()`，例如我們接觸到的`print()` `type()`便是Python內建的函數。
 {% endhint %}
@@ -36,7 +87,7 @@ d = int(b)
 print(d) # ???
 ```
 
-#### 輸入及輸出
+## 輸入及輸出
 
 到目前為止我們都只有在程式中輸出特定的變數，那麼若今天我們需要由使用者輸入變數，那麼就需要使用Python的輸入`input()`功能。`input()` 是 Python 的內置函數，用於從控制台讀取用戶輸入的內容。`input()` 函數總是以**字符串**的形式來處理用戶輸入的內容，所以用戶輸入的內容可以包含任何字符。
 
@@ -80,7 +131,7 @@ print(type(a))  # <class 'int'>
 print(type(b))  # <class 'int'>
 ```
 
-#### 格式化輸出
+## 格式化輸出
 
 在Python3中，提供了簡潔的字串格式化語法，使用方式就是在字串的前方加上`f` 或 `F` 前綴字，接著在 `{}` 符號中，傳入**變數或運算式**，Python會將 `{}` 中的變數資料或運算結果帶出來。
 
@@ -141,6 +192,8 @@ print(f'{num2:.1}')
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
 
+
+# 邏輯判斷
 迄今為止，我們寫的Python代碼都是一條一條語句順序執行，這種代碼結構通常稱之為順序結構。
 
 然而僅有順序結構並不能解決所有的問題，比如我們設計一個游戲，游戲第一關的通關條件是玩家獲得1000分，那麼在完成本局游戲後，我們要根據玩家得到分數來決定究竟是進入第二關，還是告訴玩家“Game Over”，這裡就會產生兩個分支，而且這兩個分支只有一個會被執行。
