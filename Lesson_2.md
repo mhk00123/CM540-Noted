@@ -6,9 +6,9 @@
 # Slide
 課件：[https://tinyurl.com/3uaxcanp](https://tinyurl.com/3uaxcanp)
 
-# 作業/考試 繳交
-作業1 : 共 2 題，題目請見最下方。
-[https://hamster.cpttm.org.mo/spaces/iG7O6rYBK4mfmZkG5Y-2FA/upload](https://hamster.cpttm.org.mo/spaces/iG7O6rYBK4mfmZkG5Y-2FA/upload)
+# 課堂練習
+
+[https://forms.gle/fadCHG4pn58PkMRu9](https://forms.gle/fadCHG4pn58PkMRu9)
 
 # Python 基本組成
 資料型態: int、float、str、bool
