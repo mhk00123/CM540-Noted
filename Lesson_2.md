@@ -334,6 +334,12 @@ Python支持多種運算符，下表大致按照優先級從高到低的順序�
 - 2歲以後，則為 (狗狗歲數 - 2) * 5 + 22
 
 # 功課 1
+作業1 : 共 2 題
+由於系統限制只能上傳 1 個檔案，您可以
+1. 壓縮成 `.zip` `.rar` 繳交 
+2. 把 2 個作業的程式碼寫在同1個py檔案中
+
+[https://hamster.cpttm.org.mo/spaces/iG7O6rYBK4mfmZkG5Y-2FA/upload](https://hamster.cpttm.org.mo/spaces/iG7O6rYBK4mfmZkG5Y-2FA/upload)
 ## 題目 1： 計算BMI指數
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 $$BMI = \frac{體重(kg)}{身高^2(m)}$$
