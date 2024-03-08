@@ -11,13 +11,13 @@
 [https://forms.gle/fadCHG4pn58PkMRu9](https://forms.gle/fadCHG4pn58PkMRu9)
 
 # Python 基本組成
-資料型態: int、float、str、bool
-儲存容器: list、tuple、set、dict
-輸出與輸入: print()、input()
-運算子、運算式：加減乘除、大小等於
-流程控制(選擇性敘述): if、elif、else
-重複執行的迴圈: for、while、switch
-例外狀況處理: try except
+- 資料型態: int、float、str、bool
+- 儲存容器: list、tuple、set、dict
+- 輸出與輸入: print()、input()
+- 運算子、運算式：加減乘除、大小等於
+- 流程控制(選擇性敘述): if、elif、else
+- 重複執行的迴圈: for、while、switch
+- 例外狀況處理: try except
 
 ## 變數類型、資料型態
 在Python中，基資料型態有以下4類：
