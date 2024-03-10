@@ -4,6 +4,10 @@
 **tags: `python`** **`CM-540`** **`Lesson3`**
 
 
+# Slide
+課件：[https://tinyurl.com/4d2em7er](https://tinyurl.com/4d2em7er)
+
+
 ## 循環/迴圈結構  
 ### 應用場景
 我們在寫程序的時候，一定會遇到需要重復執行某條或某些指令的場景。例如要實現每隔1秒中在屏幕上打印一次“hello, world”並持續打印一個小時，我們肯定不能夠直接把print('hello, world')這句代碼寫3600遍，這裡同樣需要循環結構。
