@@ -38,7 +38,7 @@ print(“Hello World”)
 
 ```python
 for i in range(1,101): 
-    print(f'{i:3d}', end=" ")
+    print(f"{i:3d}", end=" ")
     if(i%25==0):
         print("")
 ```
@@ -72,7 +72,7 @@ while(條件):
 count = 1
 
 while(count < 101): # 條件為 count < 101時"執行"
-    print(f'Now, count = {count}')
+    print(f"Now, count = {count}")
     count = count - 1 # count 這個變數會永遠 < 1，因此迴圈永遠不會終結
 ```
 
@@ -89,7 +89,7 @@ count = 1
 
 while(count < 101): # 條件為 count < 101時"執行"
     if(count % 2 == 0):
-        print(f'{count}', end = " ")
+        print(f"{count}", end = " ")
     count = count + 1 # 條件需要在迴圈中有變化，否則變為無限迴圈
 ```
 
