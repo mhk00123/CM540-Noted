@@ -9,6 +9,7 @@
 [https://hamster.cpttm.org.mo/spaces/iG7O6rYBK4mfmZkG5Y-2FA/upload](https://hamster.cpttm.org.mo/spaces/iG7O6rYBK4mfmZkG5Y-2FA/upload)
 ## 題目 1： 計算BMI指數
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
+
 $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 
 根據計算結果使用以下標準判斷BMI指數的範圍：
