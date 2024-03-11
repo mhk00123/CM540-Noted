@@ -343,7 +343,7 @@ for letter in 'cptTm':
    print ('當前字母為 :', letter)
 ```
 
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png =300x400)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png)
 
 
 ## 功課2
