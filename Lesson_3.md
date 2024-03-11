@@ -29,7 +29,7 @@ print(“Hello World”)
 
 這顯然是不合理的，因此我們在這裡引入循環結構`迴圈`的概念，循環結構就是程序中控制某條或某些指令重復執行的結構。
 
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110014295.png =400x)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110014295.png)
 
 #### 在Python中構造循環結構有兩種做法：
 
@@ -343,7 +343,7 @@ for letter in 'cptTm':
    print ('當前字母為 :', letter)
 ```
 
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png =300x)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png =300x400)
 
 
 ## 功課2
