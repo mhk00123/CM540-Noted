@@ -42,7 +42,7 @@ weight_kg = int(input("請使用者輸入體重(kg)："))
 height_m = float(height_cm) / 100
 
 if((weight_kg < 0) or (height_cm < 0)):
-    print("輸入錯誤，請輸入大於 0 的分數")
+    print("輸入錯誤，請輸入大於 0 的數字")
     exit()
 
 # 3. 計算BMI
