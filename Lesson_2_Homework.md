@@ -34,13 +34,16 @@ BMI < 18.5 : 體重過輕
 25 <= BMI <= 29.9 : 超重
 BMI >= 30 : 肥胖
 """
-
 # 1. 請使用者輸入身高(cm)、體重(kg)
 height_cm = int(input("請使用者輸入身高(cm)："))
 weight_kg = int(input("請使用者輸入體重(kg)："))
 
 # 2. 令身高(cm) 轉為 (m) 
 height_m = float(height_cm) / 100
+
+if((weight_kg < 0) or (height_cm < 0)):
+    print("輸入錯誤，請輸入大於 0 的分數")
+    exit()
 
 # 3. 計算BMI
 bmi = (weight_kg / (height_m * height_m))
