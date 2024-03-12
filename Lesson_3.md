@@ -347,6 +347,12 @@ for letter in 'cptTm':
 
 
 ## 功課2
+作業21 : 共 2 題
+由於系統限制只能上傳 1 個檔案，您可以
+1. 壓縮成 `.zip` `.rar` 繳交 
+2. 把 2 個作業的程式碼寫在同1個py檔案中
+
+[https://tinyurl.com/msx9wect](https://tinyurl.com/msx9wect)
 
 ### 題目 1： 超級無敵開口中
 
