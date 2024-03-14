@@ -369,7 +369,7 @@ for letter in 'cptTm':
 import random
 lucky_num = random.randint(1, 100)
 
-print(target)
+print(lucky_num)
 ```
 
 ### 題目 2： 三角型的9x9乘法表
