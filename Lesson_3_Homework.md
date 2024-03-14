@@ -26,9 +26,79 @@ lucky_num = random.randint(1, 100)
 print(lucky_num)
 ```
 
+```python
+# 生成隨機數的函數如下(隨機生成 1-100 的整數)
+import random
+
+print("###### Game Start ######")
+
+# 取得 luncky number
+lucky_num = random.randint(1, 100)
+
+# 測試輸出答案
+print(lucky_num)
+
+# 需要 2 個變數記錄區間
+min = 1
+max = 100
+
+while(True):
+    print("------------------")
+    
+    # 1. 請用戶輸入
+    # 由於我們需要判斷數字有"bye"，因此先透過 temp 變數接收
+    temp = input(f"請輸入 {min} - {max} 的數字：")
+    
+    # 2. 判斷是否打了 bye
+    if(temp == "bye"):
+        print("Bye Bye!")
+        break
+    
+    # 3. 若沒有則轉換為 int 作下一階判斷
+    user_input = int(temp)
+ 
+    # 若輸入不正確
+    if( (user_input > max) or (user_input < min) ):
+        print("### 輸入錯誤 ###")
+        continue
+    
+    # 4. 比較
+    if(user_input == lucky_num):
+        print("### 恭喜估中了！！！ ###")
+        break
+
+    elif(user_input > lucky_num):
+        print("再小一點")
+        max = user_input
+    
+    elif(user_input < lucky_num):
+        print("再大一點")
+        min = user_input
+    
+print("###### End ######")
+```
+
 
 ### 題目 2： 三角型的9x9乘法表
 
 請嘗試以迴圈輸出：
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110049230.png)
+
+```python
+# 上半部份
+for i in range(1, 10):
+    for j in range(1,10):
+        if(j>i):
+            continue # 在這個內迴圈中，break和continue最終效果一樣
+        print(f"{i}x{j}={i*j:<3}", end ="")
+    print()
+
+# 下半部份    
+for i in range(8,0,-1):
+    for j in range(1,10):
+        if(j>i):
+            continue # 在這個內迴圈中，break和continue最終效果一樣
+        print(f"{i}x{j}={i*j:<3}", end="")
+    print()
+```
