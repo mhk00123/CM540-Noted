@@ -328,6 +328,9 @@ print(f"列表中有 {rs_Leo} 個Leo")
 
 
 # 堂上練習+功課 : 21 點遊戲修正
+
+繳交：[https://tinyurl.com/23ywzyhj](https://tinyurl.com/23ywzyhj)
+
 - 扑克牌(52張) :1 - 13 表示
 - 每個數字最多 4 隻
 
