@@ -96,7 +96,7 @@ for i in range(1, 10):
 
 # 下半部份    
 for i in range(8,0,-1):
-    for j in range(1,10):
+    for j in range(1,9):
         if(j>i):
             continue # 在這個內迴圈中，break和continue最終效果一樣
         print(f"{i}x{j}={i*j:<3}", end="")
