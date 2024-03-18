@@ -5,3 +5,266 @@
 
 ## Slide
 課件：[https://tinyurl.com/2a7h3vn4](https://tinyurl.com/2a7h3vn4)
+
+# 為什麼要使用 List
+
+使用容器列表（List）有多種好處和用途，下面列出了幾個主要的原因：
+
+- 儲存多個元素： 列表允許你在單個變量中儲存多個元素。這對於處理多個相關項目或集合非常有用。你可以將列表視為一個容器，用於儲存和組織數據。
+
+- 可變性： 列表是可變的，這意味著你可以修改列表中的元素。你可以添加、刪除或修改列表中的元素，並且列表的長度可以動態改變。
+
+- 順序性： 列表保留元素的插入順序。你可以根據元素在列表中的位置來訪問它們，並進行迭代操作。
+
+- 索引訪問： 你可以使用索引來訪問列表中的特定元素。通過指定元素的位置（索引），你可以快速獲取或修改該元素的值。
+
+- 彈性操作： 列表提供了多種彈性操作，如切片、排序、合併等。你可以使用切片操作從列表中提取子列表，使用排序操作對列表進行排序，使用合併操作將多個列表合併等。
+
+- 可迭代： 列表非常適合迭代操作，你可以使用循環結構（如 for 迴圈）遍歷列表中的元素。
+
+- 廣泛支援： 列表是 Python 中最常用的內建容器之一。幾乎所有的 Python 函數和庫都支援列表操作，這使得列表成為一種廣泛應用的數據結構。
+
+
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403182319047.png)
+
+實際上列表是有順序的，index 由 0 開始。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403182319792.png)
+
+若我們今天很幾個不同的一維列表裝起來，可以使用**二維列表**
+
+```python
+列表名 = []
+```
+
+
+```python
+shopping_cart_1 = ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"]
+shopping_cart_2 = ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"]
+shopping_cart_3 = ["橙", "香蕉", "香蕉"]
+
+# 寫法 1 - (連結方式)修改數據會影響原數據
+cart = [shopping_cart_1, shopping_cart_2, shopping_cart_3]
+
+# 寫法 2 - (二維列表)修改數據不會影響原數據
+cart = [
+    ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"],
+    ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"],
+    ["橙", "香蕉", "香蕉"]
+]
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403182322522.png)
+
+## 二維列表 1個元素 存取
+```python
+列表名 = [row][col]
+```
+
+```python
+# 寫法 2 - (二維列表)修改數據不會影響原數據
+cart = [
+    ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"],
+    ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"],
+    ["橙", "香蕉", "香蕉"]
+]
+
+# 列表名[行][列]
+# 第 2 行、第 2 個元素 - 蘋果
+cart[1][1]
+
+
+# 第 3 行、第 1 個元素 - 橙
+cart[2][0]
+```
+
+## 二維列表歷遍(所有元素)
+```python
+cart = [
+    ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"],
+    ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"],
+    ["橙", "香蕉", "香蕉"]
+]
+
+# for 迴圈
+# 行(row) : 1-3
+# 列(col) : 0-4
+for row in cart:
+    for col in row:
+        print(col)
+```
+
+## 一維列表常用的操作 - 切片
+對於普通一維陣列，有幾種方法可以單獨對他進行切割工作。
+切片的結果是一個新的列表，包含原始列表中指定範圍內的元素。
+```python
+list[start:end:step]
+```
+- start：起始索引，指定切片的起始位置（包含）。
+- end：結束索引，指定切片的結束位置（不包含）。
+- step：步長，指定切片的元素間隔（預設為 1）。
+操作與字串切割相似
+
+### 一維列表常用的操作 - 切片
+```python
+# list[start:end:step]
+
+cart = ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"]
+
+# 由頭到尾
+cart_1 = cart[:] # ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"]
+
+# 取得第 2-4 項元素
+cart_2 = cart[2:5] # ["藍莓", "香蕉", "鳳梨"]
+
+# 由頭到尾，跳格取得
+cart_3 = cart[::2] # ["蘋果", "藍莓", "鳳梨"]
+
+# 倒轉列表 
+cart_4 = cart[::-1] # ["鳳梨", "香蕉", "藍莓", "橙", "蘋果"]
+```
+
+一維列表常用的操作和函數(function)
+
+```python
+list_ex = ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"]
+
+# 1. 修改特定下標的值
+# 修改 第3個元素
+print(f"原列表：{list_ex}")
+list_ex[2] = "橙"
+print(f"修改後的列表：{list_ex}")
+
+# 2.列表長度
+length = len(list_ex)
+print(f"列表長度：{length}")
+
+# 3. 查找某元素所在的位置(第一次)、如查找元素不在會報錯
+# index()
+# 例如我想查看 橙 的位置
+index = list_ex.index("橙")
+print(f"橙的index：{index}")
+
+# 4. 在指定index插入一個元素 (會改變整個列表) 
+# insert(index, 值)
+# 例如我想在 index = 2 的位置插入 "雪梨"
+print(f"原列表：{list_ex}")
+list_ex.insert(2, "雪梨")
+print(f"修改後的列表：{list_ex}")
+
+# 5. 在列表尾部加入 1 個 元素
+# append(值)
+# 在最後增加 火龍果
+print(f"原列表：{list_ex}")
+list_ex.append("火龍果")
+print(f"修改後的列表：{list_ex}")
+
+# 6. 在列表尾部加入 1 批 元素
+# extend(list)
+# 把 list2 加入到 list_ex的最後
+print(f"原列表：{list_ex}")
+list2 = ["西瓜", "水蜜桃", "青蘋果"]
+list_ex.extend(list2)
+print(f"修改後的列表：{list_ex}")
+
+# 7. 刪除元素(2種方法)
+# 7.1 刪除指定下標的元素
+# pop(index)
+# 例如我想刪除目前列表第5個元素
+print(f"原列表：{list_ex}")
+list_ex.pop(5)
+print(f"修改後的列表：{list_ex}")
+
+# 8. 刪除指定元素在List中的第一個匹配項目
+# remove(值)
+# 例如我想要移除 Ella
+print(f"原列表：{list_ex}")
+list_ex.remove("Ella")
+print(f"修改後的列表：{list_ex}")
+
+# 9. 清空列表
+# clear()
+# print(f"原列表：{list_ex}")
+# list_ex.clear()
+# print(f"修改後的列表：{list_ex}")
+
+# 10. 統計列表內某元素的值
+# count
+list_ex = ["蘋果", "橙", "藍莓", "香蕉", "鳳梨", "橙", "西瓜", "水蜜桃", "青蘋果", "橙"]
+rs_Leo = list_ex.count("橙")
+print(f"列表中有 {rs_Leo} 個橙")
+```
+
+{% hint style="info" %}
+列表的方法功能有非常多，但不建議硬記，學習編程，不僅是語言本身，以後會根據個人興趣向不同方向發展
+
+除了經常使用的，大多是靠記憶記不下來的。
+
+我們只需要有一個較為模糊的印像，知道大約有這些用法就可以。
+
+若有需要，請隨時Google即可! 
+{% endhint %}
+
+
+# 練習
+輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
+
+1. 輸出列表
+2. 輸出用戶共輸入了多少個數字
+3. 排列整組數據( 按小到大 )
+4. 排列整組數據( 按大到小 )
+5. 最小的數、最大的數
+6. 此組數據的平均值
+
+```python
+# 1. 定義 1 個空list
+list_num = []
+
+# 2. 循環輸入
+while(True):
+    temp = input("請輸入數字：") # type:String
+    if(temp == "bye"): # 如果輸入的的為 bye 則跳出迴圈
+        break
+    else:
+        user_input = int(temp)
+        list_num.append(user_input)
+
+# 3.1 輸出列表 
+print(f"列表：{list_num}")
+
+# 3.2 輸出用戶共輸入了多少個數字
+length_list_num = len(list_num)
+print(f"用戶共輸入了 {length_list_num} 個數字")
+
+# 3.3 排列整組數據( 按小到大 )
+temp_1 = list_num
+temp_1.sort()
+print(f"排列整組數據(按小到大)：{temp_1}")
+
+# 3.4 排列整組數據( 按大到小 )
+temp_2 = list_num[::-1]
+print(f"排列整組數據(按大到小)：{temp_2}")
+
+# 3.5 最小的數、最大的數
+min = list_num[0]
+max = list_num[0]
+
+for item in list_num:
+    if(item < min):
+        min = item
+    if(item > max):
+        max = item
+
+print(f"列表中最小的值是：{min}")
+print(f"列表中最大的值是：{max}")
+
+# 3.6 此組數據的平均值
+sum = 0
+for item in list_num:
+    sum = sum + item
+
+avg_list_num = sum / len(list_num)
+
+print(f"此列表的平均值為：{avg_list_num}")
+```
