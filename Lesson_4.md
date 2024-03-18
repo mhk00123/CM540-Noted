@@ -208,7 +208,7 @@ mark = [
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403150047315.png)
 
 
-### 多維列表存取方式
+### 二維列表存取方式
 ```python
 # 二維方式
 # mark = [mark_1, mark_2]
@@ -221,7 +221,7 @@ print(mark[0][0]) # Leo Tam
 print(mark[1][3]) # 102
 ```
 
-### 多維列表歷遍
+### 二維列表歷遍
 
 ```python
 # 二維方式
