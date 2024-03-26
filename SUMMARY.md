@@ -8,6 +8,8 @@
 * [Lesson 3 作業答案](Lesson\_3\_Homework.md)
 * [Lesson 4 - 函數(方法)、儲存容器](Lesson\_4.md)
 * [Lesson 5 - 儲存容器、List](Lesson\_5.md)
+* [Lesson 5 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
+* [Lesson 6 - 儲存容器 - Dictionary、錯誤捕捉](Lesson\_6.md)
 * [變數命名參考守則](變數命名參考守則.md)
 * [運算符優先順序](運算符優先順序.md)
 
