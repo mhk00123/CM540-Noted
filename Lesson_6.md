@@ -121,3 +121,34 @@ for i in all_key:
 # 例外狀況處理: try except
 執行 Python 程式的時候，往往會遇到「錯誤」的狀況。如果沒有好好處理錯誤狀況，就會造成整個程式壞掉而停止不動。因此，透過「例外處理」try except 機制。能夠在發生錯誤時進行對應的動作，不僅能保護整個程式的流程，也能夠掌握問題出現的位置，馬上進行修正。
 
+## 錯誤類型
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403261728234.png)
+
+## 使用 Try 和 Except
+```python
+try:
+    # 需執行的程式碼
+
+except Exception as E:
+    # 若有錯誤，錯誤訊息為 E
+
+else:
+    # 若沒有錯誤則執行
+
+finally:
+    # 不論有沒有錯誤都執行
+```
+
+### 例子
+```python
+a = "Hello"
+
+try:
+    b = a + 1 # Error String and Int
+except Exception as E:
+    print(E)
+
+print("哇，恭喜你的程式可以順利由頭跑到尾")
+
+```
