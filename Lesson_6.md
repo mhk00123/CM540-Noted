@@ -152,3 +152,11 @@ except Exception as E:
 print("哇，恭喜你的程式可以順利由頭跑到尾")
 
 ```
+
+# 功課
+## 修改 21點遊戲
+- 新增隨機取卡
+- 使用 Dict 記錄所有牌
+-  已取的牌不能再取
+
+繳交：https://tinyurl.com/mrxab8rv
