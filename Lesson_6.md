@@ -160,4 +160,4 @@ print("哇，恭喜你的程式可以順利由頭跑到尾")
 - 已取的牌不能再取
 - (嘗試)增加 1 個玩家，共 2 人
 
-繳交：https://tinyurl.com/mrxab8rv
+繳交：[https://tinyurl.com/mrxab8rv](https://tinyurl.com/mrxab8rv)
