@@ -10,6 +10,8 @@
 * [Lesson 5 - 儲存容器、List](Lesson\_5.md)
 * [Lesson 5 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
 * [Lesson 6 - 儲存容器 - Dictionary、錯誤捕捉](Lesson\_6.md)
+* [Lesson 6 - 21點遊戲增強 答案](Lesson\_6\_Homework.md)
+* [Lesson 7 - Module(time、os)、輸入流輸出流、pip](Lesson\_7.md)
 * [變數命名參考守則](變數命名參考守則.md)
 * [運算符優先順序](運算符優先順序.md)
 
