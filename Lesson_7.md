@@ -1,4 +1,4 @@
-# Lesson 7 - 儲存容器 - Dictionary、錯誤捕捉
+# Lesson 7 - Module(time、os)、輸入流輸出流、pip
 
 **tags: `python`** **`CM-540`** **`Lesson6`**
 
