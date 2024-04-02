@@ -74,7 +74,7 @@ while(True):
         continue
     
     # 若通通上方判斷，則進行點數相加
-    sum = sum + num/2
+    sum = sum + num
     
     # 判斷 若剛好等於 21 點，贏了，遊戲結束
     if(sum == 21):
