@@ -104,7 +104,7 @@ pip 是 Python 2.7.9 版本及其後續版本的標准組件，也是 Python 3.4
 ```bash
 pip install requests
 
-pip install BeautifulSoup
+pip install BeautifulSoup4
 
 pip install pandas
 
