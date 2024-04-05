@@ -1,6 +1,6 @@
 # Lesson 7 - Module(time、os)、輸入流輸出流、pip
 
-**tags: `python`** **`CM-540`** **`Lesson6`**
+**tags: `python`** **`CM-540`** **`Lesson7`**
 
 Module(time、os)、輸入流輸出流、pip
 
@@ -224,6 +224,8 @@ try:
 except Exception as E:
     print(E)
 ```
+
+
 
 # 第三方Module下載 - pip
 pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
