@@ -7,6 +7,17 @@ pip、API、爬蟲入門
 ## Slide
 課件：[https://tinyurl.com/3n4rzdbw](https://tinyurl.com/3n4rzdbw)
 
+## 作業
+[https://hamster.cpttm.org.mo/spaces/b9MtZ3OS9YTeHky61Aq-Eg/upload
+](https://hamster.cpttm.org.mo/spaces/b9MtZ3OS9YTeHky61Aq-Eg/upload
+)
+1. 取得簡單新聞
+給定天氣API，取得目前天氣，並輸出。
+嘗試尋找其他 API / 網站，看看使用相同方法能否成功取得你想要的資料
+
+2. 完成 21 點遊戲 Final  
+
+
 ## 資料補充 - 文件輸入/輸出流
 在Python中，我們可以透過文件輸入/輸出流open() 處理文件的新增/修改
 基礎用法
