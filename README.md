@@ -2,6 +2,16 @@
 
 **tags: `Python`** **`CM-540`** **`Introduction`**
 
+- 評審A - 關治平 : [https://tinyurl.com/2jxd7e9b](https://tinyurl.com/2jxd7e9b)
+
+- 評審B - 曾澤瑤：[https://tinyurl.com/26tuym9r](https://tinyurl.com/26tuym9r)
+
+- 評審C - 林濤：[https://tinyurl.com/29mv789h](https://tinyurl.com/29mv789h)
+
+- 評審D - 梁倩文：[https://tinyurl.com/5fnpwk9p](https://tinyurl.com/5fnpwk9p)
+
+- 評審E - 鄔嘉希：[https://tinyurl.com/2ap4jav6](https://tinyurl.com/2ap4jav6)
+
 ## Notes
 [https://leotam-cpttm.gitbook.io/cm540/](https://leotam-cpttm.gitbook.io/cm540/)
 
