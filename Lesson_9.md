@@ -133,6 +133,7 @@ data.html.body.p
 在Python中無法直接讀取XML結構，我們透過xmltodict把xml轉換為dict格式。
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161701378.png)
+
 如我想取得目前的溫度
 把資料轉換至一個`dict`、以`data`作變數名儲存
 ```Python
