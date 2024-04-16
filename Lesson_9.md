@@ -5,7 +5,16 @@
 ## Slide
 課件：[https://tinyurl.com/atnuxps7](https://tinyurl.com/atnuxps7)
 
-# 作業 — 完課 Project
+## 作業5
+1. 完成 21 點遊戲 Final
+2. 取得簡單天氣，給定天氣API，取得目前天氣，並輸出。
+
+天氣API : [https://xml.smg.gov.mo/c_actual_brief.xml](https://xml.smg.gov.mo/c_actual_brief.xml)
+
+繳交：[https://tinyurl.com/5du9az6t](https://tinyurl.com/5du9az6t)
+
+
+## 作業6 - Final Project
 自己思考一個題目，任何類型
 - 小算盤?
 - 待辦行事記錄?
@@ -13,7 +22,7 @@
 - 自動檢查退休基金價格?
 - 檢查政府工什麼時候開考?
 
-# (補充)Pass by value and pass by reference
+## (補充)Pass by value and pass by reference
 傳值(Value)、還是傳址(Address)的問題。
 
 ## 傳址(by reference)
