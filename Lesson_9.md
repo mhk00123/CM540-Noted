@@ -176,7 +176,7 @@ xml_data = response.content.decode("utf-8")
 data_dict = xmltodict.parse(xml_data)
 
 # 5. 取得Response中的"溫度"欄位
-g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"]["Value"]
+g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"][0]["Value"]
 
 # 6. 取得目前時間
 timestamp = time.time()
@@ -222,6 +222,38 @@ data = json.load(file)
 https://rt.data.gov.hk/v2/transport/citybus/route/ctb
 
 找出所有終點站為 ”堅尼地城” 的巴士路線
+
+## laod json 功能
+```python
+import os
+import json
+
+def load_json(json_data_list, file_path):
+    file = open(file_path, encoding='utf-8')
+    json_data = json.load(file)
+    json_data_list.append(json_data)
+    
+folder_path = '此處請換成您的path'
+file_list = os.listdir(folder_path)
+
+json_files = []
+json_files_list = []
+
+print(file_list)
+
+for file_name in file_list:
+    file_path = os.path.join(folder_path, file_name)
+    
+    # 檢查副檔名為 .json
+    if os.path.isfile(file_path) and file_name.endswith('.json'):
+        json_files.append(file_path)
+
+for file_address in json_files:
+    load_json(json_files_list, file_address)
+    
+print(json_files_list)
+```
+
 
 ## (補充)如何透過 Python 程式向手機發送通知
 首先，要向自己的手機發送信息是十分困難的!
