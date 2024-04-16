@@ -217,12 +217,12 @@ xml_data = response.content.decode("utf-8")
 
 # 4. 回覆的格式為.xml
 #    我們使用 xmltodict 套件處理
-data_dict = xmltodict.parse(xml_data)["ActualWeatherBrief"]["Custom"]
+data_dict = xmltodict.parse(xml_data)
 
 print(data_dict)
 
 # 5. 取得Response中的"溫度"欄位
-g_temperature = data_dict["Temperature"]["Value"]
+g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"]["Value"]
 
 # 6. 取得目前時間
 timestamp = time.time()
