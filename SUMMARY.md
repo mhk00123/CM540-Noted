@@ -9,7 +9,7 @@
 * [Lesson 7 - Module(time、os)、輸入流輸出流、pip](Lesson\_7.md)
 * [Lesson 8 - pip、API、爬蟲入門](Lesson\_8.md)
 * [Lesson 9 - API、爬蟲](Lesson\_9.md)
-* [Lesson 10 - 交通局停車場API、Pandas](Lesson\_9.md)
+* [Lesson 10 - 交通局停車場API、Pandas](Lesson\_10.md)
 * [變數命名參考守則](變數命名參考守則.md)
 * [運算符優先順序](運算符優先順序.md)
 * [Lesson 2 - 作業答案](Lesson\_2\_Homework.md)
