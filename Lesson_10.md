@@ -174,26 +174,6 @@ data_column = df[col_name]
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404191723588.png)
 
-### 增加列(Column)
-增加列 - 需要使用 `.concat()` 函數
-
-```python
-new_row = {key1:value1, key2:value2}
-df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404191723845.png)
-
-### 增加行(row)
-增加行 - 使用 `.append()`：添加一行或者另一個 DataFrame 的多行。
-
-```
-new_row = {'column1': value1, 'column2': value2, ...}
-df = df.append(new_row, ignore_index = True)
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404191724727.png)
-
 # 輸出到 Excel - `to_excel()`
 透過 `to_excel(檔案名、表名、是否需要加上index)`
 
