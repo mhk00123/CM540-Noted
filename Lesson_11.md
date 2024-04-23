@@ -186,7 +186,7 @@ max_age = df["年紀"].max()
 
 - 定位行 - df [ 條件判斷 ]
 ```pyton
-df[df["年紀"] == max_age]
+df.loc[df["年紀"] == max_age]
 ```
 
 ## 統計區間 - group_by()
