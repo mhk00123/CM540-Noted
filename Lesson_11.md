@@ -238,7 +238,7 @@ data = [
 ]
 
 df = pd.DataFrame(data)
-
+x`
 bins_area = [0, 20, 25, 30, 35]
 labels = ['0-20', '21-25', '26-30', '31-35']
 df['年齡區間'] = pd.cut(df['年紀'], bins=bins_area, labels=labels, right=False)
@@ -264,7 +264,8 @@ https://matplotlib.org/stable/plot_types/basic/index.html
 
 ```python
 import pandas as pd
- 
+import matplotlib.pyplot as plt
+
 data = [
     {'姓名': 'Leo', '年紀': 24, '工作': '工程師'},
     {'姓名': 'Alice', '年紀': 30, '工作': '設計師'},
@@ -279,6 +280,8 @@ df = pd.DataFrame(data)
 count_by_age = df.groupby('年紀').size()
 count_by_age
 count_by_age.plot(kind='bar')
+
+plt.show()
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404231707789.png)
@@ -286,6 +289,7 @@ count_by_age.plot(kind='bar')
 ## 區間分組
 ```python
 import pandas as pd
+import matplotlib.pyplot as plt
  
 data = [
     {'姓名': 'Leo', '年紀': 24, '工作': '工程師'},
@@ -303,6 +307,8 @@ labels = ['0-20', '21-25', '26-30', '31-35']
 df['年齡區間'] = pd.cut(df['年紀'], bins=bins_area, labels=labels, right=False)
 count_by_age_range = df.groupby('年齡區間').size()
 count_by_age_range.plot(kind='bar')
+
+plt.show()
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404231709079.png)
