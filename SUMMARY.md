@@ -19,3 +19,4 @@
 * [Lesson 5 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
 * [Lesson 6 - 21點遊戲增強 答案](Lesson\_6\_Homework.md)
 * [Lesson 7 - 21點遊戲(Final) 答案](Lesson\_7\_Homework.md)
+* [Get MPF 程式碼範例](GetMPF.md)
