@@ -115,7 +115,7 @@ telegram_bot_sendtext(str(today) + " 富蘭克林\n--------------------------\n"
 os.system('pause')
 ```
 
-get_fulankelam.py
+## get_fulankelam.py
 ```python
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
