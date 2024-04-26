@@ -5,6 +5,9 @@
 ## Notes
 [https://leotam-cpttm.gitbook.io/cm540/](https://leotam-cpttm.gitbook.io/cm540/)
 
+## 本人聯絡方式：
+[Leotam@cpttm.org.mo](Leotam@cpttm.org.mo)
+
 ## 作業/考試 繳交
 
 - 命名規則 : `姓名_日期_作業N`
