@@ -6,10 +6,9 @@
 # Slide
 課件：[https://shorturl.at/stvQT](https://shorturl.at/stvQT)
 
-Python 3.11 官方手冊：[https://docs.python.org/zh-tw/3.11/](https://docs.python.org/zh-tw/3.11/)
 
 # 作業/考試 繳交
-請在家中的電腦嘗試使用Anaconda安裝Python環境、以及Visual Studio Code，完成後截圖並上傳。
+請在家中的電腦嘗試使用 Anaconda 安 裝Python 環境、以及 Visual Studio Code，完成後截圖並上傳。
 
 繳交網址 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
 
@@ -96,7 +95,7 @@ print("Hello World")
 
 > 注意：在爬蟲的章節，由於套件問題建議使用本機環境方式執行
 
-## 環境搭建(1) - 本機(Local)形式
+## 環境搭建(1) - 本機形式 (不推薦入門用戶)
 
 在本機中直接安裝Python執行環境、配合 Visual Studio Code 完成開發
 
