@@ -167,18 +167,23 @@ print("Hello World 3")
 到Anaconda官方網站下載安裝檔案 : [https://www.anaconda.com/](https://www.anaconda.com/)
 
 1. **執行安裝程式**
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021753367.png)
 
 2. 注意勾選 **Add Anaconda3 to my_PATH environment variable**
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021754828.png)
 
 3. 完成後可看到 Anacaonda3 程式界面
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021755356.png)
 
 Anaconda 會為我們默認配置一個虛擬的可執行Python的環境(Env)，打開Anacaonda Prompt
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021759062.png)
 
 即可看到 `(base)` 字樣
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021759254.png)
 
 4. 透過命令我們可以看到此虛擬環境的版本為 `3.11.7`
@@ -199,6 +204,7 @@ conda create -n py311 python=3.11.7
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021816688.png)
 
 2. 成功後會看到
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021816451.png)
 
 3. 進入環境
@@ -207,7 +213,7 @@ conda create -n py311 python=3.11.7
 conda activate py311
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021819440.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021819440.png)
 
 ## Conda 命令
 - 查看已創建環境
