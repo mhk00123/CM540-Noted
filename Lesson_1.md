@@ -9,7 +9,9 @@
 Python 3.11 官方手冊：[https://docs.python.org/zh-tw/3.11/](https://docs.python.org/zh-tw/3.11/)
 
 # 作業/考試 繳交
-作業1 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
+請在家中的電腦嘗試使用Anaconda安裝Python環境、以及Visual Studio Code，完成後截圖並上傳。
+
+繳交網址 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
 
 
 # Python 是甚麼 ?
