@@ -4,7 +4,7 @@
 **tags: `python`** **`CM-540`** **`Lesson1`**
 
 # Slide
-課件：[https://tinyurl.com/3vn6mwvb](https://tinyurl.com/3vn6mwvb)
+課件：[https://shorturl.at/stvQT](https://shorturl.at/stvQT)
 
 Python 3.11 官方手冊：[https://docs.python.org/zh-tw/3.11/](https://docs.python.org/zh-tw/3.11/)
 
@@ -558,7 +558,9 @@ print(str_1[4]) # o
 print(str_1[6]) # W
 ```
 
-另外，在Python中，也可以**反向**取得字元 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402062348197.png)
+另外，在Python中，也可以**反向**取得字元 
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402062348197.png)
 
 ```python
 str_1 = "Hello World!"
