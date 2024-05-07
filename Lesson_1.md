@@ -4,13 +4,13 @@
 **tags: `python`** **`CM-540`** **`Lesson1`**
 
 # Slide
-課件：[https://shorturl.at/stvQT](https://shorturl.at/stvQT)
+課件：[https://docs.google.com/presentation/d/1bC_9xQKf5-kp1vGLoykULN6BiBCk-7rxoxaaLOjbubg/edit?usp=sharing](https://docs.google.com/presentation/d/1bC_9xQKf5-kp1vGLoykULN6BiBCk-7rxoxaaLOjbubg/edit?usp=sharing)
 
 
 # 作業/考試 繳交
-請在家中的電腦嘗試使用 Anaconda 安 裝Python 環境、以及 Visual Studio Code，完成後截圖並上傳。
+請在家中的電腦嘗試使用 Anaconda 安裝 Python 環境、以及 Visual Studio Code，完成後截圖並上傳。
 
-繳交網址 : [https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload](https://hamster.cpttm.org.mo/spaces/1Bwtj5LHBMa6FDYIblKx4g/upload)
+繳交網址 : [https://hamster.cpttm.org.mo/spaces/MOBO1s819cYwsWMgJlWqqA/upload](https://hamster.cpttm.org.mo/spaces/MOBO1s819cYwsWMgJlWqqA/upload)
 
 
 # Python 是甚麼 ?
