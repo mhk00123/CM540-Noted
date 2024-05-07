@@ -585,13 +585,14 @@ name[0] = "N"
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402232325812.png)
 
-因此若我們想改變字串中的內容，可以採用 `replace()` 函數
+因此若我們想改變字串中的內容，目前我們只能重新賦值
 
 ```python
 name = "Leo"
 
 # 把 L 改變為 N
-name = name.replace("L","N")
+# 重新賦值
+name = "Neo"
 print(name) # Neo
 ```
 
