@@ -227,7 +227,7 @@ conda info --env
 conda create -n py311 python=3.11.7
 ```
 
-- 創建環境
+- 刪除環境
 ```bash
 conda remove -n py311 -all
 ```
