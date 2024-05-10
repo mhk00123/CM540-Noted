@@ -4,11 +4,8 @@
 **tags: `python`** **`CM-540`** **`Lesson2`**
 
 # Slide
-課件：[https://tinyurl.com/3uaxcanp](https://tinyurl.com/3uaxcanp)
+課件：[https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing](https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing)
 
-# 課堂練習
-
-[https://forms.gle/fadCHG4pn58PkMRu9](https://forms.gle/fadCHG4pn58PkMRu9)
 
 # Python 基本組成
 - 資料型態: int、float、str、bool
