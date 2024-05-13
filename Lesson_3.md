@@ -10,7 +10,55 @@
 
 課件：[https://tinyurl.com/4d2em7er](https://tinyurl.com/4d2em7er)
 
-### 循環/迴圈結構
+# 作業
+繳交網址：[https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload](https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload)
+
+## 題目 1： 計算BMI指數
+請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
+$$BMI = \frac{體重(kg)}{身高^2(m)}$$
+
+根據計算結果使用以下標準判斷BMI指數的範圍：
+| BMI值 | 描述 |
+| :--: | :--: | 
+| 小於 18.5 | 體重過輕 | 
+| 18.5 到 24.9 | 正常範圍 | 
+| 25 到 29.9 | 超重 | 
+| 大於等於 30 | 肥胖 |
+
+### 題目 2： 超級無敵開口中
+
+奬門人節目內的超級無敵開口中， 玩法是電腦隨機抽出一個 1 - 100 之間的號碼作為幸運號碼，參加者輪流說出一個數字，電腦會根據答案和參加者的數字，將可選範圍縮窄，直到最後幸運號碼被估中為止。
+
+要求：
+* 系統提示：需要告知目標數字比目前估的數字大或細
+* 若使用者輸入”bye”，則輸出答案和結束遊戲
+
+> 由於目前還沒有教到導入模塊的部份，因此先提供隨機數生成方法
+
+```python
+# 生成隨機數的函數如下(隨機生成 1-100 的整數)
+import random
+lucky_num = random.randint(1, 100)
+
+print(lucky_num)
+```
+
+### 題目 3： 三角型的9x9乘法表
+
+請嘗試以迴圈輸出：
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110049230.png)
+
+
+## and(與)、or(或)、xor(非)
+- and : 需要同時為True，才是True
+- or：只需有 1 個為True，就是True
+- xor：當兩個參數相同時為False、兩個參數不同時為True (不常用)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
+
+
+## 循環/迴圈結構
 
 #### 應用場景
 
@@ -346,34 +394,3 @@ for letter in 'cptTm':
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png)
 
 
-## 功課2
-作業2 : 共 2 題
-由於系統限制只能上傳 1 個檔案，您可以
-1. 壓縮成 `.zip` `.rar` 繳交 
-2. 把 2 個作業的程式碼寫在同1個py檔案中
-
-[https://tinyurl.com/msx9wect](https://tinyurl.com/msx9wect)
-
-### 題目 1： 超級無敵開口中
-
-奬門人節目內的超級無敵開口中， 玩法是電腦隨機抽出一個 1 - 100 之間的號碼作為幸運號碼，參加者輪流說出一個數字，電腦會根據答案和參加者的數字，將可選範圍縮窄，直到最後幸運號碼被估中為止。
-
-要求：
-* 系統提示：需要告知目標數字比目前估的數字大或細
-* 若使用者輸入”bye”，則輸出答案和結束遊戲
-
-> 由於目前還沒有教到導入模塊的部份，因此先提供隨機數生成方法
-
-```python
-# 生成隨機數的函數如下(隨機生成 1-100 的整數)
-import random
-lucky_num = random.randint(1, 100)
-
-print(lucky_num)
-```
-
-### 題目 2： 三角型的9x9乘法表
-
-請嘗試以迴圈輸出：
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110049230.png)
