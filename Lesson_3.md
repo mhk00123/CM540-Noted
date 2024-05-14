@@ -11,6 +11,8 @@
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
 # 作業
+繳交截止：5月17日23:59
+
 繳交網址：[https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload](https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload)
 
 ## 題目 1： 計算BMI指數
