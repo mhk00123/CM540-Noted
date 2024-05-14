@@ -1,12 +1,10 @@
 # Lesson 3 - 邏輯判斷、循環結構
 
-## Lesson 3
-
 邏輯判斷、循環結構
 
 **tags: `python`** **`CM-540`** **`Lesson3`**
 
-## Slide
+# Slide
 
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
@@ -60,9 +58,9 @@ print(lucky_num)
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
 
 
-## 循環/迴圈結構
+# 循環/迴圈結構
 
-#### 應用場景
+## 應用場景
 
 我們在寫程序的時候，一定會遇到需要重復執行某條或某些指令的場景。例如要實現每隔1秒中在屏幕上打印一次“hello, world”並持續打印一個小時，我們肯定不能夠直接把print('hello, world')這句代碼寫3600遍，這裡同樣需要循環結構。
 
@@ -114,7 +112,7 @@ while(條件):
 
 在While迴圈中，條件是優先判斷的，先判斷條件再執行語句。 因此條件中，沒有加入終止條件的變數，迴圈會一直執行下去，變成無限迴圈。
 
-#### 無限迴圈
+## 無限迴圈
 
 相較於 for 迴圈，While 迴圈中含有讓程式判斷的條件，因此有機會出現**無限迴圈**，即迴圈條件永遠都成立，不會跳出。在正式開發程序中，我們必須避免出現無限迴圈，這會使服務端死機。
 
@@ -156,7 +154,7 @@ while(count < 101):
 print(sum)
 ```
 
-### 巢狀迴圈
+## 巢狀迴圈
 
 巢狀迴圈並非新的程式結構，只是迴圈範圍內又有迴圈，巢狀迴圈可以有好幾層，巢狀迴圈與單層迴圈運作原理相同，從外層迴圈來看，內層迴圈指示外層迴圈內的動作，因此外層迴圈作用一次，內迴圈需要執行完畢。
 
@@ -265,7 +263,7 @@ list_exp = [1 , "green", True]
 student_name = ["Leo Tam", "Mary", "John", ... ,"cpttm"]
 ```
 
-### for-in 循環/迴圈
+# for-in 循環/迴圈
 
 除了 While 迴圈外，For 迴圈也是在Python中十分常用的。兩者本質意義上十分相似，作用都是重覆執行語句。
 
@@ -276,7 +274,7 @@ student_name = ["Leo Tam", "Mary", "John", ... ,"cpttm"]
 
 如果明確知道**循環執行的次數**或者要對一個容器進行迭代，那麼我們推薦使用`for迴圈`。
 
-#### for迴圈 結構
+### for迴圈 結構
 
 ```python
 for 臨時變數 in 可迭代對象:
@@ -347,7 +345,7 @@ while (i <= 9):
     i = i + 1
 ```
 
-### 迴圈 - 跳過某一步 (continue)
+## 迴圈 - 跳過某一步 (continue)
 
 在迴圈中，我們可能有部份執行語句會因應不同情況而不出現，此時可以用`continue`語句，由檢測到continue關鍵字起跳過本次循環，直接進入下一次循環。
 
@@ -374,7 +372,7 @@ while(count <= 10):
 
 **break** 即跳出迴圈的意思，程式當遇到特定條件時，執行 **break** 語句即會跳出迴圈。
 
-#### 字串 cptTm，當遇到 `T` 時跳出
+## 字串 cptTm，當遇到 `T` 時跳出
 
 ```python
 for letter in 'cptTm':
