@@ -214,21 +214,19 @@ while (i <= 9):
 
 ```python
 stu1_name = ""
-stu1_num = ""
-stu1_class = ""
 
 stu2_name = ""
-stu2_num = ""
-stu2_class = ""
 
 stu3_name = ""
-stu3_num = ""
-stu3_class = ""
+
+stu4_name = ""
+
+stu5_name = ""
 ```
 
-如果我要再記錄 10 個學生的更多信息 ?
+如果我要再記錄 10 個學生的更多信息 ? 100 個?
 
-這樣的寫法，需要非常多的變數。隨著人數，要記錄的東西愈多，變數就需要愈，這顯然是無必要的。
+這樣的寫法，需要非常多的變數。隨著人數，要記錄的東西愈多，變數就需要愈多，這顯然是無必要的。
 
 因此我們先行引入**儲存容器**的概念
 
@@ -264,15 +262,7 @@ list_exp = [1 , "green", True]
 回歸剛才的問題，如果我要再記錄 10 個學生的更多信息，我們可以這樣處理。
 
 ```python
-student1 = ["Leo Tam", "cpttm-01","一年級"]
-student2 = ["Mary Lo", "cpttm-02","二年級"]
-student3 = ["Daniel Chan", "cpttm-03","三年級"]
-.
-.
-.
-student10 = ["Thomas Tai", "cpttm-10", "二年級"]
-
-student_list =[student1, student2, student3, …, student10]
+student_name = ["Leo Tam", "Mary", "John", ... ,"cpttm"]
 ```
 
 ### for-in 循環/迴圈
