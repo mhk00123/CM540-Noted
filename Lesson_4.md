@@ -1,4 +1,4 @@
-# Lesson 4 - 函數/方法、儲存容器
+# Lesson 4 - 儲存容器
 
 **tags: `python`** **`CM-540`** **`Lesson4`**
 
