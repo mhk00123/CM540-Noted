@@ -8,6 +8,18 @@
 
 課件：[https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
+## 功課
+繳交日期：5月21日 23:59
+繳交地址：[https://hamster.cpttm.org.mo/spaces/iq6p9gyGRVKhILxUoAeyhg/upload](https://hamster.cpttm.org.mo/spaces/iq6p9gyGRVKhILxUoAeyhg/upload)
+
+### 題目：
+輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
+- 輸出列表
+- 輸出用戶共輸入了多少個數字
+- 排列整組數據( 按小到大 )
+- 排列整組數據( 按大到小 )
+- 最小的數、最大的數
+- 此組數據的平均值
 
 # 儲存容器
 容器的意義：可以容納多份數據、容納的每一份數據可以稱為 1 個元素。
