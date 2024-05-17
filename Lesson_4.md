@@ -6,7 +6,7 @@
 
 ## Slide
 
-課件：[https://tinyurl.com/5n8vy2nd](https://tinyurl.com/5n8vy2nd)
+課件：[https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
 
 # 儲存容器
