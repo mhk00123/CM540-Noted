@@ -150,6 +150,8 @@ for row in cart:
 10. 統計列表內某元素的值
 
 ```python
+
+list_ex = ["Tom", "Kate", "Mart", "Leo"]
 # 1. 修改特定下標的值
 # 修改 第3個元素
 list_ex[2] = "Ken"
