@@ -7,6 +7,23 @@
 ## Slide
 課件：[https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
+## 功課：21 點遊戲單人版
+繳交網址：[https://hamster.cpttm.org.mo/spaces/LSb6s8Zs460Cej1PsKiOSg/upload](https://hamster.cpttm.org.mo/spaces/LSb6s8Zs460Cej1PsKiOSg/upload)
+
+截止日期：2024-05-24
+
+- 扑克牌(52張) ：1 - 13 表示(暫不分開花色)
+- 每個數字最多 4 隻
+
+我們要做的：
+- 每 1  輪人手發牌 - 指定點數
+- 若輸入超過 4 張牌，請玩家重新輸入
+- 記錄點數，點數是累加的
+- 記錄點數必須引導玩家繼續發牌
+- 若剛好等於 21 點，贏了，遊戲結束
+- 若大於 21 點，輸了，遊戲結束
+- 輸入 bye 遊戲結束
+
 # 一維列表常用的操作 - 切片
 對於普通一維陣列，有幾種方法可以單獨對他進行切割工作。
 切片的結果是一個新的列表，包含原始列表中指定範圍內的元素。
