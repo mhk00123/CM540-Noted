@@ -105,7 +105,7 @@ error_msg = fruit.pop("123蘋果", "沒有找到對應的Key")
 print(error_msg)
 
 # 4. 尋找 key 是否存在
-# in
+# in`
 flag = "蘋果" in fruit
 print(flag)
 
@@ -116,6 +116,7 @@ print(all_key)
 for i in all_key:
     print(i)
     print(type(i))
+
 ```
 
 # 例外狀況處理: try except
