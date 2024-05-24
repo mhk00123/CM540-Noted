@@ -5,7 +5,17 @@
 Dictionary、錯誤捕捉、21點遊戲
 
 ## Slide
-課件：[https://tinyurl.com/864845h5](https://tinyurl.com/864845h5)
+課件：[https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing](https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing)
+
+# 功課
+### 修改 21點遊戲
+- 把牌組分開花式 (提示：使用 dict 加 list 的組合)
+- 使用random方式抽牌
+- 每次取牌後記錄輸出變為：花式+點數
+- 加入判斷：取得J、Q、K時全部定義作10點
+
+
+繳交：[https://hamster.cpttm.org.mo/spaces/LSb6s8Zs460Cej1PsKiOSg/upload](https://hamster.cpttm.org.mo/spaces/LSb6s8Zs460Cej1PsKiOSg/upload)
 
 # 什麼時候會使用到 Dictionary(字典) 呢 ?
 Dictionary 是一種較為複雜的資料結構，對於資料的查找很方便。Python中的字典如同現實世界中的字典，包含了一堆`字`，和這個字所指示的含意，每一個`字`即代表`key`，每一個字對應的的解釋，即代表`value`
@@ -154,11 +164,19 @@ print("哇，恭喜你的程式可以順利由頭跑到尾")
 
 ```
 
-# 功課
-## 修改 21點遊戲
-- 新增隨機取卡
-- 使用 Dict 記錄所有牌
-- 已取的牌不能再取
-- (嘗試)增加 1 個玩家，共 2 人
+```python
+while(True):
+    data = input("請輪入一個數字：")
 
-繳交：[https://tinyurl.com/mrxab8rv](https://tinyurl.com/mrxab8rv)
+    try:
+        num = int(data)
+        num = num + 1
+        print(f"你輸入的是{num}")
+        break
+        
+    except Exception as E:
+        print("輸入錯誤，請重新輸入")
+        print(E)
+```
+
+
