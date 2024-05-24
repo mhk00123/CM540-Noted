@@ -37,6 +37,7 @@ while(True):
     # 輸入 bye 遊戲結束
     if(temp == "bye"):
         print(f"遊戲結束! 目前手牌：{user_input}，點數為：{sum}")
+        break
     
     user_input = int(temp)
     
