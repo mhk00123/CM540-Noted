@@ -1,8 +1,8 @@
-# Lesson 7 - Module(time、os)、輸入流輸出流、pip
+# Lesson 7 - 物件、Module(time、os)、輸入流輸出流、pip
 
 **tags: `python`** **`CM-540`** **`Lesson7`**
 
-Module(time、os)、輸入流輸出流、pip
+物件、Module(time、os)、輸入流輸出流、pip
 
 ## Slide
 課件：[https://tinyurl.com/35kuy3cn](https://tinyurl.com/35kuy3cn)
