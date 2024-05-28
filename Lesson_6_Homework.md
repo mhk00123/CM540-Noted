@@ -1,14 +1,12 @@
 # Lesson_6_Homework
 ## 21點遊戲
 
-1. 請以字典方式記錄每一張牌(花式) - 52張牌
-2. 增加自動發牌功能 (使用隨機數) (O)
-3. (嘗試) 增加 1 個玩家，共 2 人
+1. 把牌組分開花式 (提示：使用 dict 加 list 的組合)
+3. 使用random方式抽牌
+4. 每次取牌後記錄輸出變為：花式+點數
+5. 加入判斷：取得J、Q、K時全部定義作10點(+10
 
 ```python
-# 扑克牌(52張) :1 - 13 表示
-# 每個數字最多 4 隻(list)---
-
 # Random Module
 import random
 
@@ -74,7 +72,10 @@ while(True):
         continue
     
     # 若通通上方判斷，則進行點數相加
-    sum = sum + num
+    if(num>=10):
+        sum = sum + 10
+    else:
+        sum = sum + num
     
     # 判斷 若剛好等於 21 點，贏了，遊戲結束
     if(sum == 21):
@@ -85,4 +86,5 @@ while(True):
     if(sum > 21):
         print(f"目前點數為：{sum}點，爆炸了，遊戲結束")
         break
+
 ```
