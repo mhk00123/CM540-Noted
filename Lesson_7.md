@@ -7,6 +7,15 @@
 ## Slide
 課件：[https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing](https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing)
 
+## 作業 - 21 點遊戲(final)
+1. 嘗試重構程式
+2. 2人玩家 Dealer 、Player
+3. 每一步取牌後輸出當時時間
+4. 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
+
+繳交期限：2024-05-31 23:59:59
+繳交：[https://hamster.cpttm.org.mo/spaces/caNyasTlpALIQSn50qf4Tw/upload](https://hamster.cpttm.org.mo/spaces/caNyasTlpALIQSn50qf4Tw/upload)
+
 # 物件導向程式設計(Object-oriented programming、OOP)
 在學習程式語言時，或多或少都有聽過物件導向程式設計(Object-oriented programming，簡稱OOP)，它是一個具有物件(Object)概念的開發方式，能夠提高軟體的重用性、擴充性及維護性，在開發大型的應用程式時更是被廣為使用，所以在現今多數的程式語言都有此種開發方式，Python當然也不例外。而要使用物件導向程式設計就必須對類別(Class)及物件(Object)等有一些基本的了解，包含了：
 - 物件(Object)
@@ -301,8 +310,6 @@ try:
 except Exception as E:
     print(E)
 ```
-
-
 
 # 第三方Module下載 - pip
 pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
