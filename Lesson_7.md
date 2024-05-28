@@ -5,7 +5,79 @@
 物件、Module(time、os)、輸入流輸出流、pip
 
 ## Slide
-課件：[https://tinyurl.com/35kuy3cn](https://tinyurl.com/35kuy3cn)
+課件：[https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing](https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing)
+
+# 物件導向程式設計(Object-oriented programming、OOP)
+在學習程式語言時，或多或少都有聽過物件導向程式設計(Object-oriented programming，簡稱OOP)，它是一個具有物件(Object)概念的開發方式，能夠提高軟體的重用性、擴充性及維護性，在開發大型的應用程式時更是被廣為使用，所以在現今多數的程式語言都有此種開發方式，Python當然也不例外。而要使用物件導向程式設計就必須對類別(Class)及物件(Object)等有一些基本的了解，包含了：
+- 物件(Object)
+- 類別(Class)
+- 屬性(Attribute)
+- 方法(Method)
+- 建構式(Constructor)
+
+# 類別(Class)、物件(Object)
+簡單來說，類別(Class)就是物件(Object)的藍圖。
+
+就像要生產一部汽車時，都會有設計圖，藉此可以知道此類汽車會有哪些特性及功能，類別(Class)就類似設計圖，會定義未來產生物件時所擁有的屬性(Attribute)及方法(Method)。
+
+而最終透過藍圖產生的實體，則叫 物件(Object)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405281442328.png)
+
+
+### 汽車Class及實體化汽車物件的例子
+```python
+# 汽車類別 Class
+class Cars:
+    # 建構式 Constructor
+    def __init__(self, color, seat):
+        self.color = color  # 顏色 屬性Attribute
+        self.seat = seat  # 座位 屬性Attribute
+
+    # 方法(Method)
+    def drive(self):
+        print(f"My car is {self.color} and {self.seat} seats.")
+
+# 實體化物件 (Object)
+car_1 = Cars(“Yellow”, 5)
+car_2 = Cars(“White”, 7)
+```
+
+## 屬性(Attribute)
+```python
+# 汽車類別 Class
+class Cars:
+    # 建構式 Constructor
+    def __init__(self, color, seat):
+        self.color = color  # 顏色 屬性Attribute
+        self.seat = seat  # 座位 屬性Attribute
+
+
+# 實體化物件 (Object)
+car_1 = Cars(“Yellow”, 5)
+
+# 存取屬性
+print(car_1.color) # Yellow 
+```
+## 方法(Method)
+```python
+# 汽車類別 Class
+class Cars:
+    # 建構式 Constructor
+    def __init__(self, color, seat):
+        self.color = color  # 顏色 屬性Attribute
+        self.seat = seat  # 座位 屬性Attribute
+
+    # 方法(Method)
+    def drive(self):
+        print(f"My car is {self.color} and {self.seat} seats.")
+
+# 實體化物件 (Object)
+car_1 = Cars(“Yellow”, 5)
+
+# 呼叫方法
+car_1.drive()
+```
 
 # Python - Module
 Module(模塊)，是一個Python文件，以`.py`結尾。
@@ -27,7 +99,6 @@ import random as rd
 
 ### 基本語法 from
 ```python
-
 from module_name import module_name|function_name [as 別名]
 
 from random import *
@@ -41,8 +112,8 @@ from random import randint as rINT
 - datetime：用於處理日期和時間
 - json：專門用來處理 JSON 格式資料
 
-# 常用Module - time
-time module 該模塊提供了各種與時間相關的函數。
+## 常用Module - datetime
+datetime module 該模塊提供了各種與時間相關的函數。
 
 時間表示方法：時間戳( TimeStamp )
 
@@ -79,41 +150,47 @@ time module 該模塊提供了各種與時間相關的函數。
 > https://zh.wikipedia.org/zh-hant/2038%E5%B9%B4%E9%97%AE%E9%A2%98
 
 
-## 常用Module - time
-- 取得目前時間戳：time( )
-- 把時間戳轉換為 str : ctime( )
-- 把時間戳轉換為 Time Structure : gmtime( )
-- 把 Time Structure 轉換為指定時間：strftime( 時間標記格式 )
-- 把 str 轉為 Time Structure：strptime(string, 時間標記格式 )
+## 常用Module - datetime
 
 ```python
-import time as T
+# 引入 datetime
+from datetime import datetime
 
-# 取得 TimeStamp
-timestamp = T.time()
-print(timestamp)
+# 取得目前日期時間
+t_now = datetime.now()
+t_now_s = datetim.now().timestamp()
+print(t_now)
+print(t_now_s)
 
-# 把時間戳轉換為 string
-time_str = T.ctime(timestamp)
-print(time_str)
-print(type(time_str))
+# 把目前時間轉為Timestamp
+t_now_stamp = datetime.timestamp(t_now)
+print(t_now_stamp)
 
-# 取得gmt+0時間的 time struct 格式時間戳
-struct_time = T.gmtime(timestamp)
-print(struct_time)
+# 把TimeStamp轉為datatime
+t_now_Fstamp = datetime.fromtimestamp(t_now_stamp)
+print(t_now_Fstamp)
 
-# 取得本地時間的 time struct 格式時間戳
-struct_time_local = T.localtime(timestamp)
+# 手動定義初始時間
+date1 = datetime(2024, 5, 26, 10, 30, 0)  
+date2 = datetime(2024, 5, 28, 15, 45, 30)  
 
-# 格式化時間
-# Time Structure -> String
-format_time = T.strftime("%Y-%m-%d %I:%M:%S", struct_time_local)
-print(format_time)
+# 計算差值，提供返回值timedelta格式
+time_diff = date2 - date1
+print(time_diff)
+print(time_diff.days)
+print(time_diff.seconds)
 
-# String -> Time Structure
-str_time = "2024-01-01"
-tr_time = T.strptime(str_time, "%Y-%m-%d")
-print(tr_time)
+# 格式化時間 datetime To String
+str_time = t_now.strftime("%Y年%m月%d日, %H時%M分%S秒")
+print(str_time)
+print(type(str_time))
+
+# 格式化時間 String To datetime
+dateString = "2024-05-28, 14:59:00"
+c_time = datetime.strptime(dateString, "%Y-%m-%d, %H:%M:%S")
+print(ctime)
+print(type(ctime))
+
 ```
     
 ## 格式化日期
