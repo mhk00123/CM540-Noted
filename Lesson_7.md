@@ -167,7 +167,7 @@ from datetime import datetime
 
 # 取得目前日期時間
 t_now = datetime.now()
-t_now_s = datetim.now().timestamp()
+t_now_s = datetime.now().timestamp()
 print(t_now)
 print(t_now_s)
 
