@@ -5,75 +5,16 @@
 pip、API、爬蟲入門
 
 ## Slide
-課件：[https://tinyurl.com/3n4rzdbw](https://tinyurl.com/3n4rzdbw)
+課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
 
 ## 作業
 [https://hamster.cpttm.org.mo/spaces/b9MtZ3OS9YTeHky61Aq-Eg/upload
 ](https://hamster.cpttm.org.mo/spaces/b9MtZ3OS9YTeHky61Aq-Eg/upload
 )
-1. 取得簡單新聞
+
+取得簡單新聞
 給定天氣API，取得目前天氣，並輸出。
 嘗試尋找其他 API / 網站，看看使用相同方法能否成功取得你想要的資料
-
-2. 完成 21 點遊戲 Final  
-
-
-## 資料補充 - 文件輸入/輸出流
-在Python中，我們可以透過文件輸入/輸出流open() 處理文件的新增/修改
-基礎用法
-```python
-f = open("文件名", "打開方式")
-
-f = open("demofile.txt", "w")
-```
-有四種打開文件的不同方法（模式）：
-"r" - 讀取 - 默認值。打開文件進行讀取，如果文件不存在則報錯。
-"a" - 追加 - 打開供追加的文件，如果不存在則創建該文件。
-"w" - 寫入 - 打開文件進行寫入，如果文件不存在則創建該文件。
-"x" - 創建 - 創建指定的文件，如果文件存在則返回錯誤。
-
-### 寫入文件
-```python
-try:
-    my_file = open("demo.txt", "w")
-
-    my_file.write("你好，我叫Leo\n")
-    my_file.write("現在是 CM540 課程 \n")
-
-    my_file.close()
-
-except Exception as E:
-    print(E)
-```
-
-### 讀取文件
-使用 read() 和 readline()
-```python
-try:
-    my_file = open("demo.txt", "r")
-   
-    rs = my_file.read()
-    print(rs)
-   
-    rs2 = my_file.readline()
-    print(rs2)
-   
-except Exception as E:
-    print(E)
-```
-
-使用 for 迴圈
-```python
-try:
-    my_file = open("demo.txt", "r")
-
-    for i in my_file:
-        print(i)
-   
-except Exception as E:
-    print(E)
-```
-
 
 
 # 第三方Module下載 - pip
@@ -109,7 +50,7 @@ pip 是 Python 2.7.9 版本及其後續版本的標准組件，也是 Python 3.4
 - pandas
 - numpy
 - Matplotlib
-- untangle
+- xmltodict
 
 ### 請使用cmd命令全部安裝
 ```bash
@@ -123,7 +64,7 @@ pip install numpy
 
 pip install Matplotlib
 
-pip install untangle
+pip install xmltodict
 ```
 
 # 進入爬蟲世界 - 認識網頁
@@ -132,7 +73,7 @@ pip install untangle
 
 ## 網頁如何呈現到你的電腦
 當我們在瀏覽器中輸入一個網址後回車，後台會發生什麼？
-比如說你輸入 http://google.com/，你就會看到Google的首頁。
+比如說你輸入 http://google.com/ 你就會看到Google的首頁。
 簡單來說這段過程發生了以下四個步驟：
 1. 查找域名對應的IP地址(DNS)
 2. 向IP對應的服務器(Server)發送請求(Request)
