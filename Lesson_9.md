@@ -3,61 +3,15 @@
 **tags: `python`** **`CM-540`** **`Lesson9`**
 
 ## Slide
-課件：[https://tinyurl.com/atnuxps7](https://tinyurl.com/atnuxps7)
+課件：[https://docs.google.com/presentation/d/1KNGlC-_waAO3HGziN4mOu7OJjdbq8Bt8_ZQ6kA37GTA/edit?usp=sharing](https://docs.google.com/presentation/d/1KNGlC-_waAO3HGziN4mOu7OJjdbq8Bt8_ZQ6kA37GTA/edit?usp=sharing)
 
-## 作業5
-1. 完成 21 點遊戲 Final
-2. 取得簡單天氣，給定天氣API，取得目前天氣，並輸出。
-
-天氣API : [https://xml.smg.gov.mo/c_actual_brief.xml](https://xml.smg.gov.mo/c_actual_brief.xml)
-
-繳交：[https://tinyurl.com/5du9az6t](https://tinyurl.com/5du9az6t)
-
-
-## 作業6 - Final Project
+## 作業 - Final Project
 自己思考一個題目，任何類型
 - 小算盤?
 - 待辦行事記錄?
 - 資料分析? 停車場車位一些應用?
 - 自動檢查退休基金價格?
 - 檢查政府工什麼時候開考?
-
-## (補充)Pass by value and pass by reference
-傳值(Value)、還是傳址(Address)的問題。
-
-## 傳址(by reference)
-在Python中，任何儲存容器的資料類型，在進行參數傳遞時為傳址(Address)即 function 中的修改，會直接改變原資料。
-
-## 傳值(by value)
-而其他int、float等為傳值(Value)，只是把值放到參數中，function 不能改變原資料。
-
-## 示意圖
-
-![Img](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
-
-```python
-def test_value_ref(a, b):
-    a = a.append(4)
-    b = b + 1
-
-a_list = [1,2,3]
-b_int = 1
-
-print("執行function前")
-print(a_list)
-print(b_int)
-print("--------")
-
-test_value_ref(a_list, b_int)
-
-print("執行function後")
-print(a_list)
-print(b_int)
-print("--------")
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161653002.png)
-
 
 # 爬取資料的思路
 1. 取得資料(**下載、API**)
@@ -71,119 +25,119 @@ print("--------")
 - HTML: 主要用於「創建和呈現」網頁。
 - xml、json：是傳輸和儲存數據，以及在不同的系統或網站之間共享數據。 它提供了一種通用的標記語言，可用於創建「自定義」的標籤和結構，用於描述各種類型的數據資料。
 
-## HTML
-超文本標記語言、HTML 使用「標記」（markup）來詮釋文字、圖像、或是其他能在瀏覽器裡面顯示的內容。
-html以一對「標記」的方式去分不同的元素。
-例如：
-```html
-<body> 內容 </body>
-```
-
-而在一對標記中，又可以再包含另外幾組不同的標記
-```html
-<body>
-   <p>你好</p>
-   <p>這里是CM540</p>
-</body>
-```
-
-## HTML架構
-```html
-<html>
-	<header>頭部內容</header>
-
-    <body>
-        <p>你好</p>
-        <p>這里是CM540</p>
-    </body>
-
-    <footer>尾部內容</footer>
-</html>
-```
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161656929.png)
-
-## 取得HTML元素的重點
-Python中無法直接讀取 html 結構資料，因此需進行轉換。
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161658745.png)
-
-如我想取得` <p></p>`中的`你好`
-
-剛我們把html結構轉為`dict`結構、以`data`作變數名儲存
-```python
-data["html"]["body"]["p"]
-```
-
-假如是一個另一種套件(可能)
-```python
-data.html.body.p
-```
-
-## XML
-與HTML相同，XML也採用標記方式記錄資料格式，而不同的是XML主要用於存放數據。
-
-```xml
-<data>
-	<Weather>
-	<Temperature>
-		Value：25
-		Unit：°C
-	</Temperature>
-	</Weather>
-</data>
-```
 
 ## Json / XML  Parser
 實際上，Json檔案一般為程式查看，所以資料呈現上是不友好的。但我們可以透過一些簡單的工具為我們美化這些 json / XML 資料。
-- json Parser : http://json.parser.online.fr/
-- Python Dictionary：https://codebeautify.org/python-formatter-beautifier
+- Python Dictionary : http://json.parser.online.fr/
+- json Parser：https://codebeautify.org/python-formatter-beautifier
 
-# 取得XML元素
-在Python中無法直接讀取XML結構，我們透過xmltodict把xml轉換為dict格式。
+## 需要認證的 API
+目前我們所遇到的API，一般都是可以直接發送 request 得到 response。因為這些 API 都沒有經過加密，因此我們才可以輕易取得資料。
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161701378.png)
+而實際上，有更多的API是需要透過認證才可以取得資料的。這組 key : value 正是驗證所需要的資料，我們需要在發送 requests 時附帶這組參數在 header(表頭) 中
 
-如我想取得目前的溫度
-把資料轉換至一個`dict`、以`data`作變數名儲存
-```Python
-data["Weather"]["Temperature"]["value"]
+
+### 交通事務局 API 
+APP Link : [https://data.gov.mo/Detail?id=ea50a770-cc35-47cc-a3ba-7f60092d4bc4](https://data.gov.mo/Detail?id=ea50a770-cc35-47cc-a3ba-7f60092d4bc4)
+
+API Link : `https://dsat.apigateway.data.gov.mo/car_park_maintance`
+
+調用 API 參數，這組 key : value 正是驗證所需要的資料，我們需要在發送 requests 時附帶這組參數在 header(表頭) 中
+```
+'Authorization'：'APPCODE 09d43a591fba407fb862412970667de4'
 ```
 
-## 練習
-### 由 smg.gov 公開數據平台取得當前天氣
-1. 使用 requests 向 smg.gov API 取得資料
-2. 判斷回傳資料的格式：xml
-3. 用對應的Module（xmltodict）把資料格式通通轉為dict
-4. 透過 for 迴圈讀取所有相關數據
-5. 透過不同判斷、拿出需要的資料
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406032218011.png)
+
+## Postman - 用作測試 API 的工具
+Postman 為一個測試 API request、response的工具，可以網站、API、伺服器等發送 requests 並附帶各種參數。
+
+[https://www.postman.com/](https://www.postman.com/)
+
+使用 Google 即可登入使用 web 版，或可以下載使用。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406032226936.png)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406032226661.png)
+
+## Requests 中加入 header
+
+透過 payload 變數加入所需的認證參數，以 dict 型式記錄
+在 requests 的參數中加入 headers
 
 ```python
 import requests
+
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
+
+payload = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+
+response = requests.get(url, headers = payload)
+```
+
+## 取得交通事務局中的資料
+```python
+import requests
 import xmltodict
-import time 
+import json
+ 
+# 1. 目標 url
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
+ 
+# 2. Header
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+ 
+# 3. 向目標發送請求(request)
+response = requests.get(url, headers=headers)
+ 
+# 4. 讀取 response 並進行 utf-8 decode
+xml_data = response.content.decode("utf-8")
+ 
+# 5. 透過 xmltodict 把 xml 轉換為 dict
+data_dict = xmltodict.parse(xml_data)
+ 
+# 6. 尋找 target 標籤
+target_data = data_dict['CarPark']['Car_park_info']
+print(target_data)
+
+# 7. 輸出到 txt 方便放到 pareser中
+with open("data.txt", "w", encoding="utf-8") as myfile:
+    write_data = json.dumps(data_dict, ensure_ascii=False)
+    myfile.write(write_data)
+```
+
+## 練習：尋找目前澳門沒有電單車車位的停車場
+```python
+import requests
+import xmltodict
 
 # 1. 目標 url
-url = "https://xml.smg.gov.mo/c_actual_brief.xml"
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
 
-# 2. 向目標發送請求(request)
-response = requests.get(url)
+# 2. Header
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
 
-# 3. 接收回覆(Response)
+# 3. 向目標發送請求(request)
+response = requests.get(url, headers=headers)
+
+# 4. 讀取 response 並進行 utf-8 decode
 xml_data = response.content.decode("utf-8")
 
-# 4. 回覆的格式為.xml
-#    我們使用 xmltodict 套件處理
+# 5. 透過 xmltodict 把 xml 轉換為 dict
 data_dict = xmltodict.parse(xml_data)
 
-# 5. 取得Response中的"溫度"欄位
-g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"][0]["Value"]
+# 6. 尋找 target 標籤
+target_data = data_dict['CarPark']['Car_park_info']
 
-# 6. 取得目前時間
-timestamp = time.time()
-struct_time_local = time.localtime(timestamp)
-format_time = time.strftime("%Y-%m-%d %I:%M", struct_time_local)
-
-print(f"現在是 {format_time}，溫度是：{g_temperature}度")
+for i in target_data:
+    if(i["@MB_CNT"] == "" or i["@MB_CNT"] == "0"):
+        print(f'{i["@name"]} - 沒有電單車停車場')
 ```
 
 ## json
@@ -206,52 +160,60 @@ json 格式以 `{ }` 作為開始，如有新一層也是以`{ }`分開並加上
 }
 ```
 
-## Python中讀取json
+## Python中讀取json、輸出json
+
 Python 自帶讀取json格式的module：`json`
+
+- 讀取 (loads)、轉換成 `json` 格式
+- 輸出 (dumps)、由 `json` 轉換為 `string`
 ```python
 import json
 
 file = open('test.json', encoding='utf-8')
 
-data = json.load(file)
+data = json.loads(file)
+
+dump_data = json.dumps(data)
+
+with open("data.txt", "w",encoding="utf-8") as my_file:
+    # json中含有utf-8的操作
+    write_data = json.dumps(dump_data, ensure_ascii=False)
+    my_file.write(write_data)
 ```
 
-# 堂上練習
-香港城巴站點資訊API:
+## 民航局-澳門國際機場航班時間表 API 
+[https://data.gov.mo/Detail?id=ea50a770-cc35-47cc-a3ba-7f60092d4bc4](https://data.gov.mo/Detail?id=ea50a770-cc35-47cc-a3ba-7f60092d4bc4)
 
-https://rt.data.gov.hk/v2/transport/citybus/route/ctb
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406032302183.png)
 
-找出所有終點站為 ”堅尼地城” 的巴士路線
 
-## laod json 功能
+# 練習 - 尋找所有目的地為北京的航班
 ```python
-import os
+import requests
+import xmltodict
 import json
 
-def load_json(json_data_list, file_path):
-    file = open(file_path, encoding='utf-8')
-    json_data = json.load(file)
-    json_data_list.append(json_data)
-    
-folder_path = '此處請換成您的path'
-file_list = os.listdir(folder_path)
+# 1. 目標 url
+url = "https://aacm.apigateway.data.gov.mo/api/open/listFlightTimetable"
 
-json_files = []
-json_files_list = []
+# 2. Header
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
 
-print(file_list)
+# 3. 向目標發送請求(request)
+response = requests.get(url, headers=headers)
 
-for file_name in file_list:
-    file_path = os.path.join(folder_path, file_name)
-    
-    # 檢查副檔名為 .json
-    if os.path.isfile(file_path) and file_name.endswith('.json'):
-        json_files.append(file_path)
+print(response)
 
-for file_address in json_files:
-    load_json(json_files_list, file_address)
-    
-print(json_files_list)
+# 4. 讀取 response 並進行 utf-8 decode
+# 使用 loads
+json_data = json.loads(response.content)
+
+# 5. 尋找目的地為北京的 Beijing 的所有航空
+for i in json_data:
+    if("Beijin" in i['destination']):
+        print(f"{i['airline']} - {i['weekDay']}，航行周期：{i['periodStartDate']} 至 {i['periodEndDate']}")
 ```
 
 
