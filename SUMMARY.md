@@ -9,6 +9,7 @@
 * [Lesson 6 - 儲存容器 - Dictionary、錯誤捕捉](Lesson\_6.md)
 * [Lesson 7 - OOP、Module(time、os)、輸入流輸出流、pip](Lesson\_7.md)
 * [Lesson 8 - pip、API、爬蟲入門](Lesson\_8.md)
+* [Lesson 9 - API、爬蟲](Lesson\_9.md)
 * #########
 * [Lesson 3 - 作業答案](Lesson\_3\_Homework.md) 
 * [Lesson 5 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
