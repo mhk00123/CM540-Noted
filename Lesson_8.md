@@ -7,11 +7,9 @@ pip、API、爬蟲入門
 ## Slide
 課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
 
-
 取得簡單新聞
 給定天氣API，取得目前天氣，並輸出。
 嘗試尋找其他 API / 網站，看看使用相同方法能否成功取得你想要的資料
-
 
 # 第三方Module下載 - pip
 pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
