@@ -3,7 +3,7 @@
 **tags: `python`** **`CM-540`** **`Lesson10`**
 
 # Slide
-課件：[https://tinyurl.com/bdd9s85t](https://tinyurl.com/bdd9s85t)
+課件：[https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing](https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing)
 
 # 爬取 TDM 新聞
 TDM 新聞提供 API 我們可以直接調用。
