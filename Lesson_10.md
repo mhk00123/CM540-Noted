@@ -325,10 +325,11 @@ df.loc[(df["age"] > 20) & (df["work"] == "設計師")]
 
 ## Pandas raed()功能
 Pandas 提供強大的read功能：
-- json
-- xml
-- csv
-- xlsx
+- json : `pd.raed_json()`
+- xml : `pd.raed_xml()`
+- csv : `pd.raed_csv()`
+- xlsx : `pd.raed_xlsx()`
+
 以上這些檔案都可以被 pandas直接讀取並轉換為DataFrame格式
 
 ## 讀取交通事務局停車場資訊
