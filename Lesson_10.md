@@ -356,7 +356,7 @@ df
 # 判斷
 df["MB_CNT"].isnull()
 
-# 定否
+# 定位
 df[df["MB_CNT"].isnull()]
 ```
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406071625416.png)
