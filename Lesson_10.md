@@ -5,6 +5,11 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing](https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing)
 
+# Final Project
+繳交：[https://hamster.cpttm.org.mo/spaces/NCUIE40Tcbd1LcgcdqUUsw/upload](https://hamster.cpttm.org.mo/spaces/NCUIE40Tcbd1LcgcdqUUsw/upload)
+
+Deadline：2024-06-21 23:59
+
 # 爬取 TDM 新聞
 TDM 新聞提供 API 我們可以直接調用。
 > https://www.tdm.com.mo/api/v1.0/news?IsShowSevenDay=true&Type=image&Date={日期}&Lang=zh
