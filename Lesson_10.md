@@ -229,14 +229,12 @@ df
 ```python 
 df.columns
 ```
-> Index(['apples', 'oranges'], dtype='object')
 
 ### 每一行(row)
 都會有一個index，系統默認為int。可以透過以下方式取得 index 的範圍。
 ```
 df.index
 ```
-> RangeIndex(start=0, stop=4, step=1)
 
 ### 取得整列(直)
 可透過 dataframe[列名]取得
