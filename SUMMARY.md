@@ -13,7 +13,7 @@
 * [Lesson 10 - 爬蟲進階、Pandas介紹](Lesson\_10.md)
 * [Lesson 11 - Panda進階分類、Matplotlib](Lesson\_11.md)
 * #########
-* [Final Project](FinalProject.md)
+* [\*\*\* Final Project \*\*\*](FinalProject.md)
 * [Lesson 3 - 作業答案](Lesson\_3\_Homework.md) 
 * [Lesson 5 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
 * [Lesson 6 - 21點遊戲增強 答案](Lesson\_6\_Homework.md)
