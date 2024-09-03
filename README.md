@@ -10,7 +10,7 @@
 
 ## 作業/考試 繳交
 
-- 命名規則 : `姓名_日期_作業N`
+- 命名規則 : `中文姓名_日期_作業N`
 - 可接受檔案：`.py`、`.ipynb`
 - 壓縮檔：`.zip`、`.7z`
 
@@ -66,12 +66,13 @@
    * 透過 Python 爬取資料
      * `Requests`
      * `Seleium`
-     * `Regular expression` - 正則表達式
-     * 自動化操作
+     * `自動化操作`
+     * Regular expression - 正則表達式
+     
 4. 整理/處理資料：
    * 數據清洗
-     * `Numpy`
      * `Pandas`
+     * Numpy
    * 畫圖
      * `Matplotlib`
 5. 簡單計算機概論、數學知識、演算法、資料結構
