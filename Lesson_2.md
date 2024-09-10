@@ -6,10 +6,10 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing](https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing)
 
-# 作業
-繳交網址：[https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload](https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload)
 
 ## 題目 1： 計算BMI指數
+繳交網址：[https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload](https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload)
+
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 
@@ -23,21 +23,27 @@ $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 
 > 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
 
-## 題目２： 學生成績評級
+## 題目 2： 學生成績評級
+繳交網址：[https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload](https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload)
+
 請寫一個程式，提示使用者輸入 3 個科目的成績，然後根據以下標準進行評級和總評：
 
-科目分數判斷：
+### (1)科目分數判斷：
 - 每個科目的成績範圍為 0 到 100 分。
 - 如果任一科目的成績低於 60 分，則該科目評級為「不及格」。
 
-總評：
-___
+### (2)總評：
 - 如果三個科目的平均成績低於 60 分，則總評為「不及格」。
 - 如果三個科目的平均成績在 60 分（含）以上且小於 70 分，則總評為「及格」。
 - 如果三個科目的平均成績在 70 分（含）以上且小於 80 分，則總評為「中等」。
 - 如果三個科目的平均成績在 80 分（含）以上且小於 90 分，則總評為「優良」。
 - 如果三個科目的平均成績在 90 分（含）以上，則總評為「優秀」。
 
+# 註解
+在 Python 中，我們都可以在程式碼任意位置加上註解，以 `# `號作記號，在註解後方的所有內容，均不會執行。
+```python
+# 我是註解
+```
 
 
 # Python 基本組成
@@ -366,11 +372,22 @@ print(f'{num2}')
 # 12.345  => 6個位元
 # 456.789 => 7個位元
 
-print(f'{num1:7}')
-print(f'{num2:7}')
+print(f'{num1:15}')
+print(f'{num2:15}')
 ```
 
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216877.png)
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101644634.png)
+
+#### 靠左對齊
+```python
+num1 = 12.345 
+num2 = 456.789
+print(f'{num1:<15}')
+print(f'{num2:15}')
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101647014.png)
+
 
 **補0**
 
