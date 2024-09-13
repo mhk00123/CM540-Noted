@@ -9,11 +9,11 @@
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
 # 作業
-繳交截止：5月17日23:59
-
-繳交網址：[https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload](https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload)
+繳交截止：9月17日23:59
 
 ## 題目 1： 計算BMI指數
+繳交網址：[https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload](https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload)
+
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 
@@ -26,6 +26,8 @@ $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 | 大於等於 30 | 肥胖 |
 
 ### 題目 2： 超級無敵開口中
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload](https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload)
 
 奬門人節目內的超級無敵開口中， 玩法是電腦隨機抽出一個 1 - 100 之間的號碼作為幸運號碼，參加者輪流說出一個數字，電腦會根據答案和參加者的數字，將可選範圍縮窄，直到最後幸運號碼被估中為止。
 
@@ -45,10 +47,32 @@ print(lucky_num)
 
 ### 題目 3： 三角型的9x9乘法表
 
+繳交網址：[https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload](https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload)
+
 請嘗試以迴圈輸出：
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110049230.png)
 
+
+# 運算子
+| 運算符 | 描述 |
+| :--: | :--: |
+| `**` | 次方 3**4 = 3 x 3 x 3 x 3 = 81 |
+| `*` `/` `%` | 乘、除、取餘數 |
+| `+` `-` | 加、减 |
+| `<=` `<` `>` `>=` | 小於等於、小於、大於、大於等於 |
+| `+` `-` | 加、减 |
+| `==` `!=` | 等於、不等於 |
+| `is`  `is not` |  |
+| `in` `not in` |  |
+| `not` `or` `and` | |
+
+# 邏輯判斷
+迄今為止，我們寫的Python代碼都是一條一條語句順序執行，這種代碼結構通常稱之為順序結構。
+
+然而僅有順序結構並不能解決所有的問題，比如我們設計一個游戲，游戲第一關的通關條件是玩家獲得1000分，那麼在完成本局游戲後，我們要根據玩家得到分數來決定究竟是進入第二關，還是告訴玩家“Game Over”，這裡就會產生兩個分支，而且這兩個分支只有一個會被執行。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402262114223.png)
 
 ## and(與)、or(或)、xor(非)
 - and : 需要同時為True，才是True
@@ -57,10 +81,196 @@ print(lucky_num)
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
 
+## 流程控制
+流程控制是學習python的重點之一，所謂流程控制是代表當有多行的程式碼時，我們可以有效的控制程式應該執行的順序和方向，先前章節的程式是由上而下一行一行執行，當學會流程控制後，程式執行將更有變化性。
 
-# 循環/迴圈結構
+### 單向選擇 (if)
+使用方法
+```python
+if(條件): 
+    若成立則執行語句
+```
 
-## 應用場景
+``` python
+a = 15
+b = 1
+
+if(a > b): 
+    print("a 大於 b")
+```
+
+### 雙向選擇 (if、else)
+使用方法
+```python
+if(條件): 
+    若成立則執行語句
+else:
+    若條件不成立則執行語句
+```
+
+``` python
+a = 15
+b = 1
+
+if(a < b): 
+    print("a 小於 b")
+else: 
+    print("a 大於 b")
+```
+
+### 多重選擇 (if、elif、else)
+#### 情況1 : 若條件成立時則跳出 if 
+
+使用方法：
+```python
+if(條件1): 
+    若成立則執行語句
+elif(條件2):
+    若成立則執行語句
+elif(條件3):
+    若成立則執行語句
+.
+.
+.
+else:
+    全部條件都不成立時執行
+```
+
+``` python
+a = 15
+b = 1
+
+if(a < b): 
+    print("a 小於 b")
+elif(a > b): 
+    print("a 大於 b")
+else: 
+    print("a 等於 b")
+```
+
+#### 情況2 : 就算條件成立也不會跳出 if，繼續判斷 
+```python
+if(條件1): 
+    若成立則執行語句
+if(條件2):
+    若成立則執行語句
+if(條件3):
+    若成立則執行語句
+.
+.
+.
+else:
+    全部條件都不成立時執行
+```
+
+``` python
+a = 100
+
+if(a > 0): 
+    print("a 大於 0")
+if(a > 10): 
+    print("a 大於 10")
+if(a > 99):  
+    print("a 大於 99")
+if(a > 100):   
+    print("a 大於 100")
+```
+## 嵌套分支
+當然根據實際開發的需要，分支結構是可以嵌套作多重。
+```python
+if(條件1): 
+    if(條件2):
+    若成立則執行語句
+    else:
+    若條件2不成立則執行語句
+
+else:
+    全部條件都不成立時執行
+```
+
+Python支持多種運算符，下表大致按照優先級從高到低的順序列出了所有的運算符，運算符的優先級指的是多個運算符同時出現時，先做什麼運算然後再做什麼運算。除了我們之前已經用過的賦值運算符和算術運算符，我們稍後會陸續講到其他運算符的使用。
+
+## 練習1
+請用戶輸入一個整數數字，判斷屬於正數、負數、還是0 ?
+
+### 思路
+1. 令用戶輸入一個數字
+2. 轉換輸入為 int
+3. 判斷該數字是否等於 0
+- 是：輸出 "輸入的是0"
+- 不是：
+-- 大於 0 : 輸出"正數"
+-- 小於 0 : 輸出"負數"
+
+```python
+user_input = int(input("請輸入一個整數"))
+
+if(user_input == 0):
+    print("你輸入的是0")
+
+else:
+    if(user_input > 0):
+        print("你輸入的是正數")
+    
+    else:
+        print("你輸入的是負數")
+```
+
+## 練習2
+用戶驗證：請用戶輸入管理員的Username、Password，判斷是否管理員帳戶登入
+- 若成功顯示"成功登入"
+- 若用戶名錯誤、則顯示”用戶名錯誤”
+- 若用戶名正確，密碼錯，則顯示”密碼錯誤”
+- 若不是則輸出"登入失敗"
+
+管理員帳戶密碼：
+Username : admin
+Password : admin12345
+
+### 思路
+1. 定義正確的登入帳號、密碼
+2. 由用戶輸入帳號、密碼
+3. 確定輸入為 String 
+4. 判斷
+- (帳號是否與預設帳號相同) 且 (密碼是否與預設帳號密碼) 
+-- 條件1 : 帳號密碼正確：登入成功
+-- 條件2 : 帳號錯誤 : "用戶名錯誤"
+-- 條件2 : 帳號正確、密碼錯誤 : "密碼錯誤"
+- 否：
+-- "登入失敗"
+
+```python
+# 1. 定義正確的登入帳號、密碼
+admin_username = "Admin"
+admin_password = "Admin12345"
+
+# 2、3. 由用戶輸入帳號、密碼
+# 由於使用 input() 得到的值類型一定是 String，因此不需要進行強轉
+input_username = input("請輸入用戶名：")
+input_password = input("請輸入密碼：")
+
+# 4. 判斷
+
+# 4.1 若成功顯示"成功登入"
+if((input_username == admin_username) and (input_password == admin_password)):
+    print("登入成功")
+    
+# 4.2 若用戶名錯誤、則顯示”用戶名錯誤”
+elif((input_username != admin_username)):
+    print("用戶名錯誤")
+
+# 4.3 若用戶名正確，密碼錯，則顯示”密碼錯誤”
+elif((input_username == admin_username) and (input_password != admin_password)):
+    print("密碼錯誤")
+
+# 4.4 若不是則輸出"登入失敗"
+else:
+    print("登入失敗")
+```
+
+
+# 循環結構
+### 應用場景
 
 我們在寫程序的時候，一定會遇到需要重復執行某條或某些指令的場景。例如要實現每隔1秒中在屏幕上打印一次“hello, world”並持續打印一個小時，我們肯定不能夠直接把print('hello, world')這句代碼寫3600遍，這裡同樣需要循環結構。
 
@@ -119,7 +329,7 @@ while(條件):
 ```python
 count = 1
 
-while(count < 101): # 條件為 count < 101時"執行"
+while(count < 11): # 條件為 count < 10時"執行"
     print(f"Now, count = {count}")
     count = count - 1 # count 這個變數會永遠 < 1，因此迴圈永遠不會終結
 ```
