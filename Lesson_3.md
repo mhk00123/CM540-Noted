@@ -25,7 +25,7 @@ $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 | 25 到 29.9 | 超重 | 
 | 大於等於 30 | 肥胖 |
 
-### 題目 2： 超級無敵開口中
+## 題目 2： 超級無敵開口中
 
 繳交網址：[https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload](https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload)
 
@@ -45,7 +45,7 @@ lucky_num = random.randint(1, 100)
 print(lucky_num)
 ```
 
-### 題目 3： 三角型的9x9乘法表
+## 題目 3： 三角型的9x9乘法表
 
 繳交網址：[https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload](https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload)
 
