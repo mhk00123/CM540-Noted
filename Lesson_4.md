@@ -4,23 +4,146 @@
 
 函數/方法、儲存容器
 
-## Slide
+# Slide
 
 課件：[https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
-## 功課
+# 功課
 繳交日期：5月21日 23:59
 
 繳交地址：[https://hamster.cpttm.org.mo/spaces/iq6p9gyGRVKhILxUoAeyhg/upload](https://hamster.cpttm.org.mo/spaces/iq6p9gyGRVKhILxUoAeyhg/upload)
 
-### 題目：
-輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
+## 題目：
+輸入 N 個數字，輸入`bye`時結束，按順序輸入到表(List)中。
 - 輸出列表
 - 輸出用戶共輸入了多少個數字
 - 排列整組數據( 按小到大 )
 - 排列整組數據( 按大到小 )
-- 最小的數、最大的數
+- 找出輸入數據中最小的數、最大的數
 - 此組數據的平均值
+
+# for-in 循環/迴圈
+
+除了 While 迴圈外，For 迴圈也是在Python中十分常用的。兩者本質意義上十分相似，作用都是重覆執行語句。
+
+但實際上還是有一些區別：
+
+* While 循環條件是由我們定義，滿足一定條件下迴圈便會繼續執行
+* For 循環是一種”遍歷”機制，用於遍歷`可迭代對象(iterable)`，例如`列表(list)`、`字串(string)`、`元組(tuple)`等。迴圈將依序處理可迭代對象中的每個元素，直到所有元素都被處理完畢。
+
+如果明確知道**循環執行的次數**或者要對一個容器進行迭代，那麼我們推薦使用`for迴圈`。
+
+### for迴圈 結構
+
+```python
+for 臨時變數 in 可迭代對象:
+    執行語句
+```
+
+* 臨時變數用於存放每一個可迭代對象
+* 較常用於 for 迴圈的可迭代對象 - range()
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110040045.png)
+
+#### range(start, stop, step)
+
+範圍可以透過`range()`函數生成，可以接收3個參數(start, stop, step)，取頭不取尾：
+
+```python
+# 基本用法
+range(10)    # 0,1,2,3,4,5,6,7,8,9
+range(1, 10) # 1,2,3,4,5,6,7,8,9
+
+# 加上step
+range(0, 10, 2) # 0,2,4,6,8 
+range(0, 10, 3) # 0,3,6,9
+
+# 負數
+range(0, -10) # 錯誤，range默認只會累加
+range(0, -10, -1) # 0,-1,-2,-3...-9
+```
+
+## 練習1：輸出 1-100
+
+```python
+for i in range(1,101): 
+    print(f"{i:3}")
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280207309.png)
+
+## 練習2：統計
+
+定義一個內容：`Today is monday, I go to school by bus.` 統計一下有幾個字母 ”o” ?
+
+```python
+temp_str = "Today is monday, I go to school by bus."
+
+count = 0
+
+for i in temp_str:
+    if(i == "o"):
+        count = count + 1
+        
+print(count)
+```
+
+## 練習3：9x9 乘法表
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110044234.png)
+
+```python
+i = 1
+while (i <= 9):
+    j = 1
+    while (j <= 9):
+        result = i * j
+        print(f"{i}x{j}={result:<3}",end=" ")
+        j = j + 1
+    print()
+    i = i + 1
+```
+
+# 迴圈 - 跳過某一步 (continue)
+
+在迴圈中，我們可能有部份執行語句會因應不同情況而不出現，此時可以用`continue`語句，由檢測到continue關鍵字起跳過本次循環，直接進入下一次循環。
+
+## 輸出 1-10，跳過2,9
+
+```python
+# for 版本
+for i in range(1,11): 
+    if(i==2) or (i==9):
+        continue
+    print(i)
+
+# while 版本
+count = 1
+while(count <= 10):
+    if(count == 2 or count == 9):
+        count = count + 1
+        continue
+    print(count)
+    count = count + 1
+```
+
+# 迴圈 - 跳出迴圈 (break)
+
+**break** 即跳出迴圈的意思，程式當遇到特定條件時，執行 **break** 語句即會跳出迴圈。
+
+## 字串 cptTm，當遇到 `T` 時跳出
+
+```python
+for letter in 'cptTm':
+   if letter == 'T':
+      break
+   print ('當前字母為 :', letter)
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png)
+
+
+
 
 # 儲存容器
 容器的意義：可以容納多份數據、容納的每一份數據可以稱為 1 個元素。
