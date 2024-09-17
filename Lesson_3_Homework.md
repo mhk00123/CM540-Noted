@@ -1,9 +1,5 @@
 #  Lesson3 作業 詳解(共 3 題)
 
-繳交截止：5月17日23:59
-
-繳交網址：[https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload](https://hamster.cpttm.org.mo/spaces/P4-DooqN3wJafULUDdqMKw/upload)
-
 ## 題目 1： 計算BMI指數
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 
@@ -103,7 +99,7 @@ while(True):
     user_input = int(temp)
  
     # 若輸入不正確
-    if( (user_input > max) or (user_input < min) ):
+    if( (user_input < min) or (user_input > max) ):
         print("### 輸入錯誤 ###")
         continue
     
@@ -129,6 +125,43 @@ print("###### End ######")
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110049230.png)
 
+## 思路
+上半部分
+- 當 i = 1 時，j 執行 1 次(由1->1)
+- 當 i = 2 時，j 執行 2 次(由1->2)
+- 當 i = 3 時，j 執行 3 次(由1->3)
+...
+- 當 i = 9 時，j 執行 9 次(由1->9)
+
+下半部分
+- 當 i = 8 時，j 執行 8 次(由1->8)
+- 當 i = 7 時，j 執行 7 次(由1->7)
+- 當 i = 6 時，j 執行 6 次(由1->6)
+- 
+
+### While 迴圈版本
+```python
+i = 1
+while(i <= 9):
+    j = 1
+    while(j <= i):
+        print(f"{i}x{j}={i*j:<3}", end="")
+        j = j + 1
+    print()
+    i = i + 1
+    
+i = 8
+while(i >= 1):
+    j = 1
+    while(j <= i):
+        print(f"{i}x{j}={i*j:<3}", end="")
+        j = j + 1
+    print()
+    i = i - 1
+    
+```
+
+## For 迴圈版本
 ```python
 # 上半部份
 for i in range(1, 10): # 1-9
