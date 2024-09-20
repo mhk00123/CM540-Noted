@@ -8,28 +8,16 @@
 
 課件：[https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
-# 功課
-繳交日期：9月20 23:59
-繳交地址：
+# 堂上練習
 ## 題目：
 輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
 
 1. 輸出列表
 2. 輸出用戶共輸入了多少個數字
-3. 排列整組數據( 按小到大 )
-4. 排列整組數據( 按大到小 )
-5. 最小的數、最大的數
-6. 此組數據的平均值
-
-
-## 題目：
-輸入 N 個數字，輸入`bye`時結束，按順序輸入到表(List)中。
-- 輸出列表
-- 輸出用戶共輸入了多少個數字
-- 排列整組數據( 按小到大 )
-- 排列整組數據( 按大到小 )
-- 找出輸入數據中最小的數、最大的數
-- 此組數據的平均值
+3. 最小的數、最大的數
+4. 此組數據的平均值
+5. 排列整組數據( 按小到大 )
+6. 排列整組數據( 按大到小 )
 
 # for-in 循環/迴圈
 
