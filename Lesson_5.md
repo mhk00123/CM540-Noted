@@ -4,10 +4,10 @@
 
 儲存容器、Function、排序演算法
 
-## Slide
+# Slide
 課件：[https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
-## 功課：21 點遊戲單人版
+# 功課：21 點遊戲單人版
 繳交網址：[https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload](https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload)
 截止日期：2024-09-24
 
@@ -23,8 +23,67 @@
 - 若剛好等於 21 點，贏了，遊戲結束
 - 若大於 21 點，輸了，遊戲結束
 - 輸入 bye 遊戲結束
+- 
+# 練習
+輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
 
+1. 輸出列表
+2. 輸出用戶共輸入了多少個數字
+3. 排列整組數據( 按小到大 )
+4. 排列整組數據( 按大到小 )
+5. 最小的數、最大的數
+6. 此組數據的平均值
+```python
+# 1. 定義 1 個空list
+list_num = []
 
+# 2. 循環輸入
+while(True):
+    temp = input("請輸入數字：") # type:String
+    if(temp == "bye"): # 如果輸入的的為 bye 則跳出迴圈
+        break
+    else:
+        user_input = int(temp)
+        list_num.append(user_input)
+
+# 3.1 輸出列表 
+print(f"列表：{list_num}")
+
+# 3.2 輸出用戶共輸入了多少個數字
+length_list_num = len(list_num)
+print(f"用戶共輸入了 {length_list_num} 個數字")
+
+# 3.3 排列整組數據( 按小到大 )
+temp_1 = list_num
+temp_1.sort()
+print(f"排列整組數據(按小到大)：{temp_1}")
+
+# 3.4 排列整組數據( 按大到小 )
+temp_2 = list_num[::-1]
+print(f"排列整組數據(按大到小)：{temp_2}")
+
+# 3.5 最小的數、最大的數
+min = list_num[0]
+max = list_num[0]
+
+for item in list_num:
+    if(item < min):
+        min = item
+    if(item > max):
+        max = item
+
+print(f"列表中最小的值是：{min}")
+print(f"列表中最大的值是：{max}")
+
+# 3.6 此組數據的平均值
+sum = 0
+for item in list_num:
+    sum = sum + item
+
+avg_list_num = sum / len(list_num)
+
+print(f"此列表的平均值為：{avg_list_num}")
+```
 
 # 一維列表常用的操作 - 排序
 我們可以在列中使用`.sort()`函數進行快速的排序操作。
@@ -55,7 +114,7 @@ cart.sort(reverse=True) #[8,5,3,2,1]
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211506236.png)
 
 
-## len() 
+### len() 
 len() 方法返回對像（字符、列表、元組等）長度或項目個數。
 
 ```python
@@ -68,7 +127,7 @@ len_str1 = len(str1)
 print(len_str1) # 19
 ```
 
-## 練習
+### 練習
 不使用 `len()`，我們嘗試手寫一個出來，並計算以下 3 組 String 的總長度。
 
 ```python
@@ -157,6 +216,13 @@ Pass by value and pass by reference問題，在Python中，任何儲存容器的
 
 ![Img](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
 
+## 作用域
+- 全域變數 : 在整個程式中均有效
+- 局部變數 : 只在該變數處於的區域有效
+- 優先搜索局部變數
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211534155.png)
+
 ```python
 def test_value_ref(a, b):
     a = a.append(4)
@@ -211,14 +277,6 @@ print(add(1,5))
 rs = add(1,5)
 print(rs)
 ```
-
-## 作用域
-- 全域變數 : 在整個程式中均有效
-- 局部變數 : 只在該變數處於的區域有效
-- 優先搜索局部變數
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211534155.png)
-
 
 ## 練習：自製 `len()` 函數
 ```python
@@ -311,9 +369,6 @@ list_ex = [4,6,8,1,32,6,2,4,8,9,11]
 
 print(bubbleSort(list_ex))
 ```
-
-
-
 
 # 堂上練習+功課 : 21 點遊戲單人版
 - 扑克牌(52張)：1 - 13 表示(暫不分開花色)
