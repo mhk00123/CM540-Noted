@@ -8,8 +8,7 @@
 課件：[https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
 ## 功課：21 點遊戲單人版
-繳交網址：[https://hamster.cpttm.org.mo/spaces/LSb6s8Zs460Cej1PsKiOSg/upload](https://hamster.cpttm.org.mo/spaces/LSb6s8Zs460Cej1PsKiOSg/upload)
-
+繳交網址：[https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload](https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload)
 截止日期：2024-09-24
 
 ---
