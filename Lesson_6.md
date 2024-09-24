@@ -14,8 +14,8 @@ Dictionary、錯誤捕捉、21點遊戲
 - 每次取牌後記錄輸出變為：花式+點數
 - 加入判斷：取得J、Q、K時全部定義作10點
 
-
-繳交：[https://hamster.cpttm.org.mo/spaces/8pXvKkGrIQ_zBaw8M4utCw/upload](https://hamster.cpttm.org.mo/spaces/8pXvKkGrIQ_zBaw8M4utCw/upload)
+截止日期：2024-09-29 23:59
+繳交網址：[https://hamster.cpttm.org.mo/spaces/qpH9RAY2Y_TsNkFWm9hu4A/upload](https://hamster.cpttm.org.mo/spaces/qpH9RAY2Y_TsNkFWm9hu4A/upload)
 
 # 什麼時候會使用到 Dictionary(字典) 呢 ?
 Dictionary 是一種較為複雜的資料結構，對於資料的查找很方便。Python中的字典如同現實世界中的字典，包含了一堆`字`，和這個字所指示的含意，每一個`字`即代表`key`，每一個字對應的的解釋，即代表`value`
