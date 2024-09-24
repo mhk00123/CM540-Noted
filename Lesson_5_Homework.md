@@ -19,17 +19,17 @@
 # 每個數字最多 4 隻(list)---
 
 # 生成一個有13個零的列表
-count_card = []
+card_list = []
 for i in range(0,13):
-    count_card.append(int(0))
+    card_list.append(int(0))
 
-# count_card = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# card_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 user_input_list = []
 sum = 0
 
 while(True):
-    print(f"目前已取牌{count_card}")
+    print(f"目前已取牌{card_list}")
     print("##############################################")
     # 每 1 輪人手發牌 - 指定點數
     temp = input("請輸入1-13：")
@@ -46,12 +46,12 @@ while(True):
         continue
     
     ###  輸入正確  ####
-    # 在count_card 中 + 1
-    if(count_card[user_input-1] == 4):
+    # 在card_list 中 + 1
+    if(card_list[user_input-1] == 4):
         print(f"已經沒有 {user_input} 了，再重新選擇！")
         continue
     else:
-        count_card[user_input-1] = count_card[user_input-1] + 1
+        card_list[user_input-1] = card_list[user_input-1] + 1
     
     # 記錄點數
     user_input_list.append(user_input)
