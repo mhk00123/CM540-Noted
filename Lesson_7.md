@@ -88,6 +88,35 @@ car_1 = Cars(“Yellow”, 5)
 car_1.drive()
 ```
 
+## 練習 : 構建學生Student的Object和Class
+每個學生中的資料包含:
+- 中文姓名
+- 英文姓名
+- 性別
+- 學號
+- 年級
+- 並且每個學生中都可以透過 intro() 做一個自我介紹
+
+```python
+class Student:
+    def __init__(self, ch_name, en_name, sex, class_num, grade):
+        self.ch_name = ch_name
+        self.en_name = en_name
+        self.sex = sex
+        self.class_num = class_num
+        self.grade = grade
+    
+    def intro(self):
+        print(f"你好，我名字是{self.ch_name}, 英文名是{self.en_name}")
+        print(f"我是{self.sex}性, 目前就讀{self.grade}年級")
+    
+stu_Leo = Student("尼奧","Leo","男",12345,6)
+
+stu_Leo.intro()
+        
+```
+
+
 # Python - Module
 Module(模塊)，是一個Python文件，以`.py`結尾。
 
@@ -171,34 +200,26 @@ t_now_s = datetime.now().timestamp()
 print(t_now)
 print(t_now_s)
 
-# 把目前時間轉為Timestamp
-t_now_stamp = datetime.timestamp(t_now)
-print(t_now_stamp)
+# 定義要解析的日期字符串
+date_string = "2025-09-27 14:30"
+parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M")
 
-# 把TimeStamp轉為datatime
-t_now_Fstamp = datetime.fromtimestamp(t_now_stamp)
-print(t_now_Fstamp)
+# 計算時間差
+diff_time = parsed_date - now
 
-# 手動定義初始時間
-date1 = datetime(2024, 5, 26, 10, 30, 0)  
-date2 = datetime(2024, 5, 28, 15, 45, 30)  
 
-# 計算差值，提供返回值timedelta格式
-time_diff = date2 - date1
-print(time_diff)
-print(time_diff.days)
-print(time_diff.seconds)
+# 兩個 datetime 對象相減時，得到的是一個 timedelta 對象，這個對象不能直接使用 strftime() 方法
+# 獲取天數和秒數
+days = diff_time.days
+seconds = diff_time.seconds
 
-# 格式化時間 datetime To String
-str_time = t_now.strftime("%Y年%m月%d日, %H時%M分%S秒")
-print(str_time)
-print(type(str_time))
+# 計算小時和分鐘
+hours = seconds // 3600
+minutes = (seconds % 3600) // 60
 
-# 格式化時間 String To datetime
-dateString = "2024-05-28, 14:59:00"
-c_time = datetime.strptime(dateString, "%Y-%m-%d, %H:%M:%S")
-print(ctime)
-print(type(ctime))
+# 格式化為字符串
+result_string = f"時間差: {days}天 {hours}小時 {minutes}分鐘"
+print(result_string)
 
 ```
     
