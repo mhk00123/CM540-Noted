@@ -65,7 +65,7 @@ def play_game():
     
     # 每位玩家初始抽兩張牌
     for player in players:
-        for _ in range(2):
+        for i in range(2):
             player.get_card()
             
     print_card() # 每抽完一次牌都展示牌組
