@@ -47,9 +47,9 @@ days = diff_time.days
 seconds = diff_time.seconds
 
 # 拆開小時、分鐘、秒
-ans_hour = int(diff_time / 3600)
-ans_min = int(diff_time % 3600 / 60)
-ans_sec = int(diff_time % 3600 % 60)
+ans_hour = int(seconds / 3600)
+ans_min = int(seconds % 3600 / 60)
+ans_sec = int(seconds % 3600 % 60)
 
 # 格式化為字符串
 result_string = f"時間差: {days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒"
