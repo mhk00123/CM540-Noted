@@ -2,12 +2,19 @@
 
 **tags: `python`** **`CM-540`** **`Lesson8`**
 
-pip、API、爬蟲入門
+Module、pip、API、爬蟲入門
 
 ## Slide
 課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
 
-取得簡單新聞
+# 功課
+## 21 點遊戲增強(final)
+- 嘗試重構程式
+- 2人玩家 Dealer、Player (生成1個Class - 創建2實體p1,p2, 參數 )
+- 每一步取牌後輸出當時時間 (*)
+- 把整個遊戲過程輸出到txt中作記錄 (*)
+
+## 取得簡單新聞
 給定天氣API，取得目前天氣，並輸出。
 嘗試尋找其他 API / 網站，看看使用相同方法能否成功取得你想要的資料
 
