@@ -213,12 +213,13 @@ diff_time = parsed_date - now
 days = diff_time.days
 seconds = diff_time.seconds
 
-# 計算小時和分鐘
-hours = seconds // 3600
-minutes = (seconds % 3600) // 60
+# 拆開小時、分鐘、秒
+ans_hour = int(diff_time / 3600)
+ans_min = int(diff_time % 3600 / 60)
+ans_sec = int(diff_time % 3600 % 60)
 
 # 格式化為字符串
-result_string = f"時間差: {days}天 {hours}小時 {minutes}分鐘"
+result_string = f"時間差: {days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒"
 print(result_string)
 
 ```
@@ -248,6 +249,54 @@ print(result_string)
 | %p | 本地am或者pm的識別字 |
 | %j | 一年中的第幾天（001 - 366） |
 
+## 練習
+請計算現在距離 2024年10月4日21:45 還有多少小時、分、秒。
+
+```python
+# 請計算現在距離 2024年10月4日21:45 還有多少小時、分、秒。
+
+from datetime import datetime
+
+# 取得目前時間 
+now_time = datetime.now() # datetime格式
+
+# 目標時間
+target_string = "2024-10-15 21:45"
+target_time = datetime.strptime(target_string, "%Y-%m-%d %H:%M") # datetime格式
+
+# 兩日期相減
+time_diff = target_time - now_time
+print(time_diff)
+
+days = time_diff.days
+diff_seconds = time_diff.seconds
+
+print(f"{days} {diff_seconds}")
+
+ans_hour = int(diff_seconds / 3600)
+ans_min = int(diff_seconds % 3600 / 60)
+ans_sec = int(diff_seconds % 3600 % 60)
+
+print(f"現在距離{target_string}, 還有{days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒")
+```
+
+## 補充常用時間函數 time.sleep()
+若我們要程式等待一定時間後再執行下一步，可以使用`sleep(秒)`這個function
+
+```python
+import time
+from datetime import datetime
+
+now = datetime.now()
+print(now)
+
+time.sleep(2)
+
+now = datetime.now()
+print(now)
+```
+
+
 # 常用Module - os
 - 得到當前的工作目錄的路徑：os.getcwd( )
 - 取得當前工作路徑的文件列表：os.listdir(os.getcwd())
@@ -273,8 +322,29 @@ print(result_string)
 相對路徑 Documents\file.txt 將指向 C:\Users\Username\Documents\file.txt
 
 需要注意的是，相對路徑也可以使用特殊符號來表示路徑關系：
-`.` 表示當前目錄
-`..` 表示上一級目錄
+
+## 絕對路徑、相對路徑表示
+
+請注意，在 python 中，路徑一律用單引號裝 `'path'`
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410041550961.png)
+
+### `/` ：根目錄
+### `./`：當前同級目錄
+### `../` ：上級目錄
+
+```python
+open('檔名1.txt')
+
+open('/data/檔名2.txt')
+
+open('./data/檔名3.txt')
+
+open('../data/檔名4.txt')
+
+open('C:\\user\\檔名5.txt')
+```
+
 
 ## 資料補充 - 文件輸入/輸出流
 在Python中，我們可以透過文件輸入/輸出流open() 處理文件的新增/修改
@@ -331,6 +401,33 @@ try:
 except Exception as E:
     print(E)
 ```
+
+## 練習
+嘗試每2秒輸出現在的時間(共5次)，記錄在 time_record.txt 中
+
+Ex : 
+2024年10月4日 20:00:02
+2024年10月4日 20:00:04
+2024年10月4日 20:00:06
+2024年10月4日 20:00:08
+2024年10月4日 20:00:10
+
+```python
+import time
+from datetime import datetime
+
+for i in range(5):
+    now = datetime.now()
+    now = now.strftime("%Y%m%d %H:%M:%S") #格式化日期
+    try:
+        myfile = open("date_record2.txt","a")
+        myfile.write(f"{str(now)}\n")
+    except Exception as E:
+        print(E)
+        
+    time.sleep(2)
+```
+
 
 # 第三方Module下載 - pip
 pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
