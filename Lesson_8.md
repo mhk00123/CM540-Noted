@@ -2,7 +2,7 @@
 
 **tags: `python`** **`CM-540`** **`Lesson8`**
 
-Module、pip、API、爬蟲入門
+Datetime Module、pip、API、爬蟲入門
 
 ## Slide
 課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
