@@ -140,8 +140,8 @@ print(f"現在是 {g_time}，溫度是：{g_temperature}度")
 
 ## Json / XML  Parser
 實際上，Json檔案一般為程式查看，所以資料呈現上是不友好的。但我們可以透過一些簡單的工具為我們美化這些 json / XML 資料。
-- Python Dictionary : http://json.parser.online.fr/
-- json Parser：https://codebeautify.org/python-formatter-beautifier
+- Python Dictionary : [http://json.parser.online.fr/](http://json.parser.online.fr/)
+- json Parser：[https://codebeautify.org/python-formatter-beautifier](https://codebeautify.org/python-formatter-beautifier)
 
 ## 需要認證的 API
 目前我們所遇到的API，一般都是可以直接發送 request 得到 response。因為這些 API 都沒有經過加密，因此我們才可以輕易取得資料。
