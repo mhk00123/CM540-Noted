@@ -30,15 +30,17 @@
 「HyperText Transfer Protocol(HTTP) 是⼀種⽤戶端瀏覽器和伺服端伺服器之間溝通的標準協定，規範了「客⼾端」與「伺服器端」兩者間如何傳輸資料。」
 簡單來說就是：使⽤者端發送一個「Request 請求」，伺服器端根據請求回傳⼀個「Response 回覆」
 
+
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404051613930.png)
+
 
 ## Response 回覆
 Response 由目標伺服器在接收到Request後發出。
 一般回覆會夾帶著Response代碼。其中狀態呈現綠色 200，我們就可以知道這個請求是「成功」的，可以從 response body 找到我們要請求的資料，另外一般常見的狀態碼有：
 
-1. 200 成功回應
-2. 4xx 用戶端錯誤回應 (Ex : 404)
-3. 5xx 伺服器端錯誤
+- `200` 成功回應
+- `4xx` 用戶端錯誤回應 (Ex : 404)
+- `5xx` 伺服器端錯誤
 
 ## 認識HTML
 HTML（HyperText Markup Language，超文本標記語言）是打造網頁的基石。它表述並定義網頁的內容。伴隨 HTML 而來的技術還有描述網頁外觀（CSS）及功能性的程式語言（JavaScript）。
@@ -322,7 +324,6 @@ for i in json_data:
     if("Beijin" in i['destination']):
         print(f"{i['airline']} - {i['weekDay']}，航行周期：{i['periodStartDate']} 至 {i['periodEndDate']}")
 ```
-
 
 ## (補充)如何透過 Python 程式向手機發送通知
 首先，要向自己的手機發送信息是十分困難的!
