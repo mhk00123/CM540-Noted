@@ -93,7 +93,7 @@ API 的全名叫應⽤程式介面（Application Programming Interface），表�
 ```python
 import requests
 import xmltodict
-import time 
+from datetime import datetime
 
 # 1. 目標 url
 url = "https://xml.smg.gov.mo/c_actual_brief.xml"
@@ -107,18 +107,21 @@ xml_data = response.content.decode("utf-8")
 # 4. 回覆的格式為.xml
 #    我們使用 xmltodict 套件處理
 data_dict = xmltodict.parse(xml_data)
-
 print(data_dict)
+
+## 如有需要可以把整個 Dict 輸出為文字
+my_file = open("g_data.txt","w", encoding="UTF-8")
+my_file.write(str(data_dict))
+my_file.close
 
 # 5. 取得Response中的"溫度"欄位
 g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"]["Value"]
 
-# 6. 取得目前時間
-timestamp = time.time()
-struct_time_local = time.localtime(timestamp)
-format_time = time.strftime("%Y-%m-%d %I:%M", struct_time_local)
+# 6. 取得Response中的目前時間
+g_time = data_dict["ActualWeatherBrief"]["Custom"]["ValidFor"]
 
-print(f"現在是 {format_time}，溫度是：{g_temperature}度")
+print()
+print(f"現在是 {g_time}，溫度是：{g_temperature}度")
 ```
 
 
