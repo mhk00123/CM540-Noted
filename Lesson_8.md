@@ -15,12 +15,6 @@ Datetime Module、pip、API、爬蟲入門
 - 每一步取牌後輸出當時時間 (*)
 - 把整個遊戲過程輸出到txt中作記錄 (*)
 
-## 功課：取得API資料
-給定天氣API，取得目前天氣，並輸出。
-嘗試尋找其他 API / 網站，看看使用相同方法能否成功取得你想要的資料
-繳交日期：2024-10-15 23:59
-繳交地址：[https://hamster.cpttm.org.mo/spaces/E_xEKq9Ywg6IK4Du4BlV3g/upload](https://hamster.cpttm.org.mo/spaces/E_xEKq9Ywg6IK4Du4BlV3g/upload)
-
 ## 常用Module - datetime
 
 ```python
