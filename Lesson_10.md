@@ -6,9 +6,9 @@
 課件：[https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing](https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing)
 
 # Final Project
-繳交：[https://hamster.cpttm.org.mo/spaces/NCUIE40Tcbd1LcgcdqUUsw/upload](https://hamster.cpttm.org.mo/spaces/NCUIE40Tcbd1LcgcdqUUsw/upload)
+繳交：[https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload](https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload)
 
-Deadline：2024-06-21 23:59
+Deadline：2024-10-27 23:59
 
 # 爬取 TDM 新聞
 TDM 新聞提供 API 我們可以直接調用。
@@ -20,10 +20,10 @@ import json
 # 1. date_list
 date_list = ["2023-06-01","2023-06-02","2023-06-03","2023-06-04"]
 
-for d in date_list:
+for day in date_list:
 
     # 1. 目標 url
-    url = f"https://www.tdm.com.mo/api/v1.0/news?IsShowSevenDay=true&Type=image&Date={d}&Lang=zh"
+    url = f"https://www.tdm.com.mo/api/v1.0/news?IsShowSevenDay=true&Type=image&Date={day}&Lang=zh"
 
     # 2. 向目標發送請求(request)
     response = requests.get(url)
@@ -38,93 +38,6 @@ for d in date_list:
             print(f'{j["content"]}')
             print("######################")
 ```
-
-
-# 爬取澳門日報 
-## 思路
-1. 取得所有版面的連結 : `page_links[ ]`
-2. 取得每一版面中的所有文章的連結 : `target_links[ ]`
-3. 訪問每一篇文章的連結 - 取得內文
-
-```python
-import requests
-from bs4 import BeautifulSoup
-
-######################### Step 1 : 尋找報紙所有頁面中的 Links ######################### 
-# 1. 目標 url
-url = "http://macaodaily.com/html/2024-06/01/node_2.htm"
-
-# 2. 向目標發送請求(request)
-response = requests.get(url)
-html_data = response.content.decode("utf-8")
-soup = BeautifulSoup(html_data, "html.parser") 
-
-# 3. 找出所有右方table中的link
-
-page_links = []
-tables = soup.find_all(id='pageLink') #定位 id = "pageLink" 的 Table td
-
-for td in tables: # 按照網頁結構，每個Table中也包含 Table，用 For 迴圈處理
-    href = td.get("href")
-    p_link = f"http://macaodaily.com/html/2024-06/01/{href}"
-    page_links.append(p_link)
-
-print(page_links)
-
-######################### Step 2 : 每一個版面進行訪問取得文章連結 #########################
-
-target_links = []
-for page_link in page_links:
-    url = page_link
-    response = requests.get(url)
-    html_data = response.content.decode("utf-8")
-    soup = BeautifulSoup(html_data, "html.parser")
-    tables = soup.find_all('table')
-
-    count = 0
-    for i in tables[5]:
-        try:
-            links = i.find_all("a") # 由於return 回來的 HTML 不純正，會包含\n，因此會出Error
-        except:
-            continue # 若 Error 則遇到 \n，跳過即可
-        
-        for target in links:
-            try:
-                href = target.find("div")["id"][2:] # 由於return 回來的 HTML 不純正，會包含\n，因此會出Error
-            except:
-                continue # 若 Error 則遇到 \n，跳過即可
-            
-            p_link = f"http://macaodaily.com/html/2024-06/01/content_{href}.htm"
-
-            target_links.append(p_link)
-            print(p_link)
-
-print(target_links)
-
-######################### Step 3 : 訪問每一文章連結取得文章內容 #########################
-
-with open("news.txt", "w", encoding="utf-8") as myFile:
-    for target_link in target_links:        
-        url = target_link
-        response = requests.get(url)
-        html_data = response.content.decode("utf-8")
-        soup = BeautifulSoup(html_data, "html.parser")
-        tables = soup.find('founder-content')
-        
-        print("###################################")
-        print(target_link)
-        myFile.write("\n###################################\n")
-        myFile.write(f"{target_link}\n\n")
-        
-        for i in tables:
-            t_text = i.getText()
-            print(t_text)
-            myFile.write(f"{t_text}\n")
-            
-        print("###################################")      
-        myFile.write("\n###################################\n")
-```
-
 
 # Google Colab 是什麼？ 
 Google Colaboratory 是一個基於雲端的Python開發環境，提供免費的GPU和TPU資源，讓用戶可以在網頁瀏覽器中運行和編寫Python程式。它具有強大的協作功能，可以與他人共享和編輯程式碼。Google Colab支援Jupyter筆記本，並提供預裝的Python套件，方便進行數據分析、機器學習等任務。
@@ -240,6 +153,12 @@ df.columns
 ```
 df.index
 ```
+
+#### 總共有多少行
+```python
+len(df)
+```
+
 
 ### 取得整列(直)
 可透過 dataframe[列名]取得
@@ -390,4 +309,100 @@ df
 透過to_excel(檔案名、表名、是否需要加上index)
 ```python
 df.to_excel('temp.xlsx', sheet_name='沒有電單車位的停車場', index=False)
+```
+
+
+# 爬取澳門日報 
+## 思路
+1. 取得所有版面的連結 : `page_links[ ]`
+2. 取得每一版面中的所有文章的連結 : `target_links[ ]`
+3. 訪問每一篇文章的連結 - 取得內文
+
+```python
+import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
+
+######################### Step 1 : 尋找報紙所有頁面中的 Links #########################
+
+# 0. 用戶輸入日期
+day_get = input("請輸入日期（格式：YYYY-MM-DD）：")
+date_obj = datetime.strptime(day_get, "%Y-%m-%d")
+
+# 格式化為 YYYY-MM/DD
+formatted_date = f"{date_obj.year}-{date_obj.month:02}/{date_obj.day:02}"
+print(formatted_date)
+# 1. 目標 url
+url = f"http://macaodaily.com/html/{formatted_date}/node_2.htm"
+print(url)
+
+# 2. 向目標發送請求(request)
+response = requests.get(url)
+html_data = response.content.decode("utf-8")
+soup = BeautifulSoup(html_data, "html.parser") 
+
+# 3. 找出所有右方table中的link
+
+page_links = []
+tables = soup.find_all(id='pageLink') #定位 id = "pageLink" 的 Table td
+
+for td in tables: # 按照網頁結構，每個Table中也包含 Table，用 For 迴圈處理
+    href = td.get("href")
+    p_link = f"http://macaodaily.com/html/{formatted_date}/{href}"
+    page_links.append(p_link)
+
+print(page_links)
+
+######################### Step 2 : 每一個版面進行訪問取得文章連結 #########################
+
+target_links = []
+for page_link in page_links:
+    url = page_link
+    response = requests.get(url)
+    html_data = response.content.decode("utf-8")
+    soup = BeautifulSoup(html_data, "html.parser")
+    tables = soup.find_all('table')
+
+    count = 0
+    for i in tables[5]:
+        try:
+            links = i.find_all("a") # 由於return 回來的 HTML 不純正，會包含\n，因此會出Error
+        except:
+            continue # 若 Error 則遇到 \n，跳過即可
+        
+        for target in links:
+            try:
+                href = target.find("div")["id"][2:] # 由於return 回來的 HTML 不純正，會包含\n，因此會出Error
+            except:
+                continue # 若 Error 則遇到 \n，跳過即可
+            
+            p_link = f"http://macaodaily.com/html/{formatted_date}/content_{href}.htm"
+
+            target_links.append(p_link)
+            print(p_link)
+
+print(target_links)
+
+######################### Step 3 : 訪問每一文章連結取得文章內容 #########################
+
+with open("news.txt", "w", encoding="utf-8") as myFile:
+    for target_link in target_links:        
+        url = target_link
+        response = requests.get(url)
+        html_data = response.content.decode("utf-8")
+        soup = BeautifulSoup(html_data, "html.parser")
+        tables = soup.find('founder-content')
+        
+        print("###################################")
+        print(target_link)
+        myFile.write("\n###################################\n")
+        myFile.write(f"{target_link}\n\n")
+        
+        for i in tables:
+            t_text = i.getText()
+            print(t_text)
+            myFile.write(f"{t_text}\n")
+            
+        print("###################################")      
+        myFile.write("\n###################################\n")
 ```
