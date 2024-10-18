@@ -311,6 +311,30 @@ df
 df.to_excel('temp.xlsx', sheet_name='沒有電單車位的停車場', index=False)
 ```
 
+## 課堂練習
+
+尋找私家車停位 < 20 的停車場，並輸出至 Excel
+
+```python
+import pandas as pd
+import requests
+
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+response = requests.get(url, headers=headers)
+
+df = pd.read_xml(response.content)
+
+df["Car_CNT"] = df["Car_CNT"].fillna(0)
+
+df = df.loc[df["Car_CNT"] < 20]
+
+df.to_excel("output.xlsx", index=False)
+```
+
+
 
 # 爬取澳門日報 
 ## 思路
