@@ -6,11 +6,11 @@
 課件：[https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing](https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing)
 
 # Final Project
-繳交：[https://hamster.cpttm.org.mo/spaces/NCUIE40Tcbd1LcgcdqUUsw/upload](https://hamster.cpttm.org.mo/spaces/NCUIE40Tcbd1LcgcdqUUsw/upload)
+繳交：[https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload](https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload)
 
+Deadline：2024-10-27 23:59
 
-
-# Pandas 操作
+# Pandas 統計操作
 ## 範例 Data
 ```python
 import pandas as pd
@@ -30,6 +30,36 @@ df = pd.DataFrame(
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111122707.png)
 
+## 新增行列
+
+### 新增行(Row)
+內容為List、轉換為DataFrame
+```python
+# 構建新行
+new_data = ["橙", "水果", "新鮮", "進口", "貨區A3", 10, 8, 56]
+new_row = pd.DataFrame([new_data], columns=df.columns)
+
+# 合併 concat()
+df = pd.concat([df, new_row], ignore_index=True)
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410221604987.png)
+
+### 新增列
+```python
+new_col = pd.Series([11,22,33,44,55,66,77,88,99,100])
+df["已售出"] = new_col
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410221618356.png)
+
+## 刪除  drop()
+```python
+# 刪除行(Row)
+df = df.drop(index = "row_index")
+
+# 刪除列(Col)
+df = df.drop(columns = "col_name")
+```
 
 ## 統計函式
 - 共有幾行 - len( )
@@ -149,6 +179,31 @@ df
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111509265.png)
 
+## 練習
+
+```python
+import pandas as pd
+import requests
+
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+response = requests.get(url, headers=headers)
+
+df = pd.read_xml(response.content)
+
+df["Car_CNT"] = df["Car_CNT"].fillna(0)
+df["MB_CNT"] = df["MB_CNT"].fillna(0)
+
+labels = ["車位嚴重不足", "車位不足", "車位尚可", "車位充足", "車位非常充足"]
+df['私家車位狀態'] = pd.cut(df['Car_CNT'], bins=5, labels=labels, right=False)
+
+result = len(df.loc[df["私家車位狀態"] == "車位不足"])
+print(f"車位尚可的停車場數量為 {result} 個")
+
+```
+
 
 # 資料可視化 Matplotlib
 Matplotlib 是一個 python 2D 繪圖庫，主要用作為資料進行可視化處理。
@@ -186,7 +241,6 @@ import pandas as pd
 matplotlib.font_manager.fontManager.addfont('TaipeiSansTCBeta-Regular.ttf')
 matplotlib.rc('font', family='Taipei Sans TC Beta')
 ```
-
 
 ## 畫圖
 需要使用 matplotlib
