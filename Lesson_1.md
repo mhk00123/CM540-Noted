@@ -99,7 +99,7 @@ print("Hello World")
 
 ### 一、安裝 Python 環境
 
-1. 先到 Python 官方網站下載 : https://www.python.org/
+1. 先到 Python 官方網站下載 : [https://www.python.org/](https://www.python.org/)
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
 
@@ -243,7 +243,7 @@ conda deactivate
 
 一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
 
-VS Code 下載: https://code.visualstudio.com/download
+VS Code 下載: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
 
@@ -284,7 +284,7 @@ Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio
 ### 二、Google Colab
 
 1. 登入您的 Google 帳號
-2. 進入 Google Colab 服務：https://colab.research.google.com/
+2. 進入 Google Colab 服務：[https://colab.research.google.com/](https://colab.research.google.com/)
 3. 新增一個"記事本"，所有有關Google Colab的文件將會存放在你的個人Google Drive中
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041857579.png)
