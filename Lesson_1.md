@@ -280,29 +280,8 @@ Jupyter可以透過本機佈署、可以使用Plugin型式安裝在Visual Studio
 
 本課程推薦使用 Google Colab 服務直接取用 Jupyter Notebook，以節省配置時間。
 
-### 二、Anaconda 內建 Jupyter
-我們所安裝的Anaconda中，會自帶 Jupyter，我們可以直接在執行。
 
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022002460.png)
-
-選擇對應的Python 3編譯器
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022003538.png)
-
-Jupyter 檔案不是以 .py 結尾，是以 .ipynb 結尾
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022004774.png)
-
-輸入 `print("Hello World")` 後按下執行即會顯示結果
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022005662.png)
-
-### 輸出 .ipynb 文件至 .py文件
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403022020588.png)
-
-
-### 三、Google Colab
+### 二、Google Colab
 
 1. 登入您的 Google 帳號
 2. 進入 Google Colab 服務：https://colab.research.google.com/
