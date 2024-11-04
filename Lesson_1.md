@@ -10,7 +10,7 @@
 # 作業/考試 繳交
 請在家中的電腦嘗試使用 Anaconda 安裝 Python 環境、以及 Visual Studio Code，完成後截圖並上傳。
 
-繳交網址 : [https://hamster.cpttm.org.mo/spaces/sQ0mhNAJNWL5GrGY9z1Jag/upload](https://hamster.cpttm.org.mo/spaces/sQ0mhNAJNWL5GrGY9z1Jag/upload)
+繳交網址 : [https://hamster.cpttm.org.mo/spaces/con9jy-82z5PQiDpPT9X9g/upload](https://hamster.cpttm.org.mo/spaces/con9jy-82z5PQiDpPT9X9g/upload)
 
 
 # Python 是甚麼 ?
