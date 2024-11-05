@@ -8,24 +8,8 @@
 
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
-# 作業
-繳交截止：9月17日23:59
 
-## 題目 1： 計算BMI指數
-繳交網址：[https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload](https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload)
-
-請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
-$$BMI = \frac{體重(kg)}{身高^2(m)}$$
-
-根據計算結果使用以下標準判斷BMI指數的範圍：
-| BMI值 | 描述 |
-| :--: | :--: | 
-| 小於 18.5 | 體重過輕 | 
-| 18.5 到 24.9 | 正常範圍 | 
-| 25 到 29.9 | 超重 | 
-| 大於等於 30 | 肥胖 |
-
-## 題目 2： 超級無敵開口中
+## 題目： 超級無敵開口中
 
 繳交網址：[https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload](https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload)
 
@@ -45,7 +29,7 @@ lucky_num = random.randint(1, 100)
 print(lucky_num)
 ```
 
-## 題目 3： 三角型的9x9乘法表
+## 題目 2： 三角型的9x9乘法表
 
 繳交網址：[https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload](https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload)
 
