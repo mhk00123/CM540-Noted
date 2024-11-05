@@ -6,9 +6,8 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing](https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing)
 
-
 ## 題目 1： 計算BMI指數
-繳交網址：[https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload](https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/bKzjHGCdFKafBQ2jrFNoAQ/upload](https://hamster.cpttm.org.mo/spaces/bKzjHGCdFKafBQ2jrFNoAQ/upload)
 
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 $$BMI = \frac{體重(kg)}{身高^2(m)}$$
@@ -24,7 +23,7 @@ $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 > 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
 
 ## 題目 2： 學生成績評級
-繳交網址：[https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload](https://hamster.cpttm.org.mo/spaces/e1QqlWaa-wfdAfVgqEVycQ/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/R9t3AH3_AKZIA5Uo8cY9sA/upload](https://hamster.cpttm.org.mo/spaces/R9t3AH3_AKZIA5Uo8cY9sA/upload)
 
 請寫一個程式，提示使用者輸入 3 個科目的成績，然後根據以下標準進行評級和總評：
 
@@ -544,4 +543,3 @@ Python支持多種運算符，下表大致按照優先級從高到低的順序�
 - 如果狗狗 1 歲，相當於 14 的人類
 - 如果狗狗 2 歲，相當於 22 的人類
 - 2歲以後，則為 (狗狗歲數 - 2) * 5 + 22
-
