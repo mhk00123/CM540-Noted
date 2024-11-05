@@ -217,15 +217,15 @@ print("Hi, My name is " + first_name + " " + last_name + ", my phone number is "
 可以使用 `type()` 函數去檢查該變量屬於甚麼型態
 
 ```python
-a = 100
-b = 12.345
-c = "Hello, World"
-d = True
+var_a = 100
+var_b = 12.345
+var_c = "Hello, World"
+var_d = True
 
-print(type(a))    # <class 'int'>
-print(type(b))    # <class 'float'>
-print(type(c))    # <class 'str'>
-print(type(d))    # <class 'bool'>
+print(type(var_a))    # <class 'int'>
+print(type(var_b))    # <class 'float'>
+print(type(var_c))    # <class 'str'>
+print(type(var_d))    # <class 'bool'>
 ```
 
 ## 字串分割
