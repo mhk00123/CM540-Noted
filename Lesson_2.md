@@ -1,4 +1,4 @@
-# Lesson 2
+戈大尸# Lesson 2
 變數、資料型態、輸入輸出、邏輯判斷
 
 **tags: `python`** **`CM-540`** **`Lesson2`**
