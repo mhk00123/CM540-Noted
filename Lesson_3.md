@@ -9,15 +9,15 @@
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
 
-## 題目： 超級無敵開口中
+## 題目 1： 超級無敵開口中
 
-繳交網址：[https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload](https://hamster.cpttm.org.mo/spaces/CfjcgaM34-x2Uz0X1eEvTQ/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/jXSdoKCczNB0HTfM66hZew/upload](https://hamster.cpttm.org.mo/spaces/jXSdoKCczNB0HTfM66hZew/upload)
 
 奬門人節目內的超級無敵開口中， 玩法是電腦隨機抽出一個 1 - 100 之間的號碼作為幸運號碼，參加者輪流說出一個數字，電腦會根據答案和參加者的數字，將可選範圍縮窄，直到最後幸運號碼被估中為止。
 
 要求：
 * 系統提示：需要告知目標數字比目前估的數字大或細
-* 若使用者輸入”bye”，則輸出答案和結束遊戲
+* 若使用者輸入`bye`，則輸出答案和結束遊戲
 
 > 由於目前還沒有教到導入模塊的部份，因此先提供隨機數生成方法
 
@@ -29,9 +29,9 @@ lucky_num = random.randint(1, 100)
 print(lucky_num)
 ```
 
-## 題目 2： 三角型的9x9乘法表
+## 題目 2： 三角型的9x9乘法表(選做)
 
-繳交網址：[https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload](https://hamster.cpttm.org.mo/spaces/9PiKSC39JqA1F8tvSzmh-A/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/u5d_R7JPGcQbNNKkDOJYqg/upload](https://hamster.cpttm.org.mo/spaces/u5d_R7JPGcQbNNKkDOJYqg/upload)
 
 請嘗試以迴圈輸出：
 
@@ -58,12 +58,7 @@ print(lucky_num)
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402262114223.png)
 
-## and(與)、or(或)、xor(非)
-- and : 需要同時為True，才是True
-- or：只需有 1 個為True，就是True
-- xor：當兩個參數相同時為False、兩個參數不同時為True (不常用)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
 
 ## 流程控制
 流程控制是學習python的重點之一，所謂流程控制是代表當有多行的程式碼時，我們可以有效的控制程式應該執行的順序和方向，先前章節的程式是由上而下一行一行執行，當學會流程控制後，程式執行將更有變化性。
@@ -171,6 +166,14 @@ if(條件1):
 else:
     全部條件都不成立時執行
 ```
+
+## and(與)、or(或)、xor(非)
+當出現多個條件需要`同時`判斷時，我們可以使用`and`、`or`、`xor`
+- and : 需要同時為True，結果才是True
+- or：只需有 1 個為True，結果就是True
+- xor：當兩個參數相同時為False、兩個參數不同時為True (不常用)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
 
 Python支持多種運算符，下表大致按照優先級從高到低的順序列出了所有的運算符，運算符的優先級指的是多個運算符同時出現時，先做什麼運算然後再做什麼運算。除了我們之前已經用過的賦值運算符和算術運算符，我們稍後會陸續講到其他運算符的使用。
 
