@@ -4,25 +4,7 @@
 
 儲存容器、Function、排序演算法
 
-# Slide
-課件：[https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
-# 功課：21 點遊戲單人版
-繳交網址：[https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload](https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload)
-截止日期：2024-09-24
-
----
-- 扑克牌(52張) ：1 - 13 表示(暫不分開花色)
-- 每個數字最多 4 隻
-
-我們要做的：
-- 每 1  輪人手發牌 - 指定點數
-- 若輸入超過 4 張牌，請玩家重新輸入
-- 記錄點數，點數是累加的
-- 記錄點數必須引導玩家繼續發牌
-- 若剛好等於 21 點，贏了，遊戲結束
-- 若大於 21 點，輸了，遊戲結束
-- 輸入 bye 遊戲結束
 - 
 # 練習
 輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
