@@ -9,7 +9,7 @@
 
 
 # 功課：21 點遊戲單人版
-繳交網址：[https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload](https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/Kx3n7Rlu9fYuV5SkUK8X3g/upload](https://hamster.cpttm.org.mo/spaces/Kx3n7Rlu9fYuV5SkUK8X3g/upload)
 
 截止日期：2024-09-24
 
