@@ -4,3 +4,4 @@
 * [Lesson 2 - 變數、資料型態、輸入輸出、邏輯判斷](Lesson\_2.md)
 * [Lesson 3 - 邏輯判斷、循環結構](Lesson\_3.md)
 * [Lesson 4 - 儲存容器](Lesson\_4.md)
+* [Lesson 5 - 儲存容器、Function、排序演算法](Lesson\_5.md)
