@@ -5,18 +5,25 @@
 函數/方法、儲存容器
 
 # Slide
+[https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
 
-# 堂上練習
-## 題目：
-輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
+# 功課：21 點遊戲單人版
+繳交網址：[https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload](https://hamster.cpttm.org.mo/spaces/MdiEo4oS4rUKvaO5qGZvmA/upload)
+截止日期：2024-09-24
 
-1. 輸出列表
-2. 輸出用戶共輸入了多少個數字
-3. 最小的數、最大的數
-4. 此組數據的平均值
-5. 排列整組數據( 按小到大 )
-6. 排列整組數據( 按大到小 )
+---
+- 扑克牌(52張) ：1 - 13 表示(暫不分開花色)
+- 每個數字最多 4 隻
+
+我們要做的：
+- 每 1  輪人手發牌 - 指定點數
+- 若輸入超過 4 張牌，請玩家重新輸入
+- 記錄點數，點數是累加的
+- 記錄點數必須引導玩家繼續發牌
+- 若剛好等於 21 點，贏了，遊戲結束
+- 若大於 21 點，輸了，遊戲結束
+- 輸入 bye 遊戲結束
 
 # for-in 循環/迴圈
 
