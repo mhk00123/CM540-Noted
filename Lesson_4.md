@@ -276,7 +276,6 @@ for row in cart:
         print(col)
 ```
 
-
 ## 列表常用的操作和函數(function)
 1. 修改特定下標的值
 2. 列表長度
@@ -366,7 +365,6 @@ print(f"列表中有 {rs_Leo} 個Leo")
 
 若有需要，請隨時Google即可! 
 {% endhint %}
-
 
 
 
