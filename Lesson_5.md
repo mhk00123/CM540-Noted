@@ -4,8 +4,122 @@
 
 儲存容器、Function、排序演算法
 
+# Slide
+[https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
-- 
+
+# 功課：21 點遊戲單人版(Version2)
+我們對verion1 的程式碼進行重構，繳交網址：[https://hamster.cpttm.org.mo/spaces/5noF9BmT3yXtaMpntdD9gw/upload](https://hamster.cpttm.org.mo/spaces/5noF9BmT3yXtaMpntdD9gw/upload)
+
+截止日期：2024-09-24
+我們要做的：
+- 以 list 方式把所有牌分開花式及點數(hints：二維list)
+- 每 1 輪發牌 - 改以 `Random` 方式
+- 把發牌這個動作打包成 function，可以把取得的牌 return 出來
+- 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
+
+
+## 列表常用的操作和函數(function)
+1. 修改特定下標的值
+2. 列表長度
+3. 查找某元素所在的位置、如查找元素不在會報錯
+4. 在指定位置插入一個元素
+5. 在列表尾部加入 1 個 元素
+6. 在列表尾部加入 1 批 元素
+7. 刪除元素
+8. 刪除指定元素在 List 中的第一個匹配項目
+9. 清空列表
+10. 統計列表內某元素的值
+
+```python
+list_ex = ["Tom", "Kate", "Mart", "Leo"]
+# 1. 修改特定下標的值
+# 修改 第3個元素
+list_ex[2] = "Ken"
+
+# 2.列表長度
+length = len(list_ex)
+print(f"列表長度：{length}")
+
+# 3. 查找某元素所在的位置、如查找元素不在會報錯
+# index()
+# 例如我想查看 May 的位置
+index = list_ex.index("May")
+print(f"May的index：{index}")
+
+# 4. 在指定index插入一個元素 (會改變整個列表) 
+# insert(index, 值)
+# 例如我想在 index = 2 的位置插入 "Angela"
+print(f"原列表：{list_ex}")
+list_ex.insert(2, "Angela")
+print(f"修改後的列表：{list_ex}")
+
+# 5. 在列表尾部加入 1 個 元素
+# append(值)
+# 在最後增加 John
+print(f"原列表：{list_ex}")
+list_ex.append("John")
+print(f"修改後的列表：{list_ex}")
+
+# 6. 在列表尾部加入 1 批 元素
+# extend(list)
+# 把 list2 加入到 list_ex的最後
+print(f"原列表：{list_ex}")
+list2 = ["Kate", "Tom", "Ella"]
+list_ex.extend(list2)
+print(f"修改後的列表：{list_ex}")
+
+# 7. 刪除元素(2種方法)
+# 7.1 刪除指定下標的元素
+# pop(index)
+# 例如我想刪除目前列表第5個元素
+print(f"原列表：{list_ex}")
+list_ex.pop(5)
+print(f"修改後的列表：{list_ex}")
+
+# 8. 刪除指定元素在List中的第一個匹配項目
+# remove(值)
+# 例如我想要移除 Ella
+print(f"原列表：{list_ex}")
+list_ex.remove("Ella")
+print(f"修改後的列表：{list_ex}")
+
+# 9. 清空列表
+# clear()
+# print(f"原列表：{list_ex}")
+# list_ex.clear()
+# print(f"修改後的列表：{list_ex}")
+
+# 10. 統計列表內某元素的值
+# count
+list_ex = ['Leo', 'Allen', 'Angela', 'Leo', 'Celia', 'Leo', 'Kate', 'Leo']
+rs_Leo = list_ex.count("Leo")
+print(f"列表中有 {rs_Leo} 個Leo")
+```
+
+{% hint style="info" %}
+列表的方法功能有非常多，但不建議硬記，學習編程，不僅是語言本身，以後會根據個人興趣向不同方向發展
+
+除了經常使用的，大多是靠記憶記不下來的。
+
+我們只需要有一個較為模糊的印像，知道大約有這些用法就可以。
+
+若有需要，請隨時Google即可! 
+{% endhint %}
+
+# 一維列表常用的操作 - 排序
+我們可以在列中使用`.sort()`函數進行快速的排序操作。
+其中、可以透過參數`reverse`控制由大到小還是由小到大。
+```python
+cart = [2, 1, 3, 8, 5]
+
+# sort function # 由小至大(默認)
+cart.sort(reverse=False) #[1,2,3,5,8]
+
+# sort function # 由大到小
+cart.sort(reverse=True) #[8,5,3,2,1]
+```
+
 # 練習
 輸入 N 個數字，輸入”bye”時結束，按順序輸入到表(List)中。
 
@@ -15,6 +129,7 @@
 4. 排列整組數據( 按大到小 )
 5. 最小的數、最大的數
 6. 此組數據的平均值
+
 ```python
 # 1. 定義 1 個空list
 list_num = []
@@ -67,88 +182,6 @@ avg_list_num = sum / len(list_num)
 print(f"此列表的平均值為：{avg_list_num}")
 ```
 
-# 一維列表常用的操作 - 排序
-我們可以在列中使用`.sort()`函數進行快速的排序操作。
-其中、可以透過參數`reverse`控制由大到小還是由小到大。
-```python
-cart = [2, 1, 3, 8, 5]
-
-# sort function # 由小至大(默認)
-cart.sort(reverse=False) #[1,2,3,5,8]
-
-# sort function # 由大到小
-cart.sort(reverse=True) #[8,5,3,2,1]
-```
-
-# 演算法
-「演算法」這三個字近幾年可說是相當的火熱，感覺很容易就會聽到 youtube、facebook 又改演算法啦，也會很常聽見人家在討論什麼人工智慧演算法之類的。 
-在聽了很多人云亦云的概念後，那麼到底什麼是演算法? ​
-如果我們從定義上來看：
-
-**由有限步驟所構成的集合，可以用於解決某一個特定的問題。**
-
-假設我們今天要解決的那一個特定問題是「把蘋果做成一杯蘋果汁」
-那我們可以透過以下幾個步驟來實現：
-1. 清洗蘋果
-2. 將蘋果削皮、去籽
-3. 將 經過步驟 (2) 處理的蘋果 放入果汁機
-4. 在果汁機中加入一定比例的水
-5. 按下果汁機啟動按鈕
-6. 將果汁機裡面的蘋果汁倒入玻璃杯中
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211615444.jpg)
-
-我們可以把剛才那6個步驟叫作 " 把蘋果做成一杯蘋果汁 " 的演算法。
-
-而在電腦科學的領域也是如此，透過設計一連串的指令、動作，讓電腦去執行，以便協助我們解決一些特定問題。
-
-而演算法就是一種解決問題的邏輯思維！這樣的思維邏輯可以用文字，或者透過代碼、流程圖、電子電路、數學等等之類的​方式做描述。
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211616861.png)
-
-
-## 著名的排序演算法：冒泡排序（Bubble Sort）
-冒泡排序（Bubble Sort）也是一種簡單直觀的排序算法。
-
-他會反複地歷遍要排序的列表，一次比較兩個元素，如果他們的順序錯誤就把他們交換過來。歷遍數列的工作是重覆地進行直到沒有數字需交換，即表示列表已經排序完成。
-
-1. 測量列表的長度(i)，列表長度為比較回合總數
-2. 測量每回合需要比較的次數(j-i-1)
-3. 每一輪循環中由左至右比較兩個元素arr[j]、arr[j+1]，如果如果arr[j]比arr[j+1]大就把他們交換過來，否則不用理會。
-4. 每一輪結束後，整個列表最大的值應會在右手面。
-5. 重覆步驟3
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211620013.png)
-
-### 交換操作
-```python
-if arr[j] > arr[j+1]:
-    temp = arr[j]
-    arr[j] = arr[j+1]
-    arr[j+1] = temp
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211631085.png)
-
-
-## 堂上練習：實現 bubble sort
-```python
-def bubbleSort(arr):
-    # 步驟1. 測量列表的長度
-    for i in range(0, len(arr)): 
-        # 步驟2. 測量每回合需要比較的次數(j-i-1)
-        for j in range(0, len(arr)-i-1):
-            #步驟3. 
-            if arr[j] > arr[j+1]:
-                temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-    return arr
-
-list_ex = [4,6,8,1,32,6,2,4,8,9,11]
-
-print(bubbleSort(list_ex))
-```
 # 函數 Function
 函數(Function)，Python自定了很多不同的已經寫好的Function，所謂函數就是『敘述的集合』，並且以一個函數名稱來代表此敘述集合。
 
@@ -255,18 +288,6 @@ print_hello(2, 10)
 print_hello(1, 11)
 ```
 
-## 傳值(Value)、還是傳址(Address)的問題
-Pass by value and pass by reference問題，在Python中，任何儲存容器的資料類型，在進行參數傳遞時為傳址(Address)
-
-**即 function 中的修改，會直接改變原資料**
-
-而其他普通參數(int、float)等為傳值(Value)
-
-**只是把值放到參數中，function 不能改變原資料。**
-
-
-![Img](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
-
 ## 作用域
 - 全域變數 : 在整個程式中均有效
 - 局部變數 : 只在該變數處於的區域有效
@@ -296,6 +317,36 @@ print("--------")
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161653002.png)
+
+
+## 傳值(Value)、還是傳址(Address)的問題
+Pass by value and pass by reference問題，在Python中，任何儲存容器的資料類型，在進行參數傳遞時為傳址(Address)
+
+**即 function 中的修改，會直接改變原資料**
+
+而其他普通參數(int、float)等為傳值(Value)
+
+**只是把值放到參數中，function 不能改變原資料。**
+
+
+![Img](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
+
+```Python
+def modify_list(lst):
+    lst.append(4)  # 修改可變對象
+
+def reassign_value(x):
+    x = 10  # 只是改變了局部變量的引用
+
+my_list = [1, 2, 3]
+modify_list(my_list)
+print(my_list)  # 輸出: [1, 2, 3, 4]
+
+value = 5
+reassign_value(value)
+print(value)  # 輸出: 5
+```
+
 
 ## 返回值(return)
 
@@ -351,16 +402,72 @@ def len_handmade(input_string):
     return count
 ```
 
+# 演算法
+「演算法」這三個字近幾年可說是相當的火熱，感覺很容易就會聽到 youtube、facebook 又改演算法啦，也會很常聽見人家在討論什麼人工智慧演算法之類的。 
+在聽了很多人云亦云的概念後，那麼到底什麼是演算法? ​
+如果我們從定義上來看：
 
-# 堂上練習+功課 : 21 點遊戲單人版
-- 扑克牌(52張)：1 - 13 表示(暫不分開花色)
-- 每個數字最多 4 隻
+**由有限步驟所構成的集合，可以用於解決某一個特定的問題。**
 
-我們要做的：
-- 每 1 輪人手發牌 - 指定點數
-- 若輸入超過 4 張牌，請玩家重新輸入
-- 記錄點數，點數是累加的
-- 記錄點數必須引導玩家繼續發牌
-- 若剛好等於 21 點，贏了，遊戲結束
-- 若大於 21 點，輸了，遊戲結束
-- 輸入 bye 遊戲結束
+假設我們今天要解決的那一個特定問題是「把蘋果做成一杯蘋果汁」
+那我們可以透過以下幾個步驟來實現：
+1. 清洗蘋果
+2. 將蘋果削皮、去籽
+3. 將 經過步驟 (2) 處理的蘋果 放入果汁機
+4. 在果汁機中加入一定比例的水
+5. 按下果汁機啟動按鈕
+6. 將果汁機裡面的蘋果汁倒入玻璃杯中
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211615444.jpg)
+
+我們可以把剛才那6個步驟叫作 " 把蘋果做成一杯蘋果汁 " 的演算法。
+
+而在電腦科學的領域也是如此，透過設計一連串的指令、動作，讓電腦去執行，以便協助我們解決一些特定問題。
+
+而演算法就是一種解決問題的邏輯思維！這樣的思維邏輯可以用文字，或者透過代碼、流程圖、電子電路、數學等等之類的​方式做描述。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211616861.png)
+
+
+## 著名的排序演算法：冒泡排序（Bubble Sort）
+冒泡排序（Bubble Sort）也是一種簡單直觀的排序算法。
+
+他會反複地歷遍要排序的列表，一次比較兩個元素，如果他們的順序錯誤就把他們交換過來。歷遍數列的工作是重覆地進行直到沒有數字需交換，即表示列表已經排序完成。
+
+1. 測量列表的長度(i)，列表長度為比較回合總數
+2. 測量每回合需要比較的次數(j-i-1)
+3. 每一輪循環中由左至右比較兩個元素arr[j]、arr[j+1]，如果如果arr[j]比arr[j+1]大就把他們交換過來，否則不用理會。
+4. 每一輪結束後，整個列表最大的值應會在右手面。
+5. 重覆步驟3
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211620013.png)
+
+### 交換操作
+```python
+if arr[j] > arr[j+1]:
+    temp = arr[j]
+    arr[j] = arr[j+1]
+    arr[j+1] = temp
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211631085.png)
+
+
+## 堂上練習：實現 bubble sort
+```python
+def bubbleSort(arr):
+    # 步驟1. 測量列表的長度
+    for i in range(0, len(arr)): 
+        # 步驟2. 測量每回合需要比較的次數(j-i-1)
+        for j in range(0, len(arr)-i-1):
+            #步驟3. 
+            if arr[j] > arr[j+1]:
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+    return arr
+
+list_ex = [4,6,8,1,32,6,2,4,8,9,11]
+
+print(bubbleSort(list_ex))
+```
