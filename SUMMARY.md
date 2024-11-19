@@ -8,5 +8,4 @@
 * [Lesson 6 - 儲存容器 - Dictionary、錯誤捕捉](Lesson\_6.md)
 * #########
 * [Lesson 3 - 作業答案](Lesson\_3\_Homework.md) 
-* #########
-* [導讀 - 當我們在學程式時，要學的到底是什麼？](concept.md)
+* [Lesson 5 - 21點遊戲 version1](Lesson\_5\_Homework.md)
