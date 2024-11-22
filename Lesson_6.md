@@ -7,7 +7,7 @@ Dictionary、錯誤捕捉、21點遊戲
 ## Slide
 課件：[https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing](https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing)
 
-## 自定義函數/方法 - 參數、返回值
+# 自定義函數/方法 - 參數、返回值
 我們也可以在函數中加入參數和返回值，而這2個值的作用範圍只在函數有效。
 
 ```python
