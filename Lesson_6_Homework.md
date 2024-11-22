@@ -1,175 +1,177 @@
 # Lesson_6_Homework
-## 21點遊戲
+## 21點遊戲 versino2
 
-1. 把牌組分開花式 (提示：使用 dict 加 list 的組合)
-3. 使用random方式抽牌
-4. 每次取牌後記錄輸出變為：花式+點數
-5. 加入判斷：取得J、Q、K時全部定義作10點(+10
+1. 以 list 方式把所有牌分開花式及點數(hints：二維list)
+2. 每 1 輪發牌 - 改以 `Random` 方式
+3. 把發牌這個動作打包成 function，可以把取得的牌 return 出來
+4. 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
 
+# 有注解版
 ```python
-###  導入 random 模組  ####
+################# 導入 random 模組 #################
 import random
 
-###  定義 function  ####
-
-# 生成[1,2,3,4,5,6,7,8,9,10,11,12,13] 
-def card():
-    temp_list = []
-    for i in range(1,14):
-            temp_list.append(i)
+################# 定義 function #################
+## function - 取牌
+def get_card():
+    rs = [] # 定義回傳的為一個 list
+    
+    while(True):  
+        rand_suits = random.randint(0,3)
+        card_suit = card_list[rand_suits][0]
         
-    return temp_list
+        rand_card = random.randint(1,13)
+        card_point = card_list[rand_suits][rand_card]
+        print(f"取得的牌為 {card_suit}{card_point}")
+        
+        # 判斷該位置是否為 *
+        # 若是則該牌已取，再Random重抽
+        if(card_list[rand_suits][rand_card] == "*"): 
+            continue
+        
+        else: # 取牌後把對應位置變為 * 以作記錄
+            card_list[rand_suits][rand_card] = "*"
+            break # break 跳出抽牌的這個迴圈
+        
+    rs.append(card_suit)  # 第0個值為花式
+    rs.append(card_point) # 第1個值為點數
+    
+    return rs 
 
-###  全域變數  ####
+## function - 輸出玩家目前狀態
+def print_player():
+    print(f"目前已取牌 {player_card_list} , 目前的點數：{sum}")
 
-# 牌組以dict+list方式儲存、若以取牌則記為0
-card_type_list = ["黑桃", "紅心", "梅花", "方塊"]
-card_dict = {
-    "黑桃":card(),
-    "紅心":card(),
-    "梅花":card(),
-    "方塊":card() 
-}
+################# 全域變數 #################
+## list - card
+card_list = [
+    ["黑桃",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["紅心",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["梅花",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["方塊",1,2,3,4,5,6,7,8,9,10,11,12,13],
+]
 
-card_input_list = []
+## int - 玩家點數
 sum = 0
 
-###  主程式區  ####
+## list - 玩家已取的牌 
+player_card_list = []
+
+################# 主程式區 #################
 while(True):
-    print(f"目前已取牌 {card_input_list} , 目前的點數：{sum}")
+    print_player()
+    for i in range(0,4):
+        print(card_list[i])
+        
     print("##############################################")
     
     temp = input("\n取卡請輸入'get'、結束遊戲請輸入'bye'：")
     
-    # 輸入 bye 遊戲結束
     if(temp == "bye"):
-        print(f"遊戲結束! 目前手牌：{card_input_list}，點數為：{sum}")
+        print("遊戲結束！！！")
+        print_player()
+        break
+
+    elif(temp == "get"):
+        rs_get_card = get_card() # call get_card並接收回傳的 list
+        
+        card_suit = rs_get_card[0] # 花式
+        card_point = rs_get_card[1] # 點數
+        
+        player_card_list.append(f"{card_suit}{card_point}")
+        sum = sum + card_point
+    
+    # 判斷若剛好等於 21 點，贏了，遊戲結束
+    if(sum == 21):
+        print_player()
+        print("\n!!!!!!!!!!!!!!!!!!!!")
+        print("恭喜你贏得遊戲!")
         break
     
-    elif(temp == "get"):
-        
-        while(True):
-            # Random 取卡 #
-            ## 第1次random拿牌的"花式" index
-            rand_1 = random.randint(0,3) # index
-            card_type = card_type_list[rand_1]
-            
-            ## 第2次random拿牌的點數的"index""
-            rand_2 = random.randint(0,12) # index
-            card_point = card_dict[card_type][rand_2]
-        
-            print(f"{card_type}{card_point}")
-            
-            ###  判斷牌是否已取  ####
-            # 若 get_card 為 0 ，即已取，重新 random
-            if(card_point == 0):
-                continue
-            
-            else:
-                card_dict[card_type][rand_2] = 0
-                break
-        
-        # 記錄點數
-        card_input_list.append(f"{card_type}{card_point}")
-        
-        if(card_point>=10):
-            sum = sum + 10
-        else:
-            sum = sum + card_point
-        
-        # 判斷
-        # 若剛好等於 21 點，贏了，遊戲結束
-        if(sum == 21):
-            print(f"目前已取牌 {card_input_list} , 目前的點數：{sum}")
-            print("\n!!!!!!!!!!!!!!!!!!!!")
-            print("恭喜你贏得遊戲!")
-            break
-        
-        # 若大於 21 點，輸了，遊戲結束
-        if(sum > 21):
-            print(f"目前已取牌 {card_input_list} , 目前的點數：{sum}")
-            print("\n!!!!!!!!!!!!!!!!!!!!")
-            print("已經超過21點啦~爆炸了")
-            break
-        
-        print()
+    # 若大於 21 點，輸了，遊戲結束
+    elif(sum > 21):
+        print_player()
+        print("\n!!!!!!!!!!!!!!!!!!!!")
+        print("已經超過21點啦~爆炸了")
+        break
     
-    else:
-        print("\n輸入無效\n")
-        continue
+    print()
 ```
 
-## 無注解
+# 無注解版
 ```python
+################# 導入 random 模組 #################
 import random
 
-def card():
-    temp_list = []
-    for i in range(1,14):
-            temp_list.append(i)
-    return temp_list
+################# 定義 function #################
+def get_card():
+    rs = []
+    while(True):  
+        rand_suits = random.randint(0,3)
+        card_suit = card_list[rand_suits][0]
+        rand_card = random.randint(1,13)
+        card_point = card_list[rand_suits][rand_card]
+        print(f"取得的牌為 {card_suit}{card_point}")
 
-card_type_list = ["黑桃", "紅心", "梅花", "方塊"]
-card_dict = {
-    "黑桃":card(),
-    "紅心":card(),
-    "梅花":card(),
-    "方塊":card() 
-}
+        if(card_list[rand_suits][rand_card] == "*"): 
+            continue
+        else:
+            card_list[rand_suits][rand_card] = "*"
+            break
+        
+    rs.append(card_suit)
+    rs.append(card_point)
+    
+    return rs 
 
-card_input_list = []
+def print_player():
+    print(f"目前已取牌 {player_card_list} , 目前的點數：{sum}")
+
+################# 全域變數 #################
+card_list = [
+    ["黑桃",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["紅心",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["梅花",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["方塊",1,2,3,4,5,6,7,8,9,10,11,12,13],
+]
+
 sum = 0
+player_card_list = []
 
+################# 主程式區 #################
 while(True):
-    print(f"目前已取牌 {card_input_list} , 目前的點數：{sum}")
+    print_player()
+    for i in range(0,4):
+        print(card_list[i])
+        
     print("##############################################")
     
     temp = input("\n取卡請輸入'get'、結束遊戲請輸入'bye'：")
-
+    
     if(temp == "bye"):
-        print(f"遊戲結束! 目前手牌：{card_input_list}，點數為：{sum}")
+        print("遊戲結束！！！")
+        print_player()
+        break
+
+    elif(temp == "get"):
+        rs_get_card = get_card()
+        card_suit = rs_get_card[0]
+        card_point = rs_get_card[1]
+        
+        player_card_list.append(f"{card_suit}{card_point}")
+        sum = sum + card_point
+    
+    if(sum == 21):
+        print_player()
+        print("\n!!!!!!!!!!!!!!!!!!!!")
+        print("恭喜你贏得遊戲!")
         break
     
-    elif(temp == "get"):
-        
-        while(True):
-            rand_1 = random.randint(0,3)
-            card_type = card_type_list[rand_1]
-            
-            rand_2 = random.randint(0,12)
-            card_point = card_dict[card_type][rand_2]
-        
-            print(f"{card_type}{card_point}")
-            
-            if(card_point == 0):
-                continue
-            
-            else:
-                card_dict[card_type][rand_2] = 0
-                break
-        
-        card_input_list.append(f"{card_type}{card_point}")
-        
-        if(card_point>=10):
-            sum = sum + 10
-        else:
-            sum = sum + card_point
-            
-        if(sum == 21):
-            print(f"目前已取牌 {card_input_list} , 目前的點數：{sum}")
-            print("\n!!!!!!!!!!!!!!!!!!!!")
-            print("恭喜你贏得遊戲!")
-            break
-        
-        if(sum > 21):
-            print(f"目前已取牌 {card_input_list} , 目前的點數：{sum}")
-            print("\n!!!!!!!!!!!!!!!!!!!!")
-            print("已經超過21點啦~爆炸了")
-            break
-        
-        print()
+    elif(sum > 21):
+        print_player()
+        print("\n!!!!!!!!!!!!!!!!!!!!")
+        print("已經超過21點啦~爆炸了")
+        break
     
-    else:
-        print("\n輸入無效\n")
-        continue
+    print()
 ```
