@@ -11,7 +11,7 @@
 # 功課：21 點遊戲單人版(Version2)
 我們對verion1 的程式碼進行重構，繳交網址：[https://hamster.cpttm.org.mo/spaces/5noF9BmT3yXtaMpntdD9gw/upload](https://hamster.cpttm.org.mo/spaces/5noF9BmT3yXtaMpntdD9gw/upload)
 
-截止日期：2024-09-24
+截止日期：2024-11-24
 我們要做的：
 - 以 list 方式把所有牌分開花式及點數(hints：二維list)
 - 每 1 輪發牌 - 改以 `Random` 方式
