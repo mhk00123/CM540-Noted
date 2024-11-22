@@ -7,6 +7,14 @@ Dictionary、錯誤捕捉、21點遊戲
 ## Slide
 課件：[https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing](https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing)
 
+# 功課：21 點遊戲單人版(Version2.5)
+我們對verion2 的程式碼再進行重構，繳交網址：
+[https://hamster.cpttm.org.mo/spaces/8YqV6pIa1T0I7rpnVUKBTQ/upload](https://hamster.cpttm.org.mo/spaces/8YqV6pIa1T0I7rpnVUKBTQ/upload)
+
+截止日期：2024-11-26
+1. 把牌組分開花式 (提示：使用 dict 加 list 的組合)
+2. 加入判斷：取得J、Q、K時全部定義作10點(+10
+
 # 自定義函數/方法 - 參數、返回值
 我們也可以在函數中加入參數和返回值，而這2個值的作用範圍只在函數有效。
 
@@ -76,7 +84,7 @@ Pass by value and pass by reference問題，在Python中，任何儲存容器的
 
 ![Img](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
 
-```Python
+```python
 def modify_list(lst):
     lst.append(4)  # 修改可變對象
 
