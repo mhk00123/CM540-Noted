@@ -208,7 +208,7 @@ date_string = "2025-09-27 14:30"
 parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M")
 
 # 計算時間差
-diff_time = parsed_date - now
+diff_time = parsed_date - t_now
 
 
 # 兩個 datetime 對象相減時，得到的是一個 timedelta 對象，這個對象不能直接使用 strftime() 方法
