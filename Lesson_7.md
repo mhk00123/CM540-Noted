@@ -8,7 +8,7 @@
 
 繳交連結：[https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload](https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload)
 
-截止日期：2024-11-29
+截止日期：2024-12-02
 
 - 把玩家模組化(Class)
 - 新增玩家Dealer、Player1
@@ -116,7 +116,6 @@ class Student:
 stu_Leo = Student("尼奧","Leo","男",12345,6)
 
 stu_Leo.intro()
-        
 ```
 
 
@@ -226,7 +225,45 @@ result_string = f"時間差: {days}天{ans_hour}小時{ans_min}分鐘{ans_sec}�
 print(result_string)
 
 ```
-    
+
+### 練習
+請由用戶輸入目標日期時間，計算距離現在還有多少天、小時、分、秒。
+```python
+from datetime import datetime
+
+def cal_time(target_time):
+    # 取得目前日期時間
+    t_now = datetime.now()
+
+    try:
+        parsed_date = datetime.strptime(target_time, "%Y-%m-%d %H:%M%d")
+    except:
+        parsed_date = datetime.strptime(target_time, "%Y-%m-%d")
+
+    # 計算時間差
+    diff_time = parsed_date - t_now
+
+    # 兩個 datetime 對象相減時，得到的是一個 timedelta 對象，這個對象不能直接使用 strftime() 方法
+    # 獲取天數和秒數
+    days = diff_time.days
+    seconds = diff_time.seconds
+
+    # 拆開小時、分鐘、秒
+    ans_hour = int(seconds / 3600)
+    ans_min = int(seconds % 3600 / 60)
+    ans_sec = int(seconds % 3600 % 60)
+
+    # 格式化為字符串
+    result_string = f"時間差: {days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒"
+    print(result_string)
+
+
+#### Main function ####
+while(True):
+    target_time = input("請輸入目標時間：")
+    cal_time(target_time)
+```
+
 ## 格式化日期
 
 ### 有關日期
@@ -299,6 +336,24 @@ now = datetime.now()
 print(now)
 ```
 
+### 練習 
+每隔一秒輸出當前時間
+```python
+from datetime import datetime
+import time
+
+count = 0
+
+while(True):
+    time.sleep(1)
+    
+    t_now = datetime.now()
+    str_time = t_now.strftime("%Y年%m月%d日 %H:%M:%S")
+    
+    print(f"當前時間{str_time} : {count}")
+    
+    count = count + 1
+```
 
 # 常用Module - os
 - 得到當前的工作目錄的路徑：os.getcwd( )
@@ -438,24 +493,3 @@ for i in range(5):
     time.sleep(2)
 ```
 
-
-# 第三方Module下載 - pip
-pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
-
-pip 是 Python 2.7.9 版本及其後續版本的標准組件，也是 Python 3.4 及其後續版本的標准組件。它在安裝 Python 解釋器時一同安裝。
-
-## Python pip 基本命令
-安裝包：
-`pip install package_name`
-
-升級包：
-`pip install --upgrade package_name`
-
-卸載包：
-`pip uninstall package_name`
-
-顯示已安裝的包：
-`pip list`
-
-搜索包：
-`pip search package_name`
