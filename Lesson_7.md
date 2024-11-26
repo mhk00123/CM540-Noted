@@ -4,6 +4,17 @@
 
 物件、Module(time、os)、輸入流輸出流、pip
 
+## 功課：21 點遊戲單人版(Version3)
+
+繳交連結：[https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload](https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload)
+
+截止日期：2024-11-29
+
+- 把玩家模組化(Class)
+- 新增玩家Dealer、Player1
+- 每一步取牌後輸出當時時間
+- 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
+
 ## Slide
 課件：[https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing](https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing)
 
