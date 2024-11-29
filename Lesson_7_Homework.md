@@ -2,192 +2,131 @@
 - 嘗試重構程式
 - 2人玩家 Dealer 、Player
 - 每一步取牌後輸出當時時間
-- 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
-
 
 ```python
+################# 導入 random 模組 #################
 import random
 from datetime import datetime
 
-# 定義全域變數 Card dict
-def card():
-    return list(range(1, 14))
-
-def print_time():
-    now = datetime.now()
-    str_now = now.strftime("%H:%M:%S")
-    print(f"({str_now})",end="")
-    my_file.write(f"({str_now}): ")
-
-def print_card():
-    for i in card_dict:
-        print(f"{i}{card_dict[i]}")
-
-# 定義 Player Class
+################# Class Player #################
 class Player:
     def __init__(self, player_name):
         self.player_name = player_name
         self.player_card_list = []
         self.player_sum = 0
-        self.flag = True  # 用於判斷是否繼續抽牌
-    
-    def get_card(self):
-        while True:
-            rand_1 = random.randint(0, 3)
-            card_type = card_type_list[rand_1]
-            rand_2 = random.randint(0, 12)
-            card_point = card_dict[card_type][rand_2]
-            
-            if (card_point == "X"):  # 已抽過的牌
-                continue # 直至抽到未被其他人抽到牌為止
-            
-            # 若成功抽到 #
-            card_dict[card_type][rand_2] = "X"  # 標記 X 為已抽
-            self.player_card_list.append(f"{card_type}{card_point}") # 增加 Player 手上的 Card list
-            self.card_sum(card_point) # 增加 Player 手上的點數
-            self.show()
-            break
+        self.player_flag = True
         
-    def card_sum(self, card_point):
+    def get_card(self):
+        while(True):  
+            rand_suits = random.randint(0,3)
+            card_suit = card_list[rand_suits][0]
+            
+            rand_card = random.randint(1,13)
+            card_point = card_list[rand_suits][rand_card]
+            print(f"---- {card_suit}{card_point} ----")
+            
+            # 判斷該位置是否為 *
+            # 若是則該牌已取，再Random重抽
+            if(card_list[rand_suits][rand_card] == "*"): 
+                continue
+            
+            else: # 取牌後把對應位置變為 * 以作記錄
+                card_list[rand_suits][rand_card] = "*"
+                break # break 跳出抽牌的這個迴圈
+            
+        self.player_card_list.append(f"{card_suit}{card_point}")  # 第0個值為花式
+        
         if card_point >= 10:
             self.player_sum += 10  # J, Q, K 算作 10
         else:
             self.player_sum += card_point
-            
+    
     def show(self):
         print_time()
-        print(f"{self.player_name} 目前已取牌 {self.player_card_list} , 目前的點數：{self.player_sum}")
-        my_file.write(f"{self.player_name} 目前已取牌 {self.player_card_list} , 目前的點數：{self.player_sum}\n")
-
-
-# 定義 全域變數
-card_type_list = ["黑桃", "紅心", "梅花", "方塊"]
-card_dict = {
-    "黑桃": card(),
-    "紅心": card(),
-    "梅花": card(),
-    "方塊": card()
-}
-
-try:
-    my_file = open("record.txt", "a+", encoding="UTF-8")
-
-except Exception as E:
-    print(E)
-
-# 定義遊戲邏輯
-def play_game():
-
-    num_players = 3
-    players = [Player(f"P{i+1}") for i in range(num_players)]
-
-    # 玩家輪流抽牌
-    while(True):
-        all_stopped = True  # 用於檢查是否所有玩家都停止抽牌 / 爆
-        for player in players: 
-            
-            if(player.flag == True):  # 只有當玩家 flag 為 True 時才抽牌
-                print()
-                my_file.write("\n")
-                print_time()
-                print(f"現在是 --- {player.player_name} --- 的回合：")
-                my_file.write(f"現在是 --- {player.player_name} --- 的回合：\n")
-                player.show()
-                action = input(f"{player.player_name} 是否要再抽一張牌？(get/bye): ")
-                if(action.lower() == 'get'):
-                    player.get_card()
-                    if(player.player_sum > 21):
-                        print_time()
-                        print(f"{player.player_name} 超過 21 點，輸了！")
-                        my_file.write(f"{player.player_name} 超過 21 點，輸了！\n")
-                        player.flag = False  # 設置 flag 為 False，表示停止抽牌
-                else:
-                    print_time()
-                    print(f"{player.player_name} 選擇停止取牌。")
-                    my_file.write(f"{player.player_name} 選擇停止取牌。\n")
-                    player.flag = False  # 設置 flag 為 False，表示停止抽牌
-                # print_card() # 每抽完一次牌都展示牌組
-            
-            # 檢查是否所有玩家都停止抽牌
-            if(player.flag):
-                all_stopped = False
+        print(f"{self.player_name} 目前已取牌 {self.player_card_list} , 點數：{self.player_sum}")
         
-        if(all_stopped == True):  # 如果所有玩家的 flag 都是 False，則結束遊戲
-            break
 
-    # 結束遊戲，顯示所有玩家的結果
+################# 定義 function #################
+def print_time():
+    now = datetime.now()
+    str_now = now.strftime("%H:%M:%S")
+    print(f"({str_now})",end=" ")
+
+def print_card_list():
+    for i in range(0,4):
+        print(card_list[i]) 
+
+################# 全域變數 #################
+## list - card
+card_list = [
+    ["黑桃",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["紅心",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["梅花",1,2,3,4,5,6,7,8,9,10,11,12,13],
+    ["方塊",1,2,3,4,5,6,7,8,9,10,11,12,13],
+]
+
+################# 主程式區 #################
+
+# 創建玩家
+dealer = Player("Dealer")
+p1 = Player("Player 1")
+
+players_list = [dealer, p1]
+
+# Game Start
+flag_all_stoped = True
+while(flag_all_stoped):
     
-    print("\n########### 遊戲結束！結果如下 ###########\n")
-    my_file.write("\n ########### 遊戲結束！結果如下 ########### \n")
-    winners = []
-    for player in players: 
-        if(player.player_sum <= 21):
-            winners.append(player)
-        
-    if(len(winners)==0):
-        print_time()
-        print("所有玩家都超過 21 點，沒人贏！")
-        my_file.write("所有玩家都超過 21 點，沒人贏！\n")
-        
-    else:
-        win_point = 0 # 假定一個最大值
-        win_name = "" # 假定一個 winner
-        for player in players: 
+    for player in players_list:
+        if(player.player_flag == True):
             print_time()
-            print(f" {player.player_name} : {player.player_sum}點 {player.player_card_list}")
-            my_file.write(f" {player.player_name} : {player.player_sum}點 {player.player_card_list}\n")
-            if((player.player_sum > win_point) and (player.player_sum<=21)):
-                win_point = player.player_sum
-                win_name = player.player_name
+            print(f"現在是 ------ {player.player_name} ------ 的回合")
+            player.show()
+            
+            while(True):
+                temp = input("取牌請輸入'get'、結束遊戲請輸入'bye'：")
+                temp = temp.lower()
+                if(temp == "get" or temp == "bye"):
+                    break
+                else:
+                    print(f"輸入錯誤，請重新輸入")
+            
+            if(temp == "get"):
+                player.get_card()
+                player.show()
+            
+            elif(temp == "bye"):
+                print(f"{player.player_name} 放棄取牌，點數為：{player.player_sum}")
+                player.player_flag = False
+            print()
+            
+            # 判斷over21點
+            if(player.player_sum == 21):
+                print(f"{player.player_name} 獲得勝利！！！")
+                exit() # 結束遊戲
+            
+            elif(player.player_sum > 21):
+                print(f"{player.player_name} 已超過 21 點！！！")
+                player.player_flag = False
     
-    print_time()
-    print(f"最終贏家是 --- {win_name} ---、點數 {win_point} 點")
-    my_file.write(f"最終贏家是 --- {win_name} ---、點數 {win_point} 點\n")
-    my_file.close()
+    # 檢查是否全部人都"bye
+    for player in players_list:
+        if(player.player_flag == True):
+            break
+        else:
+            flag_all_stoped = False # While 迴圈將暫停
 
-# 開始遊戲
-if __name__ == "__main__":
-    my_file.write("\n ------ 現在開始遊戲 ------ \n")
-    play_game()
-
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410151610455.png)
-
-
-## 以list實作另外的牌組
-```python
-import random
-
-def draw_card(deck):
-    card = random.choice(deck)
-    deck.remove(card)
-    return card
-
-suits = ['黑桃', '紅心', '梅花', '方塊']
-ranks = {
-    'A': 1,
-    '2': 2,
-    '3': 3,
-    '4': 4,
-    '5': 5,
-    '6': 6,
-    '7': 7,
-    '8': 8,
-    '9': 9,
-    '10': 10,
-    'J': 10,
-    'Q': 10,
-    'K': 10
-}
-
-deck = []
-for suit in suits:
-    for rank in ranks.keys():
-        deck.append([suit, rank, ranks[rank]])
-
-random.shuffle(deck)
-
-get_card = draw_card(deck)
-print(get_card)
+# 若全部人都按下 bye 且未有人 over 21點，則需全部做對比並找出最大值
+max_name = ""
+max_sum = 0
+sum_list = []
+for player in players_list:
+    sum_list.append(f"{player.player_name}：{player.player_sum}點")
+    if(player.player_sum > max_sum and player.player_sum <= 21):
+        max_name = player.player_name
+        max_sum = player.player_sum
+        
+# 結果
+print(sum_list)
+print(f"最終贏家為：*** {max_name} ***，點數為：*** {max_sum}點 ***")
 ```
