@@ -11,3 +11,4 @@
 * [Lesson 3 - 作業答案](Lesson\_3\_Homework.md) 
 * [Lesson 5 - 21點遊戲 version1](Lesson\_5\_Homework.md)
 * [Lesson 6 - 21點遊戲 version2](Lesson\_6\_Homework.md)
+* [Lesson 7 - 21點遊戲 version3](Lesson\_7\_Homework.md)
