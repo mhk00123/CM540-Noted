@@ -275,3 +275,25 @@ cart_3 = cart[::2] # ["蘋果", "藍莓", "鳳梨"]
 cart_4 = cart[::-1] # ["鳳梨", "香蕉", "藍莓", "橙", "蘋果"]
 
 ```
+
+
+# 第三方Module下載 - pip
+pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
+
+pip 是 Python 2.7.9 版本及其後續版本的標准組件，也是 Python 3.4 及其後續版本的標准組件。它在安裝 Python 解釋器時一同安裝。
+
+## Python pip 基本命令
+安裝包：
+`pip install package_name`
+
+升級包：
+`pip install --upgrade package_name`
+
+卸載包：
+`pip uninstall package_name`
+
+顯示已安裝的包：
+`pip list`
+
+搜索包：
+`pip search package_name`
