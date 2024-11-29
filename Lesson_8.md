@@ -2,7 +2,16 @@
 
 **tags: `python`** **`CM-540`** **`Lesson8`**
 
-Datetime Module、pip、API、爬蟲入門
+os Module、pip、API、爬蟲入門
+
+# 功課 : 21 點遊戲增強(final)
+- 嘗試重構程式
+- 2人玩家 Dealer 、Player
+- 每一步取牌後輸出當時時間
+- 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
+
+截止日期：2024-12-03 23:59
+繳交地址：[https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload](https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload)
 
 ## Slide
 課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
