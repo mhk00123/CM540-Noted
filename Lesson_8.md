@@ -7,119 +7,11 @@ Datetime Module、pip、API、爬蟲入門
 ## Slide
 課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
 
-## 常用Module - datetime
-
-```python
-# 引入 datetime
-from datetime import datetime
-
-# 取得目前日期時間
-t_now = datetime.now()
-t_now_s = datetime.now().timestamp()
-print(t_now)
-print(t_now_s)
-
-# 定義要解析的日期字符串
-date_string = "2025-09-27 14:30"
-parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M")
-
-# 計算時間差
-diff_time = parsed_date - now
-
-
-# 兩個 datetime 對象相減時，得到的是一個 timedelta 對象，這個對象不能直接使用 strftime() 方法
-# 獲取天數和秒數
-days = diff_time.days
-seconds = diff_time.seconds
-
-# 拆開小時、分鐘、秒
-ans_hour = int(seconds / 3600)
-ans_min = int(seconds % 3600 / 60)
-ans_sec = int(seconds % 3600 % 60)
-
-# 格式化為字符串
-result_string = f"時間差: {days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒"
-print(result_string)
-
-```
-    
-## 格式化日期
-
-### 有關日期
-| 格式 | 含義 |
-| :-: | :-: |
-| %y | （00 - 99）兩個數字表示的年份 |
-| %Y | 完整的年份（4個數字表示年份） |
-| %m | 月份（01 - 12） |
-| %d | 日期（0-31） |
-| %b | 本地月份名稱的簡寫（如八月份為agu） |
-| %B | 本地月份名稱的全稱（如八月份為august） |
-| %a | 本地星期名稱的簡寫（如星期四為Thu） |
-| %A | 本地星期名稱的全稱（如星期四為Thursday） |
-
-
-### 有關時間
-| 格式 | 含義 |
-| :-: | :-: |
-| %H | 一天中的第幾個小時（24小時制，00 - 23） |
-| %I | 第幾個小時（12小時制，0 - 11） |
-| %M | 分鐘數（00 - 59） |
-| %S | 秒（00 - 61） |
-| %p | 本地am或者pm的識別字 |
-| %j | 一年中的第幾天（001 - 366） |
-
-## 練習
-請計算現在距離 2024年10月4日21:45 還有多少小時、分、秒。
-
-```python
-# 請計算現在距離 2024年10月4日21:45 還有多少小時、分、秒。
-
-from datetime import datetime
-
-# 取得目前時間 
-now_time = datetime.now() # datetime格式
-
-# 目標時間
-target_string = "2024-10-15 21:45"
-target_time = datetime.strptime(target_string, "%Y-%m-%d %H:%M") # datetime格式
-
-# 兩日期相減
-time_diff = target_time - now_time
-print(time_diff)
-
-days = time_diff.days
-diff_seconds = time_diff.seconds
-
-print(f"{days} {diff_seconds}")
-
-ans_hour = int(diff_seconds / 3600)
-ans_min = int(diff_seconds % 3600 / 60)
-ans_sec = int(diff_seconds % 3600 % 60)
-
-print(f"現在距離{target_string}, 還有{days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒")
-```
-
-## 補充常用時間函數 time.sleep()
-若我們要程式等待一定時間後再執行下一步，可以使用`sleep(秒)`這個function
-
-```python
-import time
-from datetime import datetime
-
-now = datetime.now()
-print(now)
-
-time.sleep(2)
-
-now = datetime.now()
-print(now)
-```
-
 
 # 常用Module - os
-- 得到當前的工作目錄的路徑：os.getcwd( )
-- 取得當前工作路徑的文件列表：os.listdir(os.getcwd())
-- 將一個文件名與擴展名分開。 os.path.splitext()
+- 得到當前的工作目錄的路徑：`os.getcwd()`
+- 取得當前工作路徑的文件列表：`os.listdir(os.getcwd())`
+- 將一個文件名與擴展名分開： `os.path.splitext()`
 
 ## 資料補充 - 路徑 path
 在系統中，對於路徑(Path)我們有兩種標識方法
@@ -136,9 +28,9 @@ print(now)
 ## 絕對路徑
 相對路徑是相對於當前工作目錄的路徑。它指定了文件或目錄相對於當前位置的位置。根據當前工作目錄的不同，相對路徑可能會有所變化。
 
-如果當前工作目錄是 C:\Users\Username
+如果當前工作目錄是 `C:\Users\Username`
 
-相對路徑 Documents\file.txt 將指向 C:\Users\Username\Documents\file.txt
+相對路徑 `Documents\file.txt` 將指向 `C:\Users\Username\Documents\file.txt`
 
 需要注意的是，相對路徑也可以使用特殊符號來表示路徑關系：
 
@@ -164,7 +56,6 @@ open('../data/檔名4.txt')
 open('C:\\user\\檔名5.txt')
 ```
 
-
 ## 資料補充 - 文件輸入/輸出流
 在Python中，我們可以透過文件輸入/輸出流open() 處理文件的新增/修改
 基礎用法
@@ -174,10 +65,10 @@ f = open("文件名", "打開方式")
 f = open("demofile.txt", "w")
 ```
 有四種打開文件的不同方法（模式）：
-"r" - 讀取 - 默認值。打開文件進行讀取，如果文件不存在則報錯。
-"a" - 追加 - 打開供追加的文件，如果不存在則創建該文件。
-"w" - 寫入 - 打開文件進行寫入，如果文件不存在則創建該文件。
-"x" - 創建 - 創建指定的文件，如果文件存在則返回錯誤。
+`r` - 讀取 - 默認值。打開文件進行讀取，如果文件不存在則報錯。
+`a` - 追加 - 打開並供追加文件的最後，如果不存在則創建該文件。
+`w` - 寫入 - 打開文件進行寫入，如果文件不存在則創建該文件。
+`x` - 創建 - 創建指定的文件，如果文件存在則返回錯誤。
 
 ### 寫入文件
 ```python
@@ -194,7 +85,7 @@ except Exception as E:
 ```
 
 ### 讀取文件
-使用 read() 和 readline()
+使用 `read()` 和 `readline()`
 ```python
 try:
     my_file = open("demo.txt", "r")
@@ -246,7 +137,6 @@ for i in range(5):
         
     time.sleep(2)
 ```
-
 
 # 第三方Module下載 - pip
 pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
