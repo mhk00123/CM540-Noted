@@ -124,6 +124,19 @@ print()
 print(f"現在是 {g_time}，溫度是：{g_temperature}度")
 ```
 
+## 思考
+上題中，由於`Temperature` > `Value` 有時只有一個，有時會有多個，我們可以如何處理?
+
+1. 當只有一個時，則僅僅是一個值
+```python
+g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"]["Value"]
+```
+
+2. 若有多個，則回傳一個`list`，我們只取list中第1個的值(index=0)則可
+```python
+g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"][0]["Value"]
+```
+
 
 # 爬取資料的思路
 1. 取得資料(**下載、API**)
