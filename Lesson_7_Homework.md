@@ -112,6 +112,7 @@ while(flag_all_stoped):
     # 檢查是否全部人都"bye
     for player in players_list:
         if(player.player_flag == True):
+            flag_all_stoped = True
             break
         else:
             flag_all_stoped = False # While 迴圈將暫停
