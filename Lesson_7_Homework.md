@@ -2,6 +2,7 @@
 - 嘗試重構程式
 - 2人玩家 Dealer 、Player
 - 每一步取牌後輸出當時時間
+- 把每一步紀錄到`game_log.txt`
 
 ```python
 ################# 導入 random 模組 #################
@@ -24,6 +25,7 @@ class Player:
             rand_card = random.randint(1,13)
             card_point = card_list[rand_suits][rand_card]
             print(f"---- {card_suit}{card_point} ----")
+            write_log(f"---- {card_suit}{card_point} ----\n")
             
             # 判斷該位置是否為 *
             # 若是則該牌已取，再Random重抽
@@ -44,6 +46,7 @@ class Player:
     def show(self):
         print_time()
         print(f"{self.player_name} 目前已取牌 {self.player_card_list} , 點數：{self.player_sum}")
+        write_log(f"{self.player_name} 目前已取牌 {self.player_card_list} , 點數：{self.player_sum}\n")
         
 
 ################# 定義 function #################
@@ -51,6 +54,11 @@ def print_time():
     now = datetime.now()
     str_now = now.strftime("%H:%M:%S")
     print(f"({str_now})",end=" ")
+    return str_now
+
+def write_log(write_string):
+    with open("game_log.txt", "a" , encoding="utf-8") as f:
+        f.write(f"{write_string}")
 
 def print_card_list():
     for i in range(0,4):
@@ -79,8 +87,9 @@ while(flag_all_stoped):
     
     for player in players_list:
         if(player.player_flag == True):
-            print_time()
+            write_log(f"({print_time()})")
             print(f"現在是 ------ {player.player_name} ------ 的回合")
+            write_log(f"現在是 ------ {player.player_name} ------ 的回合\n")
             player.show()
             
             while(True):
@@ -90,6 +99,8 @@ while(flag_all_stoped):
                     break
                 else:
                     print(f"輸入錯誤，請重新輸入")
+                    write_log(f"輸入錯誤，請重新輸入")
+                    
             
             if(temp == "get"):
                 player.get_card()
@@ -97,16 +108,19 @@ while(flag_all_stoped):
             
             elif(temp == "bye"):
                 print(f"{player.player_name} 放棄取牌，點數為：{player.player_sum}")
+                write_log(f"{player.player_name} 放棄取牌，點數為：{player.player_sum}\n")
                 player.player_flag = False
             print()
             
             # 判斷over21點
             if(player.player_sum == 21):
                 print(f"{player.player_name} 獲得勝利！！！")
+                write_log(f"{player.player_name} 獲得勝利！！！\n\n")
                 exit() # 結束遊戲
             
             elif(player.player_sum > 21):
                 print(f"{player.player_name} 已超過 21 點！！！")
+                write_log(f"{player.player_name} 已超過 21 點！！！\n\n")
                 player.player_flag = False
     
     # 檢查是否全部人都"bye
@@ -129,5 +143,7 @@ for player in players_list:
         
 # 結果
 print(sum_list)
+write_log(f"{sum_list}\n")
 print(f"最終贏家為：*** {max_name} ***，點數為：*** {max_sum}點 ***")
+write_log(f"最終贏家為：*** {max_name} ***，點數為：*** {max_sum}點 ***\n\n")
 ```
