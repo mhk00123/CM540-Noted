@@ -6,9 +6,50 @@
 課件：[https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing](https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing)
 
 # Final Project
-繳交：[https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload](https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload)
+[https://hamster.cpttm.org.mo/spaces/feCAHUOGzzpHSwzd-DKvGg/upload](https://hamster.cpttm.org.mo/spaces/feCAHUOGzzpHSwzd-DKvGg/upload)
 
-Deadline：2024-10-27 23:59
+Deadline：2024-12-20 23:59
+
+# 如何打包程式碼為可執行檔(exe)
+由於在windows中，我們大部份可執行檔都是`.exe`的文件，因此我們也希望，我們最終的程式碼可以打包成為一個`.exe`文件以供執行。
+
+我們將使用 `pyinstaller` module進行打包工作。
+
+1. 打開 Anaconda Prompt
+2. 切換到 `py311` 環境
+```bash
+activate py311
+```
+3. 安裝 `pyinstaller` module
+```bash
+pip install pyinstaller
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060937844.png)
+
+
+4. 透過 `cd` 命令進入 `.py` 文件所在的資料夾，例如目前程式碼檔案放在 `D:\Code\Blackjack` 中。
+5. 如切換盤符(由C->D)，需要先打一次目的地的盤符才可以完成切換。
+
+```bash
+D:
+cd D:\Code\Blackjack
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060942943.png)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060944221.png)
+
+6. 透過打包命令，打包對應的執行環境、module文件
+`pyinstaller --onefile 文件名`
+```bash
+pyinstaller --onefile blackjack.py
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060946299.png)
+
+7. 最終生成 `build`、`dist`資料夾，及`blackjack.spec`文件。而我們需要的.exe文件則存放在`dict`文件夾中。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060947575.png)
 
 # 爬取 TDM 新聞
 TDM 新聞提供 API 我們可以直接調用。
@@ -334,99 +375,3 @@ df = df.loc[df["Car_CNT"] < 20]
 df.to_excel("output.xlsx", index=False)
 ```
 
-
-
-# 爬取澳門日報 
-## 思路
-1. 取得所有版面的連結 : `page_links[ ]`
-2. 取得每一版面中的所有文章的連結 : `target_links[ ]`
-3. 訪問每一篇文章的連結 - 取得內文
-
-```python
-import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
-
-######################### Step 1 : 尋找報紙所有頁面中的 Links #########################
-
-# 0. 用戶輸入日期
-day_get = input("請輸入日期（格式：YYYY-MM-DD）：")
-date_obj = datetime.strptime(day_get, "%Y-%m-%d")
-
-# 格式化為 YYYY-MM/DD
-formatted_date = f"{date_obj.year}-{date_obj.month:02}/{date_obj.day:02}"
-print(formatted_date)
-# 1. 目標 url
-url = f"http://macaodaily.com/html/{formatted_date}/node_2.htm"
-print(url)
-
-# 2. 向目標發送請求(request)
-response = requests.get(url)
-html_data = response.content.decode("utf-8")
-soup = BeautifulSoup(html_data, "html.parser") 
-
-# 3. 找出所有右方table中的link
-
-page_links = []
-tables = soup.find_all(id='pageLink') #定位 id = "pageLink" 的 Table td
-
-for td in tables: # 按照網頁結構，每個Table中也包含 Table，用 For 迴圈處理
-    href = td.get("href")
-    p_link = f"http://macaodaily.com/html/{formatted_date}/{href}"
-    page_links.append(p_link)
-
-print(page_links)
-
-######################### Step 2 : 每一個版面進行訪問取得文章連結 #########################
-
-target_links = []
-for page_link in page_links:
-    url = page_link
-    response = requests.get(url)
-    html_data = response.content.decode("utf-8")
-    soup = BeautifulSoup(html_data, "html.parser")
-    tables = soup.find_all('table')
-
-    count = 0
-    for i in tables[5]:
-        try:
-            links = i.find_all("a") # 由於return 回來的 HTML 不純正，會包含\n，因此會出Error
-        except:
-            continue # 若 Error 則遇到 \n，跳過即可
-        
-        for target in links:
-            try:
-                href = target.find("div")["id"][2:] # 由於return 回來的 HTML 不純正，會包含\n，因此會出Error
-            except:
-                continue # 若 Error 則遇到 \n，跳過即可
-            
-            p_link = f"http://macaodaily.com/html/{formatted_date}/content_{href}.htm"
-
-            target_links.append(p_link)
-            print(p_link)
-
-print(target_links)
-
-######################### Step 3 : 訪問每一文章連結取得文章內容 #########################
-
-with open("news.txt", "w", encoding="utf-8") as myFile:
-    for target_link in target_links:        
-        url = target_link
-        response = requests.get(url)
-        html_data = response.content.decode("utf-8")
-        soup = BeautifulSoup(html_data, "html.parser")
-        tables = soup.find('founder-content')
-        
-        print("###################################")
-        print(target_link)
-        myFile.write("\n###################################\n")
-        myFile.write(f"{target_link}\n\n")
-        
-        for i in tables:
-            t_text = i.getText()
-            print(t_text)
-            myFile.write(f"{t_text}\n")
-            
-        print("###################################")      
-        myFile.write("\n###################################\n")
-```
