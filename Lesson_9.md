@@ -362,7 +362,7 @@ def telegram_bot_sendtext(bot_message):
     return response.json()
 ```
 
-- 微信：透過第三應用 pushplus 向特定微信帳戶 (pushplus) 發送`post`推送。
+- 微信：透過第三應用 `pushplus` 向特定微信帳戶 (pushplus) 發送`post`推送。
 ```python
 def wechat_bot_sendtext(bot_message):
 
