@@ -383,3 +383,36 @@ df = df.loc[df["Car_CNT"] < 20]
 df.to_excel("output.xlsx", index=False)
 ```
 
+## (補充)如何透過 Python 程式向手機發送通知
+首先，要向自己的手機發送信息是十分困難的!
+
+由於手機系統中有著非常多的認證機制，以現階段我們的知識未具備以撰寫可通過驗證的程式。
+
+因此我們需要透過第三方工具協助，目前適用於Telegram、微信。
+- Telegram：開放API，可直接透過Telegram官方API向指定的群組發送推送。
+```python
+import requests
+
+def telegram_bot_sendtext(bot_message):
+
+    bot_token = 'your_token'
+    bot_chatID = 'your_chatID'
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+
+    response = requests.get(send_text)
+
+    return response.json()
+```
+
+- 微信：透過第三應用 `pushplus` 向特定微信帳戶 (pushplus) 發送`post`推送。
+```python
+def wechat_bot_sendtext(bot_message):
+
+    payload = {
+            'token' : 'your_token',
+            'content': bot_message
+        }
+    response = requests.post('http://www.pushplus.plus/send', data=payload)
+    
+    return response
+```
