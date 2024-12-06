@@ -370,7 +370,7 @@ def wechat_bot_sendtext(bot_message):
             'token' : 'your_token',
             'content': bot_message
         }
-    rs = requests.post('http://www.pushplus.plus/send', data=payload)
+    response = requests.post('http://www.pushplus.plus/send', data=payload)
     
-    return rs
+    return response
 ```
