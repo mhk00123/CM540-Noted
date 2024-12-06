@@ -51,6 +51,14 @@ pyinstaller --onefile blackjack.py
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060947575.png)
 
+8. 加入專屬logo(.ico)
+```bash
+pyinstaller --clean --onefile --icon="logo.ico" blackjack.py
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412061603226.png)
+
+
+
 # 爬取 TDM 新聞
 TDM 新聞提供 API 我們可以直接調用。
 > https://www.tdm.com.mo/api/v1.0/news?IsShowSevenDay=true&Type=image&Date={日期}&Lang=zh
