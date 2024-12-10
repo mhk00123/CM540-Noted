@@ -10,6 +10,7 @@
 * [Lesson 8 - pip、API、爬蟲入門](Lesson\_8.md) 
 * [Lesson 9 - API、爬蟲](Lesson\_9.md)
 * [Lesson 10 - exe打包、Pandas介紹](Lesson\_10.md)
+* [Lesson 11 - Panda 進階分類、Matplotlib](Lesson\_11.md)
 * #########
 * [\*\*\* Final Project \*\*\*](FinalProject.md)
 * #########
