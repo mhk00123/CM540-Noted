@@ -5,10 +5,6 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing](https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing)
 
-# Final Project
-繳交：[https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload](https://hamster.cpttm.org.mo/spaces/mpia_iw02T7zvtHYYB04WQ/upload)
-
-Deadline：2024-10-27 23:59
 
 # Pandas 統計操作
 ## 範例 Data
@@ -117,7 +113,7 @@ df = pd.DataFrame(
 count_by_fruit = df.groupby(by="種類").size()
 count_by_fruit
 ```
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111204927.png)
+
 
 ## groupby function
 將會用到 `.agg({"col_name":"value".function})`
