@@ -303,3 +303,44 @@ plt.show()
 # dpi = 輸出圖片的大小
 plt.savefig("draw_plot.png", dpi=250)
 ```
+
+## 練習：
+整合交通事務局的資料，把私家車停車位大於1000的去除，透過並貼上標籤
+```python
+bins = [0, 10, 30, 50, 1000]
+labels = ["車位嚴重不足", "車位不足", "車位尚可", "車位充足", "車位非常充足"]
+```
+最終透過畫圖方式展示目前車位狀態。
+
+示意圖：
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412102105542.png)
+
+```python
+import pandas as pd
+import requests
+import matplotlib.pyplot as plt
+
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+response = requests.get(url, headers=headers)
+
+df = pd.read_xml(response.content)
+
+df["Car_CNT"] = df["Car_CNT"].fillna(0)
+df["MB_CNT"] = df["MB_CNT"].fillna(0)
+
+condition = df["Car_CNT"] > 1000
+target_index = df.loc[condition].index.tolist()
+df = df.drop(index = target_index)
+
+bins = [0, 10, 30, 50, 1000]
+labels = ["車位嚴重不足", "車位不足", "車位尚可", "車位充足", "車位非常充足"]
+df['私家車位狀態'] = pd.cut(df['Car_CNT'], bins=5, labels=labels, right=False)
+
+df2 = df.groupby("私家車位狀態").size()
+df2.plot(kind="bar")
+plt.show()
+```
