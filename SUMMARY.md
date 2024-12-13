@@ -11,10 +11,11 @@
 * [Lesson 9 - API、爬蟲](Lesson\_9.md)
 * [Lesson 10 - exe打包、Pandas介紹](Lesson\_10.md)
 * [Lesson 11 - Panda 進階分類、Matplotlib](Lesson\_11.md)
+* [爬取澳門日報](Lesson\_11.md)
 * #########
 * [\*\*\* Final Project \*\*\*](FinalProject.md)
 * #########
-* [Lesson 3 - 作業答案](Lesson\_3\_Homework.md) 
+* [Lesson 3 - 作業答案](macaudaily.md) 
 * [Lesson 5 - 21點遊戲 version1](Lesson\_5\_Homework.md)
 * [Lesson 6 - 21點遊戲 version2](Lesson\_6\_Homework.md)
 * [Lesson 7 - 21點遊戲 version3](Lesson\_7\_Homework.md)
