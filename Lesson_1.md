@@ -8,9 +8,13 @@
 
 
 # 作業/考試 繳交
-請在家中的電腦嘗試使用 Anaconda 安裝 Python 環境、以及 Visual Studio Code，完成後截圖並上傳。 
+請按照課堂教案，在您的電腦/課室電腦設置 Python 環境。
+編寫 HelloWorld.py，更改輸出內容。
+完成後，把輸出截圖提交。
 
-繳交網址 : [https://hamster.cpttm.org.mo/spaces/con9jy-82z5PQiDpPT9X9g/upload](https://hamster.cpttm.org.mo/spaces/con9jy-82z5PQiDpPT9X9g/upload)
+繳交網址 : [https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload](https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload)
+
+截止時間：2025年2月28日 23:59
 
 # Python 是甚麼 ?
 
