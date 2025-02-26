@@ -17,3 +17,22 @@
 * [Lesson 5 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
 * [Lesson 6 - 21點遊戲增強 答案](Lesson\_6\_Homework.md)
 * [Lesson 7 - 21點遊戲(Final) 答案](Lesson\_7\_Homework.md)
+
+## 題目 1： 計算BMI指數
+繳交網址：[https://hamster.cpttm.org.mo/spaces/bKzjHGCdFKafBQ2jrFNoAQ/upload](https://hamster.cpttm.org.mo/spaces/bKzjHGCdFKafBQ2jrFNoAQ/upload)
+
+請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
+$$BMI = \frac{體重(kg)}{身高^2(m)}$$
+
+根據計算結果使用以下標準判斷BMI指數的範圍：
+| BMI值 | 描述 |
+| :--: | :--: | 
+| 小於 18.5 | 體重過輕 | 
+| 18.5 到 24.9 | 正常範圍 | 
+| 25 到 29.9 | 超重 | 
+| 大於等於 30 | 肥胖 |
+
+> 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
+
+## 題目 2： 學生成績評級
+繳交網址：[https://hamster.cpttm.org.mo/spaces/R9t3AH3_AKZIA5Uo8cY9sA/upload](https://hamster.cpttm.org.mo/spaces/R9t3AH3_AKZIA5Uo8cY9sA/upload)

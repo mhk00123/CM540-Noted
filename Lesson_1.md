@@ -8,14 +8,21 @@
 
 
 # 作業/考試 繳交
-請在家中的電腦嘗試使用 Anaconda 安裝 Python 環境、以及 Visual Studio Code，完成後截圖並上傳。
+請按照課堂教案，在您的電腦/課室電腦設置 Python 環境。
+編寫 HelloWorld.py，更改輸出內容。
+完成後，把輸出截圖提交。
 
-繳交網址 : [https://hamster.cpttm.org.mo/spaces/con9jy-82z5PQiDpPT9X9g/upload](https://hamster.cpttm.org.mo/spaces/con9jy-82z5PQiDpPT9X9g/upload)
+繳交網址 : [https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload](https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload)
 
+截止時間：2025年2月28日 23:59
 
 # Python 是甚麼 ?
 
-Python眾多程式語言中的一種，它是一種直譯式的程式語言，也是一種膠合語言。屬於直譯式的原因是，它的程式在執行時是一行接著一行的，也就是說，系統會先翻譯一行執行它，如果順利執行之後，再翻譯下一行，再執行。
+Python 是一種程式語言，作用是透過該語言，使得人和電腦得以進行溝通。
+
+就像我們人類世界的中文、英文......等。
+
+Python 是一種直譯式的程式語言，也是一種膠合語言。屬於直譯式的原因是，它的程式在執行時是一行接著一行的，也就是說，系統會先翻譯一行執行它，如果順利執行之後，再翻譯下一行，再執行。
 
 英國發音：/ˈpaɪθən/ 美國發音：/ˈpaɪθɑːn/
 
@@ -91,70 +98,10 @@ print("Hello World")
 
 * 本課程基於 `Python 3.11.7` 版本 (若有語法更新，請自行查詢手冊)
 
-由於Python是直譯式的程式語言，因此執行Python有著很多很多的方法，本課程將會教大家 2 種方法執行，大家可以按照個人喜好選擇。
+月由於Python是直譯式的程式語言，因此執行Python有著很多很多的方法，本課程將會教大家 2 種方法執行，大家可以按照個人喜好選擇。
 
-## 環境搭建(1) - 本機形式 (不推薦入門用戶)
 
-在本機中直接安裝Python執行環境、配合 Visual Studio Code 完成開發
-
-### 一、安裝 Python 環境
-
-1. 先到 Python 官方網站下載 : [https://www.python.org/](https://www.python.org/)
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041607246.png)
-
-2. 選擇 `Windows 64-bit` 版本 (亦可按照自身需求，選擇macOS、32-bit、ARM版本)
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041610443.png)
-
-3. 為方便後續管理，請把 `Add python.exe to PATH` 打勾
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041618824.png)
-
-4. 安裝完成後，我們可以在Windows開始菜單中，找到Python 3.11 相關程式
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041626154.png)
-
-5. 打開`IDLE(Python3.11 64-bit)`，並輸入以下代碼。若有成功顯示，表示則Python環境已經順利安裝到電腦中。
-
-```python
-print("Hello World!")
-```
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041633572.png)
-
-### 二、撰寫您的第一個程式 Hello World
-
-1. 首先在 IDEL 的左上方點擊 File -> New File
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041748782.png)
-
-2. 在這個地方輸入程式碼
-
-```python
-print("Hello World 1")
-
-print("Hello World 2")
-
-print("Hello World 3")
-```
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041751080.png)
-
-3. 儲存檔案 `HelloWorld.py`
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041753562.png)
-
-4. 點擊 Run -> Run Module 執行程式碼
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041755050.png)
-
-5. Shell顯示執行成功
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041756721.png)
-
-## 安裝整合執行環境(Anaconda) - 推薦
-有了本機安裝的環境，一般已足夠滿足部份用戶，但我們仍然推薦使用整合的環境。
+## 1. 安裝整合執行環境(Anaconda) - 推薦
 
 ### Python 環境分區
 由於每個Python版本都相互獨立，在開發中，難免有時會遇到客戶指定的套件/功能在持定的版本才有，因此，若使用方法1在本機安裝，那麼在開發和調試中會遇到很多不方便的情況。
@@ -239,7 +186,49 @@ conda activate py311
 conda deactivate
 ```
 
-### 三、安裝 IDE - Visual Studio Code
+## 開始你的第一個 Python 程式
+剛才我們已成功在電腦安裝好整合式的 Python 環境，我們現在就來撰寫第一個 Python 程式吧。
+
+### 1. 生成 Python 程式碼檔案
+1. 我們首先打開記事本 `notepad.exe`
+2. 把檔案儲存到我們未來主力存放程式碼的資料夾中 (例如: `\Desktop\Code\Lesson1` )，把`存檔類型` 指定為 `所有檔案*.*`
+3. 命名我們的檔案  `HelloWorld.py` ，所有 Python程序碼檔案均以`.py`結尾。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2023/202502231335008.png)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2023/202502231337644.png)
+
+### 2. 編寫程式嗎
+在記事本中輸入
+
+```python
+# 該程式用於在屏幕中輸出 HelloWorld 文字
+
+print("Hello World, my name is Leo Tam!")
+```
+
+### 3. 運行程式
+1. 打開 `Anaconda prompt`
+2. 進入`py311`環境
+
+```bash
+conda activate py311
+```
+
+3. 進入程式碼檔案對應的路徑 (這個路徑每個人都不一樣，請注意)
+```bash
+cd C:\Users\leotam\Desktop\Code\Lesson1
+```
+
+4. 執行語法 : `python 檔案名稱`
+```bash
+python HelloWorld.py
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2023/202502231356829.png)
+
+
+## 安裝 IDE - Visual Studio Code
 
 一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
 
@@ -247,15 +236,11 @@ VS Code 下載: [https://code.visualstudio.com/download](https://code.visualstud
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
 
-1. 重新打開 `HelloWorld.py`，並按下鍵盤 F5 -> Python File 執行
+1. 重新打開 `HelloWorld.py`
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
 
-2. 執行成功
-
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
-
-3. 選取不同版本的 Conda Env
+2. 選取不同版本的 Conda Env
 可以按下鍵盤的`ctrl`+`shift`+`p` 並輸入 `Select Interpreter`
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021902262.png)
@@ -264,9 +249,11 @@ VS Code會自動檢查系統中包含的所有環境，在這里可以選擇Cond
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021903518.png)
 
+3. 執行，按下鍵盤的 F5
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
 
 
-## 環境搭建(2) - Jupyter
+## 2. 環境搭建 - Jupyter
 
 ### 一、Jupyter Notebook
 
@@ -315,7 +302,8 @@ print("Hello World 3")
 5. 運算子、運算式：加減乘除、大小等於。
 6. 流程控制(選擇性敘述): `if`、`elif`、`else`
 7. 重複執行的迴圈: `for`、`while`、`switch`。
-7. 例外狀況處理: `try` `except`。
+8. 例外狀況處理: `try` `except`。
+
 
 ## 程式語言中的變量/變數是什麼?
 
