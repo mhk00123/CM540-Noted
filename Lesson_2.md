@@ -137,10 +137,10 @@ minus = a - b     # 減法
 multiply = a * b  # 乘法
 divide = a / b    # 除法
 
-print("加法結果：" + add)       # 輸出 13
-print("減法結果：" + minus)     # 輸出 7
-print("乘法結果：" + multiply)  # 輸出 30
-print("除法結果：" + divide)    # 輸出 3.333...
+print("加法結果：" + str(add))       # 輸出 13
+print("減法結果：" + str(minus))     # 輸出 7
+print("乘法結果：" + str(multiply))  # 輸出 30
+print("除法結果：" + str(divide))    # 輸出 3.333...
 # 除法結果必為浮點數 float
 ```
 
