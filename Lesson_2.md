@@ -8,6 +8,7 @@
 
 # 作業：
 ## 題目 1： 計算BMI指數
+
 [https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload](https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload)
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 * 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
