@@ -6,6 +6,21 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing](https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing)
 
+# 作業：
+## 題目 1： 計算BMI指數
+請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
+* 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271842351.png)
+
+
+根據計算結果使用以下標準判斷BMI指數的範圍：
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271841302.png)
+
+
+## 題目 2： 學生成績評級
+
 
 
 請寫一個程式，提示使用者輸入 3 個科目的成績，然後根據以下標準進行評級和總評：
