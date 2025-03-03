@@ -8,10 +8,25 @@
 
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
+# 作業：
+Deadline : 2025-03-06 23:59
 
-## 題目 1： 超級無敵開口中
+## 題目 1： 計算BMI指數
 
-繳交網址：[https://hamster.cpttm.org.mo/spaces/jXSdoKCczNB0HTfM66hZew/upload](https://hamster.cpttm.org.mo/spaces/jXSdoKCczNB0HTfM66hZew/upload)
+[https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload](https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload)
+請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
+* 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271842351.png)
+
+
+根據計算結果使用以下標準判斷BMI指數的範圍：
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271841302.png)
+
+## 題目 2： 超級無敵開口中
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/YZws3cn37KLiC7lmG7hV0w/upload](https://hamster.cpttm.org.mo/spaces/YZws3cn37KLiC7lmG7hV0w/upload)
 
 奬門人節目內的超級無敵開口中， 玩法是電腦隨機抽出一個 1 - 100 之間的號碼作為幸運號碼，參加者輪流說出一個數字，電腦會根據答案和參加者的數字，將可選範圍縮窄，直到最後幸運號碼被估中為止。
 
@@ -29,9 +44,9 @@ lucky_num = random.randint(1, 100)
 print(lucky_num)
 ```
 
-## 題目 2： 三角型的9x9乘法表(選做)
+## 題目 3： 三角型的9x9乘法表(選做)
 
-繳交網址：[https://hamster.cpttm.org.mo/spaces/u5d_R7JPGcQbNNKkDOJYqg/upload](https://hamster.cpttm.org.mo/spaces/u5d_R7JPGcQbNNKkDOJYqg/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/KXX8QIiXdB6Y717Ld7GLjQ/upload](https://hamster.cpttm.org.mo/spaces/KXX8QIiXdB6Y717Ld7GLjQ/upload)
 
 請嘗試以迴圈輸出：
 
