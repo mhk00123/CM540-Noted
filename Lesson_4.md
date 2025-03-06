@@ -26,6 +26,78 @@
 - 若大於 21 點，輸了，遊戲結束
 - 輸入 bye 遊戲結束
 
+# 再次了解雙重迴圈
+我們可以用時鐘的`時針`和`分針`來比喻雙重迴圈
+[https://toytheater.com/clock/](https://toytheater.com/clock/)
+
+在時鐘的概念中，時針的走動與分針是緊密連接的，分針每走60格，時針走1格。
+
+- 時針值的跳動 0->23 #24小時制
+- 分針值的跳動 0->59
+
+執行順序是，分針先走，當分針走完一圈，時針才可以動。
+
+```python
+i = 0 # i 視作時針的初始值
+j = 0 # j 視作分針的初始值
+
+while(i<=23):
+    # j 每行完一圈，都應該要返回 0
+    j = 0
+    while(j<=59):
+        print(f"現在是 {i} 時 {j} 分")
+        j = j + 1 # j 每次跳動 1 格
+
+    i = i + 1 # 當 j 完成跳動 60 次後，i 跳動 1 格
+```
+
+## 迴圈技巧 - 跳過某一次 (continue)
+
+在迴圈中，我們可能有部份執行語句會因應不同情況而不出現，此時可以用`continue`語句，由檢測到continue關鍵字起跳過本次循環，直接進入下一次循環。
+
+#### 輸出 1-10，跳過2,9
+
+```python
+# while 版本
+count = 1
+while(count <= 10):
+    if(count == 2 or count == 9):
+        count = count + 1
+        continue
+    print(count)
+    count = count + 1
+
+# for 版本
+for i in range(1,11): 
+    if(i==2) or (i==9):
+        continue
+    print(i)
+```
+
+## 迴圈技巧 - 跳出迴圈 (break)
+
+**break** 即跳出迴圈的意思，程式當遇到特定條件時，執行 **break** 語句即會跳出迴圈。
+
+### 迴圈一直執行，直到遇到輸入"bye"時結束
+
+```python
+count = 0
+
+while(True):
+    print(f"現在迴圈已經執行第 {count} 次了!")
+
+    user_input = input("請問要繼續迴圈嗎? ")
+
+    if(user_input == "bye"):
+        print("=== 迴圈結束 ===")
+        break
+    
+    count = count + 1
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png)
+
+
 # for-in 循環/迴圈
 
 除了 While 迴圈外，For 迴圈也是在Python中十分常用的。兩者本質意義上十分相似，作用都是重覆執行語句。
