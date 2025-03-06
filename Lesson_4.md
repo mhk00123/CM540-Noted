@@ -9,9 +9,9 @@
 
 
 # 功課：21 點遊戲單人版
-繳交網址：[https://hamster.cpttm.org.mo/spaces/Kx3n7Rlu9fYuV5SkUK8X3g/upload](https://hamster.cpttm.org.mo/spaces/Kx3n7Rlu9fYuV5SkUK8X3g/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload](https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload)
 
-截止日期：2024-09-24
+截止日期：2025-03-10 23:59
 
 ---
 - 扑克牌(52張) ：1 - 13 表示(暫不分開花色)
@@ -24,7 +24,7 @@
 - 記錄點數必須引導玩家繼續發牌
 - 若剛好等於 21 點，贏了，遊戲結束
 - 若大於 21 點，輸了，遊戲結束
-- 輸入 bye 遊戲結束
+- 輸入 "bye" 遊戲結束
 
 # 再次了解雙重迴圈
 我們可以用時鐘的`時針`和`分針`來比喻雙重迴圈
