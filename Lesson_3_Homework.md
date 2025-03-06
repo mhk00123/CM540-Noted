@@ -82,8 +82,9 @@ print(lucky_num)
 # 需要 2 個變數記錄區間
 min = 1
 max = 100
+flag = True
 
-while(True):
+while(flag):
     print("------------------")
     
     # 1. 請用戶輸入
@@ -91,30 +92,34 @@ while(True):
     temp = input(f"請輸入 {min} - {max} 的數字：")
     
     # 2. 判斷是否打了 bye
+    # 輸入 bye
     if(temp == "bye"):
+        print(f"結果是：{lucky_num}!")
         print("Bye Bye!")
-        break
-    
-    # 3. 若沒有則轉換為 int 作下一階判斷
-    user_input = int(temp)
- 
-    # 若輸入不正確
-    if( (user_input < min) or (user_input > max) ):
-        print("### 輸入錯誤 ###")
-        continue
-    
-    # 4. 比較
-    if(user_input == lucky_num):
-        print("### 恭喜估中了！！！ ###")
-        break
+        flag = False # 迴圈會跳出
 
-    elif(user_input > lucky_num):
-        print("再小一點")
-        max = user_input
+    # 沒有輸入 bye
+    else:          
+        # 3. 轉換為 int 作下一階判斷
+        user_input = int(temp)
     
-    elif(user_input < lucky_num):
-        print("再大一點")
-        min = user_input
+        # 若輸入不正確，continue 重新輸入
+        if( (user_input < min) or (user_input > max) ):
+            print("### 輸入錯誤 ###")
+            continue
+        
+        # 4. 比較
+        if(user_input == lucky_num):
+            print("### 恭喜估中了！！！ ###")
+            flag = False # 迴圈會跳出
+
+        elif(user_input > lucky_num):
+            print("再小一點")
+            max = user_input
+        
+        elif(user_input < lucky_num):
+            print("再大一點")
+            min = user_input
     
 print("###### End ######")
 ```
