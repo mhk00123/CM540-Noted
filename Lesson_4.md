@@ -144,6 +144,8 @@ range(0, -10, -1) # 0,-1,-2,-3...-9
 ```python
 for i in range(1,101): 
     print(f"{i:3}")
+    if(i%25 == 0):
+        print() # 換行
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280207309.png)
@@ -217,8 +219,6 @@ for letter in 'cptTm':
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png)
-
-
 
 
 # 儲存容器
