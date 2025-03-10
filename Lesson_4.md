@@ -7,7 +7,6 @@
 # Slide
 [https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
-
 # 功課：21 點遊戲單人版
 繳交網址：[https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload](https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload)
 
