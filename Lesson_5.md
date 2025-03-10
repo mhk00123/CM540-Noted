@@ -7,17 +7,127 @@
 # Slide
 [https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
-
 # 功課：21 點遊戲單人版(Version2)
-我們對verion1 的程式碼進行重構，繳交網址：[https://hamster.cpttm.org.mo/spaces/5noF9BmT3yXtaMpntdD9gw/upload](https://hamster.cpttm.org.mo/spaces/5noF9BmT3yXtaMpntdD9gw/upload)
+我們對verion1 的程式碼進行重構，繳交網址：
+[[Link](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)
 
-截止日期：2024-11-24
+截止日期：2025-03-13
+
 我們要做的：
 - 以 list 方式把所有牌分開花式及點數(hints：二維list)
 - 每 1 輪發牌 - 改以 `Random` 方式
 - 把發牌這個動作打包成 function，可以把取得的牌 return 出來
 - 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
 
+
+
+# 儲存容器 - List(列表、陣列)
+
+List 是 Python 中最基本的數據結構。List 中的每個值都有對應的位置值，稱之為索引(index)，第一個索引是 0，第二個索引是 1，依此類推。
+
+```python
+# 定義一個空 List，使用[ ]
+list_empty = []
+
+# 定義一個含數據的 List 
+list_exp = ["red", "green", "blue", "yellow", "white", "black"]
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110034722.png)
+
+## List 的特性
+1. List 是有順序的，會按照 index 由0、1、2、...下去
+2. 存取方式與 string 一樣，使用變數名[index] 進行元素存取
+3. 列表的元素不需要具有相同的類型
+```python
+list_exp = [1 , "green", True] # 這個是合法的
+```
+4. List 中的元素可以作新增、修改、刪除(後續再詳講)
+5. List 是一個迭代對象(iterable)
+
+## 一維列表(常用)
+
+```python
+shopping_cart = ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"]
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405171051443.png)
+
+### 一維列表存取 1 個元素
+一維列表是有順序的，可以透過`列表名[index]`取得1個元素
+
+```python
+shopping_cart[0] # 蘋果
+shopping_cart[1] # 橙
+shopping_cart[2] # 藍莓
+shopping_cart[3] # 香蕉
+shopping_cart[4] # 鳳梨
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405171053836.png)
+
+### 一維列表存取所有元素
+由於 list 為可代物件，因此我們可以使用 for 迴圈訪問每一個元素
+```python
+shopping_cart = ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"]
+
+for i in shopping_cart:
+    print(i)
+```
+
+## 多維列表
+Python陣列有多種形式，包括一維陣列、二維陣列和多維陣列。一維陣列類似於列表，而二維陣列則可以想像成一個表格，多維陣列則可以擴展到更高維度的數據。
+
+```python
+list_all = [
+    list1[], list2[], list3[], ...
+]
+```
+
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405171058555.png)
+
+
+```python
+cart = [
+    ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"],
+    ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"],
+    ["橙", "香蕉", "香蕉"]
+]
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405171059334.png)
+
+
+### 二維列表存取方式
+```python
+cart = [
+    ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"],
+    ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"],
+    ["橙", "香蕉", "香蕉"]
+]
+
+# 列表名[行][列]
+# 第 2 行、第 2 個元素 - 蘋果
+cart[1][1]
+
+# 第 3 行、第 1 個元素 - 橙
+cart[2][0]
+```
+
+### 二維列表歷遍
+
+```python
+cart = [
+    ["蘋果", "橙", "藍莓", "香蕉", "鳳梨"],
+    ["橙", "蘋果", "鳳梨", "藍莓", "香蕉"],
+    ["橙", "香蕉", "香蕉"]
+]
+
+# for 迴圈
+for row in cart:
+    for col in row:
+        print(col)
+```
 
 ## 列表常用的操作和函數(function)
 1. 修改特定下標的值
@@ -27,7 +137,7 @@
 5. 在列表尾部加入 1 個 元素
 6. 在列表尾部加入 1 批 元素
 7. 刪除元素
-8. 刪除指定元素在 List 中的第一個匹配項目
+8. 刪除指定元素在List中的第一個匹配項目
 9. 清空列表
 10. 統計列表內某元素的值
 
@@ -47,23 +157,22 @@ print(f"列表長度：{length}")
 index = list_ex.index("May")
 print(f"May的index：{index}")
 
-# 4. 在指定index插入一個元素 (會改變整個列表) 
+# 4. 在列表尾部加入 1 個 元素 (超常用)
+# append()
+# 在最後增加 John
+print(f"原列表：{list_ex}")
+list_ex.append("John")
+print(f"修改後的列表：{list_ex}")
+
+# 5. 在指定index插入一個元素 (會改變整個列表) 
 # insert(index, 值)
 # 例如我想在 index = 2 的位置插入 "Angela"
 print(f"原列表：{list_ex}")
 list_ex.insert(2, "Angela")
 print(f"修改後的列表：{list_ex}")
 
-# 5. 在列表尾部加入 1 個 元素
-# append(值)
-# 在最後增加 John
-print(f"原列表：{list_ex}")
-list_ex.append("John")
-print(f"修改後的列表：{list_ex}")
-
-# 6. 在列表尾部加入 1 批 元素
-# extend(list)
-# 把 list2 加入到 list_ex的最後
+# 6. 兩列表合併
+# list1.extend(list2)
 print(f"原列表：{list_ex}")
 list2 = ["Kate", "Tom", "Ella"]
 list_ex.extend(list2)
@@ -78,7 +187,7 @@ list_ex.pop(5)
 print(f"修改後的列表：{list_ex}")
 
 # 8. 刪除指定元素在List中的第一個匹配項目
-# remove(值)
+# remove()
 # 例如我想要移除 Ella
 print(f"原列表：{list_ex}")
 list_ex.remove("Ella")
@@ -91,7 +200,7 @@ print(f"修改後的列表：{list_ex}")
 # print(f"修改後的列表：{list_ex}")
 
 # 10. 統計列表內某元素的值
-# count
+# count()
 list_ex = ['Leo', 'Allen', 'Angela', 'Leo', 'Celia', 'Leo', 'Kate', 'Leo']
 rs_Leo = list_ex.count("Leo")
 print(f"列表中有 {rs_Leo} 個Leo")
@@ -106,6 +215,7 @@ print(f"列表中有 {rs_Leo} 個Leo")
 
 若有需要，請隨時Google即可! 
 {% endhint %}
+
 
 # 一維列表常用的操作 - 排序
 我們可以在列中使用`.sort()`函數進行快速的排序操作。
@@ -185,18 +295,17 @@ print(f"此列表的平均值為：{avg_list_num}")
 # 函數 Function
 函數(Function)，Python自定了很多不同的已經寫好的Function，所謂函數就是『敘述的集合』，並且以一個函數名稱來代表此敘述集合。
 
-**是一種已組織好的，可以重覆使用的，實現特定功能的代碼段。**
+**是一種已組織好的，可以重覆使用的「小工具」或「黑盒子」，實現特定功能的代碼段。**
 
 試想想，為何我們為何能隨時使用 `print()`?
 
-- 是提前寫好的?
-- 可以重覆使用?
-- 實現輸出功能的一個功能段?
+- 是提前寫好的
+- 可以重覆使用
+- 實現輸出功能的一個功能段
 
 ### print() 在 Python 中的定義
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211506236.png)
-
 
 ### len() 
 len() 方法返回對像（字符、列表、元組等）長度或項目個數。
@@ -212,18 +321,16 @@ print(len_str1) # 19
 ```
 
 ### 練習
-不使用 `len()`，我們嘗試手寫一個出來，並計算以下 3 組 String 的總長度。
+不使用 `len()`，我們嘗試手寫一個出來，並計算以下 1 組 String 的總長度。
 
 ```python
 str1 = "My name is Leo Tam."
-str2 = "I'm the teacher of CM540."
-str3 = "I'm hungry."
+str2 = "My name is Leo Tam 12345."
 ```
 解：
 ```python
 str1 = "My name is Leo Tam."
-str2 = "I'm the teacher of CM540."
-str3 = "I'm hungry."
+str2 = "My name is Leo Tam 12345."
 
 count = 0
 for i in str1:
@@ -233,15 +340,9 @@ print(f"str1的字串長度為{count}")
 
 count = 0
 for i in str2:
-  count = count + 1
+    count = count + 1
 
 print(f"str2的字串長度為{count}")
-
-count = 0
-for i in str3:
-  count = count + 1
-
-print(f"str3的字串長度為{count}")
 ```
 
 ## 自定義函數/方法
