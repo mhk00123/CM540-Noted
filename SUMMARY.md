@@ -8,3 +8,5 @@
 * #########
 * [Lesson 3 - 作業答案3題](Lesson\_3\_Homework.md)
 * [Lesson 4 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
+* #########
+* [如何帶走你的程式碼](HowToBringCode.md)
