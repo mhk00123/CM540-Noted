@@ -19,11 +19,7 @@
 # 每個數字最多 4 隻(list)---
 
 # 生成一個有13個零的列表
-card_list = []
-for i in range(0,13):
-    card_list.append(int(0))
-
-# card_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+card_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 user_input_list = []
 sum = 0
@@ -41,8 +37,9 @@ while(True):
     
     user_input = int(temp)
     
+    # 假用戶不會輸入除了數字之外的東西
     if(user_input < 1 or user_input > 13):
-        print("輸入錯誤!")
+        print("輸入錯誤! 請重新輸入")
         continue
     
     ###  輸入正確  ####
@@ -51,6 +48,7 @@ while(True):
         print(f"已經沒有 {user_input} 了，再重新選擇！")
         continue
     else:
+        # 若還有空的牌，則在對應位置 +1 記錄
         card_list[user_input-1] = card_list[user_input-1] + 1
     
     # 記錄點數
@@ -65,7 +63,7 @@ while(True):
         break
     
     # 若大於 21 點，輸了，遊戲結束
-    if(sum > 21):
+    elif(sum > 21):
         print("爆炸了，")
         break
 ```
