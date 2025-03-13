@@ -11,7 +11,7 @@
 我們對verion1 的程式碼進行重構，繳交網址：
 [[Link](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)
 
-截止日期：2025-03-13
+截止日期：2025-03-17
 
 我們要做的：
 - 以 list 方式把所有牌分開花式及點數(hints：二維list)
