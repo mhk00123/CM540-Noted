@@ -1,19 +1,23 @@
-# Lesson 6 - 儲存容器 - Dictionary、錯誤捕捉
+# Lesson 6 - 傳參傳址、Dictionary、錯誤捕捉
 
 **tags: `python`** **`CM-540`** **`Lesson6`**
 
-Dictionary、錯誤捕捉、21點遊戲
+傳參傳址、Dictionary、錯誤捕捉
 
 ## Slide
 課件：[https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing](https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing)
 
-# 功課：21 點遊戲單人版(Version2.5)
-我們對verion2 的程式碼再進行重構，繳交網址：
-[https://hamster.cpttm.org.mo/spaces/8YqV6pIa1T0I7rpnVUKBTQ/upload](https://hamster.cpttm.org.mo/spaces/8YqV6pIa1T0I7rpnVUKBTQ/upload)
+# 功課：21 點遊戲單人版(Version2)
+我們對verion1 的程式碼進行重構，繳交網址：
+[https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)
 
-截止日期：2024-11-26
-1. 把牌組分開花式 (提示：使用 dict 加 list 的組合)
-2. 加入判斷：取得J、Q、K時全部定義作10點(+10
+截止日期：2025-03-17
+
+我們要做的：
+- 以 list 方式把所有牌分開花式及點數(hints：二維list)
+- 每 1 輪發牌 - 改以 `Random` 方式
+- 把發牌這個動作打包成 function，可以把取得的牌 return 出來
+- 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
 
 # 自定義函數/方法 - 參數、返回值
 我們也可以在函數中加入參數和返回值，而這2個值的作用範圍只在函數有效。
@@ -27,113 +31,126 @@ def function_name(參數1, 參數2, 參數3, ...):
 - 參數可以為空
 - 函數可以沒有 return 語句，如果沒有 return 語句，函數將返回一個特殊的值 None
 
-## 參數的意義
-以剛才的例子中，我們使用了`range(0,2)`控制迴圈的次數，但試想這個`range()`中每次都寫死了`0,2`，若我希望這個range()內的值是由執行的時候動態決定，我們要如何做？
+# 變數、Function 的順序
 
-* **注意：參數的作用範圍僅在函數中**
+我們知道，在變數、Function使用前，必須要進行宣告的動作，對應的功能才可以使用。
+
+## 程式架構順序
+在一個正常程式下，宣告的順序如下：
+* 由於 function 和 變數 都不會立即執行，因此可交換位置不會影響
+* **但全域變數必須放最上方**
+
 ```python
-# 定義最簡單的函數
-def print_hello(num1, num2):
-  for i in range(num1, num2):
-    print("Hello")
+####### 宣告區 #######
+# 由於 function 和 變數 都不會立即執行，因此可交換位置不會影響(但全域變數必須放最上方)
+# 1. 變數
+var_1 = "?"
+var_2 = "?"
 
-print_hello(2, 10)
-print_hello(1, 11)
+# 2. function 
+def function_name(var_1, var_2):
+    # code
+    return something
+
+####### 主程式/主邏輯區 #######
+if(var_1 == var_2):
+    print("他們相等")
 ```
 
-## 作用域
-- 全域變數 : 在整個程式中均有效
-- 局部變數 : 只在該變數處於的區域有效
-- 優先搜索局部變數
+## 變數的作用域
+在Python或其他程式語言中也一樣，每一個變數都有屬於它存在的適用範圍，我們稱之為**命名空間(Namespace)**。
+
+如果在最外面(也就是沒有在函式中)命名一個變數的時候，任何人應該都看得到這個變數的存在，並且可以自由使用它，我們稱之為**全域變數(Global)**。但若如果今天這個變數你是在function中宣告的或是臨時變數，則它只在Function中有效，稱為**區域變數(Local)**。
+
+- 全域變數(Global) : 在整個程式中均有效
+- 局部變數(Local) : 只在該變數處於的區域有效
+- **優先搜索局部變數**
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211534155.png)
 
 ```python
-def test_value_ref(a, b):
-    a = a.append(4)
-    b = b + 1
+var = 'global' 
 
-a_list = [1,2,3]
-b_int = 1
+def home1():
+	print(f"我是在 home1() 中的 print : {var}") # 直接取得全域的變數，不做修改
 
-print("執行function前")
-print(a_list)
-print(b_int)
-print("--------")
+def home2():
+	var = 'Not global' # 定義一個local的變數，所以修改到的變數跟全域的var無關
+	print(f"我是在 home2() 中的 print : {var}")
+	
+def home3():
+	global var # 告訴Python現在要用的就是全域的那個var
+	var = 'h3'
+	print(f"我是在 home3() 中的 print : {var}") # 因此修改後會影響到全域變數的值
 
-test_value_ref(a_list, b_int)
 
-print("執行function後")
-print(a_list)
-print(b_int)
-print("--------")
+print(f'直接輸出全域變數:  {var}')
+
+print()
+print(f'執行home1():')
+home1()
+print(f'完成home1()後的var:  {var}')
+
+print("##############")
+
+print()
+print(f'執行home2():')
+home2()
+print(f'完成home2()後的var:  {var}')
+
+print("##############")
+
+print()
+print(f'執行home3():')
+home3()
+print(f'完成home3()後的var:  {var}')
 ```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404161653002.png)
-
 
 ## 傳值(Value)、還是傳址(Address)的問題
 Pass by value and pass by reference問題，在Python中，任何儲存容器的資料類型，在進行參數傳遞時為傳址(Address)
 
 **即 function 中的修改，會直接改變原資料**
 
-而其他普通參數(int、float)等為傳值(Value)
+**而其他普通參數(int、float、String)等為傳值(Value)**
 
 **只是把值放到參數中，function 不能改變原資料。**
 
 
 ![Img](https://www.mathwarehouse.com/programming/images/pass-by-reference-vs-pass-by-value-animation.gif)
 
+## 1. 傳值(Pass By Value)，即傳入不會改變原有的值
+int、float、String 為傳值(Value)
+```python
+# 傳入的變數為基本資料型態(數值、字串、布林)
+def modify(x, y, z):
+    x = x + 10
+    y = y + " World"
+    z = False
+    print(f"函數內 : {x}, {y}, {z}")  # 30 Hello False
+
+num1 = 20
+string1 = "Hello"
+bool1 = True
+
+modify (num1, string1, bool1)
+print(f"函數外 : {num1}, {string1}, {bool1}")
+```
+
+## 2. 傳址(Pass By Address)，即傳入會改變原有的值
+所有容器如列表、字典、集合（list、dict、set 等）都是以傳址方式傳入 Function 中。
+
 ```python
 def modify_list(lst):
-    lst.append(4)  # 修改可變對象
-
-def reassign_value(x):
-    x = 10  # 只是改變了局部變量的引用
+    lst.append(4)
+    print(f"函數內:{lst}")  # [1, 2, 3, 4]
 
 my_list = [1, 2, 3]
-modify_list(my_list)
-print(my_list)  # 輸出: [1, 2, 3, 4]
-
-value = 5
-reassign_value(value)
-print(value)  # 輸出: 5
+modify_list(my_list) # 傳遞的是參考，所以會改變原始列表
+print(f"函數外:{my_list}")  # [1, 2, 3, 4]（原始列表被修改）
 ```
 
 
-## 返回值(return)
-
-### return 後空白
-```python
-def 函數名(參數):
-    {code}
-    return
-# 在這裡，return 的意義是：結束函式，因為沒有定義資料，所以回傳 None
-# 這裡的 None 我們稱為返回值。
-```
-
-### return 帶變數
-```python
-def 函數名(參數):
-    {code}
-    return 資料
-
-# 在這裡，return 的意義是：結束函式，回傳「資料」
-# 這裡的資料我們稱為返回值。
-```
-```python
-def add(a, b):
-  sum = a + b
-  return sum
-
-print(add(1,5))
-
-# 推薦使用變數裝回
-rs = add(1,5)
-print(rs)
-```
-
-# 什麼時候會使用到 Dictionary(字典) 呢 ?
+# Dictionary(字典)
 Dictionary 是一種較為複雜的資料結構，對於資料的查找很方便。Python中的字典如同現實世界中的字典，包含了一堆`字`，和這個字所指示的含意，每一個`字`即代表`key`，每一個字對應的的解釋，即代表`value`
 
 在 Python 的字典中，每一個元素都由鍵 (key) 和值 (value) 構成，結構為`key:value` 。不同的元素之間會以逗號分隔，並且以大括號 `{ }` 圍住。
@@ -294,5 +311,3 @@ while(True):
         print("輸入錯誤，請重新輸入")
         print(E)
 ```
-
-
