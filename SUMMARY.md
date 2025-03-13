@@ -5,8 +5,10 @@
 * [Lesson 3 - 邏輯判斷、循環結構](Lesson\_3.md)
 * [Lesson 4 - 循環結構、儲存容器](Lesson\_4.md)
 * [Lesson 5 - 儲存容器、Function、排序演算法](Lesson\_5.md)
+* [Lesson 6 - Dictionary、錯誤捕捉](Lesson\_6.md)
 * #########
 * [Lesson 3 - 作業答案3題](Lesson\_3\_Homework.md)
 * [Lesson 4 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
+* [Lesson 6 - 21點遊戲v2 答案](Lesson\_6\_Homework.md)
 * #########
 * [如何帶走你的程式碼](HowToBringCode.md)
