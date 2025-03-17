@@ -4,14 +4,14 @@
 
 物件、Module(time、os)、輸入流輸出流、pip
 
-## 功課：21 點遊戲單人版(Version3)
+## 功課：21 點遊戲單人版(Final)
 
-繳交連結：[https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload](https://hamster.cpttm.org.mo/spaces/dUwQ0A9-YsMvTJtM_tmEcg/upload)
+繳交連結：[https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload](https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload)
 
-截止日期：2024-12-02
+截止日期：2025-03-31
 
 - 把玩家模組化(Class)
-- 新增玩家Dealer、Player1
+- 新增玩家Dealer、Player
 - 每一步取牌後輸出當時時間
 - 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
 
@@ -20,6 +20,11 @@
 
 
 # 物件導向程式設計(Object-oriented programming、OOP)
+- OOP 是一種「用物件（對象）來組織程式碼」的設計方式。
+- 就像現實世界中的每一「物體」都有自己的「屬性」和「行為」一樣
+- OOP 把程式中的「**數據**」和「**操作數據的函數**」打包成一個個獨立的「物件」，讓程式更容易管理和擴充。
+
+## OOP 的四大核心
 在學習程式語言時，或多或少都有聽過物件導向程式設計(Object-oriented programming，簡稱OOP)，它是一個具有物件(Object)概念的開發方式，能夠提高軟體的重用性、擴充性及維護性，在開發大型的應用程式時更是被廣為使用，所以在現今多數的程式語言都有此種開發方式，Python當然也不例外。而要使用物件導向程式設計就必須對類別(Class)及物件(Object)等有一些基本的了解，包含了：
 - 物件(Object)
 - 類別(Class)
@@ -28,16 +33,35 @@
 - 建構式(Constructor)
 
 # 類別(Class)、物件(Object)
-簡單來說，類別(Class)就是物件(Object)的藍圖。
+- 類（Class）：像是「設計藍圖」，定義一個物件的「結構」。
+例如：設計一張「汽車藍圖」，寫明汽車應該有顏色、品牌、速度等屬性，以及加速、煞車等功能。
 
-就像要生產一部汽車時，都會有設計圖，藉此可以知道此類汽車會有哪些特性及功能，類別(Class)就類似設計圖，會定義未來產生物件時所擁有的屬性(Attribute)及方法(Method)。
+- 對象（Object）：根據「類」的藍圖實際創造出來的「實例」。
+例如：根據「汽車藍圖」製造出「一台紅色 Toyota 汽車」，這台車就是一個具體的「物件」。
 
-而最終透過藍圖產生的實體，則叫 物件(Object)
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405281442328.png)
 
+## Class 架構
+```python
+class 類別名稱:
+    # 建構子（初始化物件）
+    def __init__(self, 參數1, 參數2, ...): 
+        self.屬性1 = 參數1  # 定義屬性
+        self.屬性2 = 參數2
 
-### 汽車Class及實體化汽車物件的例子
+	# 定義方法（行為）
+    def 方法名稱(self, 參數):  
+        # 方法要做的事情
+        return 結果
+
+# 實體化物件 (Object)
+my_OOP_item = 類別名稱(參數1, 參數2, ...)
+
+```
+
+
+## 汽車Class及實體化汽車物件的例子
 ```python
 # 汽車類別 Class
 class Cars:
@@ -55,7 +79,7 @@ car_1 = Cars(“Yellow”, 5)
 car_2 = Cars(“White”, 7)
 ```
 
-## 屬性(Attribute)
+## 存取屬性(Attribute)
 ```python
 # 汽車類別 Class
 class Cars:
@@ -66,12 +90,12 @@ class Cars:
 
 
 # 實體化物件 (Object)
-car_1 = Cars(“Yellow”, 5)
+car_1 = Cars("Yellow", 5)
 
 # 存取屬性
 print(car_1.color) # Yellow 
 ```
-## 方法(Method)
+## 使用方法(Method)
 ```python
 # 汽車類別 Class
 class Cars:
@@ -85,7 +109,7 @@ class Cars:
         print(f"My car is {self.color} and {self.seat} seats.")
 
 # 實體化物件 (Object)
-car_1 = Cars(“Yellow”, 5)
+car_1 = Cars("Yellow", 5)
 
 # 呼叫方法
 car_1.drive()
