@@ -179,3 +179,89 @@ while(True):
     
     print()
 ```
+
+# 由李同學提供版本
+```python
+import random
+
+# 1. 生成牌堆
+def initial_deck():
+    suits = ["黑桃", "紅桃", "梅花", "方塊"]
+    nums = list(range(1, 14))  # 標識 1-13  A - K
+    deck = []
+    for suit in suits:
+        for num in nums:
+            deck.append([suit, num])
+    return deck
+
+# 2. 開始隨機發牌
+def deal_card(deck, num_cards=1):
+    dealt_cards = []
+    for i in range(num_cards):
+        if not deck:
+            break  # 牌堆為空
+        card_index = random.randint(0, len(deck) - 1)
+        dealt_cards.append(deck.pop(card_index))
+    return dealt_cards
+
+# 3. 計算點數
+def calculate_value(hand):
+    total = 0
+    has_ace = False
+    for card in hand:
+        num = card[1]
+        if num >= 10:
+            total += 10
+        elif num == 1:
+            total += 11
+            has_ace = True
+        else:
+            total += num
+    # 判斷點數是否正確
+    while total > 21 and has_ace:
+        total -= 10
+        has_ace = False
+    return total
+
+# 4. print手中點數
+def display_hand(hand, total):
+    print("你的手牌：")
+    for card in hand:
+        print(f"{card[0]}{card[1]}", end=" ")
+    print(f"\n總點數：{total}")
+
+# 5. 遊戲循環開始
+def play_game():
+    deck = initial_deck()
+    player_hand = []
+    game_over = False
+
+    while not game_over:
+        print(deck)
+        
+        # 發牌
+        new_cards = deal_card(deck, 1)
+        player_hand.extend(new_cards)
+
+        # 計算點數
+        total = calculate_value(player_hand)
+
+        # 現有牌花色，點數，總點數
+        display_hand(player_hand, total)
+
+        # 判斷結果是否獲勝
+        if total == 21:
+            print("恭喜，21点！你赢了！")
+            game_over = True
+        elif total > 21:
+            print("爆牌了！你輸了！")
+            game_over = True
+        else:
+            # 是否要牌
+            action = input("繼續發牌嗎？ (輸入 'yes' 繼續, 輸入 'bye' 結束): ")
+            if action.lower() == "bye":
+                game_over = True
+
+# 開始遊戲
+play_game()
+```
