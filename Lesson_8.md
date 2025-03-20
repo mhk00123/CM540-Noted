@@ -18,28 +18,52 @@ os Module、pip、API、爬蟲入門
 
 
 # 常用Module - os
-- 得到當前的工作目錄的路徑：`os.getcwd()`
-- 取得當前工作路徑的文件列表：`os.listdir(os.getcwd())`
-- 將一個文件名與擴展名分開： `os.path.splitext()`
+在 Python 中，`os` 模塊是操作系統的接口，提供了與操作系統交互的多種功能，例如管理文件、目錄、執行系統命令等。
+
+## os 模塊功能
+
+```python
+import os
+```
+
+- 管理文件和目錄（創建、刪除、重命名）。
+- 獲取系統信息（當前工作目錄、環境變量）。
+- 執行系統命令（如打開文件、運行程序）。
+- 處理路徑（跨平台兼容的路徑操作）。
+    - 得到當前的工作目錄的路徑：`os.getcwd()`
+    - 取得當前工作路徑的文件列表：`os.listdir(os.getcwd())`
+    - 把2個路徑組合：`os.path.join(path1, path2)`
+    - 將一個文件名與擴展名分開： `os.path.splitext()`
 
 ## 資料補充 - 路徑 path
+路徑（Path）：計算機中用來定位文件或目錄位置的字符串。
 在系統中，對於路徑(Path)我們有兩種標識方法
 1. 絕對路徑
 2. 相對路徑
 
-## 絕對路徑
+### 絕對路徑
 絕對路徑是從文件系統的根目錄（例如，在 Windows 上是盤符如 C:，在 Unix/Linux 上是/）開始的完整路徑。它指定了文件或目錄的完整位置，不依賴於當前工作目錄。絕對路徑通常包含完整的目錄結構，以及文件或目錄的名稱。例如：
 
-在 Windows 上的絕對路徑：`C:\Users\Username\Documents\file.txt`
+- 在 Windows 上的絕對路徑：
+```
+C:\Users\Username\Documents\file.txt
+```
 
-在 Unix/Linux 上的絕對路徑：`/home/username/documents/file.txt`
+- 在 Unix/Linux 上的絕對路徑：
+```
+/home/username/documents/file.txt
+```
 
-## 絕對路徑
+### 相對路徑
 相對路徑是相對於當前工作目錄的路徑。它指定了文件或目錄相對於當前位置的位置。根據當前工作目錄的不同，相對路徑可能會有所變化。
 
-如果當前工作目錄是 `C:\Users\Username`
+如果當前工作目錄(`即python程式碼存放的位置`)：`C:\Users\Username`
 
-相對路徑 `Documents\file.txt` 將指向 `C:\Users\Username\Documents\file.txt`
+相對路徑為
+```
+Documents\file.txt
+``` 
+將指向 `C:\Users\Username\Documents\file.txt`
 
 需要注意的是，相對路徑也可以使用特殊符號來表示路徑關系：
 
@@ -66,14 +90,15 @@ open('C:\\user\\檔名5.txt')
 ```
 
 ## 資料補充 - 文件輸入/輸出流
-在Python中，我們可以透過文件輸入/輸出流open() 處理文件的新增/修改
+在Python中，我們可以透過文件輸入/輸出流with open() 處理文件的新增/修改
+
 基礎用法
 ```python
-f = open("文件名", "打開方式")
-
-f = open("demofile.txt", "w")
+with open("文件名", "打開方式", encoding="utf-8") as 臨時變數:
+    臨時變數.操作()
 ```
-有四種打開文件的不同方法（模式）：
+
+### 有四種打開文件的不同方法（模式）：
 `r` - 讀取 - 默認值。打開文件進行讀取，如果文件不存在則報錯。
 
 `a` - 追加 - 打開並供追加文件的最後，如果不存在則創建該文件。
@@ -82,76 +107,216 @@ f = open("demofile.txt", "w")
 
 `x` - 創建 - 創建指定的文件，如果文件存在則返回錯誤。
 
-### 寫入文件
+### 操作
+- `write`
+    - 將指定的字符串寫入文件。一次只能寫入一個字符串
+    - 不會自動添加換行符，需要手動添加 `\n`
+- `read`
+    - 讀取文件的**全部**內容。
+- `writelines`
+    - 將一個字符串列表（或其他可迭代對象）寫入文件。
+    - 不會自動添加換行符，需要手動在每個字符串末尾添加 `\n`。比 write 更適合一次性寫入多行內容。
+- `readline`
+    - 讀取文件的一行內容。
+    - 每次調用只讀取一行。返回的字符串包含行尾的換行符 \n。
+    - 適合逐行處理大文件，避免內存不足。
+    
+## 寫入、讀取
 ```python
-try:
-    my_file = open("demo.txt", "w")
+# 使用 'w' 模式來寫入文件，如果文件不存在則會創建它
+# write()
+with open('example.txt', 'w', encoding='utf-8') as file:
+    file.write('這是第一行文字。\n')
+    file.write('這是第二行文字。\n')
 
-    my_file.write("你好，我叫Leo\n")
-    my_file.write("現在是 CM540 課程 \n")
+# writelines()
+lines_content = ['這是第一段長文字\n', '這是第二段長文字\n', '這是第三段長文字\n']
+with open('example.txt', 'a', encoding='utf-8') as file:
+    file.writelines(lines_content)
 
-    my_file.close()
+# 使用 'r' 模式來讀取整份文件
+# read()
+print("##### 使用 read() #####")
+with open('example.txt', 'r', encoding='utf-8') as file:
+    content = file.read()
+    print(content)
 
-except Exception as E:
-    print(E)
+# readline()
+print("##### 使用 readline() #####")
+with open('example.txt', 'r', encoding='utf-8') as file:
+    while True:
+        line = file.readline()
+        if not line:  # 如果讀取到文件末尾，line 為空字符串
+            break
+        print(line.strip())  # 使用 strip() 去除換行符
 ```
 
-### 讀取文件
-使用 `read()` 和 `readline()`
+## 組合練習
+向 `.\tempTxT\`生成50個.txt文件，並在每一個txt中寫入該文件名。
 ```python
-try:
-    my_file = open("demo.txt", "r")
-   
-    rs = my_file.read()
-    print(rs)
-   
-    rs2 = my_file.readline()
-    print(rs2)
-   
-except Exception as E:
-    print(E)
+import os
+
+# 確保目錄存在
+directory = './tempTxT'
+if not (os.path.exists(directory)):
+    os.makedirs(directory)
+
+# 生成 50 個 .txt 文件
+for i in range(1, 51):
+    # 文件名
+    filename = f'txt文件_{i}.txt'
+
+    # 文件路徑
+    filepath = os.path.join(directory, filename)
+
+    # 寫入文件名到文件中
+    with open(filepath, 'w', encoding='utf-8') as file:
+        file.write(f'這是文件: {filename}')
+
+print(f'已生成 50 個 .txt 文件到目錄: {directory}')
 ```
 
-使用 for 迴圈
+# 常用Module - datetime
 ```python
-try:
-    my_file = open("demo.txt", "r")
-
-    for i in my_file:
-        print(i)
-   
-except Exception as E:
-    print(E)
+from datetime import datetime
 ```
 
-## 練習
-嘗試每2秒輸出現在的時間(共5次)，記錄在 time_record.txt 中
+## datetime 出現的變數類型
+用於處理日期、時間相關的問題，在 datetime 下，日期時間會有3種格式。
+- datetime時間格式 : class `datetime`
+- 格式輸出用 : class `String`
+- 兩日期相減/加 : class `datetime.timedelta`
 
-Ex : 
-2024年10月4日 20:00:02
+## 格式化日期時間
+| 格式 | 含義 |
+| :-: | :-: |
+| %y | （00 - 99）兩個數字表示的年份 |
+| %Y | 完整的年份（4個數字表示年份） |
+| %m | 月份（01 - 12） |
+| %d | 日期（0-31） |
+| %b | 本地月份名稱的簡寫（如八月份為agu） |
+| %B | 本地月份名稱的全稱（如八月份為august） |
+| %a | 本地星期名稱的簡寫（如星期四為Thu） |
+| %A | 本地星期名稱的全稱（如星期四為Thursday） |
 
-2024年10月4日 20:00:04
 
-2024年10月4日 20:00:06
+### 有關時間
+| 格式 | 含義 |
+| :-: | :-: |
+| %H | 一天中的第幾個小時（24小時制，00 - 23） |
+| %I | 第幾個小時（12小時制，0 - 11） |
+| %M | 分鐘數（00 - 59） |
+| %S | 秒（00 - 61） |
+| %p | 本地am或者pm的識別字 |
+| %j | 一年中的第幾天（001 - 366） |
 
-2024年10月4日 20:00:08
+## 使用方法
+```python
+from datetime import datetime
 
-2024年10月4日 20:00:10
+# 1. 取得目前日期時間
+t_now = datetime.now()
+print(t_now)
+
+# 2. 自定義一個時間
+# 參數(可留空) : datetime(年, 月, 日, 時, 分, 秒)
+d_time = datetime(2025, 3, 20, 18, 45, 00)
+d_time2 = datetime(2025, 3, 20)
+print(d_time)
+print(d_time2)
+
+# 3. 格式化輸出(datetime -> string)
+# strftime()
+formatted_date = t_now.strftime("%Y年%m月%d日 %H時%M分%S秒")
+print(formatted_date)
+
+# 4. 格式化輸入(string -> datetime)
+# strptime()
+date_string = "2026-10-05 15:45:30"
+format_string = "%Y-%m-%d %H-%M-%S"
+
+format_datetime = datetime.strptime(date_string, format_string)
+print(format_datetime)
+
+# 5. 日期時間計算
+# 計算後的結果為 timedelta *
+date1 = datetime.now()
+date2 = datetime(2025,3,20,21,45,00)
+
+time_diff = date2 - date1
+print(time_diff)
+print(type(time_diff))
+
+# 5.1 提取結果
+# timedelta 中可提取2個結果
+diff_days = time_difference.days
+diff_seconds = time_difference.total_seconds()
+
+# 5.2 若需要得到確實時間，需要進行轉換
+# 計算小時、分鐘和秒
+hours = diff_seconds // 3600
+minutes = (diff_seconds % 3600) // 60
+seconds = diff_seconds % 60
+
+print(f"相差 {hours:.0f} 小時 {minutes:.0f} 分鐘 {seconds:.2f} 秒")
+
+```
+
+## 常用time function - time.sleep()
+若只計算時間(不考慮日期)，可以直接使用 `time` module
+```python
+import time
+```
+其中，最常用的功能，為 time.sleep()
+
+若我們需要程式進行特定時間的等待，此時可以使用 time.sleep(秒)等待
 
 ```python
 import time
 from datetime import datetime
 
-for i in range(5):
+while(True):
     now = datetime.now()
-    now = now.strftime("%Y%m%d %H:%M:%S") #格式化日期
-    try:
-        myfile = open("date_record2.txt","a")
-        myfile.write(f"{str(now)}\n")
-    except Exception as E:
-        print(E)
+    current_time = now.strftime("%H:%M:%S")
+    print(f"現在的時間是：{current_time}")
+    time.sleep(1)
+```
+
+## 練習 - 倒數計時
+請用戶輸入計時秒數，顯示完成日期時間開始計時，計時記錄在 time_record.txt 中 
+
+
+```python
+import time
+from datetime import datetime, timedelta
+
+target_second = input("請輸入要計時幾秒：")
+target_second = int(target_second)
+
+# 因計算時需要引入 timedelta 類別
+# 所以需要從 datetime 模組中引入 datetime 和 timedelta 類別
+completion_time = datetime.now() + timedelta(seconds=target_second)
+
+# 記錄計時開
+with open("timer_log.txt", "a", encoding="utf-8") as file:
+    print("##### 計時開始！#####")
+    print(f"計時將在 {completion_time.strftime('%Y-%m-%d %H:%M:%S')} 完成。")
+    file.write("##### 計時開始！#####\n")
+    file.write(f"計時將在 {completion_time.strftime('%Y-%m-%d %H:%M:%S')} 完成。\n")
+    
+    # 進入計時迴圈
+    while(datetime.now() < completion_time):
         
-    time.sleep(2)
+        diff_time = completion_time - datetime.now()
+        diff_seconds = diff_time.total_seconds()
+        rs = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - 剩餘時間：{diff_seconds:.0f} 秒"
+        print(rs)
+        file.write(rs + "\n")
+        
+        time.sleep(1)
+
+    print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - 計時完成！")
+    file.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - 計時完成！\n")
 ```
 
 # 第三方Module下載 - pip
