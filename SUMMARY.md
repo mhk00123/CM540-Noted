@@ -14,3 +14,4 @@
 * [Lesson 6 - 21點遊戲v2 答案](Lesson\_6\_Homework.md)
 * #########
 * [如何帶走你的程式碼](HowToBringCode.md)
+* [澳門日報 - 程式分享](macaudaily.md)
