@@ -12,6 +12,8 @@
 * [Lesson 3 - 作業答案3題](Lesson\_3\_Homework.md)
 * [Lesson 4 - 21點遊戲實作 答案](Lesson\_5\_Homework.md)
 * [Lesson 6 - 21點遊戲v2 答案](Lesson\_6\_Homework.md)
+* [Lesson 8 - 21點遊戲(Final) 答案](Lesson\_7\_Homework\_v1.md)
+
 * #########
 * [如何帶走你的程式碼](HowToBringCode.md)
 * [澳門日報 - 程式分享](macaudaily.md)
