@@ -1,4 +1,4 @@
-# 功課 : 21 點遊戲增強(final)
+# 功課 : 21 點遊戲(final)
 - 嘗試重構程式
 - 2人玩家 Dealer 、Player
 - 每一步取牌後輸出當時時間
@@ -19,10 +19,6 @@ def print_time():
     print(f"({str_now})",end="")
     my_file.write(f"({str_now}): ")
 
-def print_card():
-    for i in card_dict:
-        print(f"{i}{card_dict[i]}")
-
 # 定義 Player Class
 class Player:
     def __init__(self, player_name):
@@ -38,7 +34,7 @@ class Player:
             rand_2 = random.randint(0, 12)
             card_point = card_dict[card_type][rand_2]
             
-            if (card_point == "X"):  # 已抽過的牌
+            if card_point == "X":  # 已抽過的牌
                 continue # 直至抽到未被其他人抽到牌為止
             
             # 若成功抽到 #
@@ -51,6 +47,11 @@ class Player:
     def card_sum(self, card_point):
         if card_point >= 10:
             self.player_sum += 10  # J, Q, K 算作 10
+        elif card_point == 1: # A can be 1 or 11
+            if self.player_sum + 11 <= 21:
+                self.player_sum += 11
+            else:
+                self.player_sum += 1
         else:
             self.player_sum += card_point
             
@@ -86,7 +87,7 @@ def play_game():
         all_stopped = True  # 用於檢查是否所有玩家都停止抽牌 / 爆
         for player in players: 
             
-            if(player.flag == True):  # 只有當玩家 flag 為 True 時才抽牌
+            if(player.flag):  # 只有當玩家 flag 為 True 時才抽牌
                 print()
                 my_file.write("\n")
                 print_time()
@@ -112,37 +113,32 @@ def play_game():
             if(player.flag):
                 all_stopped = False
         
-        if(all_stopped == True):  # 如果所有玩家的 flag 都是 False，則結束遊戲
+        if(all_stopped):  # 如果所有玩家的 flag 都是 False，則結束遊戲
             break
 
     # 結束遊戲，顯示所有玩家的結果
     
     print("\n########### 遊戲結束！結果如下 ###########\n")
     my_file.write("\n ########### 遊戲結束！結果如下 ########### \n")
-    winners = []
-    for player in players: 
-        if(player.player_sum <= 21):
-            winners.append(player)
-        
-    if(len(winners)==0):
+    
+    # Find the winner
+    winners = [player for player in players if player.player_sum <= 21]
+
+    if not winners:
         print_time()
         print("所有玩家都超過 21 點，沒人贏！")
         my_file.write("所有玩家都超過 21 點，沒人贏！\n")
-        
     else:
-        win_point = 0 # 假定一個最大值
-        win_name = "" # 假定一個 winner
-        for player in players: 
+        win_player = max(winners, key=lambda player: player.player_sum)
+        
+        for player in players:
             print_time()
             print(f" {player.player_name} : {player.player_sum}點 {player.player_card_list}")
             my_file.write(f" {player.player_name} : {player.player_sum}點 {player.player_card_list}\n")
-            if((player.player_sum > win_point) and (player.player_sum<=21)):
-                win_point = player.player_sum
-                win_name = player.player_name
-    
-    print_time()
-    print(f"最終贏家是 --- {win_name} ---、點數 {win_point} 點")
-    my_file.write(f"最終贏家是 --- {win_name} ---、點數 {win_point} 點\n")
+        
+        print_time()
+        print(f"最終贏家是 --- {win_player.player_name} ---、點數 {win_player.player_sum} 點")
+        my_file.write(f"最終贏家是 --- {win_player.player_name} ---、點數 {win_player.player_sum} 點\n")
     my_file.close()
 
 # 開始遊戲
