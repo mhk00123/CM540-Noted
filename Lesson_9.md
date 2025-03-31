@@ -5,7 +5,17 @@
 ## Slide
 課件：[https://docs.google.com/presentation/d/1KNGlC-_waAO3HGziN4mOu7OJjdbq8Bt8_ZQ6kA37GTA/edit?usp=sharing](https://docs.google.com/presentation/d/1KNGlC-_waAO3HGziN4mOu7OJjdbq8Bt8_ZQ6kA37GTA/edit?usp=sharing)
 
-## 作業 - Final Project
+# 功課 : 21 點遊戲增強(final)
+- 嘗試重構程式
+- 2人玩家 Dealer 、Player
+- 每一步取牌後輸出當時時間
+- 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
+
+截止日期：2025-04-01 23:59
+繳交地址：[https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload](https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload)
+
+
+## 功課 - Final Project
 自己思考一個題目，任何類型
 - 小算盤?
 - 待辦行事記錄?
