@@ -10,54 +10,161 @@
 
 Deadline：2024-12-20 23:59
 
-# 如何打包程式碼為可執行檔(exe)
-由於在windows中，我們大部份可執行檔都是`.exe`的文件，因此我們也希望，我們最終的程式碼可以打包成為一個`.exe`文件以供執行。
+# Requests 中加入 header
 
-我們將使用 `pyinstaller` module進行打包工作。
+透過 payload 變數加入所需的認證參數，以 dict 型式記錄
+在 requests 的參數中加入 headers
 
-1. 打開 Anaconda Prompt
-2. 切換到 `py311` 環境
-```bash
-activate py311
-```
-3. 安裝 `pyinstaller` module
-```bash
-pip install pyinstaller
-```
+```python
+import requests
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060937844.png)
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
 
+payload = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
 
-4. 透過 `cd` 命令進入 `.py` 文件所在的資料夾，例如目前程式碼檔案放在 `D:\Code\Blackjack` 中。
-5. 如切換盤符(由C->D)，需要先打一次目的地的盤符才可以完成切換。
-
-```bash
-D:
-cd D:\Code\Blackjack
+response = requests.get(url, headers = payload)
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060942943.png)
+## 取得交通事務局中的資料
+```python
+import requests
+import xmltodict
+import json
+ 
+# 1. 目標 url
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
+ 
+# 2. Header
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+ 
+# 3. 向目標發送請求(request)
+response = requests.get(url, headers=headers)
+ 
+# 4. 讀取 response 並進行 utf-8 decode
+xml_data = response.content.decode("utf-8")
+ 
+# 5. 透過 xmltodict 把 xml 轉換為 dict
+data_dict = xmltodict.parse(xml_data)
+ 
+# 6. 尋找 target 標籤
+target_data = data_dict['CarPark']['Car_park_info']
+print(target_data)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060944221.png)
-
-6. 透過打包命令，打包對應的執行環境、module文件
-`pyinstaller --onefile 文件名`
-```bash
-pyinstaller --onefile blackjack.py
+# 7. 輸出到 txt 方便放到 pareser中
+with open("data.txt", "w", encoding="utf-8") as myfile:
+    write_data = json.dumps(data_dict, ensure_ascii=False)
+    myfile.write(write_data)
 ```
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060946299.png)
 
-7. 最終生成 `build`、`dist`資料夾，及`blackjack.spec`文件。而我們需要的.exe文件則存放在`dict`文件夾中。
+## XML練習：尋找目前澳門沒有電單車車位的停車場
+```python
+import requests
+import xmltodict
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060947575.png)
+# 1. 目標 url
+url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
 
-8. 加入專屬logo(.ico)
-```bash
-pyinstaller --clean --onefile --icon="logo.ico" blackjack.py
+# 2. Header
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+
+# 3. 向目標發送請求(request)
+response = requests.get(url, headers=headers)
+
+# 4. 讀取 response 並進行 utf-8 decode
+xml_data = response.content.decode("utf-8")
+
+# 5. 透過 xmltodict 把 xml 轉換為 dict
+data_dict = xmltodict.parse(xml_data)
+
+# 6. 尋找 target 標籤
+target_data = data_dict['CarPark']['Car_park_info']
+
+for i in target_data:
+    if(i["@MB_CNT"] == "" or i["@MB_CNT"] == "0"):
+        print(f'{i["@name"]} - 沒有電單車停車場')
 ```
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412061603226.png)
+
+# json
+json 檔案一開始於用 javascript 中，是一種輕量級的資料交換格式。它的使用範圍很廣，並成為ECMA 標準，可以使用在多種程式語言中，用於前後端之間的資料傳輸、儲存和交換資料。可以說是“用更少的編碼，有更快的處理速度”，所以深受廣大程式設計師的喜愛。
+
+json 格式以 `{ }` 作為開始，如有新一層也是以`{ }`分開並加上 `,`，結束和python的dict相似。
+
+```json
+{
+    "person information" : {
+        "name": "Leo Tam",
+        "age": 27,
+        "city": "Macau"
+    },
+    
+    "company information" : {
+        "name": "CPTTM",
+        "title": "Teacher"
+    }
+}
+```
+
+## Python中讀取json、輸出json
+
+Python 自帶讀取json格式的module：`json`
+
+- 讀取 (loads)、轉換成 `json` 格式
+- 輸出 (dumps)、由 `json` 轉換為 `string`
+```python
+import json
+
+file = open('test.json', encoding='utf-8')
+
+data = json.loads(file)
+
+dump_data = json.dumps(data)
+
+with open("data.txt", "w",encoding="utf-8") as my_file:
+    # json中含有utf-8的操作
+    write_data = json.dumps(dump_data, ensure_ascii=False)
+    my_file.write(write_data)
+```
+
+## 民航局-澳門國際機場航班時間表 API 
+[https://data.gov.mo/Detail?id=ea50a770-cc35-47cc-a3ba-7f60092d4bc4](https://data.gov.mo/Detail?id=ea50a770-cc35-47cc-a3ba-7f60092d4bc4)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406032302183.png)
 
 
+# 練習 - 尋找所有目的地為北京的航班
+```python
+import requests
+import xmltodict
+import json
+
+# 1. 目標 url
+url = "https://aacm.apigateway.data.gov.mo/api/open/listFlightTimetable"
+
+# 2. Header
+headers = {
+    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
+}
+
+# 3. 向目標發送請求(request)
+response = requests.get(url, headers=headers)
+
+print(response)
+
+# 4. 讀取 response 並進行 utf-8 decode
+# 使用 loads
+json_data = json.loads(response.content)
+
+# 5. 尋找目的地為北京的 Beijing 的所有航空
+for i in json_data:
+    if("Beijin" in i['destination']):
+        print(f"{i['airline']} - {i['weekDay']}，航行周期：{i['periodStartDate']} 至 {i['periodEndDate']}")
+```
 
 # 爬取 TDM 新聞
 TDM 新聞提供 API 我們可以直接調用。
