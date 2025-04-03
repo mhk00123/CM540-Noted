@@ -36,3 +36,50 @@ $$BMI = \frac{體重(kg)}{身高^2(m)}$$
 
 ## 題目 2： 學生成績評級
 繳交網址：[https://hamster.cpttm.org.mo/spaces/R9t3AH3_AKZIA5Uo8cY9sA/upload](https://hamster.cpttm.org.mo/spaces/R9t3AH3_AKZIA5Uo8cY9sA/upload)
+
+# 如何打包程式碼為可執行檔(exe)
+由於在windows中，我們大部份可執行檔都是`.exe`的文件，因此我們也希望，我們最終的程式碼可以打包成為一個`.exe`文件以供執行。
+
+我們將使用 `pyinstaller` module進行打包工作。
+
+1. 打開 Anaconda Prompt
+2. 切換到 `py311` 環境
+```bash
+activate py311
+```
+3. 安裝 `pyinstaller` module
+```bash
+pip install pyinstaller
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060937844.png)
+
+
+4. 透過 `cd` 命令進入 `.py` 文件所在的資料夾，例如目前程式碼檔案放在 `D:\Code\Blackjack` 中。
+5. 如切換盤符(由C->D)，需要先打一次目的地的盤符才可以完成切換。
+
+```bash
+D:
+cd D:\Code\Blackjack
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060942943.png)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060944221.png)
+
+6. 透過打包命令，打包對應的執行環境、module文件
+`pyinstaller --onefile 文件名`
+```bash
+pyinstaller --onefile blackjack.py
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060946299.png)
+
+7. 最終生成 `build`、`dist`資料夾，及`blackjack.spec`文件。而我們需要的.exe文件則存放在`dict`文件夾中。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060947575.png)
+
+8. 加入專屬logo(.ico)
+```bash
+pyinstaller --clean --onefile --icon="logo.ico" blackjack.py
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412061603226.png)
