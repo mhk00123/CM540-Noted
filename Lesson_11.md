@@ -61,7 +61,12 @@ df = df.drop(index = "row_index")
 df = df.drop(columns = "col_name")
 ```
 
-## 統計函式
+## 常用函式
+- 輸出Series為list()
+```python
+df["某列"].tolist()
+```
+
 - 共有幾行 - len( )
 ```python
 count_row = len(df)
