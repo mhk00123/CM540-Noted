@@ -36,11 +36,24 @@ df = pd.DataFrame(
 內容為List、轉換為DataFrame
 ```python
 # 構建新行
+# 構建新行
 new_data = ["橙", "水果", "新鮮", "進口", "貨區A3", 10, 8, 56]
+new_data2 = {
+    "產品":"橙2",
+    "種類":"水果",
+    "保存方式":"新鮮",
+    "原產地":"本地",
+    "位址":"貨區 A4",
+    "原價":20,
+    "優惠價":18.5,
+    "貨存":56
+}
 new_row = pd.DataFrame([new_data], columns=df.columns)
+new_row2 = pd.DataFrame([new_data2], columns=df.columns)
 
 # 合併 concat()
-df = pd.concat([df, new_row], ignore_index=True)
+df = pd.concat([df, new_row, new_row2], ignore_index=True)
+df
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410221604987.png)
