@@ -5,6 +5,10 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing](https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing)
 
+# Final Project
+[https://hamster.cpttm.org.mo/spaces/Dw-FRBOph8D3-_oV4r2qFQ/upload](https://hamster.cpttm.org.mo/spaces/Dw-FRBOph8D3-_oV4r2qFQ/upload)
+
+Deadline：2025-04-18 23:59
 
 # Pandas 統計操作
 ## 範例 Data
@@ -344,3 +348,84 @@ df2 = df.groupby("私家車位狀態").size()
 df2.plot(kind="bar")
 plt.show()
 ```
+
+## (補充)如何透過 Python 程式向手機發送通知
+首先，要向自己的手機發送信息是十分困難的!
+
+由於手機系統中有著非常多的認證機制，以現階段我們的知識未具備以撰寫可通過驗證的程式。
+
+因此我們需要透過第三方工具協助，目前適用於Telegram、微信。
+- Telegram：開放API，可直接透過Telegram官方API向指定的群組發送推送。
+```python
+import requests
+
+def telegram_bot_sendtext(bot_message):
+
+    bot_token = 'your_token'
+    bot_chatID = 'your_chatID'
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+
+    response = requests.get(send_text)
+
+    return response.json()
+```
+
+- 微信：透過第三應用 `pushplus` 向特定微信帳戶 (pushplus) 發送`post`推送。
+```python
+def wechat_bot_sendtext(bot_message):
+
+    payload = {
+            'token' : 'your_token',
+            'content': bot_message
+        }
+    response = requests.post('http://www.pushplus.plus/send', data=payload)
+    
+    return response
+```
+
+# 如何打包程式碼為可執行檔(exe)
+由於在windows中，我們大部份可執行檔都是`.exe`的文件，因此我們也希望，我們最終的程式碼可以打包成為一個`.exe`文件以供執行。
+
+我們將使用 `pyinstaller` module進行打包工作。
+
+1. 打開 Anaconda Prompt
+2. 切換到 `py311` 環境
+```bash
+activate py311
+```
+3. 安裝 `pyinstaller` module
+```bash
+pip install pyinstaller
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060937844.png)
+
+
+4. 透過 `cd` 命令進入 `.py` 文件所在的資料夾，例如目前程式碼檔案放在 `D:\Code\Blackjack` 中。
+5. 如切換盤符(由C->D)，需要先打一次目的地的盤符才可以完成切換。
+
+```bash
+D:
+cd D:\Code\Blackjack
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060942943.png)
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060944221.png)
+
+6. 透過打包命令，打包對應的執行環境、module文件
+`pyinstaller --onefile 文件名`
+```bash
+pyinstaller --onefile blackjack.py
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060946299.png)
+
+7. 最終生成 `build`、`dist`資料夾，及`blackjack.spec`文件。而我們需要的.exe文件則存放在`dict`文件夾中。
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412060947575.png)
+
+8. 加入專屬logo(.ico)
+```bash
+pyinstaller --clean --onefile --icon="logo.ico" blackjack.py
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412061603226.png)
