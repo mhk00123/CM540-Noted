@@ -477,10 +477,10 @@ print(f'{num2:07}')
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
 
 **精度(取小數點後 n 位)**
-
+在對應的位置加上 `:.nf`
 ```python
-print(f'{num1:.2}')
-print(f'{num2:.1}')
+print(f'{num1:.2f}')
+print(f'{num2:.1f}')
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
