@@ -6,7 +6,7 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1bC_9xQKf5-kp1vGLoykULN6BiBCk-7rxoxaaLOjbubg/edit?usp=sharing](https://docs.google.com/presentation/d/1bC_9xQKf5-kp1vGLoykULN6BiBCk-7rxoxaaLOjbubg/edit?usp=sharing)
 
-
+{% hint style="info" %}
 # 作業/考試 繳交
 請按照課堂教案，在您的電腦/課室電腦設置 Python 環境。
 編寫 HelloWorld.py，更改輸出內容。
@@ -14,7 +14,8 @@
 
 繳交網址 : [https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload](https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload)
 
-截止時間：2025年2月28日 23:59
+截止時間：2025年5月15日 23:59
+{% endhint %}
 
 # Python 是甚麼 ?
 
