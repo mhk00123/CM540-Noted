@@ -111,25 +111,26 @@ print("Hello World")
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021803092.png)
 
 
-到Anaconda官方網站下載安裝檔案 : [https://www.anaconda.com/](https://www.anaconda.com/)
+# 到Anaconda官方網站下載安裝檔案 : 
+### [https://www.anaconda.com/](https://www.anaconda.com/)
 
-1. **執行安裝程式**
+## 1. **執行安裝程式**
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021753367.png)
 
-2. 注意勾選 **Add Anaconda3 to my_PATH environment variable**
+## 2. 注意勾選 **Add Anaconda3 to my_PATH environment variable**
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021754828.png)
 
-3. 完成後可看到 Anacaonda3 程式界面
+## 3. 完成後可看到 Anacaonda3 程式界面
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021755356.png)
 
-Anaconda 會為我們默認配置一個虛擬的可執行Python的環境(Env)，打開Anacaonda Prompt
+**Anaconda 會為我們默認配置一個虛擬的可執行Python的環境(Env)，打開Anacaonda Prompt **
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021759062.png)
 
-即可看到 `(base)` 字樣
+**即可看到 `(base)` 字樣**
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021759254.png)
 
@@ -140,21 +141,21 @@ python --version
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021800394.png)
 
-## 創建指定版本的 env
+# 創建指定版本的 env
 Ex : 創建一個Python版本為3.11.7的env
 
-1. 透過命令提示輸入 `conda create -n 環境名 python=版本號`
+## 1. 透過命令提示輸入 `conda create -n 環境名 python=版本號`
 ```bash
 conda create -n py311 python=3.11.7
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021816688.png)
 
-2. 成功後會看到
+## 2. 成功後會看到
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021816451.png)
 
-3. 進入環境
+## 3. 進入環境
 透過命令提示輸入 `conda activate 環境名稱`
 ```bash
 conda activate py311
@@ -187,10 +188,10 @@ conda activate py311
 conda deactivate
 ```
 
-## 開始你的第一個 Python 程式
+# 開始你的第一個 Python 程式
 剛才我們已成功在電腦安裝好整合式的 Python 環境，我們現在就來撰寫第一個 Python 程式吧。
 
-### 1. 生成 Python 程式碼檔案
+## 1. 生成 Python 程式碼檔案
 1. 我們首先打開記事本 `notepad.exe`
 2. 把檔案儲存到我們未來主力存放程式碼的資料夾中 (例如: `\Desktop\Code\Lesson1` )，把`存檔類型` 指定為 `所有檔案*.*`
 3. 命名我們的檔案  `HelloWorld.py` ，所有 Python程序碼檔案均以`.py`結尾。
@@ -199,7 +200,7 @@ conda deactivate
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2023/202502231337644.png)
 
-### 2. 編寫程式嗎
+## 2. 編寫程式嗎
 在記事本中輸入
 
 ```python
@@ -208,7 +209,7 @@ conda deactivate
 print("Hello World, my name is Leo Tam!")
 ```
 
-### 3. 運行程式
+## 3. 運行程式
 1. 打開 `Anaconda prompt`
 2. 進入`py311`環境
 
@@ -229,19 +230,21 @@ python HelloWorld.py
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2023/202502231356829.png)
 
 
-## 安裝 IDE - Visual Studio Code
+
+# 安裝 IDE - Visual Studio Code
 
 一般來說，大部份開發者都會更傾向於使用IDE作為開發工具，因為其很高的整合性，以及自動補全、除錯能力等都會更有利開發者使用。在此我們使用目前市面上較高知名度的Visual Studio Code成為本課程的IDE工具。
 
-VS Code 下載: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
+## VS Code 下載:
+### [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041804826.png)
 
-1. 重新打開 `HelloWorld.py`
+## 1. 重新打開 `HelloWorld.py`
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041807495.png)
 
-2. 選取不同版本的 Conda Env
+## 2. 選取不同版本的 Conda Env
 可以按下鍵盤的`ctrl`+`shift`+`p` 並輸入 `Select Interpreter`
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021902262.png)
@@ -250,11 +253,12 @@ VS Code會自動檢查系統中包含的所有環境，在這里可以選擇Cond
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403021903518.png)
 
-3. 執行，按下鍵盤的 F5
+## 3. 執行，按下鍵盤的 F5
+
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041809954.png)
 
 
-## 2. 環境搭建 - Jupyter
+# 環境搭建2 - Jupyter
 
 ### 一、Jupyter Notebook
 
