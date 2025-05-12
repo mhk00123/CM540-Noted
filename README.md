@@ -3,7 +3,7 @@
 **tags: `Python`** **`CM-540`** **`Introduction`**
 
 ## Notes
-[https://leotam-cpttm.gitbook.io/cm540/](https://leotam-cpttm.gitbook.io/cm540/)
+[https://leotam-cpttm.gitbook.io/cm540-05-2025c/](https://leotam-cpttm.gitbook.io/cm540-05-2025c/)
 
 ## 本人聯絡方式：
 [Leotam@cpttm.org.mo](Leotam@cpttm.org.mo)
@@ -32,7 +32,7 @@
 | 認識Python、搭建編程環境 | 3小時    | 1堂    |
 | 編程基礎邏輯          | 12小時   | 4堂    |
 | API應用、Python庫應用            | 9小時    | 3堂    |
-| 資料爬取、整理、輸出有意義圖表         | 9小時   | 3堂    |
+| 資料爬取、整理、輸出圖表         | 9小時   | 3堂    |
 | Final Project         | 3小時   | 1堂    |
 | Total           | `36小時` | `12堂` |
 
@@ -64,7 +64,6 @@
      * `API` 介紹
    * 透過 Python 爬取資料
      * `Requests`
-     * `Seleium`
      * `自動化操作`
      * Regular expression - 正則表達式
      
