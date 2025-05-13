@@ -299,16 +299,6 @@ print("Hello World 3")
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img/2024/202402041903668.png)
 
-# Python的組成：
-1. 變數
-2. 資料型態: `int`、`float`、`str`、`bool`。
-3. 儲存容器: `list`、`tuple`、`set`、`dict`。
-4. 輸出與輸入: `print()`、`input()`。
-5. 運算子、運算式：加減乘除、大小等於。
-6. 流程控制(選擇性敘述): `if`、`elif`、`else`
-7. 重複執行的迴圈: `for`、`while`、`switch`。
-8. 例外狀況處理: `try` `except`。
-
 # AI工具
 在本課程中，我們十分推薦大家使用 AI 協助學習，以下為本人推薦大家可以使用的 AI 平台：
 
