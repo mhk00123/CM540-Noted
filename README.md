@@ -3,7 +3,7 @@
 **tags: `Python`** **`CM-540`** **`Introduction`**
 
 ## Notes
-[https://leotam-cpttm.gitbook.io/cm540-05-2025c/](https://leotam-cpttm.gitbook.io/cm540-05-2025c/)
+[https://leotam.gitbook.io/cm540-05-2025-c/](https://leotam.gitbook.io/cm540-05-2025-c/)
 
 ## 本人聯絡方式：
 [Leotam@cpttm.org.mo](Leotam@cpttm.org.mo)
