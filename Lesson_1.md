@@ -12,9 +12,9 @@
 編寫 HelloWorld.py，更改輸出內容。
 完成後，把輸出截圖提交。
 
-繳交網址 : [https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload](https://hamster.cpttm.org.mo/spaces/ZQEdS11PRHNZUoTTze7htQ/upload)
+繳交網址 : [https://hamster.cpttm.org.mo/spaces/CEPga7bhtbQMUawAtr5aNg/upload](https://hamster.cpttm.org.mo/spaces/CEPga7bhtbQMUawAtr5aNg/upload)
 
-截止時間：2025年5月15日 23:59
+截止時間：2025年5月18日 23:59
 {% endhint %}
 
 # Python 是甚麼 ?
