@@ -312,7 +312,7 @@ print("Hello World 3")
 # AI工具
 在本課程中，我們十分推薦大家使用 AI 協助學習，以下為本人推薦大家可以使用的 AI 平台：
 
-1. POE，一個整合多個不同AI模型的網站，推薦大家使用`GPT-4o-mini` 模型
+1. POE，一個整合多個不同AI模型的網站，推薦大家使用`GPT-4o-mini`或`GPT-4.1-mini` 模型
 [https://poe.com/](https://poe.com/)
 
 2. Gork，由Tesla公司釋出的模型，可免費使用。
