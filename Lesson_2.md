@@ -6,6 +6,8 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing](https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing)
 
+
+{% hint style="info" %}
 # 作業：
 ## 題目 1： 計算BMI指數
 
@@ -38,6 +40,10 @@
 - 如果三個科目的平均成績在 80 分（含）以上且小於 90 分，則總評為「優良」。
 - 如果三個科目的平均成績在 90 分（含）以上，則總評為「優秀」。
 
+截止時間：2025年5月20日 23:59
+{% endhint %}
+
+
 # 變量／變數
 你可以把變數想像成一個 **容器**，用來存放資料，這些資料可以是`數字`、`文字`、或是其他類型的資訊。
 變數就像是一個標籤，幫助我們記住和操作這些資料。
@@ -51,6 +57,14 @@ my_name = "Leo"
 - 等號(=)，意思是賦予。
 
 而這個過程，我們稱作宣告變數，**所有變數在使用前必須要先宣告才可以使用**。
+
+## 保留字
+部份保留字用作程式自帶的function或是其他用途，皆不可以當作變數名稱。
+
+Python 3 中共33個保留字:
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505150052497.png)
+
 
 # 註解
 在 Python 中，我們都可以在程式碼任意位置加上註解，以 `# `號作記號，在註解後方的所有內容，均不會執行。
@@ -78,7 +92,22 @@ Python 的內建型態主要分為以下幾種：
 
 資料型態在程式中很重要，它們決定了資料的處理方式和運算規則，因此在撰寫程式時需要確保資料型態的一致性和適當使用。
 
-## 整數(integer)
+## 檢查變數資料型態
+可以使用 `type()` 函數去檢查該變量屬於甚麼型態
+```python
+var_a = 100
+var_b = 12.345
+var_c = "Hello, World"
+var_d = True
+
+print(type(var_a))    # <class 'int'>
+print(type(var_b))    # <class 'float'>
+print(type(var_c))    # <class 'str'>
+print(type(var_d))    # <class 'bool'>
+```
+
+
+# 整數(integer)
 
 一般來說，所有沒有小數點的數字，我們都歸類為整數。在 Python2 裡，分`整數 int`跟`長整數 long`，而在 Python3 裡，不管多大的數字，都只會顯示`整數 int`，已經沒有`長整數 long`的概念了，但其他語言仍然還是有`長整數 long`的概念，所以我們還是需要了解一下。
 
@@ -98,21 +127,20 @@ Python 的內建型態主要分為以下幾種：
 
 # 隠式定義
 a = 1
+b = 2**101 # 2的101次方
 
 # 顯式定義
-b = int(1)
-
-c = 2**101
+c = int(1)
 ```
 
-## 浮點數(float)
+# 浮點數(float)
 
 廣義上浮點數就是有小數點的數字，其實不完全正確，還有部份不常用的情況涉及計算機概論知識，礙於篇幅，我們這裡不展開討論，本課程中僅會出現含小數點的情況。
 
 浮點數有兩種表示方式
 
 1. 直接包含小數：`314.159`、 `314159.0`(含有.0也算是浮點數)
-2. 小數 + E次冪(E標記是表示 10的冪數)：`52.3E4`即`523000.0`
+2. 小數 + E次冪(E標記是表示 10的冪數)：`5.3E4`即`53000.0`
 
 ```python
 # 宣告一個浮點數
@@ -120,13 +148,13 @@ c = 2**101
 # 隠式宣告
 a = 314.159
 b = 314159.0
-c = 52.3E4
+c = 5.3E4
 
 # 顯式宣告
 d = float(314.159)
 ```
 
-## 數字計算 (加減乘除)
+# 數字計算 (加減乘除)
 整數(int)和浮點數(float)之間可以進行運算
 ``` python
 a = 10
@@ -144,9 +172,52 @@ print("除法結果：" + str(divide))    # 輸出 3.333...
 # 除法結果必為浮點數 float
 ```
 
-## Boolean 布林
+## float 精度問題
+觀察以下程式碼，會有特別的結果
+```python
+a = 0.1
+b = 0.2
+print(a+b)
 
-布林（英語：Boolean）是電腦科學中的**邏輯資料**類型，它是只有兩種值的原始類型，Boolean型類一般是運算後的一個結果
+# 結果為
+# 0.30000000000000004
+```
+為什麼在這麼簡單的問題上，會出現錯誤?
+
+我們知道，電腦其實是不認識十進制數，只認識二進制數，也就是說，當我們以十進制數進行運算的時候，計算機需要將各個十進制數轉換成二進制數，然後進行二進制間的計算。
+
+因此真正原因是由於浮點數在十進制和二進制的轉換上出現精度差。
+
+以 `0.1` 為例，轉換成二進制結果為:
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505150045591.png)
+
+可以看到，結果是無限循環的，也就是說，`0.1` 轉換成二進制數後，無法精確到等於十進制數的 `0.1`﹐最終造成計算錯誤。
+
+{% hint style="info" %}
+這種問題不僅在 Python 中存在，在所有支持浮點數運算的編程語言中都會遇到，它不光是 Python 的 Bug。
+{% endhint %}
+
+## 簡單解決
+由於精度問題，一般影響會在2^50次方後的位置出現，因此入門使用者可透過 round() 函數以四捨五入的方式解決
+```python
+# 使用方法
+round(需轉換的數字, 保留多少位小數)
+```
+
+```python
+a = 0.1
+b = 0.2
+
+c = round(a+b, 1)
+
+print(c) # 0.3
+```
+
+
+# Boolean 布林
+
+布林（英語：Boolean）是電腦科學中的**邏輯資料**類型，它是只有兩種值的原始類型，Boolean型類一般是運算後的一個結果，一般用於後續條件判斷。
 
 * 真 `True`
 * 假 `False`
@@ -162,12 +233,15 @@ result = (b > a)
 print(result) # True
 ```
 
-
-**字元**
+# 字元
 像是`字母`、`數字`、`符號`、`空格`或是`換行`都是字元，一個 a 是一個字元，一個空格也是一個字元，它是文書系統裡頭最小的單位。
 
-## 字串(String)
-字串由一串有順序的字元所組成，也屬於Python 序列(Sequence)的一種，稱為字元序列。字串**成對的引號**來呈現，`單引號`、`雙引號` 、`三個單引號`、`三個雙引號`都可以拿來表示字串。如果想表達文字，卻忘了使用引號，Python 會將你輸入的文字視為變數、數字或是保留字。
+# 字串(String)
+字串由一串有順序的字元所組成，屬於Python 序列(Sequence)的一種，由多個字元組成，稱為字元序列。
+
+字串**成對的引號**來呈現，`單引號`、`雙引號` 、`三個單引號`、`三個雙引號`都可以拿來表示字串。
+
+如果想表達文字，卻忘了使用引號，Python 會將你輸入的文字視為變數、數字或是保留字。
 
 ```python
 # 正常字串宣告
@@ -248,13 +322,14 @@ print(name) # Neo
 ```python
 first_name = "Leo"
 last_name ="Tam"
-my_phone_num = 28781313
+my_phone_num = "28781313"
 
-mix_str = first_name + last_name + str(my_phone_num) 
-
-print("Hi, My name is " + first_name + " " + last_name + ", my phone number is " + str(my_phone_num))
+## 寫法1 ##
+print("Hi, My name is " + first_name + " " + last_name + ", my phone number is " + my_phone_num
 # Hi, My name is Leo Tam, my phone numer is 28781313
 
+## 寫法2 ##
+mix_str = first_name + last_name + my_phone_num)
 print(mix_str)
 # Hi, My name is Leo Tam, my phone numer is 28781313
 ```
@@ -275,48 +350,31 @@ result2 = my_phone_num[0:3]
 print(result2) # Error
 ```
 
-## 檢查變量型態
-
-可以使用 `type()` 函數去檢查該變量屬於甚麼型態
-
-```python
-var_a = 100
-var_b = 12.345
-var_c = "Hello, World"
-var_d = True
-
-print(type(var_a))    # <class 'int'>
-print(type(var_b))    # <class 'float'>
-print(type(var_c))    # <class 'str'>
-print(type(var_d))    # <class 'bool'>
-```
-
 ## 強制轉型
 {% hint style="info" %}
 補充資料：函數/方法(Function)，Python自定了很多不同的已經寫好的Function，我們先在這邊開一個頭，在後續的章節中我們會再詳講。所謂函數就是『敘述的集合』，並且以一個函數名稱來代表此敘述集合。通常一個函數可以完成某項功能，所以可以把函數想像成是一種對資料的操作方法。一般來說，函數以這樣的返式表示`函數名()`，例如我們接觸到的`print()` `type()`便是Python內建的函數。
 {% endhint %}
 
-從剛才的例子中，我們發現不同型態的變數是無法進行相互運算的，那麼若現在有需要把變數指定類型，可以使用Python中內置的函數對變量類型進行強制轉換
+在 Python 中，強制轉型（Type Casting） 指的是**「明確地將一種資料型態轉換成另一種」**。
 
-* `int()`：將一個數值或字符串轉換成整數，可以指定進制。
-* `float()`：將一個字符串轉換成浮點數。
-* `str()`：將指定的對像轉換成字符串形式，可以指定編碼。
-* `chr()`：將整數轉換成該編碼對應的字符串（一個字符）。
-* `ord()`：將字符串（一個字符）轉換成對應的編碼（整數）。
+這對於初學者來說，是處理資料型態不一致時非常重要的技巧。常用的強制轉型:
+- `int()` : 把 float 和 string 轉為 int
+- `float()` : 把 int 和 string 轉為 float
+- `str()`: 把任意值轉換為string
 
 ```python
-a = 100
-b = 12.345
+print(int(3.9))       # 3
+print(int("123"))     # 123
+print(int("12.3"))    # ❌ 錯誤！因為字串內有小數點，不能直接轉成整數
 
-print(type(a)) # <class 'int'>
-print(type(b)) # <class 'float'>
+print(float(5))       # 5.0
+print(float("3.14"))  # 3.14
 
-c = str(a)
-print(c) # 100
-print(type(c)) # <class 'str'>
+print(str(100))       # "100"
+print(str(3.14))      # "3.14"
+print(str(True))      # "True"
 
-d = int(b)
-print(d) #12
+int("abc")            # ❌ ValueError: invalid literal for int() with base 10: 'abc'
 ```
 
 ### 字串相加轉型
@@ -429,13 +487,13 @@ print(f"Hi, My name is {first_name} {last_name}, my phone number is {my_phone_nu
 # Hi, My name is Leo Tam, my phone numer is 28781313
 ```
 
-### 格式化輸出變數的用法
+### 格式化輸出(f-string)變數的用法
 
 ```python
-num1 = 12.345 
-num2 = 456.789
-print(f'{num1}')
-print(f'{num2}')
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A}')
+print(f'{num_B}')
 ```
 
 #### 對齊
@@ -448,9 +506,11 @@ print(f'{num2}')
 # 觀察
 # 12.345  => 6個位元
 # 456.789 => 7個位元
-
-print(f'{num1:15}') # 輸出字串共15個位元，不足自動填空格
-print(f'{num2:15}')
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:15}') # 輸出字串共15個位元，不足自動填空格
+print(f'{num_B:15}')
+print(f'{num_B:<15})
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502262200878.png)
@@ -458,10 +518,10 @@ print(f'{num2:15}')
 
 #### 靠左對齊
 ```python
-num1 = 12.345 
-num2 = 456.789
-print(f'{num1:<15}')
-print(f'{num2:15}')
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:<15}')
+print(f'{num_B:15}')
 ```
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101647014.png)
@@ -470,17 +530,22 @@ print(f'{num2:15}')
 **補0**
 
 ```python
-print(f'{num1:07}')
-print(f'{num2:07}')
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:07}')
+print(f'{num_B:07}')
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
 
 **精度(取小數點後 n 位)**
+注意，格式輸出僅改變輸出到屏幕的狀態，並非改變變數的值。
 在對應的位置加上 `:.nf`
 ```python
-print(f'{num1:.2f}')
-print(f'{num2:.1f}')
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:.2f}')
+print(f'{num_B:.1f}')
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
