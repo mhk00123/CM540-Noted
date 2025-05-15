@@ -25,7 +25,11 @@ HackMD 使用一個標記式語言 Markdown 有興趣的同學可以自行學習
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202503100055066.png)
 
+
 ## 分享程式碼
 與 Google Doc 相同，使用 HackMD 也可以同步分享筆記，或同時編輯也可。
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202503100056301.png)
+
+# Github
+最推薦，但需要學習成本，如有興趣可以自行學習。
