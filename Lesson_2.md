@@ -8,22 +8,22 @@
 
 
 {% hint style="info" %}
-# 作業：
-## 題目 1： 計算BMI指數
+# 題目 1： 計算BMI指數
 
 [https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload](https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload)
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 * 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271842351.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271842351.png)
 
 
 根據計算結果使用以下標準判斷BMI指數的範圍：
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271841302.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271841302.png)
+{% endhint %}
 
-
-## 題目 2： 學生成績評級
+{% hint style="info" %}
+# 題目 2： 學生成績評級
 
 [https://hamster.cpttm.org.mo/spaces/rHPXTT_ONoMF5Z4iT5dDoQ/upload](https://hamster.cpttm.org.mo/spaces/rHPXTT_ONoMF5Z4iT5dDoQ/upload)
 
@@ -63,7 +63,7 @@ my_name = "Leo"
 
 Python 3 中共33個保留字:
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505150052497.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505150052497.png)
 
 
 # 註解
@@ -190,7 +190,7 @@ print(a+b)
 
 以 `0.1` 為例，轉換成二進制結果為:
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505150045591.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505150045591.png)
 
 可以看到，結果是無限循環的，也就是說，`0.1` 轉換成二進制數後，無法精確到等於十進制數的 `0.1`﹐最終造成計算錯誤。
 
@@ -513,7 +513,7 @@ print(f'{num_B:15}')
 print(f'{num_B:<15})
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502262200878.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502262200878.png)
 
 
 #### 靠左對齊
@@ -524,7 +524,7 @@ print(f'{num_A:<15}')
 print(f'{num_B:15}')
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101647014.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101647014.png)
 
 
 **補0**
@@ -612,7 +612,7 @@ else:
 - or：只需有 1 個結果為True，就是True
 - xor：當兩個參數相同時為False、兩個參數不同時為True (不常用)
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405132331072.png)
     
 ## 練習1
 用戶驗證：請用戶輸入Username、Password，判斷是否管理員帳戶登入若成功輸出"成功登入"，若不是則輸出"登錄失敗"
