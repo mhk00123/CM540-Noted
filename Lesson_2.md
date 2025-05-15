@@ -1,4 +1,4 @@
-戈大尸# Lesson 2
+# Lesson 2
 變數、資料型態、輸入輸出、邏輯判斷
 
 **tags: `python`** **`CM-540`** **`Lesson2`**
@@ -6,11 +6,13 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing](https://docs.google.com/presentation/d/1V65yCaEIEPAe7G4l96b3gdxwrjxu6e9AdiGx25um2YY/edit?usp=sharing)
 
-
+# 作業
+截止時間：2025年5月20日 23:59
 {% hint style="info" %}
 # 題目 1： 計算BMI指數
 
-[https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload](https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload)
+[https://hamster.cpttm.org.mo/spaces/THu_NiO5huaQbk42zhIjrw/upload](https://hamster.cpttm.org.mo/spaces/THu_NiO5huaQbk42zhIjrw/upload)
+
 請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
 * 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
 
@@ -25,7 +27,7 @@
 {% hint style="info" %}
 # 題目 2： 學生成績評級
 
-[https://hamster.cpttm.org.mo/spaces/rHPXTT_ONoMF5Z4iT5dDoQ/upload](https://hamster.cpttm.org.mo/spaces/rHPXTT_ONoMF5Z4iT5dDoQ/upload)
+[https://hamster.cpttm.org.mo/spaces/zJSnedsakiRQAL6E3Iq1YA/upload](https://hamster.cpttm.org.mo/spaces/zJSnedsakiRQAL6E3Iq1YA/upload)
 
 請寫一個程式，提示使用者輸入 3 個科目的成績，然後根據以下標準進行評級和總評：
 
@@ -40,7 +42,7 @@
 - 如果三個科目的平均成績在 80 分（含）以上且小於 90 分，則總評為「優良」。
 - 如果三個科目的平均成績在 90 分（含）以上，則總評為「優秀」。
 
-截止時間：2025年5月20日 23:59
+
 {% endhint %}
 
 
