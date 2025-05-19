@@ -9,22 +9,10 @@
 課件：[https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing](https://docs.google.com/presentation/d/1qh0-se2MSjAxyeE6rOPOm6hnW7SK_aeh6He7Su8Vb04/edit?usp=sharing)
 
 # 作業：
-Deadline : 2025-03-06 23:59
+截止時間：2025年5月25日 23:59
 
-## 題目 1： 計算BMI指數
-
-[https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload](https://hamster.cpttm.org.mo/spaces/jiXtQg8wgwwUDCVPdKz4GA/upload)
-請寫一個程式，提示使用者輸入他們的身高（ cm ）和體重（kg）然後計算並輸出他們的BMI指數。
-* 提示：在計算BMI指數時，需要將身高從 cm 轉換為 m
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271842351.png)
-
-
-根據計算結果使用以下標準判斷BMI指數的範圍：
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502271841302.png)
-
-## 題目 2： 超級無敵開口中
+{% hint style="info" %}
+# 題目 1： 超級無敵開口中
 
 繳交網址：[https://hamster.cpttm.org.mo/spaces/YZws3cn37KLiC7lmG7hV0w/upload](https://hamster.cpttm.org.mo/spaces/YZws3cn37KLiC7lmG7hV0w/upload)
 
@@ -43,14 +31,18 @@ lucky_num = random.randint(1, 100)
 
 print(lucky_num)
 ```
+{% endhint %}
 
-## 題目 3： 三角型的9x9乘法表(選做)
+{% hint style="info" %}
+# 題目 2： 三角型的9x9乘法表(選做)
 
 繳交網址：[https://hamster.cpttm.org.mo/spaces/KXX8QIiXdB6Y717Ld7GLjQ/upload](https://hamster.cpttm.org.mo/spaces/KXX8QIiXdB6Y717Ld7GLjQ/upload)
 
 請嘗試以迴圈輸出：
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403110049230.png)
+
+{% endhint %}
 
 
 # 邏輯判斷
@@ -90,7 +82,6 @@ a == c # False
 c > b  # True
 ```
 
-
 # 流程控制
 流程控制是學習python的重點之一，所謂流程控制是代表當有多行的程式碼時，我們可以有效的控制程式應該執行的順序和方向，先前章節的程式是由上而下一行一行執行，當學會流程控制後，程式執行將更有變化性。
 
@@ -100,7 +91,7 @@ c > b  # True
 - 如果今天下雨，就帶傘；否則，就不帶傘。
 - 如果成績大於 60 分，就及格；否則，就不及格。
 
-在程式中，我們用 `if` 和 `else` 來實現這種決策邏輯。
+在程式中，我們用 `if` 和 `else`、`elif` 來實現這種決策邏輯。
 
 
 ## 單向選擇 (if)
@@ -195,29 +186,14 @@ else:
     print("今天天氣普通，不用帶傘。")
 ```
 
-### 練習1
-請用戶輸入一個整數數字，判斷屬於正數、負數、還是0 ?
-```python
-# 讓用戶輸入一個整數
-num = int(input("請輸入一個整數: "))
-
-# 判斷數字是正數、負數還是零
-if (num > 0):
-    print("這是正數")
-elif (num < 0):
-    print("這是負數")
-else:
-    print("這是零")
-```
-
-## 嵌套分支
+# 嵌套分支
 當然根據實際開發的需要，分支結構是可以嵌套作多重。
 我們使用巢狀的 if 語句來進一步細分條件，若 if  的情況大於 2 個時，可以繼續細分。
 
 ```python
 if(條件1): 
     if(條件2):
-    若成立則執行語句
+    若成立則執行語句 # 此處的意思是若條件1成立 且 條件2也成立
     else:
     若條件2不成立則執行語句
 
@@ -230,20 +206,24 @@ weather = "下雨"  # 可以改為 "出太陽" 或其他
 temperature = 20  # 可以改為其他溫度值
 
 # 使用嵌套分支來判斷
+weather = "下雨"  # 可以改為 "出太陽" 或其他
+temperature = 20  # 可以改為其他溫度值
+
+# 使用嵌套分支來判斷
 if(weather == "下雨"):
     if(temperature < 15):
         print("今天下雨且溫度低於 15°C，帶傘和外套。")
     else:
-        print("今天下雨且溫度高於或等於 15°C，帶傘。")
+        print("今天下雨，帶傘。")
 
 elif(weather == "出太陽") :
-    if(temperature > 30):
-        print("今天出太陽且溫度高於 30°C，帶傘和防曬霜。")
+    if(temperature < 15):
+        print("今天出太陽且溫度低於 15°C，帶傘、防曬霜以及外套。")
     else:
-        print("今天出太陽且溫度低於或等於 30°C，帶傘。")
-
+        print("今天出太陽，帶傘。")
 else:
-    print("今天天氣普通，不用帶傘。")
+    print("今天天氣普通，什麼都不用帶。")
+
 ```
 
 
@@ -481,6 +461,69 @@ while (i <= 9):
     i = i + 1
 ```
 
+### 格式化輸出(f-string)變數的用法
+
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A}')
+print(f'{num_B}')
+```
+
+#### 對齊
+- `<` 靠左對齊 
+- `>` 靠右對齊 (默認)
+- `^` 置中對齊
+
+
+```python
+# 觀察
+# 12.345  => 6個位元
+# 456.789 => 7個位元
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:15}') # 輸出字串共15個位元，不足自動填空格
+print(f'{num_B:15}')
+print(f'{num_B:<15})
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502262200878.png)
+
+
+#### 靠左對齊
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:<15}')
+print(f'{num_B:15}')
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101647014.png)
+
+
+**補0**
+
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:07}')
+print(f'{num_B:07}')
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
+
+**精度(取小數點後 n 位)**
+注意，格式輸出僅改變輸出到屏幕的狀態，並非改變變數的值。
+在對應的位置加上 `:.nf`
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:.2f}')
+print(f'{num_B:.1f}')
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
+
 ## 儲存容器
 
 思考一個問題：如果我要記錄 3 個學生的信息 包含：姓名、學號、年級
@@ -657,5 +700,3 @@ for letter in 'cptTm':
 ```
 
 ![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402290132352.png)
-
-
