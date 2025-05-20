@@ -226,10 +226,6 @@ weather = "下雨"  # 可以改為 "出太陽" 或其他
 temperature = 20  # 可以改為其他溫度值
 
 # 使用嵌套分支來判斷
-weather = "下雨"  # 可以改為 "出太陽" 或其他
-temperature = 20  # 可以改為其他溫度值
-
-# 使用嵌套分支來判斷
 if(weather == "下雨"):
     if(temperature < 15):
         print("今天下雨且溫度低於 15°C，帶傘和外套。")
