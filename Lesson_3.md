@@ -281,29 +281,22 @@ if((y < 0) or (y > 100)):
 ### 練習2
 用戶驗證：請用戶輸入管理員的Username、Password，判斷是否管理員帳戶登入
 - 若成功顯示"成功登入"
-- 若用戶名錯誤、則顯示”用戶名錯誤”
-- 若用戶名正確，密碼錯，則顯示”密碼錯誤”
-- 若不是則輸出"登入失敗"
+- 不論帳號錯誤還是密碼錯誤，一律顯示"用戶名或密碼錯誤"
+- 其他不知名原因顯示"登入失敗"
 
 管理員帳戶密碼：
-Username : admin
-
-Password : admin12345
+Username : Admin
+Password : Admin12345
 
 ### 思路
 1. 定義正確的登入帳號、密碼
 2. 由用戶輸入帳號、密碼
 3. 確定輸入為 String 
 4. 判斷
-- (帳號是否與預設帳號相同) 且 (密碼是否與預設帳號密碼) 
--- 條件1 : 帳號密碼正確：登入成功
--- 條件2 : 帳號錯誤 : "用戶名錯誤"
--- 條件2 : 帳號正確、密碼錯誤 : "密碼錯誤"
-- 否：
--- "登入失敗"
+
 
 ```python
-# 1. 定義正確的登入帳號、密碼
+# 1. 定義管理員正確的登入帳號、密碼
 admin_username = "Admin"
 admin_password = "Admin12345"
 
@@ -313,20 +306,15 @@ input_username = input("請輸入用戶名：")
 input_password = input("請輸入密碼：")
 
 # 4. 判斷
-
-# 4.1 若成功顯示"成功登入"
+# 4.1 若帳戶密碼皆正確則顯示"成功登入"
 if((input_username == admin_username) and (input_password == admin_password)):
     print("登入成功")
     
-# 4.2 若用戶名錯誤、則顯示”用戶名錯誤”
-elif((input_username != admin_username)):
-    print("用戶名錯誤")
+# 4.2 帳號錯誤還是密碼錯誤，一律顯示"登入失敗"
+elif((input_username != admin_username) or (input_password != admin_password)):
+    print("用戶名或密碼錯誤")
 
-# 4.3 若用戶名正確，密碼錯，則顯示”密碼錯誤”
-elif((input_username == admin_username) and (input_password != admin_password)):
-    print("密碼錯誤")
-
-# 4.4 若不是則輸出"登入失敗"
+# 4.3 其他不知名原因
 else:
     print("登入失敗")
 ```
