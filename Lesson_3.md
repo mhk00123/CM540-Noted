@@ -12,9 +12,28 @@
 截止時間：2025年5月25日 23:59
 
 {% hint style="info" %}
-# 題目 1： 超級無敵開口中
+# 題目 1： 學生成績評級
+[https://hamster.cpttm.org.mo/spaces/zJSnedsakiRQAL6E3Iq1YA/upload](https://hamster.cpttm.org.mo/spaces/zJSnedsakiRQAL6E3Iq1YA/upload)
 
-繳交網址：[https://hamster.cpttm.org.mo/spaces/YZws3cn37KLiC7lmG7hV0w/upload](https://hamster.cpttm.org.mo/spaces/YZws3cn37KLiC7lmG7hV0w/upload)
+請寫一個程式，提示使用者輸入 3 個科目的成績，然後根據以下標準進行評級和總評：
+
+### (1)科目分數判斷：
+- 每個科目的成績範圍為 0 到 100 分。
+- 如果任一科目的成績低於 60 分，則該科目評級為「不及格」。
+
+### (2)總評：
+- 如果三個科目的平均成績低於 60 分，則總評為「不及格」。
+- 如果三個科目的平均成績在 60 分（含）以上且小於 70 分，則總評為「及格」。
+- 如果三個科目的平均成績在 70 分（含）以上且小於 80 分，則總評為「中等」。
+- 如果三個科目的平均成績在 80 分（含）以上且小於 90 分，則總評為「優良」。
+- 如果三個科目的平均成績在 90 分（含）以上，則總評為「優秀」。
+
+{% endhint %}
+
+{% hint style="info" %}
+# 題目 2： 超級無敵開口中
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/hH39vKqdQFC09C3ha3D-LQ/upload](https://hamster.cpttm.org.mo/spaces/hH39vKqdQFC09C3ha3D-LQ/upload)
 
 奬門人節目內的超級無敵開口中， 玩法是電腦隨機抽出一個 1 - 100 之間的號碼作為幸運號碼，參加者輪流說出一個數字，電腦會根據答案和參加者的數字，將可選範圍縮窄，直到最後幸運號碼被估中為止。
 
@@ -34,9 +53,9 @@ print(lucky_num)
 {% endhint %}
 
 {% hint style="info" %}
-# 題目 2： 三角型的9x9乘法表(選做)
+# 題目 3： 三角型的9x9乘法表(選做)
 
-繳交網址：[https://hamster.cpttm.org.mo/spaces/KXX8QIiXdB6Y717Ld7GLjQ/upload](https://hamster.cpttm.org.mo/spaces/KXX8QIiXdB6Y717Ld7GLjQ/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/ZSDkaA1BgsBJzo364fC8qw/upload](https://hamster.cpttm.org.mo/spaces/ZSDkaA1BgsBJzo364fC8qw/upload)
 
 請嘗試以迴圈輸出：
 
