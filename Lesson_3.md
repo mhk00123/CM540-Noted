@@ -46,7 +46,8 @@
 ```python
 # 生成隨機數的函數如下(隨機生成 1-100 的整數)
 import random
-lucky_num = random.randint(1, 100)
+
+lucky_num = random.randint(1, 100) # 變數 lucky_num 為一個1-100的int隨機數 
 
 print(lucky_num)
 ```
