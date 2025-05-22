@@ -7,10 +7,13 @@
 # Slide
 [https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing](https://docs.google.com/presentation/d/1TA_VG_QN7NaPTX-RQXtA1tl86_b0GSyAtfa-BC40y1g/edit?usp=sharing)
 
-# 功課：21 點遊戲單人版
-繳交網址：[https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload](https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload)
+# 作業：
+截止時間：2025年5月27日 23:59
 
-截止日期：2025-03-10 23:59
+{% hint style="info" %}
+
+# 21 點遊戲單人版
+繳交網址：[https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload](https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload)
 
 ---
 - 扑克牌(52張) ：1 - 13 表示(暫不分開花色)
@@ -24,6 +27,72 @@
 - 若剛好等於 21 點，贏了，遊戲結束
 - 若大於 21 點，輸了，遊戲結束
 - 輸入 "bye" 遊戲結束
+
+{% endhint %}
+
+# 格式化輸出(f-string)變數的用法
+
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A}')
+print(f'{num_B}')
+```
+
+## 對齊
+- `<` 靠左對齊 
+- `>` 靠右對齊 (默認)
+- `^` 置中對齊
+
+
+```python
+# 觀察
+# 12.345  => 6個位元
+# 456.789 => 7個位元
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:15}') # 輸出字串共15個位元，不足自動填空格
+print(f'{num_B:15}')
+print(f'{num_B:<15})
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202502262200878.png)
+
+
+## 靠左對齊
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:<15}')
+print(f'{num_B:15}')
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202409101647014.png)
+
+
+**補0**
+
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:07}')
+print(f'{num_B:07}')
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280216982.png)
+
+**精度(取小數點後 n 位)**
+注意，格式輸出僅改變輸出到屏幕的狀態，並非改變變數的值。
+在對應的位置加上 `:.nf`
+```python
+num_A = 12.345 
+num_B = 456.789
+print(f'{num_A:.2f}')
+print(f'{num_B:.1f}')
+```
+
+![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202402280219610.png)
+
 
 # 再次了解雙重迴圈
 我們可以用時鐘的`時針`和`分針`來比喻雙重迴圈
