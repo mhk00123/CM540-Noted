@@ -118,16 +118,9 @@ while(flag):
     temp = input(f"請輸入 {min} - {max} 的數字：")
     
     # 6. 判斷是否打了 bye
-    if(type(temp) == str):     # 判斷輸入的類型是否為字串
-        if(temp == "bye"):     # 若輸入的字串為 bye，則結束遊戲
-            print("### Bye Bye ###")
-            flag = False       # 迴圈會跳出
-            continue           # 重新開始迴圈，繼續請用戶輸入
-        
-        # 若輸入的字串不是 bye，則繼續進行遊戲
-        else:
-            print("### 輸入錯誤 ###")
-            continue           # 重新開始迴圈，繼續請用戶輸入
+    if(temp == "bye"):     # 判斷輸入的類型是否為字串
+        print("### Bye Bye ###")
+        flag = False       # 迴圈會跳出
         
     # 若沒有輸入 bye
     else:          
