@@ -80,7 +80,9 @@ lucky_num = random.randint(1, 100)
 
 print(lucky_num)
 ```
+{% endhint %}
 
+## 解答1
 ```python
 # ''''''''''''''''''''''''''''''
 # 1. 導入 random 模組
@@ -147,7 +149,46 @@ while(flag):
     
 print("###### End ######")
 ```
-{% endhint %}
+
+## 解答2
+```python
+# 1. 導入 random 模組
+import random
+
+print("###### Game Start ######")
+
+# 2. 取得 luncky number 
+# random.randint(1, 100) 會隨機生成 1-100 的整數
+lucky_num = random.randint(1, 100)
+
+# 測試輸出答案
+print(lucky_num)
+
+# 3. 生成記錄區間，上界及下界，控制變量
+min = 1       # min 是用來控制用戶輸入的下界範圍
+max = 100     # max 是用來控制用戶輸入的上界範圍
+flag = True   # flag 是用來控制迴圈的變量
+
+while(flag):
+    user_input = input(f"請輸入 {min} - {max} 的數字") # string
+
+    if(user_input == "bye"):
+        print(f"結束遊戲，答案是{lucky_num}")
+        flag = False
+    
+    else:
+        user_input = int(user_input)
+        if(user_input == lucky_num):
+            flag = False
+            print("恭喜你，估中了!!")
+        
+        elif(user_input > lucky_num):
+            max = user_input
+
+        elif(user_input < lucky_num):
+            min = user_input
+
+```
 
 
 ## 題目 3： 三角型的9x9乘法表
