@@ -13,7 +13,7 @@
 {% hint style="info" %}
 
 # 21 點遊戲單人版
-繳交網址：[https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload](https://hamster.cpttm.org.mo/spaces/3V_FYqx9Yhy3lSJrsPWcCA/upload)
+繳交網址：[https://hamster.cpttm.org.mo/spaces/NPbwFIxKFYNAvVYHnq9Sxg/upload](https://hamster.cpttm.org.mo/spaces/NPbwFIxKFYNAvVYHnq9Sxg/upload)
 
 ---
 - 扑克牌(52張) ：1 - 13 表示(暫不分開花色)
