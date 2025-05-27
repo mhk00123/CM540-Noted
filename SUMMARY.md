@@ -7,6 +7,6 @@
 * #########
 * [Lesson 2 - 作業答案 1 題](Lesson\_2\_Homework.md)
 * [Lesson 3 - 作業答案 3 題](Lesson\_3\_Homework.md)
-* [Lesson 4 - 作業答案 1 題](Lesson\_3\_Homework.md)
+* [Lesson 4 - 作業答案 1 題](Lesson\_4\_Homework.md)
 * #########
 * [如何帶走你的程式碼](HowToBringCode.md)
