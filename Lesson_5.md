@@ -7,18 +7,22 @@
 # Slide
 [https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing](https://docs.google.com/presentation/d/1SHZm3jpyAL2EsYFXPe944Z-mqsmDCwbEjc32wopYKss/edit?usp=sharing)
 
-# 功課：21 點遊戲單人版(Version2)
-我們對verion1 的程式碼進行重構，繳交網址：
-[[Link](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)
+# 作業：
+截止時間：2025年6月1日 23:59
 
-截止日期：2025-03-17
+{% hint style="info" %}
 
-我們要做的：
+# 21 點遊戲單人版 Version 2
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload](https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload)
+
+---
 - 以 list 方式把所有牌分開花式及點數(hints：二維list)
 - 每 1 輪發牌 - 改以 `Random` 方式
 - 把發牌這個動作打包成 function，可以把取得的牌 return 出來
 - 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
 
+{% endhint %}
 
 # 儲存容器 - List(列表、陣列)
 
