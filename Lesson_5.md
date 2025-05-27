@@ -420,7 +420,7 @@ print(b_int)
 print("--------")
 ```
 
-![](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505271737105.png)
+![var](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505271737105.png)
 
 
 ## 傳值(Value)、還是傳址(Address)的問題
