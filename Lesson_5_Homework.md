@@ -18,8 +18,9 @@
 # 扑克牌(52張) :1 - 13 表示
 # 每個數字最多 4 隻(list)---
 
-# 生成一個有13個零的列表
-card_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# 生成一個有13個4的列表
+# index 對應位置 0->1, 1->2, ... ,11->Q, 12->K
+card_list = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
 
 user_input_list = []
 sum = 0
@@ -48,8 +49,8 @@ while(True):
         print(f"已經沒有 {user_input} 了，再重新選擇！")
         continue
     else:
-        # 若還有空的牌，則在對應位置 +1 記錄
-        card_list[user_input-1] = card_list[user_input-1] + 1
+        # 若還有空的牌，則在對應index位置記錄 扣1張
+        card_list[user_input-1] = card_list[user_input-1] - 1
     
     # 記錄點數
     user_input_list.append(user_input)
