@@ -121,15 +121,19 @@ print_hello(1, 11)
 手寫一個模擬 len() 的方法 count_string()，用於統計傳入的字串string，一共有多少個字元。
 
 ```python
+# 定義 function
 def count_string(str1):
     count = 0
     for i in str1:
         count = count + 1
-    return count
 
+    print(f"你傳入字串:{count}，一共有{count}個字元。")
+
+# 主邏輯區
 str_1 = "Hello, World!"
 
-count_str1 = count_string(str_1)
+# 執行 function
+count_string(str_1)
 ```
 
 # 自定義函數/方法 - 返回值
