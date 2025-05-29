@@ -7,32 +7,175 @@
 ## Slide
 課件：[https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing](https://docs.google.com/presentation/d/1P6d7MLJ2wQ575pxFVLx80tfqFBggMq8CJRwg9EzeZO0/edit?usp=sharing)
 
-# 功課：21 點遊戲單人版(Version2)
-我們對verion1 的程式碼進行重構，繳交網址：
-[https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload](https://hamster.cpttm.org.mo/spaces/D0zskV6HZGBIk6CI9ApoQA/upload)
+# 作業：
+截止時間：2025年6月1日 23:59
 
-截止日期：2025-03-17
+{% hint style="info" %}
 
-我們要做的：
-- 以 list 方式把所有牌分開花式及點數(hints：二維list)
+# 21 點遊戲單人版 Version 2
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload](https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload)
+
+---
+- 以 list/dict 方式把所有牌分開花式及點數(hints：二維list)
 - 每 1 輪發牌 - 改以 `Random` 方式
 - 把發牌這個動作打包成 function，可以把取得的牌 return 出來
 - 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
 
-# 自定義函數/方法 - 參數、返回值
+{% endhint %}
+
+# List 的複製
+在Python中，list 的複製不可以直接使用 `=` 符號，是由於 List 在使用等號的時候，只有把 list_1 的地址給予 list_2，因此若我們改變 list_1 的值，list_2也會隨之改變。
+
+```python
+list_1 = [1,2,3,4,5]
+list_2 = list_1
+
+list_1[0] = 100 # 改變 list_1 index 為 0 的值
+print(list_2)   # [100,2,3,4,5] # 列印 list_2
+```
+
+## 正確做法
+使用 `.copy()`
+
+```python
+list_1 = [1,2,3,4,5]
+list_2 = list_1.copy()
+
+list_1[0] = 100 # 改變 list_1 index 為 0 的值
+print(list_1)   # [100,2,3,4,5] # 列印 list_1
+print(list_2)   # [1,2,3,4,5]   # 列印 list_2
+```
+
+# 函數 Function
+函數(Function)，Python自定了很多不同的已經寫好的Function，所謂函數就是『敘述的集合』，並且以一個函數名稱來代表此敘述集合。
+
+**是一種已組織好的，可以重覆使用的「小工具」或「黑盒子」，實現特定功能的代碼段。**
+
+試想想，為何我們為何能隨時使用 `print()`?
+
+- 是提前寫好的
+- 可以重覆使用
+- 實現輸出功能的一個功能段
+
+### print() 在 Python 中的定義
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211506236.png)
+
+## 自定義函數/方法
+由於 python 是自上而下進行編譯和執行，因此定義函數一定要執行(call)函數前完成。
+```python
+# 定義最簡單的函數
+def 函數名():
+    需要執行的程式塊
+
+# 執行/call
+函數名()
+```
+
+定義一個 `print_hello()` 函數，功能是每一次執行時列印2次Hello
+
+```python
+def print_hello():
+  for i in range(0,2):
+    print("Hello")
+
+print_hello()
+```
+
+# 自定義函數/方法 - 參數
 我們也可以在函數中加入參數和返回值，而這2個值的作用範圍只在函數有效。
 
 ```python
 def function_name(參數1, 參數2, 參數3, ...):
     {code}
-    return 結果
 ```
 
 - 參數可以為空
-- 函數可以沒有 return 語句，如果沒有 return 語句，函數將返回一個特殊的值 None
+
+## 例子 : len()
+`len()` 方法返回對像（字符、列表、元組等）長度或項目個數。
+
+```python
+# 定義一個String
+str1 = "My name is Leo Tam."
+
+print(len(str1)) # 這里的 str1 便是參數之一
+```
+
+# 參數的意義
+以剛才的例子中，我們使用了`range(0,2)`控制迴圈的次數，但試想這個`range()`中每次都寫死了`0,2`，若我希望這個range()內的值是由執行的時候動態決定，我們要如何做？
+
+* **注意：參數的作用範圍僅在函數中**
+```python
+# 定義最簡單的函數
+def print_hello(num1, num2):
+  for i in range(num1, num2):
+    print("Hello")
+
+print_hello(2, 10)
+print_hello(1, 11)
+```
+
+## 練習
+手寫一個模擬 len() 的方法 count_string()，用於統計傳入的字串string，一共有多少個字元。
+
+```python
+def count_string(str1):
+    count = 0
+    for i in str1:
+        count = count + 1
+    return count
+
+str_1 = "Hello, World!"
+
+count_str1 = count_string(str_1)
+```
+
+# 自定義函數/方法 - 返回值
+函數除了可以執行一定功能的邏輯外，還可以返回`結果`，並回傳至主函數。
+
+使用 `return` 關鍵字
+
+```python
+def 函數名(參數):
+    需要執行的程式塊
+    return 資料
+   
+# 在這裡，return 的意義是：結束函式，回傳「資料」
+# 這裡的資料我們稱為返回值。
+```
+
+```python
+def 函數名(參數):
+    需要執行的程式塊
+    return
+
+# 在這裡，return 後空白的意義是：結束函式，因為沒有定義資料，所以回傳 None
+# 這裡的 None 我們稱為返回值。
+```
+
+## 接收返回值
+我們可以使用變數接收返回值
+```python
+def count_string(str1):
+    count = 0
+    for i in str1:
+        count = count + 1
+    return count
+
+str_1 = "Hello, World!"
+
+count_str1 = count_string(str_1)
+# count_string 最終會以 return 方式把結果傳回
+# 然後我們使用變數 count_str1 把結果儲存
+
+print(count_str1)
+```
+
+
 
 # 變數、Function 的順序
-
 我們知道，在變數、Function使用前，必須要進行宣告的動作，對應的功能才可以使用。
 
 ## 程式架構順序
@@ -65,8 +208,6 @@ if(var_1 == var_2):
 - 全域變數(Global) : 在整個程式中均有效
 - 局部變數(Local) : 只在該變數處於的區域有效
 - **優先搜索局部變數**
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202405211534155.png)
 
 ```python
 var = 'global' 
@@ -105,6 +246,8 @@ print(f'執行home3():')
 home3()
 print(f'完成home3()後的var:  {var}')
 ```
+
+![var](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202505271737105.png)
 
 ## 傳值(Value)、還是傳址(Address)的問題
 Pass by value and pass by reference問題，在Python中，任何儲存容器的資料類型，在進行參數傳遞時為傳址(Address)
@@ -149,6 +292,7 @@ modify_list(my_list) # 傳遞的是參考，所以會改變原始列表
 print(f"函數外:{my_list}")  # [1, 2, 3, 4]（原始列表被修改）
 ```
 
+---
 
 # Dictionary(字典)
 Dictionary 是一種較為複雜的資料結構，對於資料的查找很方便。Python中的字典如同現實世界中的字典，包含了一堆`字`，和這個字所指示的含意，每一個`字`即代表`key`，每一個字對應的的解釋，即代表`value`
