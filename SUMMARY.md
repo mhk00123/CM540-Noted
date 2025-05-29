@@ -6,7 +6,7 @@
 * [Lesson 3 - 邏輯判斷、循環結構](Lesson_3.md)
 * [Lesson 4 - 循環結構、儲存容器](Lesson_4.md)
 * [Lesson 5 - 儲存容器、Function、排序演算法](Lesson_5.md)
-* [Lesson 6 - Dictionary、錯誤捕捉](Lesson\_6.md)
+* [Lesson 6 - Function、Dictionary、錯誤捕捉](Lesson\_6.md)
 * #########
 * [Lesson 2 - 作業答案 1 題](Lesson_2_Homework.md)
 * [Lesson 3 - 作業答案 3 題](Lesson_3_Homework.md)
