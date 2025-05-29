@@ -120,6 +120,10 @@ print_hello(1, 11)
 ## 練習
 手寫一個模擬 len() 的方法 count_string()，用於統計傳入的字串string，一共有多少個字元。
 
+<details>
+
+<summary>解答</summary>
+解答: 
 ```python
 # 定義 function
 def count_string(str1):
@@ -135,6 +139,8 @@ str_1 = "Hello, World!"
 # 執行 function
 count_string(str_1)
 ```
+
+</details>
 
 # 自定義函數/方法 - 返回值
 函數除了可以執行一定功能的邏輯外，還可以返回`結果`，並回傳至主函數。
