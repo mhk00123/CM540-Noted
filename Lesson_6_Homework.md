@@ -1,10 +1,18 @@
 # Lesson_6_Homework
-## 21點遊戲 versino2
 
-1. 以 list 方式把所有牌分開花式及點數(hints：二維list)
-2. 每 1 輪發牌 - 改以 `Random` 方式
-3. 把發牌這個動作打包成 function，可以把取得的牌 return 出來
-4. 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
+{% hint style="info" %}
+
+# 21 點遊戲單人版 Version 2
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload](https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload)
+
+---
+- 以 list/dict 方式把所有牌分開花式及點數(hints：二維list)
+- 每 1 輪發牌 - 改以 `Random` 方式
+- 把發牌這個動作打包成 function，可以把取得的牌 return 出來
+- 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
+
+{% endhint %}
 
 # 有注解版
 ```python
@@ -13,6 +21,9 @@ import random
 
 ################# 全域變數 #################
 ## list - card
+## index = 0 為花式
+## index 1-13 為對應的點數
+
 card_list = [
     ["黑桃",1,2,3,4,5,6,7,8,9,10,11,12,13],
     ["紅心",1,2,3,4,5,6,7,8,9,10,11,12,13],
@@ -31,7 +42,7 @@ player_card_list = []
 def get_card():
     rs = [] # 定義回傳的為一個 list
     
-    while(True):  
+    while(True): 
         rand_suits = random.randint(0,3)
         card_suit = card_list[rand_suits][0]
         
@@ -47,9 +58,10 @@ def get_card():
         else: # 取牌後把對應位置變為 * 以作記錄
             card_list[rand_suits][rand_card] = "*"
             break # break 跳出抽牌的這個迴圈
-        
-    rs.append(card_suit)  # 第0個值為花式
-    rs.append(card_point) # 第1個值為點數
+    
+    # rs 為一個 list 
+    rs.append(card_suit)  # index =  0 個值為花式
+    rs.append(card_point) # index =  1 個值為點數
     
     return rs 
 
@@ -60,22 +72,18 @@ def print_player():
 ################# 主程式區 #################
 while(True):
     print_player()
-    for i in range(0,4):
-        print(card_list[i])
-        
-    print("##############################################")
+
+    user_input = input("\n取卡請輸入'get'、結束遊戲請輸入'bye'：")
     
-    temp = input("\n取卡請輸入'get'、結束遊戲請輸入'bye'：")
-    
-    if(temp == "bye"):
+    if(user_input == "bye"):
         print("遊戲結束！！！")
         print_player()
         break
 
-    elif(temp == "get"):
-        rs_get_card = get_card() # call get_card並接收回傳的 list
+    elif(user_input == "get"):
+        rs_get_card = get_card()    # call get_card並接收回傳的 list
         
-        card_suit = rs_get_card[0] # 花式
+        card_suit = rs_get_card[0]  # 花式
         card_point = rs_get_card[1] # 點數
         
         player_card_list.append(f"{card_suit}{card_point}")
@@ -178,90 +186,4 @@ while(True):
         break
     
     print()
-```
-
-# 由李同學提供版本
-```python
-import random
-
-# 1. 生成牌堆
-def initial_deck():
-    suits = ["黑桃", "紅桃", "梅花", "方塊"]
-    nums = list(range(1, 14))  # 標識 1-13  A - K
-    deck = []
-    for suit in suits:
-        for num in nums:
-            deck.append([suit, num])
-    return deck
-
-# 2. 開始隨機發牌
-def deal_card(deck, num_cards=1):
-    dealt_cards = []
-    for i in range(num_cards):
-        if not deck:
-            break  # 牌堆為空
-        card_index = random.randint(0, len(deck) - 1)
-        dealt_cards.append(deck.pop(card_index))
-    return dealt_cards
-
-# 3. 計算點數
-def calculate_value(hand):
-    total = 0
-    has_ace = False
-    for card in hand:
-        num = card[1]
-        if num >= 10:
-            total += 10
-        elif num == 1:
-            total += 11
-            has_ace = True
-        else:
-            total += num
-    # 判斷點數是否正確
-    while total > 21 and has_ace:
-        total -= 10
-        has_ace = False
-    return total
-
-# 4. print手中點數
-def display_hand(hand, total):
-    print("你的手牌：")
-    for card in hand:
-        print(f"{card[0]}{card[1]}", end=" ")
-    print(f"\n總點數：{total}")
-
-# 5. 遊戲循環開始
-def play_game():
-    deck = initial_deck()
-    player_hand = []
-    game_over = False
-
-    while not game_over:
-        print(deck)
-        
-        # 發牌
-        new_cards = deal_card(deck, 1)
-        player_hand.extend(new_cards)
-
-        # 計算點數
-        total = calculate_value(player_hand)
-
-        # 現有牌花色，點數，總點數
-        display_hand(player_hand, total)
-
-        # 判斷結果是否獲勝
-        if total == 21:
-            print("恭喜，21点！你赢了！")
-            game_over = True
-        elif total > 21:
-            print("爆牌了！你輸了！")
-            game_over = True
-        else:
-            # 是否要牌
-            action = input("繼續發牌嗎？ (輸入 'yes' 繼續, 輸入 'bye' 結束): ")
-            if action.lower() == "bye":
-                game_over = True
-
-# 開始遊戲
-play_game()
 ```
