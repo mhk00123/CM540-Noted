@@ -112,6 +112,7 @@ while(True):
 import random
 
 ################# 全域變數 #################
+
 card_list = [
     ["黑桃",1,2,3,4,5,6,7,8,9,10,11,12,13],
     ["紅心",1,2,3,4,5,6,7,8,9,10,11,12,13],
@@ -120,65 +121,66 @@ card_list = [
 ]
 
 sum = 0
+
 player_card_list = []
 
 ################# 定義 function #################
+## function - 取得一張牌
 def get_card():
     rs = []
-    while(True):  
+    
+    while(True): 
         rand_suits = random.randint(0,3)
         card_suit = card_list[rand_suits][0]
+        
         rand_card = random.randint(1,13)
         card_point = card_list[rand_suits][rand_card]
         print(f"取得的牌為 {card_suit}{card_point}")
-
-        # 若取得的牌為重覆、即==*，則continue 重抽
+        
         if(card_list[rand_suits][rand_card] == "*"): 
             continue
         
-        # 若取得的牌不為*，則代表成功抽到，
-        # 我們把他的值取出，並把二維list對應的位置記錄為 *
         else:
             card_list[rand_suits][rand_card] = "*"
             break
-        
+    
     rs.append(card_suit)
     rs.append(card_point)
     
     return rs 
 
+## function - 輸出玩家目前狀態
 def print_player():
     print(f"目前已取牌 {player_card_list} , 目前的點數：{sum}")
 
 ################# 主程式區 #################
 while(True):
     print_player()
-    for i in range(0,4):
-        print(card_list[i])
-        
-    print("##############################################")
+
+    user_input = input("\n取卡請輸入'get'、結束遊戲請輸入'bye'：")
     
-    temp = input("\n取卡請輸入'get'、結束遊戲請輸入'bye'：")
-    
-    if(temp == "bye"):
+    if(user_input == "bye"):
         print("遊戲結束！！！")
         print_player()
         break
 
-    elif(temp == "get"):
+    elif(user_input == "get"):
         rs_get_card = get_card()
+        
         card_suit = rs_get_card[0]
         card_point = rs_get_card[1]
         
         player_card_list.append(f"{card_suit}{card_point}")
         sum = sum + card_point
     
+    # 判斷若剛好等於 21 點，贏了，遊戲結束
     if(sum == 21):
         print_player()
         print("\n!!!!!!!!!!!!!!!!!!!!")
         print("恭喜你贏得遊戲!")
         break
     
+    # 若大於 21 點，輸了，遊戲結束
     elif(sum > 21):
         print_player()
         print("\n!!!!!!!!!!!!!!!!!!!!")
