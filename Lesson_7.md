@@ -4,15 +4,22 @@
 
 OOP、Module(time)、pip
 
-## 功課：21 點遊戲單人版(Final)
+# 作業：
+截止時間：2025年6月8日 23:59
 
-繳交連結：[https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload](https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload)
+{% hint style="info" %}
 
-截止日期：2025-06-08
+# 21 點遊戲單人版 Final
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload](https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload)
+
+---
 
 - 把玩家模組化(Class)
 - 新增玩家Dealer、Player
 - 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
+
+{% endhint %}
 
 ## Slide
 課件：[https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing](https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing)
