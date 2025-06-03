@@ -2,41 +2,212 @@
 
 **tags: `python`** **`CM-540`** **`Lesson7`**
 
-物件、Module(time、os)、輸入流輸出流、pip
+OOP、Module(time)、pip
 
 ## 功課：21 點遊戲單人版(Final)
 
-繳交連結：[https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload](https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload)
+繳交連結：[https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload](https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload)
 
-截止日期：2025-03-31
+截止日期：2025-06-08
 
 - 把玩家模組化(Class)
 - 新增玩家Dealer、Player
-- 每一步取牌後輸出當時時間
 - 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
 
 ## Slide
 課件：[https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing](https://docs.google.com/presentation/d/15Yld0Ppk5lrHQV_FyxswlJePxbhe7zyFZ9xkh1E_gmE/edit?usp=sharing)
 
+# 例外狀況處理: try except
+執行 Python 程式的時候，往往會遇到「錯誤」的狀況。如果沒有好好處理錯誤狀況，就會造成整個程式壞掉而停止不動。因此，透過「例外處理」try except 機制。能夠在發生錯誤時進行對應的動作，不僅能保護整個程式的流程，也能夠掌握問題出現的位置，馬上進行修正。
+
+## 錯誤例子
+觀察以下程式碼:
+```python
+a = "Hello"
+b = a + 1
+print(b)
+```
+
+String 和 int 不能作相加的動作
+此處會出現 `TypeError` 的錯誤，程式終結
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202506031421324.png)
+
+
+## 錯誤類型
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403261728234.png)
+
+# 使用 Try 和 Except
+我們可以透過 `try`、`except`組合捕捉對應執式執行錯誤。
+## 基本用法
+```python
+try:
+    # 需要執行的程式碼`
+
+except:
+    # 如果有錯誤，則執行
+```
+
+### 例子
+```python
+try:
+    a = "Hello"
+    b = a + 1
+except:
+    print("程式出現錯誤，請檢查！")
+```
+
+## 可以為每一個Error作特定的判斷
+
+```python
+try:
+    # 需執行的程式碼
+
+except TypeError:
+	print('型別發生錯誤')
+    
+except NameError:
+    print('使用沒有被定義的對象！')
+
+except IndexError:
+    print('沒有特定的index，請重新確認!')
+
+except Exception as E:
+    print('不知道怎麼了，反正發生錯誤！')
+```
+
+## Try Except 所有用法
+```python
+try:
+    # 需執行的程式碼
+
+except Exception as E:
+    # 若有錯誤，捕捉錯誤訊息，以變數 E 作儲存
+
+else:
+    # 若沒有錯誤則執行
+
+finally:
+    # 不論有沒有錯誤都執行
+```
+
+## Try Except 意義
+- 處理預期的錯誤：
+例如處理使用者輸入、檔案操作、網路請求等可能失敗的操作
+
+- 提供替代方案：
+當主要方法失敗時，可以使用備用方法繼續執行
+
+- 盡獲特定的異常，而不是捕獲所有異常 (except Exception)
+- **將 try 區塊保持盡可能減小**，只包含可能引發異常的程式碼
+
+
+# 練習1:
+
+請使用 Try Except 令以下這段程式碼可以順利執行
+若執行錯誤則由系統補上 key 為 3 的內容 或是其他修正方法
+
+```python
+temp = {
+    1: "我是Pie", 
+    2: "我是Pie2"
+}
+
+print(temp[3])
+```
+
+### 解答
+```python
+temp = {
+    1: "我是Pie", 
+    2: "我是Pie2"
+}
+
+# 有問的題的應是這段程式碼
+
+try:
+    print(temp[3])
+
+except:
+    print("沒有這個key，系統為你新增一個")
+    temp[3] = "我是Pie3"
+    print(temp[3])
+```
+
+## 練習2
+優化我們早前的手動抽牌流程
+- 由使用者輸入數字(1-13)，並轉為int類型
+- 若使用者輸入bye，則結束
+- 輸入其他英文字母，則提示輸入錯誤，請重新輸入
+
+```python
+while(True):
+    user_input = input("請輸入一個數字，若輸入bye則結束：")
+   
+    if(user_input == "bye"):
+        print("bye bye!")
+        break
+   
+    else:
+        user_input = int(user_input
+```
+
+### 解答
+```python
+while(True):
+    user_input = input("請輸入一個數字，若輸入bye則結束：")
+    
+    if(user_input == "bye"):
+        print("結束程式")
+        break
+    
+    else:
+        try:
+            user_input = int(user_input)
+            print(f"你輸入的數字是：{user_input}, Type: {type(user_input)}")
+        except:
+            print("輸入錯誤，請輸入數字或bye")
+            continue
+```
 
 # 物件導向程式設計(Object-oriented programming、OOP)
+過去我們一條一條的寫程式，加上一些整合式的 function，並以排序的方式讓編譯器知道程式執行的先後順序，這就目前我們寫程式一般常見的架構:
+
+**程序導向設計 (Procedure-Oriented Programming, POP)**
+
+現代軟體開發中，物件導向程式設計(Object-oriented programming、OOP) 是主流設計範式，幾乎所有主流語言（如 Java、Python、C++、C#）都支援它。以下是它的核心優勢：
 - OOP 是一種「用物件（對象）來組織程式碼」的設計方式。
 - 就像現實世界中的每一「物體」都有自己的「屬性」和「行為」一樣
 - OOP 把程式中的「**數據**」和「**操作數據的函數**」打包成一個個獨立的「物件」，讓程式更容易管理和擴充。
 
-## OOP 的四大核心
+想像你在玩樂高積木，樂高有許多相同形狀的模組（例如輪胎、門窗），你可以用這些模組快速拼出不同的東西（車子、房子等）。
+
+**OOP 就像在寫程式時，把程式碼拆成可重複使用的『模組』**
+
+**再用這些模組組合出完整的程式**
+
+## 為什麼要教大家?
+以入門學習來說，根本不需要學OOP。
+
+以POP的架構，甚至連 function 都不用寫就可以一步一步完成目標了。
+
+但是每樣功能存在一定都有它的道理，OOP就是軟體不停開發、演進下的一個產物，當程式能力到一定的程度後，一旦開始做比較大的專案或是計畫，則就會需要用到OOP的技巧。
+
+
+## OOP 的五大核心
 在學習程式語言時，或多或少都有聽過物件導向程式設計(Object-oriented programming，簡稱OOP)，它是一個具有物件(Object)概念的開發方式，能夠提高軟體的重用性、擴充性及維護性，在開發大型的應用程式時更是被廣為使用，所以在現今多數的程式語言都有此種開發方式，Python當然也不例外。而要使用物件導向程式設計就必須對類別(Class)及物件(Object)等有一些基本的了解，包含了：
 - 物件(Object)
 - 類別(Class)
+- 建構式(Constructor)
 - 屬性(Attribute)
 - 方法(Method)
-- 建構式(Constructor)
 
 # 類別(Class)、物件(Object)
-- 類（Class）：像是「設計藍圖」，定義一個物件的「結構」。
-例如：設計一張「汽車藍圖」，寫明汽車應該有顏色、品牌、速度等屬性，以及加速、煞車等功能。
+- 類別／類（Class）：像是「**設計藍圖**」，定義一個物件的「**結構**」。
+例如：設計一張「**汽車藍圖**」，寫明汽車應該有顏色、品牌、速度等屬性，以及加速、煞車等功能。
 
-- 對象（Object）：根據「類」的藍圖實際創造出來的「實例」。
+- 物件（Object）：根據「**類別**」的藍圖實際創造出來的「**實例**」。
 例如：根據「汽車藍圖」製造出「一台紅色 Toyota 汽車」，這台車就是一個具體的「物件」。
 
 
@@ -59,7 +230,6 @@ class 類別名稱:
 my_OOP_item = 類別名稱(參數1, 參數2, ...)
 
 ```
-
 
 ## 汽車Class及實體化汽車物件的例子
 ```python
@@ -115,31 +285,56 @@ car_1 = Cars("Yellow", 5)
 car_1.drive()
 ```
 
-## 練習 : 構建學生Student的Object和Class
-每個學生中的資料包含:
-- 中文姓名
-- 英文姓名
-- 性別
-- 學號
-- 年級
-- 並且每個學生中都可以透過 intro() 做一個自我介紹
+## 練習 : 銀行帳戶
+以OOP的概念創建一個銀行帳戶(BankAccount)
+每個帳戶包含屬性:
+- 帳號
+- 餘額
+
+並且每個帳戶都可以對自己的戶口進行以下行為:
+- 存款
+- 提款
+- 查詢餘額
+
+**生成 2 個帳戶作測試**
+
 
 ```python
-class Student:
-    def __init__(self, ch_name, en_name, sex, class_num, grade):
-        self.ch_name = ch_name
-        self.en_name = en_name
-        self.sex = sex
-        self.class_num = class_num
-        self.grade = grade
-    
-    def intro(self):
-        print(f"你好，我名字是{self.ch_name}, 英文名是{self.en_name}")
-        print(f"我是{self.sex}性, 目前就讀{self.grade}年級")
-    
-stu_Leo = Student("尼奧","Leo","男",12345,6)
+# 定義 BankAccount 類別
+# 定義 BankAccount 類別
+class BankAccount:
+    # 初始化方法
+    def __init__(self, account_number, balance):
+        self.account_number = account_number        
+        self.balance = balance
+        print(f"帳戶創建成功！{self.account_number}，餘額：{self.balance}")  # 提示帳戶創建成功      
 
-stu_Leo.intro()
+    # 提款方法
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"存款成功！餘額：{self.balance}")
+
+    # 存款方法
+    def withdraw(self, amount):
+        if(amount <= self.balance):
+            self.balance =  self.balance - amount
+            print(f"提款成功！餘額：{self.balance}")
+            
+        else:
+            print("提款失敗：餘額不足！")   # 提示餘額不足
+
+    # 查詢餘額方法
+    def get_balance(self):
+        return self.balance
+
+# 建立兩個帳戶物件
+account_Leo = BankAccount("1234", 10)     # 創建物件1 - Leo：帳號 1234，初始餘額1000
+account_May = BankAccount("5678", 1000)   # 創建物件2 - May：帳號 5678，初始餘額0
+
+# 使用帳戶功能
+account_May.deposit(500)                  # May 存入500
+account_Leo.withdraw(200)                 # Leo 取款200、提示：提示餘額不足
+account_Leo.get_balance()                 # Leo 查詢自己餘額
 ```
 
 
@@ -233,7 +428,6 @@ parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M")
 # 計算時間差
 diff_time = parsed_date - t_now
 
-
 # 兩個 datetime 對象相減時，得到的是一個 timedelta 對象，這個對象不能直接使用 strftime() 方法
 # 獲取天數和秒數
 days = diff_time.days
@@ -250,7 +444,32 @@ print(result_string)
 
 ```
 
-### 練習
+## 格式化日期
+
+### 有關日期
+| 格式 | 含義 |
+| :-: | :-: |
+| %y | （00 - 99）兩個數字表示的年份 |
+| %Y | 完整的年份（4個數字表示年份） |
+| %m | 月份（01 - 12） |
+| %d | 日期（0-31） |
+| %b | 本地月份名稱的簡寫（如八月份為agu） |
+| %B | 本地月份名稱的全稱（如八月份為august） |
+| %a | 本地星期名稱的簡寫（如星期四為Thu） |
+| %A | 本地星期名稱的全稱（如星期四為Thursday） |
+
+### 有關時間
+| 格式 | 含義 |
+| :-: | :-: |
+| %H | 一天中的第幾個小時（24小時制，00 - 23） |
+| %I | 第幾個小時（12小時制，0 - 11） |
+| %M | 分鐘數（00 - 59） |
+| %S | 秒（00 - 61） |
+| %p | 本地am或者pm的識別字 |
+| %j | 一年中的第幾天（001 - 366） |
+
+
+## 練習
 請由用戶輸入目標日期時間，計算距離現在還有多少天、小時、分、秒。
 ```python
 from datetime import datetime
@@ -260,7 +479,7 @@ def cal_time(target_time):
     t_now = datetime.now()
 
     try:
-        parsed_date = datetime.strptime(target_time, "%Y-%m-%d %H:%M%d")
+        parsed_date = datetime.strptime(target_time, "%Y-%m-%d %H:%M:%S")
     except:
         parsed_date = datetime.strptime(target_time, "%Y-%m-%d")
 
@@ -269,8 +488,8 @@ def cal_time(target_time):
 
     # 兩個 datetime 對象相減時，得到的是一個 timedelta 對象，這個對象不能直接使用 strftime() 方法
     # 獲取天數和秒數
-    days = diff_time.days
-    seconds = diff_time.seconds
+    days = diff_time.days        # 天數
+    seconds = diff_time.seconds  # 秒數
 
     # 拆開小時、分鐘、秒
     ans_hour = int(seconds / 3600)
@@ -288,61 +507,6 @@ while(True):
     cal_time(target_time)
 ```
 
-## 格式化日期
-
-### 有關日期
-| 格式 | 含義 |
-| :-: | :-: |
-| %y | （00 - 99）兩個數字表示的年份 |
-| %Y | 完整的年份（4個數字表示年份） |
-| %m | 月份（01 - 12） |
-| %d | 日期（0-31） |
-| %b | 本地月份名稱的簡寫（如八月份為agu） |
-| %B | 本地月份名稱的全稱（如八月份為august） |
-| %a | 本地星期名稱的簡寫（如星期四為Thu） |
-| %A | 本地星期名稱的全稱（如星期四為Thursday） |
-
-
-### 有關時間
-| 格式 | 含義 |
-| :-: | :-: |
-| %H | 一天中的第幾個小時（24小時制，00 - 23） |
-| %I | 第幾個小時（12小時制，0 - 11） |
-| %M | 分鐘數（00 - 59） |
-| %S | 秒（00 - 61） |
-| %p | 本地am或者pm的識別字 |
-| %j | 一年中的第幾天（001 - 366） |
-
-## 練習
-請計算現在距離 2024年10月4日21:45 還有多少小時、分、秒。
-
-```python
-# 請計算現在距離 2024年10月4日21:45 還有多少小時、分、秒。
-
-from datetime import datetime
-
-# 取得目前時間 
-now_time = datetime.now() # datetime格式
-
-# 目標時間
-target_string = "2024-10-15 21:45"
-target_time = datetime.strptime(target_string, "%Y-%m-%d %H:%M") # datetime格式
-
-# 兩日期相減
-time_diff = target_time - now_time
-print(time_diff)
-
-days = time_diff.days
-diff_seconds = time_diff.seconds
-
-print(f"{days} {diff_seconds}")
-
-ans_hour = int(diff_seconds / 3600)
-ans_min = int(diff_seconds % 3600 / 60)
-ans_sec = int(diff_seconds % 3600 % 60)
-
-print(f"現在距離{target_string}, 還有{days}天{ans_hour}小時{ans_min}分鐘{ans_sec}秒")
-```
 
 ## 補充常用時間函數 time.sleep()
 若我們要程式等待一定時間後再執行下一步，可以使用`sleep(秒)`這個function
