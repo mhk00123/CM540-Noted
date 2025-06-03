@@ -48,7 +48,6 @@ def get_card():
         
         rand_card = random.randint(1,13)
         card_point = card_list[rand_suits][rand_card]
-        print(f"取得的牌為 {card_suit}{card_point}")
         
         # 判斷該位置是否為 *
         # 若是則該牌已取，再Random重抽
@@ -57,6 +56,7 @@ def get_card():
         
         else: # 取牌後把對應位置變為 * 以作記錄
             card_list[rand_suits][rand_card] = "*"
+            print(f"取得的牌為 {card_suit}{card_point}")
             break # break 跳出抽牌的這個迴圈
     
     # rs 為一個 list 
@@ -133,13 +133,13 @@ def get_card():
         
         rand_card = random.randint(1,13)
         card_point = card_list[rand_suits][rand_card]
-        print(f"取得的牌為 {card_suit}{card_point}")
-        
+
         if(card_list[rand_suits][rand_card] == "*"): 
             continue
         
         else:
             card_list[rand_suits][rand_card] = "*"
+            print(f"取得的牌為 {card_suit}{card_point}")
             break
     
     rs.append(card_suit)
