@@ -427,12 +427,51 @@ for i in all_key:
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202403261728234.png)
 
 ## 使用 Try 和 Except
+## 基本用法
+```python
+try:
+    # 需要執行的程式碼
+
+except:
+    # 如果有錯誤，則執行
+```
+
+## 例子
+```python
+try:
+    a = "Hello"
+    b = a + 1
+except:
+    print("程式出現錯誤，請檢查！")
+```
+
+## 可以為每一個Error作特定的判斷
+
+```python
+try:
+    # 需執行的程式碼
+
+except TypeError:
+	print('型別發生錯誤')
+    
+except NameError:
+    print('使用沒有被定義的對象！')
+
+except IndexError:
+    print('沒有特定的index，請重新確認!')
+
+except Exception as E:
+    print('不知道怎麼了，反正發生錯誤！')
+
+```
+
+## Try Except 所有用法
 ```python
 try:
     # 需執行的程式碼
 
 except Exception as E:
-    # 若有錯誤，錯誤訊息為 E
+    # 若有錯誤，捕捉錯誤訊息，以變數 E 作儲存
 
 else:
     # 若沒有錯誤則執行
@@ -441,30 +480,34 @@ finally:
     # 不論有沒有錯誤都執行
 ```
 
-### 例子
+# 練習:
+
+請使用 Try Except 令以下這段程式碼可以順利執行
+若執行錯誤則由系統補上 key 為 3 的內容 或是其他修正方法
+
 ```python
-a = "Hello"
+temp = {
+    1: "我是Pie", 
+    2: "我是Pie2"
+}
 
-try:
-    b = a + 1 # Error String and Int
-except Exception as E:
-    print(E)
-
-print("哇，恭喜你的程式可以順利由頭跑到尾")
-
+print(temp[3])
 ```
 
+## 解答
 ```python
-while(True):
-    data = input("請輪入一個數字：")
+temp = {
+    1: "我是Pie", 
+    2: "我是Pie2"
+}
 
-    try:
-        num = int(data)
-        num = num + 1
-        print(f"你輸入的是{num}")
-        break
-        
-    except Exception as E:
-        print("輸入錯誤，請重新輸入")
-        print(E)
+# 有問的題的應是這段程式碼
+
+try:
+    print(temp[3])
+
+except:
+    print("沒有這個key，系統為你新增一個")
+    temp[3] = "我是Pie3"
+    print(temp[3])
 ```
