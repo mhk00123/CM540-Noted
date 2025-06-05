@@ -16,7 +16,6 @@
 {% endhint %}
 
 ```python
-
 ################# 導入 random 模組 #################
 import random
 from datetime import datetime
@@ -136,6 +135,7 @@ while(flag_all_stoped):
             elif(player.player_sum > 21):
                 print(f"{player.player_name} 已超過 21 點！！！")
                 player.player_flag = False
+                check_who_win(players_list)
                 exit()
     
     # 檢查是否全部人都"bye
