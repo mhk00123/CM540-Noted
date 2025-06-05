@@ -124,12 +124,13 @@ with open('example.txt', 'r', encoding='utf-8') as file:
 **稱作B文件相對於A文件的xx位置。**
 
 ## 文件路徑 - 相對路徑(同層)
-同樣地，如我們要透過程式訪問 `C:\Code\Lesson_1\abc.txt ` (假設，這個程式也位於 Lesson_1資料夾中)
+同樣地，如我們要透過程式訪問 `C:\Code\Lesson_1\abc.txt ` 
+(假設，這個程式也位於 Lesson_1資料夾中)
 
 這裡我們便有2個文件的關係：
 - A文件(程式)     `C:\Code\Lesson_1\main.py`
 - B文件(abc.txt)  `C:\Code\Lesson_1\abc.txt`
-- 
+
 我們便可以以相對路徑描述 B 文件的位置:
 *B文件相對於A文件的同一層的位置*
 
@@ -188,20 +189,23 @@ Module(模塊)，是一個Python文件，一般以`.py`結尾。
 ### 基本語法
 ```python
 import module_name [as 別名]
-
-import random 
-
-import random as rd
 ```
+
+```python
+import random          # 導入 random 
+
+import random as rd    # 導入 random 以別名 rd 記錄
+```
+
 
 ### 基本語法 from
 ```python
 from module_name import module_name|function_name [as 別名]
-
-from random import *
-
+```
+```python
 from random import randint as rINT
 ```
+
 
 # Python - 常用Module(系統內建)
 - math：用來進行數學計算，它提供了很多數學方面的專業函式
