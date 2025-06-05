@@ -1,10 +1,22 @@
-# 功課 : 21 點遊戲增強(version3)
-- 嘗試重構程式
-- 2人玩家 Dealer 、Player
-- 每一步取牌後輸出當時時間
-- 把每一步紀錄到`game_log.txt`
+# 作業：
+截止時間：2025年6月3日 23:59
+
+{% hint style="info" %}
+
+# 21 點遊戲單人版 Final
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload](https://hamster.cpttm.org.mo/spaces/qiStjaFjLahBUZU-QUqFXg/upload)
+
+---
+- 以 list/dict 方式把所有牌分開花式及點數(hints：二維list)
+- 每 1 輪發牌 - 改以 `Random` 方式
+- 把發牌這個動作打包成 function，可以把取得的牌 return 出來
+- 每一輪顯示目前手上有什麼牌(連同花式)及總點數(hints：把print這個動作也打包成function)
+
+{% endhint %}
 
 ```python
+
 ################# 導入 random 模組 #################
 import random
 from datetime import datetime
@@ -25,8 +37,7 @@ class Player:
             rand_card = random.randint(1,13)
             card_point = card_list[rand_suits][rand_card]
             print(f"---- {card_suit}{card_point} ----")
-            write_log(f"---- {card_suit}{card_point} ----\n")
-            
+
             # 判斷該位置是否為 *
             # 若是則該牌已取，再Random重抽
             if(card_list[rand_suits][rand_card] == "*"): 
@@ -46,8 +57,7 @@ class Player:
     def show(self):
         print_time()
         print(f"{self.player_name} 目前已取牌 {self.player_card_list} , 點數：{self.player_sum}")
-        write_log(f"{self.player_name} 目前已取牌 {self.player_card_list} , 點數：{self.player_sum}\n")
-        
+
 
 ################# 定義 function #################
 def print_time():
@@ -56,13 +66,23 @@ def print_time():
     print(f"({str_now})",end=" ")
     return str_now
 
-def write_log(write_string):
-    with open("game_log.txt", "a" , encoding="utf-8") as f:
-        f.write(f"{write_string}")
-
 def print_card_list():
     for i in range(0,4):
-        print(card_list[i]) 
+        print(card_list[i])
+
+def check_who_win(players_list):
+    max_name = ""
+    max_sum = 0
+    sum_list = []
+
+    for player in players_list:
+        sum_list.append(f"{player.player_name}：{player.player_sum}點")
+        if(player.player_sum > max_sum and player.player_sum <= 21):
+            max_name = player.player_name
+            max_sum = player.player_sum
+            
+    print(f"最終贏家為：*** {max_name} ***，點數為：*** {max_sum}點 ***")
+
 
 ################# 全域變數 #################
 ## list - card
@@ -87,9 +107,7 @@ while(flag_all_stoped):
     
     for player in players_list:
         if(player.player_flag == True):
-            write_log(f"({print_time()})")
             print(f"現在是 ------ {player.player_name} ------ 的回合")
-            write_log(f"現在是 ------ {player.player_name} ------ 的回合\n")
             player.show()
             
             while(True):
@@ -99,8 +117,6 @@ while(flag_all_stoped):
                     break
                 else:
                     print(f"輸入錯誤，請重新輸入")
-                    write_log(f"輸入錯誤，請重新輸入")
-                    
             
             if(temp == "get"):
                 player.get_card()
@@ -108,20 +124,19 @@ while(flag_all_stoped):
             
             elif(temp == "bye"):
                 print(f"{player.player_name} 放棄取牌，點數為：{player.player_sum}")
-                write_log(f"{player.player_name} 放棄取牌，點數為：{player.player_sum}\n")
+
                 player.player_flag = False
             print()
             
             # 判斷over21點
             if(player.player_sum == 21):
                 print(f"{player.player_name} 獲得勝利！！！")
-                write_log(f"{player.player_name} 獲得勝利！！！\n\n")
                 exit() # 結束遊戲
             
             elif(player.player_sum > 21):
                 print(f"{player.player_name} 已超過 21 點！！！")
-                write_log(f"{player.player_name} 已超過 21 點！！！\n\n")
                 player.player_flag = False
+                exit()
     
     # 檢查是否全部人都"bye
     for player in players_list:
@@ -132,18 +147,5 @@ while(flag_all_stoped):
             flag_all_stoped = False # While 迴圈將暫停
 
 # 若全部人都按下 bye 且未有人 over 21點，則需全部做對比並找出最大值
-max_name = ""
-max_sum = 0
-sum_list = []
-for player in players_list:
-    sum_list.append(f"{player.player_name}：{player.player_sum}點")
-    if(player.player_sum > max_sum and player.player_sum <= 21):
-        max_name = player.player_name
-        max_sum = player.player_sum
-        
-# 結果
-print(sum_list)
-write_log(f"{sum_list}\n")
-print(f"最終贏家為：*** {max_name} ***，點數為：*** {max_sum}點 ***")
-write_log(f"最終贏家為：*** {max_name} ***，點數為：*** {max_sum}點 ***\n\n")
+check_who_win(players_list)
 ```

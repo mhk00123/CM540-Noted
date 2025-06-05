@@ -14,7 +14,6 @@ OOP、Module(time)、pip
 繳交網址：[https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload](https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload)
 
 ---
-
 - 把玩家模組化(Class)
 - 新增玩家Dealer、Player
 - 把整個遊戲過程輸出到txt中作記錄 *(嘗試)

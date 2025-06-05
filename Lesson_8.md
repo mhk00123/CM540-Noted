@@ -2,105 +2,54 @@
 
 **tags: `python`** **`CM-540`** **`Lesson8`**
 
-os Module、pip、API、爬蟲入門
+文件輸入流、輸出流、Module、pip、API、爬蟲入門
 
-# 功課 : 21 點遊戲增強(final)
-- 嘗試重構程式
-- 2人玩家 Dealer 、Player
-- 每一步取牌後輸出當時時間
+# 作業1：
+截止時間：2025年6月8日 23:59
+
+{% hint style="info" %}
+
+# 21 點遊戲單人版 Final
+
+繳交網址：[https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload](https://hamster.cpttm.org.mo/spaces/RMe_Iu_nn3Tv7ufj1-CXEQ/upload)
+
+---
+- 把玩家模組化(Class)
+- 新增玩家Dealer、Player
 - 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
 
-截止日期：2025-04-01 23:59
-繳交地址：[https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload](https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload)
+{% endhint %}
 
+# 作業2：
 
-# 功課2 : 
-思考工作中可自動化動作為Final Project題目
+{% hint style="info" %}
+
+# 功課 :
+**思考**工作中可自動化動作為Final Project題目
+
+{% endhint %}
+
 
 # Slide
 課件：[https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing](https://docs.google.com/presentation/d/1Cq-7TjksWri1E_UvoaNF1Vaz4W_xtlI1VOs3oVbB8Qg/edit?usp=sharing)
 
-
-# 常用Module - os
-在 Python 中，`os` 模塊是操作系統的接口，提供了與操作系統交互的多種功能，例如管理文件、目錄、執行系統命令等。
-
-## os 模塊功能
-
-```python
-import os
-```
-
-- 管理文件和目錄（創建、刪除、重命名）。
-- 獲取系統信息（當前工作目錄、環境變量）。
-- 執行系統命令（如打開文件、運行程序）。
-- 處理路徑（跨平台兼容的路徑操作）。
-    - 得到當前的工作目錄的路徑：`os.getcwd()`
-    - 取得當前工作路徑的文件列表：`os.listdir(os.getcwd())`
-    - 把2個路徑組合：`os.path.join(path1, path2)`
-    - 將一個文件名與擴展名分開： `os.path.splitext()`
-
-## 資料補充 - 路徑 path
-路徑（Path）：計算機中用來定位文件或目錄位置的字符串。
-在系統中，對於路徑(Path)我們有兩種標識方法
-1. 絕對路徑
-2. 相對路徑
-
-### 絕對路徑
-絕對路徑是從文件系統的根目錄（例如，在 Windows 上是盤符如 C:，在 Unix/Linux 上是/）開始的完整路徑。它指定了文件或目錄的完整位置，不依賴於當前工作目錄。絕對路徑通常包含完整的目錄結構，以及文件或目錄的名稱。例如：
-
-- 在 Windows 上的絕對路徑：
-```
-C:\Users\Username\Documents\file.txt
-```
-
-- 在 Unix/Linux 上的絕對路徑：
-```
-/home/username/documents/file.txt
-```
-
-### 相對路徑
-相對路徑是相對於當前工作目錄的路徑。它指定了文件或目錄相對於當前位置的位置。根據當前工作目錄的不同，相對路徑可能會有所變化。
-
-如果當前工作目錄(`即python程式碼存放的位置`)：`C:\Users\Username`
-
-相對路徑為
-```
-Documents\file.txt
-``` 
-將指向 `C:\Users\Username\Documents\file.txt`
-
-需要注意的是，相對路徑也可以使用特殊符號來表示路徑關系：
-
-## 絕對路徑、相對路徑表示
-
-請注意，在 python 中，路徑一律用單引號裝 `'path'`
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410041550961.png)
-
-### `/` ：根目錄
-### `./`：當前同級目錄
-### `../` ：上級目錄
-
-```python
-open('檔名1.txt')
-
-open('/data/檔名2.txt')
-
-open('./data/檔名3.txt')
-
-open('../data/檔名4.txt')
-
-open('C:\\user\\檔名5.txt')
-```
-
-## 資料補充 - 文件輸入/輸出流
+# 創建/讀取文件 - 文件輸入/輸出流
 在Python中，我們可以透過文件輸入/輸出流with open() 處理文件的新增/修改
 
-基礎用法
+## 語法
 ```python
-with open("文件名", "打開方式", encoding="utf-8") as 臨時變數:
+with open("路徑及文件名", "打開方式", encoding="utf-8") as 臨時變數:
     臨時變數.操作()
 ```
+
+## 基礎用法
+創建一個 demo
+```python
+with open("demo.txt", "w") as my_file:
+    my_file.write("你好，我叫Leo\n")
+```
+
+
 
 ### 有四種打開文件的不同方法（模式）：
 `r` - 讀取 - 默認值。打開文件進行讀取，如果文件不存在則報錯。
@@ -133,10 +82,12 @@ with open('example.txt', 'w', encoding='utf-8') as file:
     file.write('這是第一行文字。\n')
     file.write('這是第二行文字。\n')
 
+
 # writelines()
 lines_content = ['這是第一段長文字\n', '這是第二段長文字\n', '這是第三段長文字\n']
 with open('example.txt', 'a', encoding='utf-8') as file:
     file.writelines(lines_content)
+
 
 # 使用 'r' 模式來讀取整份文件
 # read()
@@ -144,6 +95,7 @@ print("##### 使用 read() #####")
 with open('example.txt', 'r', encoding='utf-8') as file:
     content = file.read()
     print(content)
+
 
 # readline()
 print("##### 使用 readline() #####")
@@ -155,30 +107,108 @@ with open('example.txt', 'r', encoding='utf-8') as file:
         print(line.strip())  # 使用 strip() 去除換行符
 ```
 
-## 組合練習
-向 `.\tempTxT\`生成50個.txt文件，並在每一個txt中寫入該文件名。
+# 文件路徑 - 絕對路徑
+在電腦世界中，「路徑」就是表示當前文件的地址。
+
+例如：我們要透過程式訪問 `C:\Code\Lesson_1\abc.txt`
+
+我們解讀作 ： 在 `C:\Code\Lesson_1` 資料夾中的 `abc.txt` 檔案
+
+而像這種把確實位置全部寫出來的寫法`C:\Code\Lesson_1\abc.txt`，稱作「**絕對路徑**」
+
+# 文件路徑 - 相對路徑
+所謂「相對路徑」基於當前目錄，透過A文件與B文件的位置關係去描述路徑。
+
+因此「相對路徑」一定會出現 2 個文件的關係：
+
+**稱作B文件相對於A文件的xx位置。**
+
+## 文件路徑 - 相對路徑(同層)
+同樣地，如我們要透過程式訪問 `C:\Code\Lesson_1\abc.txt ` (假設，這個程式也位於 Lesson_1資料夾中)
+
+這裡我們便有2個文件的關係：
+- A文件(程式)     `C:\Code\Lesson_1\main.py`
+- B文件(abc.txt)  `C:\Code\Lesson_1\abc.txt`
+- 
+我們便可以以相對路徑描述 B 文件的位置:
+*B文件相對於A文件的同一層的位置*
+
+同一層表示方法，路徑直接以文件名標識 `abc.txt` 或使用 1 個 `.\`
+即 `.\abc.txt`
+
+## 文件路徑 - 相對路徑(下一層)
+A文件(程式)      `C:\Code\main.py`
+B文件(abc.txt)  `C:\Code\Lesson_1\abc.txt`
+
+路徑表示：`.\Lesson_1\abc.txt`
+
+## 文件路徑 - 相對路徑(上一層)
+上一層文件，以`..`表示表上層
+
+A文件(程式)     `C:\Code\Lesson_1\Code\main.py`
+B文件(abc.txt)  `C:\Code\Lesson_1\abc.txt`
+
+路徑表示：`..\abc.txt`
+
+
+## 練習 - 心情記錄
 ```python
-import os
+# 獲取用戶輸入
+date_input = input("請輸入今天的日期（YYYY-MM-DD）：")
+mood = input("請輸入今天的心情：")
+journal_entry = input("請輸入一句話描述今天的事情：")
 
-# 確保目錄存在
-directory = './tempTxT'
-if not (os.path.exists(directory)):
-    os.makedirs(directory)
+# 構造文件名
+filename = f"{date_input}_{mood}.txt"
 
-# 生成 50 個 .txt 文件
-for i in range(1, 51):
-    # 文件名
-    filename = f'txt文件_{i}.txt'
+# 構造完整路徑（相對路徑）
+file_path = f"Daily/{filename}"
 
-    # 文件路徑
-    filepath = os.path.join(directory, filename)
+# 寫入日記內容
+with open(file_path, "w", encoding="utf-8") as file:
+    file.write(f"日期：{date_input}\n")
+    file.write(f"心情：{mood}\n")
+    file.write(f"記錄：{journal_entry}\n")
 
-    # 寫入文件名到文件中
-    with open(filepath, 'w', encoding='utf-8') as file:
-        file.write(f'這是文件: {filename}')
-
-print(f'已生成 50 個 .txt 文件到目錄: {directory}')
+# 提示保存成功
+print(f"日記已保存至：{file_path}")
 ```
+
+# Python - Module
+Module(模塊)，是一個Python文件，一般以`.py`結尾。
+
+在Module中，我們可以把定義好的Class、Function、變量、代碼等封裝。
+
+使其可以在其他Python文件中使用。
+
+我們可以認為一個模塊就是一個工具包、每一個工具包中有著各種各樣的工具令我們實現各種不同的功能。
+
+使用Module前，需要進行導入`import`
+
+### 基本語法
+```python
+import module_name [as 別名]
+
+import random 
+
+import random as rd
+```
+
+### 基本語法 from
+```python
+from module_name import module_name|function_name [as 別名]
+
+from random import *
+
+from random import randint as rINT
+```
+
+# Python - 常用Module(系統內建)
+- math：用來進行數學計算，它提供了很多數學方面的專業函式
+- os：提供了與作業系統互動的功能，比如檔案和目錄操作
+- datetime：用於處理日期和時間
+- json：專門用來處理 JSON 格式資料
+    
 
 # 常用Module - datetime
 ```python
@@ -187,9 +217,9 @@ from datetime import datetime
 
 ## datetime 出現的變數類型
 用於處理日期、時間相關的問題，在 datetime 下，日期時間會有3種格式。
-- datetime時間格式 : class `datetime`
-- 格式輸出用 : class `String`
-- 兩日期相減/加 : class `datetime.timedelta`
+- datetime時間格式 : **class** : `datetime`
+- 格式輸出用 : **class** : `String`
+- 兩日期相減/加 : **class** : `datetime.timedelta`
 
 ## 格式化日期時間
 | 格式 | 含義 |
