@@ -35,8 +35,7 @@ class Player:
             
             rand_card = random.randint(1,13)
             card_point = card_list[rand_suits][rand_card]
-            print(f"---- {card_suit}{card_point} ----")
-
+            
             # 判斷該位置是否為 *
             # 若是則該牌已取，再Random重抽
             if(card_list[rand_suits][rand_card] == "*"): 
@@ -45,7 +44,8 @@ class Player:
             else: # 取牌後把對應位置變為 * 以作記錄
                 card_list[rand_suits][rand_card] = "*"
                 break # break 跳出抽牌的這個迴圈
-            
+
+        print(f"---- {card_suit}{card_point} ----")
         self.player_card_list.append(f"{card_suit}{card_point}")  # 第0個值為花式
         
         if card_point >= 10:
