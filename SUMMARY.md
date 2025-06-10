@@ -9,6 +9,7 @@
 * [Lesson 6 - Function、Dictionary、錯誤捕捉](Lesson\_6.md)
 * [Lesson 7 - 錯誤捕捉、OOP](Lesson\_7.md)
 * [Lesson 8 - Module(time)、輸入流輸出流、pip](Lesson\_8.md)
+* [Lesson 9 - 網站原理、API、爬蟲](Lesson\_9.md)
 * #########
 * [Lesson 2 - 作業答案 1 題](Lesson_2_Homework.md)
 * [Lesson 3 - 作業答案 3 題](Lesson_3_Homework.md)
