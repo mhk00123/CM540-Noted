@@ -5,23 +5,96 @@
 ## Slide
 課件：[https://docs.google.com/presentation/d/1KNGlC-_waAO3HGziN4mOu7OJjdbq8Bt8_ZQ6kA37GTA/edit?usp=sharing](https://docs.google.com/presentation/d/1KNGlC-_waAO3HGziN4mOu7OJjdbq8Bt8_ZQ6kA37GTA/edit?usp=sharing)
 
-# 功課 : 21 點遊戲增強(final)
-- 嘗試重構程式
-- 2人玩家 Dealer 、Player
-- 每一步取牌後輸出當時時間
-- 把整個遊戲過程輸出到txt中作記錄 *(嘗試)
+# 作業：
+截止時間：2025年6月26日 23:59
 
-截止日期：2025-04-01 23:59
-繳交地址：[https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload](https://hamster.cpttm.org.mo/spaces/iaMUdcYZAHaWIl9bpm3-jw/upload)
+{% hint style="info" %}
 
+# Final Project
 
-## 功課 - Final Project
 自己思考一個題目，任何類型
 - 小算盤?
 - 待辦行事記錄?
 - 資料分析? 停車場車位一些應用?
 - 自動檢查退休基金價格?
 - 檢查政府工什麼時候開考?
+
+{% endhint %}
+
+
+# 第三方 Module/Package/庫
+Python 擁有十分多優秀的第三方 Module可供用戶使用，我們只需要直接導入，就十分簡單地使用別人完成的功能，不用重複造輪子。
+
+## 如何尋找對應的 Module/Package/庫
+1. 以實現功能導向，先思考需求/需要完成的功能，再尋找對應的 Module
+2. 可選擇問AI / Google 等方式尋找可以匹配的Module
+> 如果我要在 Python 實現xxx功能，我可以使用什麼套件?
+
+## 下載安裝 
+所有的第三方Module都需要有下載及安裝的到環境的動作，才可以透過 `import` / `from xxx import yyy` 的方式在程式碼中使用
+
+[https://pypi.org/](https://pypi.org/)
+
+在Python中，有一個官方儲存第三方 module / package 的網站基本上若我們使用 pip安裝的第三方 module 都會優先搜索此網站。
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404051611421.png)
+
+
+# 第三方Module下載 - pip
+pip 是 Python 的包管理器，用於安裝和管理第三方庫（也稱為包/Module）的工具。它使你能夠輕松地下載、安裝、升級和卸載 Python 包。
+
+pip 是 Python 2.7.9 版本及其後續版本的標准組件，也是 Python 3.4 及其後續版本的標准組件。它在安裝 Python 解釋器時一同安裝。
+
+## Python pip 基本命令
+安裝指定包：
+`pip install package_name`
+
+升級包：
+`pip install --upgrade package_name`
+
+卸載包：
+`pip uninstall package_name`
+
+顯示已安裝的包：
+`pip list`
+
+搜索包：
+`pip search package_name`
+
+
+## 取得網絡資料所用到的第三方 package
+- requests
+- BeautifulSoup
+- pandas
+- numpy
+- Matplotlib
+- xmltodict
+
+### 請使用命令全部安裝到對應環境中
+1. 打開 Anaconda Prompt
+2. 進入對應環境
+```
+conda activate py311
+```
+3. 輸入安裝指令
+```bash
+pip install requests
+
+pip install BeautifulSoup4
+
+pip install pandas
+
+pip install numpy
+
+pip install Matplotlib
+
+pip install xmltodict
+```
+
+如果有多個Module想同步安裝，可以簡化指令，以空格分開每個Module的名稱
+```bash
+pip install requests BeautifulSoup4 pandas numpy Matplotlib xmltodict
+```
+
 
 # 進入爬蟲世界 - 認識網頁
 在現階段我們在使用電腦的時候，我們經常會瀏覽網頁。
@@ -87,23 +160,42 @@ API 的全名叫應⽤程式介面（Application Programming Interface），表�
 - csv
 - xlsx
 
+# html、xml、json
+- HTML: 主要用於「創建和呈現」網頁。
+- xml、json：是傳輸和儲存數據，以及在不同的系統或網站之間共享數據。 它提供了一種通用的標記語言，可用於創建「自定義」的標籤和結構，用於描述各種類型的數據資料。
+
+
+## Json / XML  Parser
+實際上，Json檔案一般為程式查看，所以資料呈現上是不友好的。但我們可以透過一些簡單的工具為我們美化這些 json / XML 資料。
+- Json Parser Online : [http://json.parser.online.fr/](http://json.parser.online.fr/)
+
+- XML Parser : [https://jsonformatter.org/xml-parser](https://jsonformatter.org/xml-parser)
+
 ## 如何尋找API
 並非所有網站都希望提供資料給別人下載，因此不是所有網站都會提供API給大家。而在本澳則有 1 開放資料平台，供大家使用：澳門特別行政區政府數據開放平台：
 
 [https://data.gov.mo/](https://data.gov.mo/)
 
-如何使用 Python 取得這些東西
+## 如何使用 Python 取得這些東西
 - 透過 requests 向目標 API 發送請求
-- 透過不同module處理response資料
-- 整理
-- 輸出有效數據
+- 最得 response 原始資料
+- 按照原始資料的類型，如:`xml`、`json`、`string`、......等，選擇對應的處理套件，令這些不同類型的資料轉換為我們可以處理的格式，例如：`list`、`dict`
+- 由於取得的資料可能包含多個層級，一般需要配合`for`、 `while`迴圈分層取得資料，以及需要處理多層`list`、`dict`的技巧。
+- 最終提取有效訊息
+
+
 
 ## 由 smg.gov 公開數據平台取得當前天氣
+
+Target API URL: `https://xml.smg.gov.mo/c_actual_brief.xml`
+API Type : `XML`
+使用套件 : 
+- `request` : 向目標 API 發送請求並取得回應資料
+- `xmltodict` : 回應資料類型為 `.xml` ，透過`xmltodict`處理對應資料，並轉化為 `dict`
 
 ```python
 import requests
 import xmltodict
-from datetime import datetime
 
 # 1. 目標 url
 url = "https://xml.smg.gov.mo/c_actual_brief.xml"
@@ -115,14 +207,9 @@ response = requests.get(url)
 xml_data = response.content.decode("utf-8")
 
 # 4. 回覆的格式為.xml
-#    我們使用 xmltodict 套件處理
+# 我們使用 xmltodict 套件處理
 data_dict = xmltodict.parse(xml_data)
 print(data_dict)
-
-## 如有需要可以把整個 Dict 輸出為文字
-my_file = open("g_data.txt","w", encoding="UTF-8")
-my_file.write(str(data_dict))
-my_file.close
 
 # 5. 取得Response中的"溫度"欄位
 g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"]["Value"]
@@ -146,25 +233,6 @@ g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"]["Value"
 ```python
 g_temperature = data_dict["ActualWeatherBrief"]["Custom"]["Temperature"][0]["Value"]
 ```
-
-
-# 爬取資料的思路
-1. 取得資料(**下載、API**)
-2. 判斷回傳資料的格式(**json、xml、xlsx、csv**)
-3. 用對應的Module、Package把資料格式通通轉為**dict / list**
-4. 透過 for 迴圈讀取所有相關數據
-5. 透過不同判斷、拿出需要的資料
-
-
-# html、xml、json
-- HTML: 主要用於「創建和呈現」網頁。
-- xml、json：是傳輸和儲存數據，以及在不同的系統或網站之間共享數據。 它提供了一種通用的標記語言，可用於創建「自定義」的標籤和結構，用於描述各種類型的數據資料。
-
-
-## Json / XML  Parser
-實際上，Json檔案一般為程式查看，所以資料呈現上是不友好的。但我們可以透過一些簡單的工具為我們美化這些 json / XML 資料。
-- Python Dictionary : [http://json.parser.online.fr/](http://json.parser.online.fr/)
-- json Parser：[https://codebeautify.org/python-formatter-beautifier](https://codebeautify.org/python-formatter-beautifier)
 
 ## 需要認證的 API
 目前我們所遇到的API，一般都是可以直接發送 request 得到 response。因為這些 API 都沒有經過加密，因此我們才可以輕易取得資料。
@@ -216,7 +284,6 @@ response = requests.get(url, headers = payload)
 ```python
 import requests
 import xmltodict
-import json
  
 # 1. 目標 url
 url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
@@ -238,11 +305,6 @@ data_dict = xmltodict.parse(xml_data)
 # 6. 尋找 target 標籤
 target_data = data_dict['CarPark']['Car_park_info']
 print(target_data)
-
-# 7. 輸出到 txt 方便放到 pareser中
-with open("data.txt", "w", encoding="utf-8") as myfile:
-    write_data = json.dumps(data_dict, ensure_ascii=False)
-    myfile.write(write_data)
 ```
 
 ## 練習：尋找目前澳門沒有電單車車位的停車場
@@ -299,7 +361,7 @@ json 格式以 `{ }` 作為開始，如有新一層也是以`{ }`分開並加上
 
 Python 自帶讀取json格式的module：`json`
 
-- 讀取 (loads)、轉換成 `json` 格式
+- 讀取 (loads)、轉換成 `json` 格式，可以讀取檔案，亦可以response中的json內容。
 - 輸出 (dumps)、由 `json` 轉換為 `string`
 ```python
 import json
