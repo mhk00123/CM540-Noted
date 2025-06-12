@@ -6,7 +6,7 @@
 課件：[https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing](https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing)
 
 # 作業：
-截止時間：2025年6月日 23:59
+截止時間：2025年6月29日 23:59
 
 {% hint style="info" %}
 
