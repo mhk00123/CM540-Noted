@@ -5,12 +5,25 @@
 # Slide
 課件：[https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing](https://docs.google.com/presentation/d/1BF94gb2vS1jGLhQZnxqJqZX7QN86bvyLvhei7uCcxhU/edit?usp=sharing)
 
+# 作業：
+截止時間：2025年6月日 23:59
+
+{% hint style="info" %}
+
 # Final Project
-[https://hamster.cpttm.org.mo/spaces/Dw-FRBOph8D3-_oV4r2qFQ/upload](https://hamster.cpttm.org.mo/spaces/Dw-FRBOph8D3-_oV4r2qFQ/upload)
 
-Deadline：2025-04-18 23:59
+繳交網址：[https://hamster.cpttm.org.mo/spaces/9iOIDsZc7TLVbref_Ot8AQ/upload](https://hamster.cpttm.org.mo/spaces/9iOIDsZc7TLVbref_Ot8AQ/upload)
 
-# Requests 中加入 header
+自己思考一個題目，任何類型
+- 小算盤?
+- 待辦行事記錄?
+- 資料分析? 停車場車位一些應用?
+- 自動檢查退休基金價格?
+- 檢查政府工什麼時候開考?
+
+{% endhint %}
+
+# Requests 中加入認證 
 
 透過 payload 變數加入所需的認證參數，以 dict 型式記錄
 在 requests 的參數中加入 headers
@@ -93,7 +106,7 @@ for i in target_data:
 # json
 json 檔案一開始於用 javascript 中，是一種輕量級的資料交換格式。它的使用範圍很廣，並成為ECMA 標準，可以使用在多種程式語言中，用於前後端之間的資料傳輸、儲存和交換資料。可以說是“用更少的編碼，有更快的處理速度”，所以深受廣大程式設計師的喜愛。
 
-json 格式以 `{ }` 作為開始，如有新一層也是以`{ }`分開並加上 `,`，結束和python的dict相似。
+json 格式以 `{ }` 作為開始，如有新一層也是以`{ }`分開並加上 `,`，結束和python的dict相似，和dict較為明顯不同的是，json檔案key可以重複。
 
 ```json
 {
@@ -122,13 +135,6 @@ import json
 file = open('test.json', encoding='utf-8')
 
 data = json.loads(file)
-
-dump_data = json.dumps(data)
-
-with open("data.txt", "w",encoding="utf-8") as my_file:
-    # json中含有utf-8的操作
-    write_data = json.dumps(dump_data, ensure_ascii=False)
-    my_file.write(write_data)
 ```
 
 ## 民航局-澳門國際機場航班時間表 API 
@@ -140,25 +146,24 @@ with open("data.txt", "w",encoding="utf-8") as my_file:
 # 練習 - 尋找所有目的地為北京的航班
 ```python
 import requests
-import xmltodict
 import json
 
 # 1. 目標 url
 url = "https://aacm.apigateway.data.gov.mo/api/open/listFlightTimetable"
 
 # 2. Header
-headers = {
+playload = {
     "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
 }
 
 # 3. 向目標發送請求(request)
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=playload)
 
 print(response)
 
-# 4. 讀取 response 並進行 utf-8 decode
+# 4. 讀取 response.text
 # 使用 loads
-json_data = json.loads(response.content)
+json_data = json.loads(response.text)
 
 # 5. 尋找目的地為北京的 Beijing 的所有航空
 for i in json_data:
@@ -174,25 +179,23 @@ import requests
 import json
 
 # 1. date_list
-date_list = ["2023-06-01","2023-06-02","2023-06-03","2023-06-04"]
+day = "2025-06-12"
 
-for day in date_list:
+# 1. 目標 url
+url = f"https://www.tdm.com.mo/api/v1.0/news?IsShowSevenDay=true&Type=image&Date={day}&Lang=zh"
 
-    # 1. 目標 url
-    url = f"https://www.tdm.com.mo/api/v1.0/news?IsShowSevenDay=true&Type=image&Date={day}&Lang=zh"
+# 2. 向目標發送請求(request)
+response = requests.get(url)
 
-    # 2. 向目標發送請求(request)
-    response = requests.get(url)
+json_data = json.loads(response.content)
 
-    json_data = json.loads(response.content)
+target_data = json_data["data"]["newsList"]
 
-    target_data = json_data["data"]["newsList"]
-
-    for i in target_data:
-        for j in i["data"]:
-            print(f'{j["date"]} : {j["title"]}')
-            print(f'{j["content"]}')
-            print("######################")
+for i in target_data:
+    for j in i["data"]:
+        print(f'{j["date"]} : {j["title"]}')
+        print(f'{j["content"]}')
+        print("######################")
 ```
 
 # Google Colab 是什麼？ 
@@ -420,10 +423,10 @@ import pandas as pd
 import requests
 
 url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
-headers = {
+playload = {
     "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
 }
-response = requests.get(url, headers=headers)
+response = requests.get(url, headers=playload)
 
 df = pd.read_xml(response.content)
 df
