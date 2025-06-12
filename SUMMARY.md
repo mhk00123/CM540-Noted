@@ -11,6 +11,8 @@
 * [Lesson 8 - Module(time)、輸入流輸出流](Lesson\_8.md)
 * [Lesson 9 - 網站原理、pip、API、爬蟲](Lesson\_9.md)
 * #########
+* [Final Project](FinalProject.md)
+* #########
 * [Lesson 2 - 作業答案 1 題](Lesson_2_Homework.md)
 * [Lesson 3 - 作業答案 3 題](Lesson_3_Homework.md)
 * [Lesson 4 - 作業答案 1 題](Lesson_4_Homework.md)
