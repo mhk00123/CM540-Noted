@@ -1,260 +1,118 @@
-# Lesson 11 - Pandas、Matplotlib
+# Lesson 11 - Pandas、Matplotlib、總結
 
 **tags: `python`** **`CM-540`** **`Lesson11`**
 
 # Slide
 課件：[https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing](https://docs.google.com/presentation/d/1tPwN2reYVnsRwWkYHi2gzdvIP7XgC_3Ll9mgeiyupv8/edit?usp=sharing)
 
+# 作業：
+截止時間：2025年6月29日 23:59
+
+{% hint style="info" %}
+
 # Final Project
-[https://hamster.cpttm.org.mo/spaces/Dw-FRBOph8D3-_oV4r2qFQ/upload](https://hamster.cpttm.org.mo/spaces/Dw-FRBOph8D3-_oV4r2qFQ/upload)
 
-Deadline：2025-04-18 23:59
+繳交網址：[https://hamster.cpttm.org.mo/spaces/9iOIDsZc7TLVbref_Ot8AQ/upload](https://hamster.cpttm.org.mo/spaces/9iOIDsZc7TLVbref_Ot8AQ/upload)
 
-# Pandas 統計操作
-## 範例 Data
-```python
-import pandas as pd
-df = pd.DataFrame(
-    {
-      '產品': ['蘋果','奇異果','檸檬','牛排','肥牛','豬腩肉','雞翅膀','奶酪','牛奶'],
-      '種類': ['水果','水果','水果','肉類','肉類','肉類','肉類','奶製品','奶製品'],
-      '保存方式': ['新鮮','新鮮','新鮮','新鮮','冷藏','冷藏','新鮮','冷藏','新鮮'],
-      '原產地': ['本地','進口','本地','本地','進口','進口','本地','本地','本地'],
-      '位址': ['貨區 A1','貨區 A3','貨區 A1','貨區 A2','貨區 B2','貨區 B1','貨區 A4','貨區 B2','貨區 A1'],
-      '原價': [3.6, 6.3, 2.4, 10.3, 16.6, 8.5, 6.6, 5.3, 2.4],
-      '優惠價': [3.4, 5.7, 1.9, 10.2, 13.9, 7.9, 5.2, 5.1, 1.9],
-      '貨存': [67, 70, 80, 98, 91, 40, 70, 86, 72],
-    }    
-)
+自己思考一個題目，任何類型
+- 小算盤?
+- 待辦行事記錄?
+- 資料分析? 停車場車位一些應用?
+- 自動檢查退休基金價格?
+- 檢查政府工什麼時候開考?
+- OCR 應用    
+
+{% endhint %}
+
+
+# Pandas 缺失值處理
+在我們使用pd.read()讀取資料時，有部份資料值存在空白、缺失的情況
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202506161733655.png)
+
+而在 Pandas 中，我們可以快速處理缺失值
+
+## 定位 NaN 的值
+可透過 `df.isnull()`，與早前定位一樣，先寫條件，再定位
+
+``` python
+# condition
+condition = df[列名稱].isnull()
+
+# 定位
+df[condition]
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111122707.png)
+``` python
+# 判斷 Condition
+condition = df["MB_CNT"].isnull()
 
-## 新增行列
+# 定位
+df[condition]
+```
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406071625416.png)
 
-### 新增行(Row)
-內容為List、轉換為DataFrame
+## 缺失值(NaN)處理
+可以使用 2 種方法
+1. 填充
+2. 刪除行
+
 ```python
-# 構建新行
-# 構建新行
-new_data = ["橙", "水果", "新鮮", "進口", "貨區A3", 10, 8, 56]
-new_data2 = {
-    "產品":"橙2",
-    "種類":"水果",
-    "保存方式":"新鮮",
-    "原產地":"本地",
-    "位址":"貨區 A4",
-    "原價":20,
-    "優惠價":18.5,
-    "貨存":56
-}
-new_row = pd.DataFrame([new_data], columns=df.columns)
-new_row2 = pd.DataFrame([new_data2], columns=df.columns)
+# 使用固定值填充
+df = df.fillna(value)
 
-# 合併 concat()
-df = pd.concat([df, new_row, new_row2], ignore_index=True)
-df
+# 2 刪除行
+df = df.dropna()
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410221604987.png)
-
-### 新增列
 ```python
-new_col = pd.Series([11,22,33,44,55,66,77,88,99,100])
-df["已售出"] = new_col
+# 自己 = 自己代表取代原數據
+df["MB_CNT"] = df["MB_CNT"].fillna(0)
 ```
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202410221618356.png)
 
-## 刪除  drop()
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406071634500.png)
+
+# 刪除目標資料
+我們可以指定特定行/列進行刪除
+
 ```python
+# 刪除列(Col)
+df = df.drop(columns = "col_index")
+
 # 刪除行(Row)
 df = df.drop(index = "row_index")
-
-# 刪除列(Col)
-df = df.drop(columns = "col_name")
 ```
 
-## 常用函式
-- 輸出Series為list()
+### 刪除Row
+由於刪除特定行需要尋找對應的 Row index
+可以先定位，再用對應的function定位對應的Row Index
+
+例如 : 刪除所有名稱中包含氹仔的停車場
 ```python
-df["某列"].tolist()
+# 1. 包含某文字的寫法
+condition = df["name"].str.contains("氹仔", na=False)
+
+# 1.1 如果為非包含 ==
+# condition = df["name"] == "氹仔"
+
+# 2. 尋找對應的 Row index
+target_index = df[condition].index.tolist()
+
+# 3. 刪除 row
+df = df.drop(index=target_index)
 ```
 
-- 共有幾行 - len( )
+## 整理數據後 - 輸出至 Excel to_excel()
+透過to_excel(檔案名、表名、是否需要加上index)
 ```python
-count_row = len(df)
+df.to_excel('temp.xlsx', sheet_name='test_sheet', index=False)
 ```
-
-- 平均值 - mean( )
-```python
-avg_price = df.loc[:, "原價"].mean()
-```
-
-- 最小 - min( )
-```python
-min_price = df["原價"].min()
-```
-
-- 最大 - max( )
-```python
-max_price = df["原價"].max()
-```
-
-- 定位行 - df [ 條件判斷 ]
-```python
-df.loc[df["原價"] == max_price]
-```
-
-## 統計區間 - group_by()
-我們可以透過 group_by( ) 為我們的數據作分區區間，但一般來說我們無法可視化這個 group by 後的數據。
-```python
-df.groupby(by=[col_name1, col_name2]).agg({col_name : func1, col_name : func2})
-```
-使用.size( ) 查看每一個 group 的數量
-```python
-count_by_fruit = df.groupby(by="種類").size()
-```
-
-
-```python
-import pandas as pd
-
-df = pd.DataFrame(
-    {
-      '產品': ['蘋果','奇異果','檸檬','牛排','肥牛','豬腩肉','雞翅膀','奶酪','牛奶'],
-      '種類': ['水果','水果','水果','肉類','肉類','肉類','肉類','奶製品','奶製品'],
-      '保存方式': ['新鮮','新鮮','新鮮','新鮮','冷藏','冷藏','新鮮','冷藏','新鮮'],
-      '原產地': ['本地','進口','本地','本地','進口','進口','本地','本地','本地'],
-      '位址': ['貨區 A1','貨區 A3','貨區 A1','貨區 A2','貨區 B2','貨區 B1','貨區 A4','貨區 B2','貨區 A1'],
-      '原價': [3.6, 6.3, 2.4, 10.3, 16.6, 8.5, 6.6, 5.3, 2.4],
-      '優惠價': [3.4, 5.7, 1.9, 10.2, 13.9, 7.9, 5.2, 5.1, 1.9],
-      '貨存': [67, 70, 80, 98, 91, 40, 70, 86, 72],
-    }    
-)
-
-count_by_fruit = df.groupby(by="種類").size()
-count_by_fruit
-```
-
-
-## groupby function
-在group by中，我們可以直接使用 for 迴圈存取里面每一個項目。
-
-```python
-import pandas as pd
-
-df = pd.DataFrame(
-    {
-      '產品': ['蘋果','奇異果','檸檬','牛排','肥牛','豬腩肉','雞翅膀','奶酪','牛奶'],
-      '種類': ['水果','水果','水果','肉類','肉類','肉類','肉類','奶製品','奶製品'],
-      '保存方式': ['新鮮','新鮮','新鮮','新鮮','冷藏','冷藏','新鮮','冷藏','新鮮'],
-      '原產地': ['本地','進口','本地','本地','進口','進口','本地','本地','本地'],
-      '位址': ['貨區 A1','貨區 A3','貨區 A1','貨區 A2','貨區 B2','貨區 B1','貨區 A4','貨區 B2','貨區 A1'],
-      '原價': [3.6, 6.3, 2.4, 10.3, 16.6, 8.5, 6.6, 5.3, 2.4],
-      '優惠價': [3.4, 5.7, 1.9, 10.2, 13.9, 7.9, 5.2, 5.1, 1.9],
-      '貨存': [67, 70, 80, 98, 91, 40, 70, 86, 72],
-    }    
-)
-
-count_by_fruit = df.groupby(by="種類")
-
-for group, content in count_by_fruit:
-    print(group)
-    print(content)
-
-```
-
-
-將會用到 `.agg({"col_name":"value".function})`
-agg中，使用 dict {列名:函數}
-| 數據的處理 | 描述 |
-| :--: | :--: |
-| `{'col_name': sum}` | 計算這一列裡，每個分組的總和 |
-| `{'col_name': min}` | 找出這一列裡，每個分組的最小值 |
-| `{'col_name': max}` | 找出這一列裡，每個分組的最大值 |
-| `{'col_name': np.mean}` | 計算這一列裡，每個分組的平均值 |
-| `{'col_name': std}` | 計算這一列裡，每個分組的標準差 |
-| `{'col_name': median}` | 找出這一列裡，每個分組的中位數 |
-
-
-## 尋找每個組別的數量
-
-```python
-df.groupby(by="種類").agg({"產品": len})
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111254180.png)
-
-## 將文字組合成一行
-```python
-df.groupby(by="種類").agg({"產品": ", ".join})
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111253631.png)
-
-
-## 統計區間 - pd.cut( )
-除了使用 group_by( )，我們也可以使用 cut( ) 為資料進行指定的區間劃分。
-```python
-pd.cut(col_index, bins, labels, right)
-```
-
-```python
-import pandas as pd
-
-import pandas as pd
-df = pd.DataFrame(
-    {
-      '產品': ['蘋果','奇異果','檸檬','牛排','肥牛','豬腩肉','雞翅膀','奶酪','牛奶'],
-      '種類': ['水果','水果','水果','肉類','肉類','肉類','肉類','奶製品','奶製品'],
-      '保存方式': ['新鮮','新鮮','新鮮','新鮮','冷藏','冷藏','新鮮','冷藏','新鮮'],
-      '原產地': ['本地','進口','本地','本地','進口','進口','本地','本地','本地'],
-      '位址': ['貨區 A1','貨區 A3','貨區 A1','貨區 A2','貨區 B2','貨區 B1','貨區 A4','貨區 B2','貨區 A1'],
-      '原價': [3.6, 6.3, 2.4, 10.3, 16.6, 8.5, 6.6, 5.3, 2.4],
-      '優惠價': [3.4, 5.7, 1.9, 10.2, 13.9, 7.9, 5.2, 5.1, 1.9],
-      '貨存': [67, 70, 80, 98, 91, 40, 70, 86, 72],
-    }    
-)
-
-bins_area = [0,30,60,90,120]
-labels = ['缺貨', '需要補貨', '充足', '非常充足']
-df['貨存狀態'] = pd.cut(df['貨存'], bins=bins_area, labels=labels, right=False)
-df
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111509265.png)
-
-## 練習
-
-```python
-import pandas as pd
-import requests
-
-url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
-headers = {
-    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
-}
-response = requests.get(url, headers=headers)
-
-df = pd.read_xml(response.content)
-
-df["Car_CNT"] = df["Car_CNT"].fillna(0)
-df["MB_CNT"] = df["MB_CNT"].fillna(0)
-
-labels = ["車位嚴重不足", "車位不足", "車位尚可", "車位充足", "車位非常充足"]
-df['私家車位狀態'] = pd.cut(df['Car_CNT'], bins=5, labels=labels, right=False)
-
-result = len(df.loc[df["私家車位狀態"] == "車位不足"])
-print(f"車位尚可的停車場數量為 {result} 個")
-
-```
-
 
 # 資料可視化 Matplotlib
 Matplotlib 是一個 python 2D 繪圖庫，主要用作為資料進行可視化處理。
 Matplotlib、Pandas、Numpy 這三個 module 便是Python中處理大數據最好的工具。
 由於Matplotlib中包含大量不同的參數，本課程由於屬入門課程，只能帶大家入門使用。
 ```python
+import matplotlib
 import matplotlib.pyplot as plt
 ```
 ## 可以繪製的圖表：
@@ -262,171 +120,173 @@ import matplotlib.pyplot as plt
 
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202404231703990.png)
 
-## 在pandas中使用`plot()`
-由於在Pandas中已有整合部份Matplotlib功能，只要我們能提供x, y軸資料。
-便能快速地繪製圖表。
+## 使用 Matplotlib 的兩個方法
+1. 自己生成x,y軸資料，透過 Matplotlib 畫出
+2. 直接在Pandas中使用由於在Pandas中已有整合部份Matplotlib功能，只要我們能提供x, y軸資料，便能快速地繪製圖表。
 
 ## 設置中文化(colab)
+在Colab 中添下以下字行
 ```python
-# 在Colab 中添下以下字行
-
+# 下載台北思源黑體
 !wget -O TaipeiSansTCBeta-Regular.ttf https://drive.google.com/uc?id=1eGAsTN1HBpJAkeVM57_C7ccp7hbgSz3_&export=download
+
 import matplotlib
-matplotlib.font_manager.fontManager.addfont('TaipeiSansTCBeta-Regular.ttf')
+import matplotlib.pyplot as plt 
+from matplotlib.font_manager import fontManager
+
+fontManager.addfont('TaipeiSansTCBeta-Regular.ttf')
 matplotlib.rc('font', family='Taipei Sans TC Beta')
 ```
 
 ## 設置中文化(VS Code)
 ```python
 import matplotlib
-import matplotlib.font_manager
 import matplotlib.pyplot as plt
+
+matplotlib.rc('font', family='Microsoft JhengHei')
+```
+
+## 1. 使用 Matplotlib 畫圖(線性圖)  `plt.plot()`
+需要使用 matplotlib中的 `plt.plot()`
+```python
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.rc('font', family='Microsoft JhengHei')
+
+## 數據
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+## 創建圖表(plot 線性圖)
+plt.plot(x, y , marker='o', linestyle='-')
+## 添加圖例
+
+## 添加標簽和標題
+plt.xlabel('X 軸')
+plt.ylabel('Y 軸')
+plt.title('Test Plot 圖')
+
+## 顯示圖表
+plt.show()
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202506170105449.png)
+
+
+## 1. 使用 Matplotlib 畫圖(柱狀圖) `plt.bar()`
+需要使用 matplotlib中的 `plt.bar()`
+```python
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.rc('font', family='Microsoft JhengHei')
+
+## 數據
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+## 創建圖表(plot 線性圖)
+plt.bar(x, y, color='blue')
+## 添加圖例
+
+## 添加標簽和標題
+plt.xlabel('X 軸')
+plt.ylabel('Y 軸')
+plt.title('Test Plot 圖')
+
+## 顯示圖表
+plt.show()
+```
+
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202506170118223.png)
+
+
+## 2. 透過Pandas中的內建功能畫圖 `df.plot()`
+該方法需要使用對應的 DataFrame Function，因此要先建立好 DataFrame 才可以畫圖。
+
+Ex : 統計暨普查局 : 就業人口月工作收入中位數
+Link : [https://data.gov.mo/Detail?id=00d591b9-781c-4583-a440-896e9e89d9fc](https://data.gov.mo/Detail?id=00d591b9-781c-4583-a440-896e9e89d9fc)
+
+1. 先取得資料
+- target_url : `https://dsec.apigateway.data.gov.mo/public/KeyIndicator/MedianMonthlyEmploymentEarnOfTheEmployed`
+- request method : `POST`
+- return type : `json`
+
+```python
+import matplotlib
+import matplotlib.pyplot as plt
+import requests
+import json
 import pandas as pd
 
-matplotlib.font_manager.fontManager.addfont('TaipeiSansTCBeta-Regular.ttf')
-matplotlib.rc('font', family='Taipei Sans TC Beta')
+matplotlib.rc('font', family='Microsoft JhengHei')
+
+target_url = 'https://dsec.apigateway.data.gov.mo/public/KeyIndicator/MedianMonthlyEmploymentEarnOfTheEmployed'
+
+playload = {
+    'Authorization' : 'APPCODE 09d43a591fba407fb862412970667de4'
+}
+
+rs = requests.post(target_url, headers=playload)
+
+# 解釋資料直至可以轉換為 dataframe
+
+json_data = json.loads(rs.text)
+
+target_json_data = json_data['value']['values'] # 是一個 list
+
+df = pd.DataFrame(target_json_data)
+
+print(df)
 ```
 
-## 畫圖
-需要使用 matplotlib
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202506170136057.png)
+
+簡單處理數據，由於畫圖需要所有資料均為數字，此處把`string`轉為`int`
 ```python
+df["value"] = df["value"].astype(int)
+```
+
+最後透過`df.plot()`畫出對應圖，系統會自動尋找可以畫圖的數據
+另外 x 軸為對應的 row_index
+```python
+import matplotlib
 import matplotlib.pyplot as plt
-
-df.plot(kind="line")
-```
-
-```python
+import requests
+import json
 import pandas as pd
-import matplotlib.pyplot as plt
 
-df = pd.DataFrame(
-    {
-      '產品': ['蘋果','奇異果','檸檬','牛排','肥牛','豬腩肉','雞翅膀','奶酪','牛奶'],
-      '種類': ['水果','水果','水果','肉類','肉類','肉類','肉類','奶製品','奶製品'],
-      '保存方式': ['新鮮','新鮮','新鮮','新鮮','冷藏','冷藏','新鮮','冷藏','新鮮'],
-      '原產地': ['本地','進口','本地','本地','進口','進口','本地','本地','本地'],
-      '位址': ['貨區 A1','貨區 A3','貨區 A1','貨區 A2','貨區 B2','貨區 B1','貨區 A4','貨區 B2','貨區 A1'],
-      '原價': [3.6, 6.3, 2.4, 10.3, 16.6, 8.5, 6.6, 5.3, 2.4],
-      '優惠價': [3.4, 5.7, 1.9, 10.2, 13.9, 7.9, 5.2, 5.1, 1.9],
-      '貨存': [67, 70, 80, 98, 91, 40, 70, 86, 72],
-    }    
-)
+matplotlib.rc('font', family='Microsoft JhengHei')
 
-# 先產品設置至 X 軸
-df = df.set_index("產品")
+target_url = 'https://dsec.apigateway.data.gov.mo/public/KeyIndicator/MedianMonthlyEmploymentEarnOfTheEmployed'
 
-# 透過.plot(kind="")畫出圖表
-# 使用 VS Code 的話需要使用 plt.show()
-df.plot(kind='line')
+playload = {
+    'Authorization' : 'APPCODE 09d43a591fba407fb862412970667de4'
+}
+
+rs = requests.post(target_url, headers=playload)
+
+json_data = json.loads(rs.text)
+
+target_json_data = json_data['value']['values'] # list
+
+df = pd.DataFrame(target_json_data)
+
+df["value"] = df["value"].astype(int)
+
+df.plot(marker='o', grid=True)
+
 plt.show()
 ```
 
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111601850.png)
+![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202506170200996.png)
 
+## 儲存圖片 `plt.save()`
+可透過 `plt.save()` 完成儲存
 
-## 分類畫圖(group by)
 ```python
-count_by_fruit = df.groupby(by="種類").agg({"種類":len})
-count_by_fruit.plot(kind="bar")
-plt.show()
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111602337.png)
-
-
-## 對比原價、優惠價
-```python
-df2 = pd.DataFrame(df, columns=["產品", "原價", "優惠價"])
-df2 = df2.set_index("產品")
-df2.plot(kind="line")
-plt.show()
-```
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111609404.png)
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202406111609463.png)
-
-
-## 儲存畫好的圖 savefig()
-```python
-# dpi = 輸出圖片的大小
 plt.savefig("draw_plot.png", dpi=250)
 ```
 
-## 練習：
-整合交通事務局的資料，把私家車停車位大於1000的去除，透過並貼上標籤
-```python
-bins = [0, 10, 30, 50, 1000]
-labels = ["車位嚴重不足", "車位不足", "車位尚可", "車位充足", "車位非常充足"]
-```
-最終透過畫圖方式展示目前車位狀態。
-
-示意圖：
-
-![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412102105542.png)
-
-```python
-import pandas as pd
-import requests
-import matplotlib.pyplot as plt
-
-url = "https://dsat.apigateway.data.gov.mo/car_park_maintance"
-headers = {
-    "Authorization": "APPCODE 09d43a591fba407fb862412970667de4"
-}
-response = requests.get(url, headers=headers)
-
-df = pd.read_xml(response.content)
-
-df["Car_CNT"] = df["Car_CNT"].fillna(0)
-df["MB_CNT"] = df["MB_CNT"].fillna(0)
-
-condition = df["Car_CNT"] > 1000
-target_index = df.loc[condition].index.tolist()
-df = df.drop(index = target_index)
-
-bins = [0, 10, 30, 50, 1000]
-labels = ["車位嚴重不足", "車位不足", "車位尚可", "車位充足", "車位非常充足"]
-df['私家車位狀態'] = pd.cut(df['Car_CNT'], bins=5, labels=labels, right=False)
-
-df2 = df.groupby("私家車位狀態").size()
-df2.plot(kind="bar")
-plt.show()
-```
-
-## (補充)如何透過 Python 程式向手機發送通知
-首先，要向自己的手機發送信息是十分困難的!
-
-由於手機系統中有著非常多的認證機制，以現階段我們的知識未具備以撰寫可通過驗證的程式。
-
-因此我們需要透過第三方工具協助，目前適用於Telegram、微信。
-- Telegram：開放API，可直接透過Telegram官方API向指定的群組發送推送。
-```python
-import requests
-
-def telegram_bot_sendtext(bot_message):
-
-    bot_token = 'your_token'
-    bot_chatID = 'your_chatID'
-    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
-
-    response = requests.get(send_text)
-
-    return response.json()
-```
-
-- 微信：透過第三應用 `pushplus` 向特定微信帳戶 (pushplus) 發送`post`推送。
-```python
-def wechat_bot_sendtext(bot_message):
-
-    payload = {
-            'token' : 'your_token',
-            'content': bot_message
-        }
-    response = requests.post('http://www.pushplus.plus/send', data=payload)
-    
-    return response
-```
 
 # 如何打包程式碼為可執行檔(exe)
 由於在windows中，我們大部份可執行檔都是`.exe`的文件，因此我們也希望，我們最終的程式碼可以打包成為一個`.exe`文件以供執行。
@@ -474,3 +334,39 @@ pyinstaller --onefile blackjack.py
 pyinstaller --clean --onefile --icon="logo.ico" blackjack.py
 ```
 ![Img](https://cdn.jsdelivr.net/gh/mhk00123/my-img@main/2024/202412061603226.png)
+
+
+# (補充)如何透過 Python 程式向手機發送通知
+首先，要向自己的手機發送信息是十分困難的!
+
+由於手機系統中有著非常多的認證機制，以現階段我們的知識未具備以撰寫可通過驗證的程式。
+
+因此我們需要透過第三方工具協助，目前適用於Telegram、微信。
+- Telegram：開放API，可直接透過Telegram官方API向指定的群組發送推送。
+```python
+import requests
+
+def telegram_bot_sendtext(bot_message):
+
+    bot_token = 'your_token'
+    bot_chatID = 'your_chatID'
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+
+    response = requests.get(send_text)
+
+    return response.json()
+```
+
+- 微信：透過第三應用 `pushplus` 向特定微信帳戶 (pushplus) 發送`post`推送。
+```python
+def wechat_bot_sendtext(bot_message):
+
+    payload = {
+            'token' : 'your_token',
+            'content': bot_message
+        }
+    response = requests.post('http://www.pushplus.plus/send', data=payload)
+    
+    return response
+```
+
