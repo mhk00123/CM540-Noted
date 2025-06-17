@@ -11,6 +11,7 @@
 * [Lesson 8 - Module(time)、輸入流輸出流](Lesson\_8.md)
 * [Lesson 9 - 網站原理、pip、API、爬蟲](Lesson\_9.md)
 * [Lesson 10 - 爬蟲進階、Pandas介紹](Lesson\_10.md)
+* [Lesson 11 - Matplotlib、打包、總結](Lesson\_11.md)
 * #########
 * [Final Project](FinalProject.md)
 * #########
