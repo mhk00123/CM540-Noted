@@ -1,4 +1,4 @@
-# Lesson 11 - Pandas、Matplotlib、總結
+# Lesson 11 - Matplotlib、打包、總結
 
 **tags: `python`** **`CM-540`** **`Lesson11`**
 
